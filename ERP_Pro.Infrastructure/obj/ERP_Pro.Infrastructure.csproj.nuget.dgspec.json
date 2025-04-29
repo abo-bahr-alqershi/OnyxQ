@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj": {}
+    "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj": {}
   },
   "projects": {
-    "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj": {
+    "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj",
+        "projectUniqueName": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj",
         "projectName": "ERP_Pro.Infrastructure",
-        "projectPath": "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj",
+        "projectPath": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure/ERP_Pro.Infrastructure.csproj",
         "packagesPath": "/home/ameen/.nuget/packages/",
-        "outputPath": "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure/obj/",
+        "outputPath": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ameen/.nuget/NuGet/NuGet.Config"

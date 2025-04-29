@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj": {}
+    "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj": {}
   },
   "projects": {
-    "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj": {
+    "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj",
+        "projectUniqueName": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj",
         "projectName": "ERP_Pro.Infrastructure.Shared",
-        "projectPath": "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj",
+        "projectPath": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure.Shared/ERP_Pro.Infrastructure.Shared.csproj",
         "packagesPath": "/home/ameen/.nuget/packages/",
-        "outputPath": "/home/ameen/projects/ERP_Pro/src/ERP_Pro.Infrastructure.Shared/obj/",
+        "outputPath": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Infrastructure.Shared/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ameen/.nuget/NuGet/NuGet.Config"
