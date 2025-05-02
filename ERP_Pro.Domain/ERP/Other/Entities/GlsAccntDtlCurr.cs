@@ -1,15 +1,27 @@
 public class GlsAccntDtlCurr
 {
-    public string? AcCodeDtl { get; private set; }
-    public int? AcDtlTyp { get; private set; }
-    public string? CurCode { get; private set; }
-    public bool? Inactv { get; private set; }
-    public string? InactvRson { get; private set; }
-    public DateTime? InactvDate { get; private set; }
-    public int? InactvUId { get; private set; }
-    public int? AdUId { get; private set; }
-    public DateTime? AdDate { get; private set; }
-    public int? UpUId { get; private set; }
-    public DateTime? UpDate { get; private set; }
+    /// <summary>رمز الحساب التفصيلي</summary>
+    public string? AccountDetailCode { get; private set; }
+    /// <summary>نوع الحساب التفصيلي</summary>
+    public int? AccountDetailType { get; private set; }
+    /// <summary>رمز العملة</summary>
+    public string? CurrencyCode { get; private set; }
+    /// <summary>هل الحساب غير نشط</summary>
+    public bool? Inactive { get; private set; }
+    /// <summary>سبب التعطيل</summary>
+    public string? InactiveReason { get; private set; }
+    /// <summary>تاريخ التعطيل</summary>
+    public DateTime? InactiveDate { get; private set; }
+    /// <summary>رقم المستخدم الذي عطل الحساب</summary>
+    public int? InactiveUserId { get; private set; }
+    /// <summary>رقم المستخدم الذي أضاف السجل</summary>
+    public int? AddedByUserId { get; private set; }
+    /// <summary>تاريخ إضافة السجل</summary>
+    public DateTime? AddedDate { get; private set; }
+    /// <summary>رقم المستخدم الذي عدّل السجل</summary>
+    public int? UpdatedByUserId { get; private set; }
+    /// <summary>تاريخ آخر تعديل</summary>
+    public DateTime? UpdatedDate { get; private set; }
+    /// <summary>هل تم استخدام الحساب</summary>
     public bool? Used { get; private set; }
 }

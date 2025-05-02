@@ -1,7 +1,7 @@
 public class CashAtBankDetail
 {
     /// <summary> رقم البنك </summary>
-    public long? BankNo { get; private set; }
+    public long? BankNumber { get; private set; }
     /// <summary> كود الحساب البنكي </summary>
     public string? AccountCode { get; private set; }
     /// <summary> رمز العملة </summary>
@@ -19,17 +19,17 @@ public class CashAtBankDetail
     /// <summary> تاريخ التعطيل </summary>
     public DateTime? InactiveDate { get; private set; }
     /// <summary> الحد الأدنى للرصد </summary>
-    public int? MinLimitAmount { get; private set; }
+    public int? MinimumLimitAmount { get; private set; }
     /// <summary> الحد الأعلى للرصد </summary>
-    public int? MaxLimitAmount { get; private set; }
+    public int? MaximumLimitAmount { get; private set; }
     /// <summary> الحد الأعلى للمعاملة </summary>
-    public int? MaxLimitTransactionAmount { get; private set; }
+    public int? MaximumLimitTransactionAmount { get; private set; }
     /// <summary> الحد الأدنى للمعاملة </summary>
-    public int? MinLimitTransactionAmount { get; private set; }
+    public int? MinimumLimitTransactionAmount { get; private set; }
     /// <summary> السماح بتجاوز الحد (1=نعم) </summary>
     public bool? PassLimit { get; private set; }
     /// <summary> رقم الحساب البنكي (تفصيلي) </summary>
-    public string? BankAccount { get; private set; }
+    public string? BankAccountNumber { get; private set; }
     /// <summary> المستخدم الذي أضاف السطر </summary>
     public int? AddedUserId { get; private set; }
     /// <summary> تاريخ الإضافة </summary>

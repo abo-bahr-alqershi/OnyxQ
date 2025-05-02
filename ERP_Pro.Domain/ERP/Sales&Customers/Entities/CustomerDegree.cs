@@ -26,7 +26,7 @@ public class CustomerDegree
     public string? UpdatedTerminal { get; private set; }
     public string CGroupAName { get; private set; }
     public string? CGroupEName { get; private set; }
-    public string? CACode { get; private set; }
+    public string? CustomerCode { get; private set; }
     /// <summary> المستخدم الذي أضاف السطر </summary>
     public int? AddedUserId { get; private set; }
     /// <summary> تاريخ الإضافة </summary>
@@ -43,15 +43,15 @@ public class CustomerDegree
     public string? AddedTerminal { get; private set; }
     /// <summary> اسم الجهاز عند التعديل </summary>
     public string? UpdatedTerminal { get; private set; }
-    public string CAName { get; private set; }
-    public string? CEName { get; private set; }
-    public string CACode { get; private set; }
-    public long? CstSeq { get; private set; }
-    public long CGroupCode { get; private set; }
-    public string? CTaxCode { get; private set; }
-    public string? CBoxCode { get; private set; }
-    public string? CAddress { get; private set; }
-    public short? CntryNo { get; private set; }
+    public string CustomerArabicName { get; private set; }
+    public string? CustomerEnglishName { get; private set; }
+    public string CustomerCode { get; private set; }
+    public long? CustomerSequence { get; private set; }
+    public long CustomerGroupCode { get; private set; }
+    public string? CustomerTaxCode { get; private set; }
+    public string? CustomerBoxCode { get; private set; }
+    public string? CustomerAddress { get; private set; }
+    public short? CountryNo { get; private set; }
     public long? ProvNo { get; private set; }
     public long? CityNo { get; private set; }
     public long? RCode { get; private set; }
@@ -62,22 +62,22 @@ public class CustomerDegree
     public long? ColNo { get; private set; }
     public string? CcCode { get; private set; }
     public short? CreditPeriod { get; private set; }
-    public string? CPhone { get; private set; }
-    public string? CFax { get; private set; }
-    public string? CBox { get; private set; }
-    public string? CPerson { get; private set; }
-    public string? CEMail { get; private set; }
-    public string? CWebSite { get; private set; }
-    public short? CClass { get; private set; }
+    public string? CustomerPhone { get; private set; }
+    public string? CustomerFax { get; private set; }
+    public string? CustomerBox { get; private set; }
+    public string? ContactPerson { get; private set; }
+    public string? CustomerEmail { get; private set; }
+    public string? CustomerWebsite { get; private set; }
+    public short? CustomerClass { get; private set; }
     /// <summary> كود درجة أو تصنيف العميل </summary>
     public short? CustomerDegree { get; private set; }
-    public string? CMobile { get; private set; }
-    public DateTime? CSince { get; private set; }
+    public string? CustomerMobile { get; private set; }
+    public DateTime? CustomerSince { get; private set; }
     public bool? Inactive { get; private set; }
     public string? InactiveRes { get; private set; }
     public DateTime? InactiveDate { get; private set; }
-    public string? CVendor { get; private set; }
-    public string? CNote { get; private set; }
+    public string? CustomerVendor { get; private set; }
+    public string? CustomerNote { get; private set; }
     public int? DiscPer { get; private set; }
     public bool? ConnRemSys { get; private set; }
     public bool? InactiveSales { get; private set; }
@@ -98,7 +98,7 @@ public class CustomerDegree
     public string? GFax { get; private set; }
     public bool? BlkLst { get; private set; }
     public string? BlkLstRes { get; private set; }
-    public bool? CSalesMan { get; private set; }
+    public bool? CustomerSalesMan { get; private set; }
     public string? LicenseNo { get; private set; }
     public string? LicenseOwner { get; private set; }
     public string? ResponsPerson { get; private set; }
@@ -107,7 +107,7 @@ public class CustomerDegree
     public long? DriverNo { get; private set; }
     public long? AcOpNo { get; private set; }
     public bool? ImpXls { get; private set; }
-    public string? CParent { get; private set; }
+    public string? CustomerParent { get; private set; }
     public int? ConnBrnNo { get; private set; }
     public bool? SendMsg { get; private set; }
     public int? AprvUId { get; private set; }
@@ -134,7 +134,7 @@ public class CustomerDegree
     public int? SrcIncRate { get; private set; }
     public short? MrtlStat { get; private set; }
     public string? CmpnyWork { get; private set; }
-    public bool? CFinscanStatus { get; private set; }
+    public bool? CustomerFinScanStatus { get; private set; }
     public DateTime? OpnFileDate { get; private set; }
     public DateTime? EndFileDate { get; private set; }
     public string? HomeAddress { get; private set; }
@@ -162,11 +162,11 @@ public class CustomerDegree
     public bool CstDealFlg { get; private set; }
     public bool? CstExcptQtPrmFlg { get; private set; }
     public bool CstExchFlg { get; private set; }
-    public int? CClassTyp { get; private set; }
-    public int? CRisk { get; private set; }
-    public long? CBusSec { get; private set; }
-    public short? CPerFee { get; private set; }
-    public string? CAcctFee { get; private set; }
+    public int? CustomerClassType { get; private set; }
+    public int? CustomerRisk { get; private set; }
+    public long? CustomerBusinessSector { get; private set; }
+    public short? CustomerPercentageFee { get; private set; }
+    public string? CustomerAccountFee { get; private set; }
     public bool AutoApprvd { get; private set; }
     public int? AprvRskUId { get; private set; }
     public string? AprvRskDsc { get; private set; }
@@ -201,12 +201,12 @@ public class CustomerDegree
     public string? SecretKey { get; private set; }
     public short? AllowPrdAftrDue { get; private set; }
     public DateTime? BlkLstDate { get; private set; }
-    public string? CAge { get; private set; }
-    public bool? CGender { get; private set; }
+    public string? CustomerAge { get; private set; }
+    public bool? CustomerGender { get; private set; }
     public string? InsuranceNo { get; private set; }
     public string? ApprovalNo { get; private set; }
-    public bool? CInsurance { get; private set; }
-    public string? CCodeTrgt { get; private set; }
+    public bool? CustomerInsurance { get; private set; }
+    public string? CustomerCodeTarget { get; private set; }
     public bool? InsrnceCst { get; private set; }
     public long? InsrnceCmpNo { get; private set; }
     public int? NtnltyNo { get; private set; }
@@ -237,12 +237,12 @@ public class CustomerDegree
     public string? NaiDsc { get; private set; }
     public string? EqCptl { get; private set; }
     public bool AgntFlg { get; private set; }
-    public string? CIdPlace { get; private set; }
-    public string? CId { get; private set; }
-    public DateTime? CIdIssDate { get; private set; }
-    public DateTime? CIdExpDate { get; private set; }
-    public long? CProff { get; private set; }
-    public long? CIdType { get; private set; }
+    public string? CustomerIdPlace { get; private set; }
+    public string? CustomerId { get; private set; }
+    public DateTime? CustomerIdIssueDate { get; private set; }
+    public DateTime? CustomerIdExpiryDate { get; private set; }
+    public long? CustomerProfession { get; private set; }
+    public long? CustomerIdType { get; private set; }
     public bool? InsrtdFlg { get; private set; }
     public bool? PltclRltnFlg { get; private set; }
     public string? PltclRltnWith { get; private set; }

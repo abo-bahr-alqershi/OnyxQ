@@ -1,150 +1,183 @@
-public class ItemMovement
+using System;
+using System.Collections.Generic;
+using ERP_Pro.Domain.Common;
+using ERP_Pro.Domain.Common.ValueObjects;
+using ERP_Pro.Domain.ERP.Inventory&Warehouses.Events;
+using ERP_Pro.Domain.ERP.Inventory&Warehouses.ValueObjects;
+
+namespace ERP_Pro.Domain.ERP.Inventory&Warehouses.Entities
 {
-    /// <summary> نوع المستند (فاتورة، مرتجع، تحويل، ...). </summary>
-    public int DocType { get; private set; }
-    /// <summary> نوع مستند الفاتورة المتعلق بالحركة. </summary>
-    public int? BillDocType { get; private set; }
-    /// <summary> رقم المستند الرئيسي للحركة. </summary>
-    public long DocNo { get; private set; }
-    /// <summary> كود الصنف. </summary>
-    public string ItemCode { get; private set; }
-    /// <summary> الكمية المنقولة أو المدخلة أو المخرجة. </summary>
-    public int? ItemQty { get; private set; }
-    /// <summary> كمية مجانية ضمن الحركة. </summary>
-    public int? FreeQty { get; private set; }
-    /// <summary> وحدة الصنف. </summary>
-    public string ItemUnit { get; private set; }
-    /// <summary> حجم العبوة. </summary>
-    public int PackSize { get; private set; }
-    /// <summary> كمية العبوة. </summary>
-    public int? PackQty { get; private set; }
-    /// <summary> كمية مجانية جزئية. </summary>
-    public int? PartialFreeQty { get; private set; }
-    /// <summary> تاريخ الحركة. </summary>
-    public DateTime ItemDate { get; private set; }
-    /// <summary> تكلفة الصنف. </summary>
-    public int? ItemCost { get; private set; }
-    /// <summary> رمز المستودع. </summary>
-    public long WarehouseCode { get; private set; }
-    /// <summary> مجموعة المستودع. </summary>
-    public long? WarehouseGroupCode { get; private set; }
-    /// <summary> تكلفة المخزون. </summary>
-    public int? StockCost { get; private set; }
-    /// <summary> مبلغ ضريبة القيمة المضافة. </summary>
-    public int? VatAmount { get; private set; }
-    /// <summary> مبلغ الخصم على الحركة. </summary>
-    public int? DiscountAmount { get; private set; }
-    /// <summary> رمز العملة. </summary>
-    public string? CurrencyCode { get; private set; }
-    /// <summary> سعر الصرف. </summary>
-    public int? AccountRate { get; private set; }
-    /// <summary> سعر المخزون. </summary>
-    public int? StockRate { get; private set; }
-    /// <summary> مركز التكلفة. </summary>
-    public string? CostCenterCode { get; private set; }
-    /// <summary> رقم المشروع. </summary>
-    public string? ProjectNo { get; private set; }
-    /// <summary> رقم النشاط. </summary>
-    public string? ActivityNo { get; private set; }
-    /// <summary> رمز تفاصيل الحساب. </summary>
-    public string? AccountDtlCode { get; private set; }
-    /// <summary> نوع تفاصيل الحساب. </summary>
-    public short? AccountDtlType { get; private set; }
-    /// <summary> كود العميل. </summary>
-    public string? CustomerCode { get; private set; }
-    /// <summary> كود المورد. </summary>
-    public string? VendorCode { get; private set; }
-    /// <summary> وصف الحركة. </summary>
-    public string? Description { get; private set; }
-    /// <summary> رقم أمر التوريد. </summary>
-    public long? GRNo { get; private set; }
-    /// <summary> تاريخ انتهاء الدفعة. </summary>
-    public DateTime ExpireDate { get; private set; }
-    /// <summary> رقم التشغيلة/الدفعة. </summary>
-    public string BatchNo { get; private set; }
-    /// <summary> رقم السطر الداخلي. </summary>
-    public long? RecordNo { get; private set; }
-    /// <summary> رقم تسلسلي إضافي للعنصر. </summary>
-    public int? Serial { get; private set; }
-    /// <summary> رقم مرجعي إضافي. </summary>
-    public string? RefNo { get; private set; }
-    /// <summary> الرقم التسلسلي للمستند. </summary>
-    public long DocSerial { get; private set; }
-    /// <summary> رقم مستند الصرف المرتبط (تحويلات). </summary>
-    public long? OutNo { get; private set; }
-    /// <summary> الرقم التسلسلي لأمر التوريد المرتبط. </summary>
-    public long? OutGRSerial { get; private set; }
-    /// <summary> تسلسل السطر بالمستند. </summary>
-    public long? DocSequence { get; private set; }
-    /// <summary> الباركود المستخدم في الحركة. </summary>
-    public string? Barcode { get; private set; }
-    /// <summary> نوع المرتجع (إن وجد). </summary>
-    public bool? ReturnType { get; private set; }
-    /// <summary> نوع الحركة (1=إدخال، 2=إخراج، ...). </summary>
-    public bool? InOut { get; private set; }
-    /// <summary> علم الترحيل الخارجي. </summary>
-    public int? ExternalPost { get; private set; }
-    /// <summary> طول العنصر. </summary>
-    public int? ItemLength { get; private set; }
-    /// <summary> عرض العنصر. </summary>
-    public int? ItemWidth { get; private set; }
-    /// <summary> ارتفاع العنصر. </summary>
-    public int? ItemHeight { get; private set; }
-    /// <summary> رقم العنصر الإضافي. </summary>
-    public int? ItemNumber { get; private set; }
-    /// <summary> كمية الوزن. </summary>
-    public int? WeightQty { get; private set; }
-    /// <summary> وحدة الوزن. </summary>
-    public string? WeightUnit { get; private set; }
-    /// <summary> رقم مرجعي إضافي. </summary>
-    public int? ArgumentNo { get; private set; }
-    /// <summary> تاريخ الإضافة. </summary>
-    public DateTime? AddedDate { get; private set; }
-    /// <summary> تاريخ آخر تعديل. </summary>
-    public DateTime? UpdatedDate { get; private set; }
-    /// <summary> رقم الشركة. </summary>
-    public short CompanyNo { get; private set; }
-    /// <summary> رقم الفرع. </summary>
-    public int BranchNo { get; private set; }
-    /// <summary> السنة المالية للفرع. </summary>
-    public short? BranchYear { get; private set; }
-    /// <summary> مستخدم الفرع. </summary>
-    public short? BranchUser { get; private set; }
-    /// <summary> نوع الكمية المجانية. </summary>
-    public bool? FreeType { get; private set; }
-    /// <summary> رقم مستوى التسعير المستخدم. </summary>
-    public short? LevelNo { get; private set; }
-    /// <summary> سعر العنصر بعد الضريبة. </summary>
-    public int? ItemPriceVat { get; private set; }
-    /// <summary> رقم الموظف المرتبط بالحركة. </summary>
-    public long? EmployeeNo { get; private set; }
-    /// <summary> مبلغ الخصم الرئيسي بعد الضريبة. </summary>
-    public int? DiscountAmountMasterVat { get; private set; }
-    /// <summary> نسبة الخصم. </summary>
-    public int? DiscountPercent { get; private set; }
-    /// <summary> مبلغ الخصم التفصيلي. </summary>
-    public int? DiscountAmountDetail { get; private set; }
-    /// <summary> مبلغ الخصم التفصيلي بعد الضريبة. </summary>
-    public int? DiscountAmountDetailVat { get; private set; }
-    /// <summary> نسبة خصم إضافية. </summary>
-    public int? DiscountPercent2 { get; private set; }
-    /// <summary> مبلغ خصم إضافي تفصيلي. </summary>
-    public int? DiscountAmountDetail2 { get; private set; }
-    /// <summary> مبلغ خصم إضافي تفصيلي بعد الضريبة. </summary>
-    public int? DiscountAmountDetail2Vat { get; private set; }
-    /// <summary> نسبة خصم إضافية ثالثة. </summary>
-    public int? DiscountPercent3 { get; private set; }
-    /// <summary> مبلغ خصم إضافي ثالث. </summary>
-    public int? DiscountAmountDetail3 { get; private set; }
-    /// <summary> مبلغ خصم إضافي ثالث بعد الضريبة. </summary>
-    public int? DiscountAmountDetail3Vat { get; private set; }
-    /// <summary> مبلغ إضافي آخر. </summary>
-    public int? OtherAmount { get; private set; }
-    /// <summary> مبلغ الضريبة على الإضافات. </summary>
-    public int? VatAmountOther { get; private set; }
-    /// <summary> نسبة ضريبة القيمة المضافة. </summary>
-    public int? VatPercent { get; private set; }
-    /// <summary> مبلغ الخصم الرئيسي بدون ضريبة. </summary>
-    public int? DiscountAmountMaster { get; private set; }
-    public Warehouse Warehouse { get; private set; } // Navigation
+    public class ItemMovement : AggregateRoot
+    {
+        #region Basic Info
+        public Guid Id { get; private set; }
+        public DocumentNumber DocumentNumber { get; private set; }
+        public DocumentType DocumentType { get; private set; }
+        public DocumentType? BillDocumentType { get; private set; }
+        public DateTime ItemDate { get; private set; }
+        public string Description { get; private set; }
+        public string ReferenceNumber { get; private set; }
+        public long DocumentSerial { get; private set; }
+        public long? DocumentSequence { get; private set; }
+        #endregion
+
+        #region Item Details
+        public ItemCode ItemCode { get; private set; }
+        public string Barcode { get; private set; }
+        public ItemQuantity Quantity { get; private set; }
+        public ItemQuantity FreeQuantity { get; private set; }
+        public UnitMeasure ItemUnit { get; private set; }
+        public PackageSize PackSize { get; private set; }
+        public ItemQuantity PackQuantity { get; private set; }
+        public ItemQuantity PartialFreeQuantity { get; private set; }
+        public Money ItemCost { get; private set; }
+        public ItemDimensions Dimensions { get; private set; }
+        public Weight Weight { get; private set; }
+        #endregion
+
+        #region Location Info
+        public WarehouseId WarehouseId { get; private set; }
+        public WarehouseGroupId WarehouseGroupId { get; private set; }
+        public BatchNumber BatchNumber { get; private set; }
+        public DateTime ExpireDate { get; private set; }
+        #endregion
+
+        #region Financial Info
+        public Money StockCost { get; private set; }
+        public Money VatAmount { get; private set; }
+        public Money DiscountAmount { get; private set; }
+        public CurrencyCode CurrencyCode { get; private set; }
+        public ExchangeRate AccountRate { get; private set; }
+        public ExchangeRate StockRate { get; private set; }
+        public DiscountInfo PrimaryDiscount { get; private set; }
+        public DiscountInfo SecondaryDiscount { get; private set; }
+        public DiscountInfo TertiaryDiscount { get; private set; }
+        public Money OtherAmount { get; private set; }
+        public Money VatAmountOther { get; private set; }
+        public Percentage VatPercent { get; private set; }
+        #endregion
+
+        #region References
+        public CostCenterCode CostCenterCode { get; private set; }
+        public ProjectNumber ProjectNumber { get; private set; }
+        public ActivityNumber ActivityNumber { get; private set; }
+        public AccountDetailInfo AccountDetail { get; private set; }
+        public CustomerCode CustomerCode { get; private set; }
+        public VendorCode VendorCode { get; private set; }
+        public GoodsReceiptInfo GoodsReceipt { get; private set; }
+        public EmployeeNumber EmployeeNumber { get; private set; }
+        #endregion
+
+        #region Movement Info
+        public MovementType MovementType { get; private set; }
+        public bool? ReturnType { get; private set; }
+        public int? ExternalPost { get; private set; }
+        public int? Serial { get; private set; }
+        public long? OutNumber { get; private set; }
+        public long? OutGoodsReceiptSerial { get; private set; }
+        #endregion
+
+        #region Company Info
+        public CompanyInfo CompanyInfo { get; private set; }
+        public BranchInfo BranchInfo { get; private set; }
+        #endregion
+
+        #region Audit Info
+        public DateTime? AddedDate { get; private set; }
+        public DateTime? UpdatedDate { get; private set; }
+        #endregion
+
+        #region Navigation Properties
+        public virtual Warehouse Warehouse { get; private set; }
+        #endregion
+
+        private ItemMovement() { }
+
+        public static ItemMovement Create(
+            DocumentType documentType,
+            DocumentNumber documentNumber,
+            ItemCode itemCode,
+            ItemQuantity quantity,
+            UnitMeasure itemUnit,
+            WarehouseId warehouseId,
+            DateTime itemDate,
+            CompanyInfo companyInfo,
+            BranchInfo branchInfo)
+        {
+            var movement = new ItemMovement
+            {
+                Id = Guid.NewGuid(),
+                DocumentType = documentType,
+                DocumentNumber = documentNumber,
+                ItemCode = itemCode,
+                Quantity = quantity,
+                ItemUnit = itemUnit,
+                WarehouseId = warehouseId,
+                ItemDate = itemDate,
+                CompanyInfo = companyInfo,
+                BranchInfo = branchInfo
+            };
+
+            movement.AddDomainEvent(new ItemMovementCreatedEvent(movement));
+            return movement;
+        }
+
+        public void UpdateQuantity(ItemQuantity newQuantity)
+        {
+            if (newQuantity.Value < 0)
+                throw new DomainException("Quantity cannot be negative");
+
+            var oldQuantity = Quantity;
+            Quantity = newQuantity;
+            UpdatedDate = DateTime.UtcNow;
+
+            AddDomainEvent(new ItemMovementQuantityUpdatedEvent(this, oldQuantity, newQuantity));
+        }
+
+        public void AddFreeQuantity(ItemQuantity freeQuantity)
+        {
+            if (freeQuantity.Value < 0)
+                throw new DomainException("Free quantity cannot be negative");
+
+            FreeQuantity = freeQuantity;
+            UpdatedDate = DateTime.UtcNow;
+
+            AddDomainEvent(new ItemMovementFreeQuantityAddedEvent(this, freeQuantity));
+        }
+
+        public void UpdateCost(Money newCost)
+        {
+            if (newCost.Amount < 0)
+                throw new DomainException("Cost cannot be negative");
+
+            var oldCost = ItemCost;
+            ItemCost = newCost;
+            UpdatedDate = DateTime.UtcNow;
+
+            AddDomainEvent(new ItemMovementCostUpdatedEvent(this, oldCost, newCost));
+        }
+
+        public void ApplyDiscount(DiscountInfo discount)
+        {
+            if (discount.Percentage < 0 || discount.Percentage > 100)
+                throw new DomainException("Discount percentage must be between 0 and 100");
+
+            PrimaryDiscount = discount;
+            UpdatedDate = DateTime.UtcNow;
+
+            AddDomainEvent(new ItemMovementDiscountAppliedEvent(this, discount));
+        }
+
+        public void SetBatchInfo(BatchNumber batchNumber, DateTime expireDate)
+        {
+            if (expireDate < ItemDate)
+                throw new DomainException("Expiry date cannot be earlier than item date");
+
+            BatchNumber = batchNumber;
+            ExpireDate = expireDate;
+            UpdatedDate = DateTime.UtcNow;
+
+            AddDomainEvent(new ItemMovementBatchInfoSetEvent(this, batchNumber, expireDate));
+        }
+    }
 }

@@ -22,7 +22,7 @@ public class SupplierClass
     public string? AddedTerminal { get; private set; }
     /// <summary> اسم الجهاز عند التعديل </summary>
     public string? UpdatedTerminal { get; private set; }
-    public string? ACy { get; private set; }
+    public string? AccountCurrency { get; private set; }
     public bool? Inactive { get; private set; }
     /// <summary> المستخدم الذي أضاف السطر </summary>
     public int? AddedUserId { get; private set; }
@@ -34,7 +34,7 @@ public class SupplierClass
     public DateTime? UpdatedDate { get; private set; }
     /// <summary> عدد مرات التحديث </summary>
     public long? UpdateCount { get; private set; }
-    public int? MaxLmtAmtPr { get; private set; }
-    public int? MaxLmtAmtPo { get; private set; }
-    public bool? CurDflt { get; private set; }
+    public int? MaximumLimitAmountPurchase { get; private set; }
+    public int? MaximumLimitAmountPurchaseOrder { get; private set; }
+    public bool? CurrencyDefault { get; private set; }
 }

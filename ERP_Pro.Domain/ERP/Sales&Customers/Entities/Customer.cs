@@ -33,7 +33,7 @@ public class Customer
     /// <summary> ترتيب العميل ضمن المسار </summary>
     public long? SortInRoute { get; private set; }
     /// <summary> إحداثيات العميل </summary>
-    public string? GPS { get; private set; }
+    public string? GeographicPosition { get; private set; }
     /// <summary> رقم المحصل </summary>
     public long? CollectorNo { get; private set; }
     /// <summary> مركز التكلفة للعميل </summary>
@@ -269,7 +269,7 @@ public class Customer
     /// <summary> طبيعة النشاط التجاري </summary>
     public string? CompanyActivity { get; private set; }
     /// <summary> عميل من دول الخليج (1=نعم) </summary>
-    public bool? CustomerGCC { get; private set; }
+    public bool? CustomerGulfCooperationCouncil { get; private set; }
     /// <summary> تاريخ تحديث ملف العميل </summary>
     public DateTime? CustomerFileUpdateDate { get; private set; }
     /// <summary> نوع الاستفادة </summary>
@@ -277,7 +277,7 @@ public class Customer
     /// <summary> اسم الصورة الرئيسية للعميل </summary>
     public string? CustomerMainImageName { get; private set; }
     /// <summary> علم مجموعة ضريبية للعميل </summary>
-    public bool? CustomerVATGroupFlag { get; private set; }
+    public bool? CustomerVatGroupFlag { get; private set; }
     /// <summary> علم يسمح بالتعامل مع العميل </summary>
     public bool? CustomerDealFlag { get; private set; }
     /// <summary> استثناء من عروض الأسعار الترويجية </summary>
@@ -353,9 +353,9 @@ public class Customer
     /// <summary> نوع فتح الزيارة </summary>
     public short? VisitOpenType { get; private set; }
     /// <summary> نوع تسعير الضريبة </summary>
-    public bool? VATPriceType { get; private set; }
+    public bool? VatPriceType { get; private set; }
     /// <summary> رقم GLN </summary>
-    public string? GLNCode { get; private set; }
+    public string? GlobalLocationNumber { get; private set; }
     /// <summary> تسلسل جهاز الجوال للعميل </summary>
     public string? CustomerMobileDeviceSerial { get; private set; }
     /// <summary> حفظ بيانات الدخول (1=نعم) </summary>

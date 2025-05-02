@@ -1,11 +1,11 @@
 public class ItemPriceHistory
 {
     /// <summary> رقم السجل التاريخي </summary>
-    public long? AuditNo { get; private set; }
+    public long? AuditNumber { get; private set; }
     /// <summary> نوع السجل (إضافة/تعديل) </summary>
     public bool? AuditType { get; private set; }
     /// <summary> رقم مستوى التسعير </summary>
-    public short? LevelNo { get; private set; }
+    public short? LevelNumber { get; private set; }
     /// <summary> كود الصنف </summary>
     public string? ItemCode { get; private set; }
     /// <summary> وحدة الصنف </summary>
@@ -15,19 +15,19 @@ public class ItemPriceHistory
     /// <summary> كود المستودع </summary>
     public long? WarehouseCode { get; private set; }
     /// <summary> الكمية من </summary>
-    public long? FromQty { get; private set; }
+    public long? FromQuantity { get; private set; }
     /// <summary> الكمية إلى </summary>
-    public long? ToQty { get; private set; }
+    public long? ToQuantity { get; private set; }
     /// <summary> سعر الصنف الجديد </summary>
     public decimal? ItemPrice { get; private set; }
     /// <summary> السعر السابق </summary>
-    public int? PrevItemPrice { get; private set; }
+    public int? PreviousItemPrice { get; private set; }
     /// <summary> المستخدم الذي أضاف السطر </summary>
-    public int? AddedByUserId { get; private set; }
+    public int? AddedUserId { get; private set; }
     /// <summary> تاريخ الإضافة </summary>
     public DateTime? AddedDate { get; private set; }
     /// <summary> المستخدم الذي عدل السطر </summary>
-    public int? UpdatedByUserId { get; private set; }
+    public int? UpdatedUserId { get; private set; }
     /// <summary> تاريخ آخر تعديل </summary>
     public DateTime? UpdatedDate { get; private set; }
     /// <summary> المستخدم الذي راجع التعديل </summary>
@@ -35,11 +35,11 @@ public class ItemPriceHistory
     /// <summary> تاريخ التدقيق </summary>
     public DateTime? AuditDate { get; private set; }
     /// <summary> رقم المستند </summary>
-    public long? DocNo { get; private set; }
+    public long? DocumentNumber { get; private set; }
     /// <summary> تاريخ المستند </summary>
-    public DateTime? DocDate { get; private set; }
+    public DateTime? DocumentDate { get; private set; }
     /// <summary> رقم الفرع </summary>
-    public int BranchNo { get; private set; }
+    public int BranchNumber { get; private set; }
     /// <summary> عدد مرات التعديل </summary>
     public long? UpdateCount { get; private set; }
     /// <summary> أولوية التقرير </summary>
@@ -51,13 +51,13 @@ public class ItemPriceHistory
     /// <summary> تاريخ انتهاء السعر </summary>
     public DateTime ExpireDate { get; private set; }
     /// <summary> رقم الدفعة </summary>
-    public string BatchNo { get; private set; }
+    public string BatchNumber { get; private set; }
     /// <summary> الحد الأدنى للسعر الجديد </summary>
-    public int? MinItemPrice { get; private set; }
+    public int? MinimumItemPrice { get; private set; }
     /// <summary> الحد الأعلى للسعر الجديد </summary>
-    public int? MaxItemPrice { get; private set; }
+    public int? MaximumItemPrice { get; private set; }
     /// <summary> الحد الأعلى السابق للسعر </summary>
-    public int? PrevMaxItemPrice { get; private set; }
+    public int? PreviousMaximumItemPrice { get; private set; }
     /// <summary> الحد الأدنى السابق للسعر </summary>
-    public int? PrevMinItemPrice { get; private set; }
+    public int? PreviousMinimumItemPrice { get; private set; }
 }

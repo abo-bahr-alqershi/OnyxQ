@@ -1,14 +1,23 @@
-public class SPrdBrnCurCls
+public class BranchCurrencyPeriodClosing
 {
-    public short? PrdNo { get; private set; }
-    public int? BrnNo { get; private set; }
-    public string? CurCode { get; private set; }
-    public int? CurRate { get; private set; }
-    public short? PrdNo { get; private set; }
-    public DateTime? PrdDate { get; private set; }
-    public short YrNo { get; private set; }
-    public bool? Inactv { get; private set; }
-    public int? UpUId { get; private set; }
-    public DateTime? UpDate { get; private set; }
-    public long? UpCnt { get; private set; }
+    /// <summary>رقم الفترة</summary>
+    public short? PeriodNumber { get; private set; }
+    /// <summary>رقم الفرع</summary>
+    public int? BranchNumber { get; private set; }
+    /// <summary>رمز العملة</summary>
+    public string? CurrencyCode { get; private set; }
+    /// <summary>سعر العملة</summary>
+    public int? CurrencyRate { get; private set; }
+    /// <summary>تاريخ الفترة</summary>
+    public DateTime? PeriodDate { get; private set; }
+    /// <summary>سنة الفترة</summary>
+    public short YearNumber { get; private set; }
+    /// <summary>هل الفترة غير نشطة</summary>
+    public bool? Inactive { get; private set; }
+    /// <summary>رقم المستخدم الذي عدّل السجل</summary>
+    public int? UpdatedByUserId { get; private set; }
+    /// <summary>تاريخ آخر تعديل</summary>
+    public DateTime? UpdatedDate { get; private set; }
+    /// <summary>عدد مرات التعديل</summary>
+    public long? UpdateCount { get; private set; }
 }

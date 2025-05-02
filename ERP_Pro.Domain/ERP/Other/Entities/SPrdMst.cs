@@ -1,36 +1,101 @@
-public class SPrdMst
+public class PeriodMaster
 {
-    public short PrdCnt { get; private set; }
-    public bool? PrdTyp { get; private set; }
-    public short FPrdNo { get; private set; }
-    public short? TPrdNo { get; private set; }
-    public short FYrNo { get; private set; }
-    public short TYrNo { get; private set; }
-    public bool? PlCls { get; private set; }
-    public int? PlClsUId { get; private set; }
-    public DateTime? PlClsDate { get; private set; }
-    public bool? InvCls { get; private set; }
-    public int? InvClsUId { get; private set; }
-    public DateTime? InvClsDate { get; private set; }
-    public bool? YrCls { get; private set; }
-    public int? YrClsUId { get; private set; }
-    public DateTime? YrClsDate { get; private set; }
-    public bool? FasCls { get; private set; }
-    public int? FasClsUId { get; private set; }
-    public DateTime? FasClsDate { get; private set; }
-    public bool? OpnNewYr { get; private set; }
-    public int? OpnNewYrUId { get; private set; }
-    public DateTime? OpnNewYrDate { get; private set; }
-    public int? AdUId { get; private set; }
-    public DateTime? AdDate { get; private set; }
-    public int? UpUId { get; private set; }
-    public DateTime? UpDate { get; private set; }
-    public long? UpCnt { get; private set; }
-    public long? PrRep { get; private set; }
-    public string? AdTrmnlNm { get; private set; }
-    public string? UpTrmnlNm { get; private set; }
-    public bool? InvStrtWrk { get; private set; }
-    public int? InvStrtWrkUId { get; private set; }
-    public DateTime? InvStrtWrkDate { get; private set; }
-    public bool? InvClsMthd { get; private set; }
+    /// <summary>عدد الفترات</summary>
+    public short PeriodCount { get; private set; }
+
+    /// <summary>نوع الفترة</summary>
+    public bool? PeriodType { get; private set; }
+
+    /// <summary>رقم أول فترة</summary>
+    public short FirstPeriodNumber { get; private set; }
+
+    /// <summary>رقم آخر فترة</summary>
+    public short? LastPeriodNumber { get; private set; }
+
+    /// <summary>رقم أول سنة</summary>
+    public short FirstYearNumber { get; private set; }
+
+    /// <summary>رقم آخر سنة</summary>
+    public short LastYearNumber { get; private set; }
+
+    /// <summary>إغلاق الأرباح والخسائر</summary>
+    public bool? ProfitLossClosed { get; private set; }
+
+    /// <summary>رقم المستخدم الذي أغلق الأرباح والخسائر</summary>
+    public int? ProfitLossClosedUserId { get; private set; }
+
+    /// <summary>تاريخ إغلاق الأرباح والخسائر</summary>
+    public DateTime? ProfitLossClosedDate { get; private set; }
+
+    /// <summary>إغلاق المخزون</summary>
+    public bool? InventoryClosed { get; private set; }
+
+    /// <summary>رقم المستخدم الذي أغلق المخزون</summary>
+    public int? InventoryClosedUserId { get; private set; }
+
+    /// <summary>تاريخ إغلاق المخزون</summary>
+    public DateTime? InventoryClosedDate { get; private set; }
+
+    /// <summary>إغلاق السنة</summary>
+    public bool? YearClosed { get; private set; }
+
+    /// <summary>رقم المستخدم الذي أغلق السنة</summary>
+    public int? YearClosedUserId { get; private set; }
+
+    /// <summary>تاريخ إغلاق السنة</summary>
+    public DateTime? YearClosedDate { get; private set; }
+
+    /// <summary>إغلاق الأصول الثابتة</summary>
+    public bool? FixedAssetsClosed { get; private set; }
+
+    /// <summary>رقم المستخدم الذي أغلق الأصول الثابتة</summary>
+    public int? FixedAssetsClosedUserId { get; private set; }
+
+    /// <summary>تاريخ إغلاق الأصول الثابتة</summary>
+    public DateTime? FixedAssetsClosedDate { get; private set; }
+
+    /// <summary>فتح سنة جديدة</summary>
+    public bool? OpenNewYear { get; private set; }
+
+    /// <summary>رقم المستخدم الذي فتح السنة الجديدة</summary>
+    public int? OpenNewYearUserId { get; private set; }
+
+    /// <summary>تاريخ فتح السنة الجديدة</summary>
+    public DateTime? OpenNewYearDate { get; private set; }
+
+    /// <summary>رقم المستخدم الذي أضاف السجل</summary>
+    public int? AddedByUserId { get; private set; }
+
+    /// <summary>تاريخ الإضافة</summary>
+    public DateTime? AddedDate { get; private set; }
+
+    /// <summary>رقم المستخدم الذي عدّل السجل</summary>
+    public int? UpdatedByUserId { get; private set; }
+
+    /// <summary>تاريخ آخر تعديل</summary>
+    public DateTime? UpdatedDate { get; private set; }
+
+    /// <summary>عدد مرات التعديل</summary>
+    public long? UpdateCount { get; private set; }
+
+    /// <summary>رقم تقرير الطباعة</summary>
+    public long? PrintReport { get; private set; }
+
+    /// <summary>اسم الجهاز عند الإضافة</summary>
+    public string? AddedTerminalName { get; private set; }
+
+    /// <summary>اسم الجهاز عند التعديل</summary>
+    public string? UpdatedTerminalName { get; private set; }
+
+    /// <summary>بدء العمل في المخزون</summary>
+    public bool? InventoryStartWork { get; private set; }
+
+    /// <summary>رقم المستخدم الذي بدأ العمل في المخزون</summary>
+    public int? InventoryStartWorkUserId { get; private set; }
+
+    /// <summary>تاريخ بدء العمل في المخزون</summary>
+    public DateTime? InventoryStartWorkDate { get; private set; }
+
+    /// <summary>طريقة إغلاق المخزون</summary>
+    public bool? InventoryCloseMethod { get; private set; }
 }

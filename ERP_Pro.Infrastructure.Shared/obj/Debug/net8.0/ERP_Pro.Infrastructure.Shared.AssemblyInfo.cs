@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ERP_Pro.Infrastructure.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ccb883253737a98fa5f87090a6ef1c5ebcdf231")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a13740bc9cf6239d8719ad3a01ea126345ae17b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ERP_Pro.Infrastructure.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ERP_Pro.Infrastructure.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

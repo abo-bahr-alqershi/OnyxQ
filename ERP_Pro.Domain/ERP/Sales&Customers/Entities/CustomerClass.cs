@@ -22,8 +22,8 @@ public class CustomerClass
     public string? AddedTerminal { get; private set; }
     /// <summary> اسم الجهاز عند التعديل </summary>
     public string? UpdatedTerminal { get; private set; }
-    public string? CClassTypNm { get; private set; }
-    public string? CClassTypFNm { get; private set; }
+    public string? CustomerClassTypeName { get; private set; }
+    public string? CustomerClassTypeFullName { get; private set; }
     /// <summary> المستخدم الذي أضاف السطر </summary>
     public int? AddedUserId { get; private set; }
     /// <summary> تاريخ الإضافة </summary>
@@ -40,15 +40,15 @@ public class CustomerClass
     public string? AddedTerminal { get; private set; }
     /// <summary> اسم الجهاز عند التعديل </summary>
     public string? UpdatedTerminal { get; private set; }
-    public string? ACy { get; private set; }
-    public decimal? CrLimit { get; private set; }
-    public decimal? InvLimit { get; private set; }
-    public int? CstLmtPer { get; private set; }
-    public bool? CstLmtTyp { get; private set; }
-    public short? LevNo { get; private set; }
+    public string? AccountCurrency { get; private set; }
+    public decimal? CreditLimit { get; private set; }
+    public decimal? InvoiceLimit { get; private set; }
+    public int? CustomerLimitPercentage { get; private set; }
+    public bool? CustomerLimitType { get; private set; }
+    public short? LevelNumber { get; private set; }
     public bool? Inactive { get; private set; }
-    public DateTime? CnfrmLstDate { get; private set; }
-    public short? LevNoCsh { get; private set; }
+    public DateTime? ConfirmationLastDate { get; private set; }
+    public short? LevelNumberCash { get; private set; }
     /// <summary> المستخدم الذي أضاف السطر </summary>
     public int? AddedUserId { get; private set; }
     /// <summary> تاريخ الإضافة </summary>
@@ -65,4 +65,34 @@ public class CustomerClass
     public ICollection<CustomerRequest> CustomerRequests { get; private set; } // Inverse Navigation
     public ICollection<SalesDiscount> SalesDiscounts { get; private set; } // Inverse Navigation
     public ICollection<SalesFreeQty> SalesFreeQties { get; private set; } // Inverse Navigation
+}
+
+public class WarehouseBusinessInfo : ValueObject
+{
+    public string? ProjectNumber { get; private set; }
+    public string? ActivityCode { get; private set; }
+    public string? SalesOrderDescription { get; private set; }
+    public int? SalesOrderType { get; private set; }
+    public int? ServiceCenterNumber { get; private set; }
+    public int? BankNumber { get; private set; }
+    public string? ReportCode { get; private set; }
+    public int? ColumnNumber { get; private set; }
+    public string? CustomerCode { get; private set; }
+    public int? CalculationTypeNoTax { get; private set; }
+    public int? CustomerGroupCode { get; private set; }
+    
+    protected override IEnumerable<object> GetEqualityComponents()
+    {
+        yield return ProjectNumber ?? string.Empty;
+        yield return ActivityCode ?? string.Empty;
+        yield return SalesOrderDescription ?? string.Empty;
+        yield return SalesOrderType ?? 0;
+        yield return ServiceCenterNumber ?? 0;
+        yield return BankNumber ?? 0;
+        yield return ReportCode ?? string.Empty;
+        yield return ColumnNumber ?? 0;
+        yield return CustomerCode ?? string.Empty;
+        yield return CalculationTypeNoTax ?? 0;
+        yield return CustomerGroupCode ?? 0;
+    }
 }

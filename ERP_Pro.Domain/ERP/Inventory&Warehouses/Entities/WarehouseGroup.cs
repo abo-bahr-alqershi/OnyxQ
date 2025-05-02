@@ -1,773 +1,208 @@
-public class WarehouseGroup
+using System;
+using System.Collections.Generic;
+using ERP_Pro.Domain.Common;
+using ERP_Pro.Domain.Events;
+
+namespace ERP_Pro.Domain.ERP.Inventory_Warehouses.Entities
 {
-    public long? WhgCode { get; private set; }
-    public string? WhgAName { get; private set; }
-    public string? WhgEName { get; private set; }
-    public int? AdUId { get; private set; }
-    public DateTime? AdDate { get; private set; }
-    public int? UpUId { get; private set; }
-    public DateTime? UpDate { get; private set; }
-    public long? UpCnt { get; private set; }
-    public long? PrRep { get; private set; }
-    public string? AdTrmnlNm { get; private set; }
-    public string? UpTrmnlNm { get; private set; }
-    public string WCode { get; private set; }
-    public string WCode { get; private set; }
-    public string ReqType { get; private set; }
-    public string ReqName { get; private set; }
-    public string ReqEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string IncomType { get; private set; }
-    public string IncomName { get; private set; }
-    public string IncomEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string OutType { get; private set; }
-    public string OutName { get; private set; }
-    public string OutEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string TrType { get; private set; }
-    public string TrName { get; private set; }
-    public string TrEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string StkType { get; private set; }
-    public string StkName { get; private set; }
-    public string StkEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string InvType { get; private set; }
-    public string InvName { get; private set; }
-    public string InvEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string PrType { get; private set; }
-    public string PrAName { get; private set; }
-    public string PrEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string PoType { get; private set; }
-    public string PoAName { get; private set; }
-    public string PoEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string GrnType { get; private set; }
-    public string GrnAName { get; private set; }
-    public string GrnEName { get; private set; }
-    public string UpUId { get; private set; }
-    public string BillTypeNo { get; private set; }
-    public string TypeLName { get; private set; }
-    public string TypeFName { get; private set; }
-    public string UpUId { get; private set; }
-    public string TypNo { get; private set; }
-    public string TypLName { get; private set; }
-    public string TypFName { get; private set; }
-    public string UpUId { get; private set; }
-    public string UpUId { get; private set; }
-    public string IasPostDtl { get; private set; }
-    public string Inactive { get; private set; }
-    public string IasCcTree { get; private set; }
-    public string IasBdgtBlncDtl { get; private set; }
-    public string IasAccTree { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string SMobileScr { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string SMobileScr { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 2 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 2 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 2 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string LosQty { get; private set; }
-    public string 1 { get; private set; }
-    public string LosQty { get; private set; }
-    public string 1 { get; private set; }
-    public string LosQty { get; private set; }
-    public string 1 { get; private set; }
-    public string LosQty { get; private set; }
-    public string 2 { get; private set; }
-    public string LosQty { get; private set; }
-    public string 1 { get; private set; }
-    public string ClcTaxFreeQtyFlg { get; private set; }
-    public string 1 { get; private set; }
-    public string ClcTaxFreeQtyFlg { get; private set; }
-    public string 1 { get; private set; }
-    public string ClcTaxFreeQtyFlg { get; private set; }
-    public string 1 { get; private set; }
-    public string ClcTaxFreeQtyFlg { get; private set; }
-    public string 2 { get; private set; }
-    public string ClcTaxFreeQtyFlg { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 2 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 2 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string DeliverdRes { get; private set; }
-    public string 1 { get; private set; }
-    public string DeliverdRes { get; private set; }
-    public string 1 { get; private set; }
-    public string DeliverdRes { get; private set; }
-    public string 1 { get; private set; }
-    public string DeliverdRes { get; private set; }
-    public string 2 { get; private set; }
-    public string DeliverdRes { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 2 { get; private set; }
-    public string Fld5 { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 2 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 2 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 2 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 2 { get; private set; }
-    public string FreeTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 2 { get; private set; }
-    public string WebSrvcUuid { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtMst { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtMst { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtMst { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtMst { get; private set; }
-    public string 2 { get; private set; }
-    public string DisAmtMst { get; private set; }
-    public string 1 { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string 1 { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string 1 { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string 1 { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string 2 { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string 1 { get; private set; }
-    public string PmanCode { get; private set; }
-    public string 1 { get; private set; }
-    public string PmanCode { get; private set; }
-    public string 1 { get; private set; }
-    public string PmanCode { get; private set; }
-    public string 1 { get; private set; }
-    public string PmanCode { get; private set; }
-    public string 2 { get; private set; }
-    public string PmanCode { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 2 { get; private set; }
-    public string FieldDtl10 { get; private set; }
-    public string 1 { get; private set; }
-    public string ACy { get; private set; }
-    public string 1 { get; private set; }
-    public string ACy { get; private set; }
-    public string 1 { get; private set; }
-    public string ACy { get; private set; }
-    public string 1 { get; private set; }
-    public string ACy { get; private set; }
-    public string 2 { get; private set; }
-    public string ACy { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtDtl { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtDtl { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtDtl { get; private set; }
-    public string 1 { get; private set; }
-    public string DisAmtDtl { get; private set; }
-    public string 2 { get; private set; }
-    public string DisAmtDtl { get; private set; }
-    public string 1 { get; private set; }
-    public string AcDtlTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string AcDtlTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string AcDtlTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string AcDtlTyp { get; private set; }
-    public string 2 { get; private set; }
-    public string AcDtlTyp { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 1 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 2 { get; private set; }
-    public string DocDateMnl { get; private set; }
-    public string 0 { get; private set; }
-    public string IasItmMst { get; private set; }
-    public string IasItemPrice { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string DtsOptn { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string DtsOptn { get; private set; }
-    public string CcCode { get; private set; }
-    public string CcCode { get; private set; }
-    public string CcCode { get; private set; }
-    public string CcCode { get; private set; }
-    public string CcCode { get; private set; }
-    public string CcCode { get; private set; }
-    public string CcCode { get; private set; }
-    public string CcCode { get; private set; }
-    public string POrderDetail { get; private set; }
-    public string IasItmMst { get; private set; }
-    public string IasPiBillDtl { get; private set; }
-    public string Case { get; private set; }
-    public string 0 { get; private set; }
-    public string Case { get; private set; }
-    public string Case { get; private set; }
-    public string Case { get; private set; }
-    public string Case { get; private set; }
-    public string 1 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string VoucherDetail { get; private set; }
-    public string Case { get; private set; }
-    public string 0 { get; private set; }
-    public string Case { get; private set; }
-    public string Case { get; private set; }
-    public string Case { get; private set; }
-    public string Case { get; private set; }
-    public string 1 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string 2 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string VoucherDetail { get; private set; }
-    public string SApprvdUsrDtl { get; private set; }
-    public string TypFNm { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string IasVouchrType { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string IasVouchrType { get; private set; }
-    public string IasPostDtl { get; private set; }
-    public string IasPostDtl { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string TDate { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string InvAssmblTyp { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string InvAssmblTyp { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string InvItmBinMovmnt { get; private set; }
-    public string InOut { get; private set; }
-    public string QuotationDetail { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string OrderDetail { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string POrderDetail { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string IasBillDtl { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string IasRtBillDtl { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string IasPiBillDtl { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string IasPrBillDtl { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string Null { get; private set; }
-    public string GrDetail { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string IasOutgoingDtl { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string Null { get; private set; }
-    public string RefNo { get; private set; }
-    public string IasBillDtlAddDisc { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string RefNo { get; private set; }
-    public string IasPiBillDtlAddDisc { get; private set; }
-    public string GnrTaxTypClcDtl { get; private set; }
-    public string GnrTaxCodeDtl { get; private set; }
-    public string GnrTaxTypClcBrn { get; private set; }
-    public string IasItemPrice { get; private set; }
-    public string IasPrivPrice { get; private set; }
-    public string ExRate { get; private set; }
-    public string IasParaInv { get; private set; }
-    public string IasItmDtl { get; private set; }
-    public string IasItmOnline { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string IQty { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string StkCost { get; private set; }
-    public string WCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string Null { get; private set; }
-    public string BrnUsr { get; private set; }
-    public string PostCode { get; private set; }
-    public string IasBillDtl { get; private set; }
-    public string PostCode { get; private set; }
-    public string DetailOutBills { get; private set; }
-    public string PostCode { get; private set; }
-    public string 1 { get; private set; }
-    public string IasPiBillDtl { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string 1 { get; private set; }
-    public string GrDetail { get; private set; }
-    public string PostCode { get; private set; }
-    public string 1 { get; private set; }
-    public string IasRtBillDtl { get; private set; }
-    public string PostCode { get; private set; }
-    public string 1 { get; private set; }
-    public string IasRetBillDtl { get; private set; }
-    public string PostCode { get; private set; }
-    public string IasPrBillDtl { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 1 { get; private set; }
-    public string GrDetail { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string IasOutgoingDtl { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string IasWhtrnsDtl { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string IasWhtrnsDtl { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string KitItemsDetail { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string AssembleKitItemsDet { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string DisassembleKitItemsDet { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string DisKitItemsDetail { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string StkAdjustmentDet { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string StkAdjustmentDet { get; private set; }
-    public string AvlQty { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string PlsMins { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string 1 { get; private set; }
-    public string StkAdjustmentDet { get; private set; }
-    public string AvlQty { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string PostCode { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string StkAdjustmentDet { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string PrRep { get; private set; }
-    public string 1 { get; private set; }
-    public string PrRep { get; private set; }
-    public string 1 { get; private set; }
-    public string PrRep { get; private set; }
-    public string 1 { get; private set; }
-    public string PrRep { get; private set; }
-    public string 1 { get; private set; }
-    public string PrRep { get; private set; }
-    public string 1 { get; private set; }
-    public string PrRep { get; private set; }
-    public string 2 { get; private set; }
-    public string PrRep { get; private set; }
-    public string DocSequence { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string IasItmOnline { get; private set; }
-    public string IasBillDtl { get; private set; }
-    public string IasRtBillDtl { get; private set; }
-    public string 1 { get; private set; }
-    public string UpCnt { get; private set; }
-    public string 1 { get; private set; }
-    public string UpCnt { get; private set; }
-    public string 1 { get; private set; }
-    public string UpCnt { get; private set; }
-    public string 1 { get; private set; }
-    public string UpCnt { get; private set; }
-    public string 2 { get; private set; }
-    public string UpCnt { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 2 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 2 { get; private set; }
-    public string ExternalPost { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 2 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 1 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string 2 { get; private set; }
-    public string AdDateClk { get; private set; }
-    public string IasVBsoqty { get; private set; }
-    public string CashInHand { get; private set; }
-    public string CashAtBank { get; private set; }
-    public string Customer { get; private set; }
-    public string VDetails { get; private set; }
-    public string GlsVAccntDtl { get; private set; }
-    public string GlsVAccntDtl { get; private set; }
-    public string SEmp { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string IasVApTypes { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string UserR { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string IasVArTypes { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string UserR { get; private set; }
-    public string CCode { get; private set; }
-    public string MrpMtSq { get; private set; }
-    public string ProcessReqAuto { get; private set; }
-    public string ACy { get; private set; }
-    public string PmanCode { get; private set; }
-    public string DlvryTimeDys { get; private set; }
-    public string DeliveryDate { get; private set; }
-    public string IasItmDtl { get; private set; }
-    public string IasVItmMovExpBtchAvlqty { get; private set; }
-    public string IasItemPrice { get; private set; }
-    public string WarehouseDetails { get; private set; }
-    public string IasItmOnline { get; private set; }
-    public string IasVLastUpdItm { get; private set; }
-    public string DocSerRef { get; private set; }
-    public string UpTrmnlNm { get; private set; }
-    public string RcrdCnt { get; private set; }
-    public string RcrdCnt { get; private set; }
-    public string RcrdCnt { get; private set; }
-    public string IasItmDtl { get; private set; }
-    public string IasVItmMovExpBtchAvlqty { get; private set; }
-    public string IasItemPrice { get; private set; }
-    public string WarehouseDetails { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 1 { get; private set; }
-    public string SEmp { get; private set; }
-    public string HrsScrEss { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string HrsScrEss { get; private set; }
-    public string HrsHldyCode { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string SDshBord { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string SDshBord { get; private set; }
-    public string 1 { get; private set; }
-    public string UserR { get; private set; }
-    public string HpsDept { get; private set; }
-    public string 0 { get; private set; }
-    public string 0 { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string Null { get; private set; }
-    public string 0 { get; private set; }
-    public string HpsDept { get; private set; }
-    public ICollection<SalesDiscount> SalesDiscounts { get; private set; } // Inverse Navigation
-    public ICollection<SalesFreeQty> SalesFreeQties { get; private set; } // Inverse Navigation
+    public class WarehouseGroup : AggregateRoot
+    {
+        // Primary Key
+        public Guid Id { get; private set; }
+        public long WarehouseGroupCode { get; private set; }
+        
+        // Basic Info
+        public string WarehouseGroupArabicName { get; private set; }
+        public string? WarehouseGroupEnglishName { get; private set; }
+        public bool IsActive { get; private set; } = true;
+        
+        // Document Types
+        public DocumentTypeInfo RequestType { get; private set; }
+        public DocumentTypeInfo IncomingType { get; private set; }
+        public DocumentTypeInfo OutgoingType { get; private set; }
+        public DocumentTypeInfo TransferType { get; private set; }
+        public DocumentTypeInfo StockType { get; private set; }
+        public DocumentTypeInfo InventoryType { get; private set; }
+        public DocumentTypeInfo PurchaseType { get; private set; }
+        public DocumentTypeInfo PurchaseOrderType { get; private set; }
+        public DocumentTypeInfo GoodsReceiptNoteType { get; private set; }
+        
+        // Settings
+        public bool InventoryAccountingSystemPostDetail { get; private set; }
+        public bool InventoryAccountingSystemCostCenterTree { get; private set; }
+        public bool InventoryAccountingSystemBudgetBalanceDetail { get; private set; }
+        public bool InventoryAccountingSystemAccountTree { get; private set; }
+        public bool UserRestricted { get; private set; }
+        public bool ShowMobileScreen { get; private set; }
+        public bool CalculateTaxFreeQuantityFlag { get; private set; }
+        public bool DocumentDateManual { get; private set; }
+        public decimal LossQuantity { get; private set; }
+        
+        // Audit Fields
+        public int? AddedUserId { get; private set; }
+        public DateTime? AddedDate { get; private set; }
+        public int? UpdatedUserId { get; private set; }
+        public DateTime? UpdatedDate { get; private set; }
+        public long UpdateCount { get; private set; }
+        public string? AddedTerminal { get; private set; }
+        public string? UpdatedTerminal { get; private set; }
+
+        // Navigation Properties
+        public virtual IReadOnlyCollection<Warehouse> Warehouses => _warehouses.AsReadOnly();
+        public virtual IReadOnlyCollection<SalesDiscount> SalesDiscounts => _salesDiscounts.AsReadOnly();
+        public virtual IReadOnlyCollection<SalesFreeQty> SalesFreeQties => _salesFreeQties.AsReadOnly();
+
+        // Private Collections
+        private readonly List<Warehouse> _warehouses = new();
+        private readonly List<SalesDiscount> _salesDiscounts = new();
+        private readonly List<SalesFreeQty> _salesFreeQties = new();
+
+        // Constructors
+        private WarehouseGroup() { } // For EF Core
+
+        public WarehouseGroup(
+            long groupCode,
+            string arabicName,
+            string? englishName = null)
+        {
+            Id = Guid.NewGuid();
+            WarehouseGroupCode = groupCode;
+            WarehouseGroupArabicName = arabicName;
+            WarehouseGroupEnglishName = englishName;
+            
+            AddDomainEvent(new WarehouseGroupCreatedEvent(Id, groupCode, arabicName));
+        }
+
+        // Methods
+        public void UpdateBasicInfo(
+            string arabicName,
+            string? englishName)
+        {
+            WarehouseGroupArabicName = arabicName;
+            WarehouseGroupEnglishName = englishName;
+            
+            AddDomainEvent(new WarehouseGroupUpdatedEvent(Id));
+        }
+
+        public void Deactivate()
+        {
+            if (!IsActive) return;
+            
+            IsActive = false;
+            AddDomainEvent(new WarehouseGroupDeactivatedEvent(Id));
+        }
+
+        public void Activate()
+        {
+            if (IsActive) return;
+            
+            IsActive = true;
+            AddDomainEvent(new WarehouseGroupActivatedEvent(Id));
+        }
+
+        public void UpdateDocumentType(
+            DocumentTypeCategory category,
+            string code,
+            string arabicName,
+            string englishName)
+        {
+            var docType = new DocumentTypeInfo(code, arabicName, englishName);
+            
+            switch (category)
+            {
+                case DocumentTypeCategory.Request:
+                    RequestType = docType;
+                    break;
+                case DocumentTypeCategory.Incoming:
+                    IncomingType = docType;
+                    break;
+                case DocumentTypeCategory.Outgoing:
+                    OutgoingType = docType;
+                    break;
+                case DocumentTypeCategory.Transfer:
+                    TransferType = docType;
+                    break;
+                case DocumentTypeCategory.Stock:
+                    StockType = docType;
+                    break;
+                case DocumentTypeCategory.Inventory:
+                    InventoryType = docType;
+                    break;
+                case DocumentTypeCategory.Purchase:
+                    PurchaseType = docType;
+                    break;
+                case DocumentTypeCategory.PurchaseOrder:
+                    PurchaseOrderType = docType;
+                    break;
+                case DocumentTypeCategory.GoodsReceiptNote:
+                    GoodsReceiptNoteType = docType;
+                    break;
+                default:
+                    throw new DomainException("Invalid document type category");
+            }
+            
+            AddDomainEvent(new WarehouseGroupDocumentTypeUpdatedEvent(Id, category));
+        }
+
+        public void UpdateSettings(
+            bool postDetail,
+            bool costCenterTree,
+            bool budgetBalanceDetail,
+            bool accountTree,
+            bool userRestricted,
+            bool showMobileScreen,
+            bool calculateTaxFreeQuantity,
+            bool documentDateManual,
+            decimal lossQuantity)
+        {
+            InventoryAccountingSystemPostDetail = postDetail;
+            InventoryAccountingSystemCostCenterTree = costCenterTree;
+            InventoryAccountingSystemBudgetBalanceDetail = budgetBalanceDetail;
+            InventoryAccountingSystemAccountTree = accountTree;
+            UserRestricted = userRestricted;
+            ShowMobileScreen = showMobileScreen;
+            CalculateTaxFreeQuantityFlag = calculateTaxFreeQuantity;
+            DocumentDateManual = documentDateManual;
+            LossQuantity = lossQuantity;
+            
+            AddDomainEvent(new WarehouseGroupSettingsUpdatedEvent(Id));
+        }
+
+        // Helper Methods
+        private void ValidateState()
+        {
+            if (string.IsNullOrWhiteSpace(WarehouseGroupArabicName))
+                throw new DomainException("Warehouse group Arabic name is required");
+                
+            if (WarehouseGroupCode <= 0)
+                throw new DomainException("Invalid warehouse group code");
+        }
+    }
+
+    public class DocumentTypeInfo
+    {
+        public string Code { get; private set; }
+        public string ArabicName { get; private set; }
+        public string EnglishName { get; private set; }
+
+        public DocumentTypeInfo(string code, string arabicName, string englishName)
+        {
+            Code = code;
+            ArabicName = arabicName;
+            EnglishName = englishName;
+        }
+    }
+
+    public enum DocumentTypeCategory
+    {
+        Request,
+        Incoming,
+        Outgoing,
+        Transfer,
+        Stock,
+        Inventory,
+        Purchase,
+        PurchaseOrder,
+        GoodsReceiptNote
+    }
 }

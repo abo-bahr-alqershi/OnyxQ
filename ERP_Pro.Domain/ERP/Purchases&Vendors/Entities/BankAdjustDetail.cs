@@ -1,11 +1,11 @@
 public class BankAdjustDetail
 {
     /// <summary> رقم المستند </summary>
-    public long DocumentNo { get; private set; }
+    public long DocumentNumber { get; private set; }
     /// <summary> تسلسل المستند </summary>
     public long? DocumentSerial { get; private set; }
     /// <summary> رقم البنك </summary>
-    public long? BankNo { get; private set; }
+    public long? BankNumber { get; private set; }
     /// <summary> كود الحساب البنكي </summary>
     public string AccountCode { get; private set; }
     /// <summary> كود الحساب الفرعي </summary>
@@ -15,7 +15,7 @@ public class BankAdjustDetail
     /// <summary> رمز العملة </summary>
     public string CurrencyCode { get; private set; }
     /// <summary> رقم البنك الفرعي </summary>
-    public short? BranchBankNo { get; private set; }
+    public short? BranchBankNumber { get; private set; }
     /// <summary> رصيد البنك </summary>
     public int? BankBalance { get; private set; }
     /// <summary> وصف السطر </summary>
@@ -25,7 +25,7 @@ public class BankAdjustDetail
     /// <summary> مبلغ القيد أجنبي </summary>
     public int? JournalAmountForeign { get; private set; }
     /// <summary> رقم السطر </summary>
-    public long? RecordNo { get; private set; }
+    public long? RecordNumber { get; private set; }
     /// <summary> المستخدم الذي أضاف السطر </summary>
     public int? AddedUserId { get; private set; }
     /// <summary> تاريخ الإضافة </summary>
@@ -35,9 +35,9 @@ public class BankAdjustDetail
     /// <summary> تاريخ آخر تعديل </summary>
     public DateTime? UpdatedDate { get; private set; }
     /// <summary> رقم الشركة </summary>
-    public short CompanyNo { get; private set; }
+    public short CompanyNumber { get; private set; }
     /// <summary> رقم الفرع </summary>
-    public int BranchNo { get; private set; }
+    public int BranchNumber { get; private set; }
     /// <summary> السنة المالية للفرع </summary>
     public short? BranchYear { get; private set; }
     /// <summary> مستخدم الفرع </summary>
@@ -47,23 +47,23 @@ public class BankAdjustDetail
     /// <summary> مركز التكلفة </summary>
     public string? CostCenterCode { get; private set; }
     /// <summary> رقم المشروع </summary>
-    public string? ProjectNo { get; private set; }
+    public string? ProjectNumber { get; private set; }
     /// <summary> رقم النشاط </summary>
-    public string? ActivityNo { get; private set; }
+    public string? ActivityNumber { get; private set; }
     /// <summary> رقم مرجعي إضافي </summary>
-    public string? ReferenceNo { get; private set; }
+    public string? ReferenceNumber { get; private set; }
     /// <summary> رقم فرع المستند </summary>
-    public int? DocumentBranchNo { get; private set; }
+    public int? DocumentBranchNumber { get; private set; }
     /// <summary> نوع المستند المرجعي </summary>
-    public long? DocumentTypeRef { get; private set; }
+    public long? DocumentTypeReference { get; private set; }
     /// <summary> نوع قيد اليومية المرجعي </summary>
-    public long? JournalVoucherTypeRef { get; private set; }
+    public long? JournalVoucherTypeReference { get; private set; }
     /// <summary> رقم المستند المرجعي </summary>
-    public long? DocumentNoRef { get; private set; }
+    public long? DocumentNumberReference { get; private set; }
     /// <summary> تسلسل المستند المرجعي </summary>
-    public long? DocumentSerialRef { get; private set; }
+    public long? DocumentSerialReference { get; private set; }
     /// <summary> تسلسل المستند المرجعي </summary>
-    public long? DocumentSequenceRef { get; private set; }
+    public long? DocumentSequenceReference { get; private set; }
     /// <summary> تسلسل السطر </summary>
     public long? DocumentSequence { get; private set; }
     /// <summary> سعر الصرف </summary>

@@ -1,0 +1,11 @@
+name: DeepSeek Coder (local)
+version: 0.0.1
+schema: v1
+models:
+  - provider: ollama
+    model: deepseek-coder:1.3b
+    name: DeepSeek Coder 1.3b
+    roles:
+      - chat
+      - edit
+    baseUrl: http://localhost:11434

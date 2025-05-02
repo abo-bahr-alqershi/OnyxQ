@@ -3,9 +3,9 @@ public class PurchaseChargeItems
     /// <summary> نوع الفاتورة </summary>
     public int? BillType { get; private set; }
     /// <summary> نوع مستند الفاتورة </summary>
-    public short? BillDocType { get; private set; }
+    public short? BillDocumentType { get; private set; }
     /// <summary> رقم الفاتورة </summary>
-    public long? BillNo { get; private set; }
+    public long? BillNumber { get; private set; }
     /// <summary> الرقم التسلسلي للفاتورة </summary>
     public long BillSerial { get; private set; }
     /// <summary> تاريخ المستند </summary>
@@ -19,7 +19,7 @@ public class PurchaseChargeItems
     /// <summary> سعر الصرف للحساب </summary>
     public int? AccountRate { get; private set; }
     /// <summary> نسبة مئوية مضافة </summary>
-    public int? Percent { get; private set; }
+    public int? Percentage { get; private set; }
     /// <summary> المبلغ </summary>
     public int? Amount { get; private set; }
     /// <summary> كود المستودع </summary>
@@ -27,11 +27,11 @@ public class PurchaseChargeItems
     /// <summary> مركز التكلفة </summary>
     public string? CostCenterCode { get; private set; }
     /// <summary> رقم المشروع </summary>
-    public string? ProjectNo { get; private set; }
+    public string? ProjectNumber { get; private set; }
     /// <summary> رقم النشاط </summary>
-    public string? ActivityNo { get; private set; }
+    public string? ActivityNumber { get; private set; }
     /// <summary> رقم السطر الداخلي </summary>
-    public long? RecordNo { get; private set; }
+    public long? RecordNumber { get; private set; }
     /// <summary> نوع عنصر الخدمة </summary>
     public int? ServiceItemType { get; private set; }
     /// <summary> كود الصنف </summary>
@@ -41,7 +41,7 @@ public class PurchaseChargeItems
     /// <summary> حجم العبوة </summary>
     public int PackSize { get; private set; }
     /// <summary> نوع الفاتورة (تجميع/مفرد) </summary>
-    public bool? BillPY { get; private set; }
+    public bool? BillPaymentType { get; private set; }
     /// <summary> تم الترحيل خارجيًا </summary>
     public int? ExternalPost { get; private set; }
     /// <summary> المبلغ لكل وحدة </summary>
@@ -49,9 +49,9 @@ public class PurchaseChargeItems
     /// <summary> كود الترحيل </summary>
     public string? PostCode { get; private set; }
     /// <summary> رقم الشركة </summary>
-    public short CompanyNo { get; private set; }
+    public short CompanyNumber { get; private set; }
     /// <summary> رقم الفرع </summary>
-    public int BranchNo { get; private set; }
+    public int BranchNumber { get; private set; }
     /// <summary> السنة المالية للفرع </summary>
     public short? BranchYear { get; private set; }
     /// <summary> مستخدم الفرع </summary>
