@@ -8,33 +8,33 @@ namespace ERP_Pro.Domain.ERP.Inventory_Warehouses.Entities
     public class DisassembleKitItemDetail : Entity
     {
         #region Basic Info
-        /// <summary> رقم مستند التفكيك. </summary>
-        public long DocNo { get; private set; }
-        /// <summary> الرقم التسلسلي للمستند. </summary>
-        public long? DocSerial { get; private set; }
-        /// <summary> تسلسل السطر بالمستند. </summary>
-        public long DocSequence { get; private set; }
-        /// <summary> كود الترحيل. </summary>
-        public string? PostCode { get; private set; }
+    /// <summary> رقم مستند التفكيك. </summary>
+    public long DocNo { get; private set; }
+    /// <summary> الرقم التسلسلي للمستند. </summary>
+    public long? DocSerial { get; private set; }
+    /// <summary> تسلسل السطر بالمستند. </summary>
+    public long DocSequence { get; private set; }
+    /// <summary> كود الترحيل. </summary>
+    public string? PostCode { get; private set; }
         /// <summary> رقم السطر الداخلي. </summary>
         public long? RecordNo { get; private set; }
-        /// <summary> تسلسل السطر الرئيسي. </summary>
-        public int? DocSequenceMain { get; private set; }
-        /// <summary> رقم فرعي للسطر. </summary>
-        public int? RecordSq { get; private set; }
+    /// <summary> تسلسل السطر الرئيسي. </summary>
+    public int? DocSequenceMain { get; private set; }
+    /// <summary> رقم فرعي للسطر. </summary>
+    public int? RecordSq { get; private set; }
         #endregion
 
         #region Cost Info
-        /// <summary> مركز التكلفة. </summary>
-        public string? CostCenterCode { get; private set; }
-        /// <summary> رقم المشروع. </summary>
-        public string? ProjectNo { get; private set; }
-        /// <summary> رقم النشاط. </summary>
-        public string? ActivityNo { get; private set; }
+    /// <summary> مركز التكلفة. </summary>
+    public string? CostCenterCode { get; private set; }
+    /// <summary> رقم المشروع. </summary>
+    public string? ProjectNo { get; private set; }
+    /// <summary> رقم النشاط. </summary>
+    public string? ActivityNo { get; private set; }
         /// <summary> تكلفة الكيت المجمعة. </summary>
         public int? KitCost { get; private set; }
         /// <summary> نسبة التكلفة من الكيت. </summary>
-        public int? PerCostFromKitItm { get; private set; }
+    public int? PerCostFromKitItm { get; private set; }
         #endregion
 
         #region Kit Info

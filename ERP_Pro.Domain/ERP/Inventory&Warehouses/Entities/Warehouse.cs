@@ -15,7 +15,7 @@ namespace ERP_Pro.Domain.ERP.Inventory_Warehouses.Entities
         // Basic Info
         public string WarehouseArabicName { get; private set; }
         public string? WarehouseEnglishName { get; private set; }
-        public string? Location { get; private set; }
+    public string? Location { get; private set; }
         public string? TelephoneNumber { get; private set; }
         public bool IsActive { get; private set; } = true;
         
@@ -29,8 +29,8 @@ namespace ERP_Pro.Domain.ERP.Inventory_Warehouses.Entities
         
         // Location Info
         public string? GeographicPosition { get; private set; }
-        public string? Latitude { get; private set; }
-        public string? Longitude { get; private set; }
+    public string? Latitude { get; private set; }
+    public string? Longitude { get; private set; }
         public string? GlobalLocationNumber { get; private set; }
         public string? WarehouseLocalAddress { get; private set; }
         public string? WarehouseForeignAddress { get; private set; }

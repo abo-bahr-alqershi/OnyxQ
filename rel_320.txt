@@ -1,0 +1,1 @@
+| 278 | IAS_USR_GRP | IAS_USR | n:1 | IUG_IU | IU_CODE | IAUSGRP_IAUS_FK | النظام والأمن | ربط مجموعة المستخدمين بالمستخدم | ✅ موجودة (UserGroup و User) |

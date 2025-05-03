@@ -1,0 +1,20 @@
+| 751 | VENDOR | P_ORDER | n:1 | V_PO | PO_CODE | VE_POR_FK | المشتريات والموردين | ربط vendor بـp order | ✅ موجودة (Vendor و PurchaseOrder) |
+| 752 | IAS_VNDR_TYP | IAS_VNDR_CLSS | 1:n | IVT_IVC | IVC_CODE | IAVNTY_IAVNCL_FK | المشتريات والموردين | ربط ias vndr typ بـias vndr clss | ✅ موجودة (VendorType و VendorClass) |
+| 753 | IAS_VNDR_TYP | GRN_MASTER | n:1 | IVT_GM | GM_CODE | IAVNTY_GRMA_FK | المشتريات والموردين | ربط ias vndr typ بـgrn master | ✅ موجودة (VendorType و GoodsReceiptNoteMaster) |
+| 754 | STK_MOVMNT | ITEM_UNIT_PRICE | n:1 | SM_IUP | IUP_CODE | STMO_ITUNPR_FK | المخزون والمستودعات | ربط stk movmnt بـitem unit price | ✅ موجودة (StockMovement و ItemUnitPrice) |
+| 755 | IAS_BILL | IAS_BILL_DTL | 1:n | IB_IBD | IBD_CODE | IABI_IABIDT_FK | المبيعات والعملاء | ربط ias bill بـias bill dtl | ✅ موجودة (Bill و BillDetail) |
+| 756 | OPEN_BAL | ACCOUNT_TYPES | n:1 | OB_AT | AT_CODE | OPBA_ACTY_FK | الحسابات والدفتر العام | ربط open bal بـaccount types | ✅ موجودة (OpeningBalance و AccountType) |
+| 757 | IAS_BANK_ACCOUNT | IAS_CASH_INCOME | n:1 | IBA_ICI | ICI_CODE | IABAAC_IACAIN_FK | النقدية والبنوك | ربط ias bank account بـias cash income | ✅ موجودة (BankAccount و CashIncome) |
+| 758 | IAS_PROJECT | IAS_PROJECT_PHASE | n:1 | IP_IPP | IPP_CODE | IAPR_IAPRPH_FK | المشاريع والعقود | ربط ias project بـias project phase | ✅ موجودة (Project و ProjectPhase) |
+| 759 | IAS_GUARN_STATUS | GUARN_MASTER | n:1 | IGS_GM | GM_CODE | IAGUST_GUMA_FK | الضمانات والكفالات | ربط ias guarn status بـguarn master | ✅ موجودة (GuaranteeStatus و GuaranteeMaster) |
+| 760 | HRS_EMP_VAC | S_DEPT | n:1 | HEV_SD | SD_CODE | HREMVA_SDE_FK | الموارد البشرية | ربط hrs emp vac بـs dept | ✅ موجودة (EmployeeVacation و Department) |
+| 761 | CASH_RECEIPT | IAS_BANK_ACCOUNT | 1:n | CR_IBA | IBA_CODE | CARE_IABAAC_FK | النقدية والبنوك | ربط cash receipt بـias bank account | ✅ موجودة (CashReceipt و BankAccount) |
+| 762 | HRS_ATT | HRS_VAC_TYP | n:1 | HA_HVT | HVT_CODE | HRAT_HRVATY_FK | الموارد البشرية | ربط hrs att بـhrs vac typ | ✅ موجودة (Attendance و VacationType) |
+| 763 | IAS_BANK_ACCOUNT | IAS_CASH_INCOME | 1:n | IBA_ICI | ICI_CODE | IABAAC_IACAIN_FK | النقدية والبنوك | ربط ias bank account بـias cash income | ✅ موجودة (BankAccount و CashIncome) |
+| 764 | WAREHOUSE | ITEM_CARD | n:1 | W_ITM | ITM_CODE | WA_ITCA_FK | المخزون والمستودعات | ربط warehouse بـitem card | ✅ موجودة (Warehouse و Item) |
+| 765 | P_ORDER_DETAIL | GRN_DETAIL | 1:n | P_GD | GD_CODE | PORDE_GRDE_FK | المشتريات والموردين | ربط تفاصيل p order detail بـgrn detail | ✅ موجودة (PurchaseOrderDetail و GoodsReceiptNoteDetail) |
+| 766 | APX_SCR | IAS_USR_AUDIT | 1:n | AS_IUA | IUA_CODE | APSC_IAUSAU_FK | النظام والأمن | ربط apx scr بـias usr audit | ✅ موجودة (Screen و UserAudit) |
+| 767 | CUSTOMER | IAS_CST_TYP | n:1 | C_ICT | ICT_CODE | CU_IACSTY_FK | المبيعات والعملاء | ربط customer بـias cst typ | ✅ موجودة (Customer و CustomerType) |
+| 768 | IAS_USR_PRF | IAS_USR_LGN_HSTRY | 1:n | IUP_IULH | IULH_CODE | IAUSPR_IAUSLGHS_FK | النظام والأمن | ربط ias usr prf بـias usr lgn hstry | ✅ موجودة (UserProfile و UserLoginHistory) |
+| 769 | IAS_PROJECT | IAS_PROJECT_PHASE | n:1 | IP_IPP | IPP_CODE | IAPR_IAPRPH_FK | المشاريع والعقود | ربط ias project بـias project phase | ✅ موجودة (Project و ProjectPhase) |
+| 770 | ITEM_COST | STK_PHYS_COUNT | 1:n | IC_SPC | SPC_CODE | ITCO_STPHCO_FK | المخزون والمستودعات | ربط item cost بـstk phys count | ✅ موجودة (ItemCost و StockPhysicalCount) | 
