@@ -1,0 +1,4969 @@
+[
+  {
+    "name": "S_ALRT_DATA_TMP",
+    "columns": [
+      {
+        "name": "ALRT_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "MSG_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "LBL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SYS_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "ALRT_SLCT_DTL",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "ALRT_SLCT_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "ALRT_SLCT_ORDR",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "ALRT_HIDE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ALRT_HIDE_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "RPRT_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FLD_CNT",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "FLD_LBL",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_WDTH",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_DIR",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "ALRT_DAY",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "ALRT_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "ALRT_PRD_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "MSG_DSC",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      }
+    ],
+    "primary_keys": [],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_ALRT_SYS_DTL",
+    "columns": [
+      {
+        "name": "ALRT_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "ALRT_SLCT",
+        "type": "VARCHAR2(3000)"
+      },
+      {
+        "name": "ALRT_SLCT_WHR",
+        "type": "VARCHAR2(2000)"
+      },
+      {
+        "name": "ALRT_SLCT_ORDR",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "ALRT_GRP_BY",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "FLD_CNT",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "FLD_LBL",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_WDTH",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_DIR",
+        "type": "VARCHAR2(250)"
+      }
+    ],
+    "primary_keys": [
+      "ALRT_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "ALRT_NO"
+        ],
+        "references_table": "S_ALRT_SYS_MST"
+      }
+    ]
+  },
+  {
+    "name": "S_ALRT_SYS_MST",
+    "columns": [
+      {
+        "name": "ALRT_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "ALRT_TYP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "LBL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "ALRT_DAY",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "MSG_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "SYS_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "ALRT_SLCT",
+        "type": "VARCHAR2(3000)"
+      },
+      {
+        "name": "ALRT_ACTN",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ALRT_PRD_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ALRT_SLCT_WHR",
+        "type": "VARCHAR2(2000)"
+      },
+      {
+        "name": "ALRT_SLCT_ORDR",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INACTIVE_RES",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "INACTIVE_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "ALRT_ST",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ALRT_GRP_BY",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "ALRT_HIDE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ALRT_HIDE_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "RPRT_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SHW_ALRT_AFTR_LGN",
+        "type": "NUMBER(1, 0)"
+      }
+    ],
+    "primary_keys": [
+      "ALRT_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_APPROVL_APP_DVC",
+    "columns": [
+      {
+        "name": "DOC_NO",
+        "type": "NUMBER(30, 0)"
+      },
+      {
+        "name": "DOC_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "USR_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SYS_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "MOD_ID",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "EMP_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "C_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "MOBILE_OS",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "MOBILE_SRL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "APPROVED",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "APRV_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "APRV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "APRV_DSC",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      }
+    ],
+    "primary_keys": [
+      "DOC_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "EMP_NO"
+        ],
+        "references_table": "S_EMP"
+      },
+      {
+        "columns": [
+          "C_CODE"
+        ],
+        "references_table": "CUSTOMER"
+      },
+      {
+        "columns": [
+          "U_ID"
+        ],
+        "references_table": "USER_R"
+      }
+    ]
+  },
+  {
+    "name": "S_APPRVD_LVL",
+    "columns": [
+      {
+        "name": "LVL_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "LVL_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10\n, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "LVL_NO",
+      "DOC_TYP"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_APPRVD_MOV",
+    "columns": [
+      {
+        "name": "LVL_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "DOC_SER",
+        "type": "NUMBER"
+      },
+      {
+        "name": "DOC_NO",
+        "type": "NUMBER"
+      },
+      {
+        "name": "DOC_JV_TYP",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "DOC_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "APPRVD",
+        "type": "NUMBER(1,\n 0)"
+      },
+      {
+        "name": "APPRVD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "APPRVD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "APPRVD_DESC",
+        "type": "VARCHAR2(255)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "DOC_AMT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "EXTERNAL_POST",
+        "type": "NUMBER(5, 0)"
+      }
+    ],
+    "primary_keys": [
+      "LVL_NO",
+      "DOC_TYP",
+      "DOC_SER"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "LVL_NO",
+          "DOC_TYP"
+        ],
+        "references_table": "S_APPRVD_LVL"
+      },
+      {
+        "columns": [
+          "APPRVD_U_ID"
+        ],
+        "references_table": "USER_R"
+      }
+    ]
+  },
+  {
+    "name": "S_APPRVD_SHW_DOC",
+    "columns": [
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FLD_CNT",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "DOC_SLCT",
+        "type": "VARCHAR2(3000)"
+      },
+      {
+        "name": "DOC_SLCT_WHR",
+        "type": "VARCHAR2(2000)"
+      },
+      {
+        "name": "DOC_GRP_BY",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "DOC_SLCT_ORDR",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "FLD_LBL",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_WDTH",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_DIR",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "DOC_TYP"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_APPRVD_SHW_DOC_SUB",
+    "columns": [
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FLD_CNT",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "DOC_SLCT",
+        "type": "VARCHAR2(3000)"
+      },
+      {
+        "name": "DOC_SLCT_WHR",
+        "type": "VARCHAR2(2000)"
+      },
+      {
+        "name": "DOC_GRP_BY",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "DOC_SLCT_ORDR",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "FLD_LBL",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_WDTH",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "FLD_DIR",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "DOC_TYP"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_APPRVD_USR",
+    "columns": [
+      {
+        "name": "LVL_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PRV_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "F_AMT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "T_AMT",
+        "type": "NUMBER"
+      }
+    ],
+    "primary_keys": [
+      "LVL_NO",
+      "DOC_TYP",
+      "U_ID"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "LVL_NO",
+          "DOC_TYP"
+        ],
+        "references_table": "S_APPRVD_LVL"
+      },
+      {
+        "columns": [
+          "U_ID"
+        ],
+        "references_table": "USER_R"
+      }
+    ]
+  },
+  {
+    "name": "S_APPRVD_USR_DTL",
+    "columns": [
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "LVL_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "TYP_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PRV_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "F_AMT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "T_AMT",
+        "type": "NUMBER"
+      }
+    ],
+    "primary_keys": [
+      "U_ID",
+      "LVL_NO",
+      "DOC_TYP",
+      "TYP_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "LVL_NO",
+          "DOC_TYP",
+          "U_ID"
+        ],
+        "references_table": "S_APPRVD_USR"
+      }
+    ]
+  },
+  {
+    "name": "S_BRN",
+    "columns": [
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_PARENT",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "CMP_GRP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "CMP_LNAME",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "CMP_FNAME",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_LNAME",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_FNAME",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_LDES",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_FDES",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_LADD",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_FADD",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_LTELE",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_FTELE",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_LFAX",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_FFAX",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_LBOX",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_FBOX",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "DIAL_NAME",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BRN_CODE",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "BRN_LOCAL",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "BRN_LGHT",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "MAIN_BRN",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CNTRY_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "PROV_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "CITY_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "R_CODE",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "CMP_IMG",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LATITUDE",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "LONGITUDE",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "GPS_COLOR",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "GPS",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "WEB_SITE",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "IDNFNT_SCL_SCRTY_NO",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "AGNCY_SCL_SCRTY_CODE",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "AGNCY_SCL_SCRTY_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_TAX_CODE",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "RC_CODE",
+        "type": "VARCHAR2(40)"
+      },
+      {
+        "name": "NAI_TAX",
+        "type": "VARCHAR2(40)"
+      },
+      {
+        "name": "NIS_CODE",
+        "type": "VARCHAR2(40)"
+      },
+      {
+        "name": "BRN_TEL_NO",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INACTIVE_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTIVE_RES",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "CAPITAL",
+        "type": "NUMBER"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "GRP_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PL_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PL_CLS_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "PL_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PL_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PL_CLS_A_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "PL_CLS_CUR_CODE",
+        "type": "VARCHAR2(7)"
+      },
+      {
+        "name": "PL_CLS_AMT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "PL_UNCLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PL_UNCLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PAN_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "TAN_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "BAN_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "TAX_WEB_SITE",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "RPRT_HDR_IMG",
+        "type": "BLOB"
+      },
+      {
+        "name": "RPRT_HDR_IMG_NM",
+        "type": "VARCHAR2(200)"
+      },
+      {
+        "name": "RPRT_HDR_IMG_NM_H",
+        "type": "VARCHAR2(200)"
+      },
+      {
+        "name": "BUILDING_NO",
+        "type": "VARCHAR2(200)"
+      },
+      {
+        "name": "STREET",
+        "type": "VARCHAR2(200)"
+      },
+      {
+        "name": "TAX_AUTH_CODE",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "RPRT_HDR_TYP",
+        "type": "NUMBER"
+      }
+    ],
+    "primary_keys": [
+      "BRN_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "GRP_NO"
+        ],
+        "references_table": "S_BRN_GRPS"
+      },
+      {
+        "columns": [
+          "CMP_NO"
+        ],
+        "references_table": "S_CMPNY"
+      },
+      {
+        "columns": [
+          "PROV_NO"
+        ],
+        "references_table": "IAS_PROVINCES"
+      },
+      {
+        "columns": [
+          "R_CODE"
+        ],
+        "references_table": "REGIONS"
+      },
+      {
+        "columns": [
+          "CITY_NO"
+        ],
+        "references_table": "CITIES"
+      },
+      {
+        "columns": [
+          "CNTRY_NO"
+        ],
+        "references_table": "CNTRY"
+      }
+    ]
+  },
+  {
+    "name": "S_BRN_DOCS",
+    "columns": [
+      {
+        "name": "CODE_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "DOC_NO",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "ISSUE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "END_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "DUR_ALRM",
+        "type": "NUMBER(4,\n 0)"
+      },
+      {
+        "name": "RNWL_DATE",
+        "type": "VARCHAR2(10)"
+      },
+      {
+        "name": "ISSUE_PLACE",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "FIELD1",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD2",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD3",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD4",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD5",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD6",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD7",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD8",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD9",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD10",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTIVE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INACTIVE_RES",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "BRN_NO",
+      "CODE_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "BRN_NO"
+        ],
+        "references_table": "S_BRN"
+      }
+    ]
+  },
+  {
+    "name": "S_BRN_GRPS",
+    "columns": [
+      {
+        "name": "GRP_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "GRP_L_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "GRP_F_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "GRP_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_BRN_USR_PRIV",
+    "columns": [
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "ADD_FLAG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "VIEW_FLAG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "FILL_FLAG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ADD_BNF_FLAG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      }
+    ],
+    "primary_keys": [
+      "U_ID",
+      "BRN_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "BRN_NO"
+        ],
+        "references_table": "S_BRN"
+      },
+      {
+        "columns": [
+          "U_ID"
+        ],
+        "references_table": "USER_R"
+      }
+    ]
+  },
+  {
+    "name": "S_CMPNY",
+    "columns": [
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "CMP_LNAME",
+        "type": "VARCHAR2(40)"
+      },
+      {
+        "name": "CMP_FNAME",
+        "type": "VARCHAR2(40)"
+      },
+      {
+        "name": "CMP_LSHRT",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "CMP_FSHRT",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "CMP_DESC",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "CMP_IMG",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "CMP_GRP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "CMP_WEB_SITE",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "CMP_E_MAIL",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "GPS",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "CNTRY_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "WEB_CONN",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "FINSCAN_URL",
+        "type": "VARCHAR2(200)"
+      },
+      {
+        "name": "FINSCAN_ORG_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "FINSCAN_USR_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "FINSCAN_USR_PASS",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "CMP_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_CODE_SEND_MSG",
+    "columns": [
+      {
+        "name": "RCRD_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "CODE_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "EMP_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "SEND_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "MOBILE_NO",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "E_MAIL",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INACTV_USR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTV_RSON",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [
+      "RCRD_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_CONN_CNTCT",
+    "columns": [
+      {
+        "name": "CONN_CNTCT_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "CNTCT_CODE",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "CNTCT_TYP",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "CNTCT_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "CNTCT_DSC",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "NOTES",
+        "type": "VARCHAR2(150)"
+      },
+      {
+        "name": "CNTCT_FVRT",
+        "type": "NUMBER(1,\n 0)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTV_RSON",
+        "type": "VARCHAR2(150)"
+      },
+      {
+        "name": "INACTV_USR",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "INACTV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "CONN_CNTCT_NO",
+      "CNTCT_CODE",
+      "CNTCT_TYP",
+      "CNTCT_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_CST_HND_DVC",
+    "columns": [
+      {
+        "name": "C_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "HND_DVC_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "HND_DVC_SRL",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INACTIVE_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTIVE_RES",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      }
+    ],
+    "primary_keys": [
+      "C_CODE",
+      "HND_DVC_SRL"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "C_CODE"
+        ],
+        "references_table": "CUSTOMER"
+      }
+    ]
+  },
+  {
+    "name": "S_DDC_SCR_DTL",
+    "columns": [
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "OBJ_NM",
+        "type": "VARCHAR2(61)"
+      },
+      {
+        "name": "FLD_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "FLD_NO",
+        "type": "NUMBER(10,\n 0)"
+      },
+      {
+        "name": "LBL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "FLD_TYP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "FLD_PRV",
+        "type": "NUMBER(1,\n 0)"
+      },
+      {
+        "name": "FLD_HD",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "FLD_MNDTRY",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "FLG_LST_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "FLG_LST_WHR",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "FLG_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LST_TBL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LST_COL_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LST_COL_VAL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "FLD_WDTH",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "FLD_UPD",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [
+      "FORM_NO",
+      "OBJ_NM",
+      "FLD_NM"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_DIR_CONN",
+    "columns": [
+      {
+        "name": "S_TYPE",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "DIR_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "DIR_CODE_EXTRNL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "T_DESC",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "S_TYPE",
+      "DIR_CODE",
+      "DIR_CODE_EXTRNL"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_DOC_MSG_ALRT",
+    "columns": [
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "MSG_TXT",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "ALRT_FLG",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SEND_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INACTV_USR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTV_RSON",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [
+      "DOC_TYP"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_DOC_TYP_AC_DTL_MSG",
+    "columns": [
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AC_DTL_TYP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "MSG_TXT",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INACTV_USR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTV_RSON",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "MSG_TXT_SPCL_FLG",
+        "type": "NUMBER(1, 0)"
+      }
+    ],
+    "primary_keys": [
+      "DOC_TYP",
+      "AC_DTL_TYP"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_DOC_TYP_MSG",
+    "columns": [
+      {
+        "name": "DOC_TYP",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "DOC_TYP"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_FLAGS",
+    "columns": [
+      {
+        "name": "LANG_NO",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "FLG_SR",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "FLG_VALUE",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "FLG_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "FLG_DESC",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "FLG_ST",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "FLG_PRIV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "LBL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      }
+    ],
+    "primary_keys": [
+      "LANG_NO",
+      "FLG_CODE",
+      "FLG_VALUE"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_FLAGS_PRIV",
+    "columns": [
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FLG_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "FLG_VALUE",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PRIV_FLAG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      }
+    ],
+    "primary_keys": [
+      "U_ID",
+      "FLG_CODE",
+      "FLG_VALUE"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_HRCHY",
+    "columns": [
+      {
+        "name": "HRCHY_NO",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "HRCHY_L_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "HRCHY_F_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "HRCHY_PARNT",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "LVL_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "TYP_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "EVLUTION_TYP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_RES",
+        "type": "VARCHAR2(150)"
+      },
+      {
+        "name": "INACTIVE_U_ID",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "INACTIVE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "HRCHY_CODE",
+        "type": "VARCHAR2(20)"
+      }
+    ],
+    "primary_keys": [
+      "HRCHY_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "TYP_NO"
+        ],
+        "references_table": "S_HRCHY_TYP"
+      }
+    ]
+  },
+  {
+    "name": "S_HRCHY_TYP",
+    "columns": [
+      {
+        "name": "TYP_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "TYP_L_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "TYP_F_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "TYP_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_JRNL_FILE_DTL",
+    "columns": [
+      {
+        "name": "DOC_TYPE",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "JV_TYPE",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "J_DOC_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "J_SER",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "A_CODE_EXTRNL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "A_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "AC_CODE_DTL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "AC_CODE_DTL_SUB",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "AC_DTL_TYP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "A_CODE_ANLYS_EXTRNL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "A_CY_EXTRNL",
+        "type": "VARCHAR2(7)"
+      },
+      {
+        "name": "A_CY",
+        "type": "VARCHAR2(7)"
+      },
+      {
+        "name": "J_DESC",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "DR_AMT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "CR_AMT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "DR_AMT_F",
+        "type": "NUMBER"
+      },
+      {
+        "name": "CR_AMT_F",
+        "type": "NUMBER"
+      },
+      {
+        "name": "AC_RATE",
+        "type": "NUMBER"
+      },
+      {
+        "name": "CC_CODE",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "CC_CODE_EXTRNL",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "PJ_NO",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "PJ_NO_EXTRNL",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "ACTV_NO",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "ACTV_NO_EXTRNL",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "C_CODE",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "V_CODE",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "REP_CODE",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "COL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "LC_NO",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "GR_NO",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "CSH_BNK_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "RCRD_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "RCRD_NO_ORD",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "DOC_TYPE_REF",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "DOC_JV_TYPE_REF",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "DOC_NO_REF",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "DOC_SER_REF",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "DOC_DUE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "BILL_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "BILL_SER",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "I_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "WO_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "WO_SER",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "REF_NO",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "CHEQUE_NO",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "DOC_SEQUENCE",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3\n, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "NOTE_NO",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "DOC_BRN_NO",
+        "type": "NUMBER(6, 0)"
+      }
+    ],
+    "primary_keys": [
+      "J_SER",
+      "A_CODE",
+      "RCRD_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "ACTV_NO"
+        ],
+        "references_table": "IAS_ACTVTY"
+      },
+      {
+        "columns": [
+          "J_SER"
+        ],
+        "references_table": "S_JRNL_FILE_MST"
+      },
+      {
+        "columns": [
+          "A_CODE",
+          "A_CY"
+        ],
+        "references_table": "ACCOUNT_CURR"
+      },
+      {
+        "columns": [
+          "COL_NO"
+        ],
+        "references_table": "COLLERCTOR"
+      },
+      {
+        "columns": [
+          "CC_CODE"
+        ],
+        "references_table": "COST_CENTERS"
+      },
+      {
+        "columns": [
+          "C_CODE"
+        ],
+        "references_table": "CUSTOMER"
+      },
+      {
+        "columns": [
+          "V_CODE"
+        ],
+        "references_table": "V_DETAILS"
+      },
+      {
+        "columns": [
+          "LC_NO"
+        ],
+        "references_table": "LC_MASTER"
+      }
+    ]
+  },
+  {
+    "name": "S_JRNL_FILE_MST",
+    "columns": [
+      {
+        "name": "FILE_TYPE",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "DOC_TYPE",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "JV_TYPE",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "J_DOC_NO",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "J_SER",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "J_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "BATCH_VAL",
+        "type": "NUMBER"
+      },
+      {
+        "name": "REF_NO",
+        "type": "VARCHAR2(15)"
+      },
+      {
+        "name": "ATTACH_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "T_DESC",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "STAND_BY",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CLS_ZERO_AC_BLNC",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AUDIT_REF",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AUDIT_REF_DESC",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "AUDIT_REF_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AUDIT_REF_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "J_POST",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "POST_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "POST_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UNPOST_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UNPOST_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PROCESED",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "APPROVED",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "APRV_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "APRV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "APRV_DSC",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_RES",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "INACTIVE_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTIVE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5,\n 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "DOC_TYP_REF",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "DOC_NO_REF",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "DOC_SRL_REF",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "FIELD1",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD2",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD3",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD4",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD5",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD6",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD7",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD8",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD9",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FIELD10",
+        "type": "VARCHAR2(60)"
+      }
+    ],
+    "primary_keys": [
+      "J_SER"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_LIB_FILE",
+    "columns": [
+      {
+        "name": "FILE_NAME",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "LIB_VERSION_UPDT",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "CREATED_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "ACCESSED_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "MODIFIED_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "FILE_SIZE",
+        "type": "NUMBER"
+      }
+    ],
+    "primary_keys": [
+      "FILE_NAME"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_LOGS",
+    "columns": [
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER"
+      },
+      {
+        "name": "LOG_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "LOG_DESC",
+        "type": "VARCHAR2(4000)"
+      }
+    ],
+    "primary_keys": [],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_LOG_CHK_BFR_CLS",
+    "columns": [
+      {
+        "name": "MSG_NO",
+        "type": "NUMBER"
+      },
+      {
+        "name": "MSG_TXT_FXD",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "RPRT_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "RPRT_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      }
+    ],
+    "primary_keys": [],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_LOV_SLCT",
+    "columns": [
+      {
+        "name": "LOV_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "LOV_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LOV_LBL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "LOV_SQL",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "LOV_PRV",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "GRP_BY",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "LOV_COL_CNT",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "LOV_COL_LBL",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "LOV_COL_WDTH",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "LOV_COL_HID",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "DFLT_ORDR",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "LOV_COL_LTR",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "LOV_COL_RTL",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "RPRT_DPND_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "RPRT_RET_COL",
+        "type": "VARCHAR2(1000)"
+      },
+      {
+        "name": "LOV_SPCL_FLG",
+        "type": "NUMBER(1, 0)"
+      }
+    ],
+    "primary_keys": [
+      "LOV_NM"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_LST_SLCT",
+    "columns": [
+      {
+        "name": "LST_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LST_SQL",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "LST_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "LST_ORDRBY",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "LST_SQL_PRV",
+        "type": "VARCHAR2(4000)"
+      }
+    ],
+    "primary_keys": [
+      "LST_NM"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_MOBILE_SCR",
+    "columns": [
+      {
+        "name": "SYS_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SCR_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "SCR_PARENT_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "SCR_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_MOBILE_SCR_NM",
+    "columns": [
+      {
+        "name": "SCR_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "LNG_NO",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "SCR_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "SCR_NO",
+      "LNG_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "SCR_NO"
+        ],
+        "references_table": "S_MOBILE_SCR"
+      }
+    ]
+  },
+  {
+    "name": "S_MOBILE_SCR_PRV",
+    "columns": [
+      {
+        "name": "SCR_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PRV_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "ADD_FLAG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "SCR_NO",
+      "U_ID"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "SCR_NO"
+        ],
+        "references_table": "S_MOBILE_SCR"
+      },
+      {
+        "columns": [
+          "U_ID"
+        ],
+        "references_table": "USER_R"
+      }
+    ]
+  },
+  {
+    "name": "S_PRD_BRN_CLS",
+    "columns": [
+      {
+        "name": "PRD_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_NO",
+        "type": "NUMBER(3,\n 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "F_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "T_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "YR_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PRD_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PRD_UNCLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PRD_UNCLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PRD_CLS_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PL_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PL_CLS_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "PL_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PL_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PL_UNCLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PL_UNCLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INV_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INV_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INV_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INV_CLS_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "INV_UNCLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INV_UNCLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "DEPR_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "DEPR_CLS_U_ID",
+        "type": "NUMBER(5,\n 0)"
+      },
+      {
+        "name": "DEPR_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "DEPR_CLS_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "DEPR_UNCLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "DEPR_UNCLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "MRP_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "MRP_CLS_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "MRP_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "MRP_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "MRP_UNCLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "MRP_UNCLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "FAS_PRD",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PL_AC_CODE_CLS",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "PL_AMT_CLS",
+        "type": "NUMBER"
+      },
+      {
+        "name": "RVRS_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "RVRS_F_DATE_CLS",
+        "type": "DATE"
+      },
+      {
+        "name": "RVRS_T_DATE_CLS",
+        "type": "DATE"
+      },
+      {
+        "name": "CUR_DIFF_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CUR_DIFF_CLS_WTH_CC",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CUR_DIFF_CLS_WTH_PJ",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CUR_DIFF_CLS_WTH_ACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CUR_RATE_FLG_CLS",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "CUR_RATE_TYP_FLG_CLS",
+        "type": "NUMBER(2, 0)"
+      }
+    ],
+    "primary_keys": [
+      "PRD_NO",
+      "BRN_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "PRD_TYP"
+        ],
+        "references_table": "S_PRD_MST"
+      }
+    ]
+  },
+  {
+    "name": "S_PRD_BRN_CUR_CLS",
+    "columns": [
+      {
+        "name": "PRD_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "CUR_CODE",
+        "type": "VARCHAR2(7)"
+      },
+      {
+        "name": "CUR_RATE",
+        "type": "NUMBER"
+      }
+    ],
+    "primary_keys": [
+      "PRD_NO",
+      "BRN_NO",
+      "CUR_CODE"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_PRD_DAY",
+    "columns": [
+      {
+        "name": "PRD_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "PRD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "YR_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [
+      "PRD_NO",
+      "PRD_DATE"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "PRD_NO"
+        ],
+        "references_table": "S_PRD_DTL"
+      }
+    ]
+  },
+  {
+    "name": "S_PRD_DTL",
+    "columns": [
+      {
+        "name": "PRD_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "PRD_L_NM",
+        "type": "VARCHAR2(40)"
+      },
+      {
+        "name": "PRD_F_NM",
+        "type": "VARCHAR2(40)"
+      },
+      {
+        "name": "F_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "T_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "YR_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "INACTV",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_SEASON",
+        "type": "NUMBER(15, 0)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [
+      "PRD_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "PRD_TYP"
+        ],
+        "references_table": "S_PRD_MST"
+      }
+    ]
+  },
+  {
+    "name": "S_PRD_MST",
+    "columns": [
+      {
+        "name": "PRD_CNT",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "PRD_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "F_PRD_NO",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "T_PRD_NO",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "F_YR_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "T_YR_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "PL_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PL_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "PL_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INV_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INV_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INV_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "YR_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "YR_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "YR_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "FAS_CLS",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "FAS_CLS_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FAS_CLS_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "OPN_NEW_YR",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "OPN_NEW_YR_U_ID",
+        "type": "NUMBER(5\n, 0)"
+      },
+      {
+        "name": "OPN_NEW_YR_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5,\n 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "INV_STRT_WRK",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INV_STRT_WRK_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INV_STRT_WRK_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "INV_CLS_MTHD",
+        "type": "NUMBER(1, 0)"
+      }
+    ],
+    "primary_keys": [
+      "PRD_TYP"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_PRMTR_MSG",
+    "columns": [
+      {
+        "name": "PARA_NO",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "HOUR_SEND_CHQ_ALRT",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "HOUR_SEND_CST_BLNC",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "HOUR_SEND_ACCNT_BLNC",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "GET_ACCNT_ALRT",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_SEND_ACCNT_BLNC",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "GET_ACCNT_DTL_ALRT",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_SEND_CST_BLNC",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "GET_DUE_CHQ_ALRT",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "PRD_ALRT_RCPT_DUE_CHQ",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "PRD_ALRT_PYMNT_DUE_CHQ",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "MINT_SEND_CHQ_ALRT",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "TZ_SEND_CHQ_ALRT",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "MINT_SEND_ACCNT_BLNC",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "TZ_SEND_ACCNT_BLNC",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "MINT_SEND_CST_BLNC",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "TZ_SEND_CST_BLNC",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5,\n 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [
+      "PARA_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_RPRT_USR_TMPLT_DTL",
+    "columns": [
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "TMPLT_NO",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "BLK_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "ITM_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "VAL",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "SQ_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "NOTES",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "FORM_NO",
+      "U_ID",
+      "TMPLT_NO",
+      "SQ_NO"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "FORM_NO",
+          "U_ID",
+          "TMPLT_NO"
+        ],
+        "references_table": "S_RPRT_USR_TMPLT_MST"
+      }
+    ]
+  },
+  {
+    "name": "S_RPRT_USR_TMPLT_MST",
+    "columns": [
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "TMPLT_NO",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "NOTES",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_RES",
+        "type": "VARCHAR2(150)"
+      },
+      {
+        "name": "INACTIVE_U_ID",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "INACTIVE_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(30, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "TMPLT_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "DFLT_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "GNR_FOR_ALL_USR_FLG",
+        "type": "NUMBER(1, 0)"
+      }
+    ],
+    "primary_keys": [
+      "FORM_NO",
+      "U_ID",
+      "TMPLT_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_RP_EXTRA_PRMTRS_DTL",
+    "columns": [
+      {
+        "name": "DOC_NO",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "DOC_SRL",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "RCRD_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "JOIN_OPRTR",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "CLMN_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "CLMN_CMNT",
+        "type": "VARCHAR2(250)"
+      },
+      {
+        "name": "CLMN_TYP",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "OPRTR",
+        "type": "VARCHAR2(20)"
+      },
+      {
+        "name": "NO_VAL",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "VAL1",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "VAL2",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [],
+    "foreign_keys": [
+      {
+        "columns": [
+          "DOC_SRL"
+        ],
+        "references_table": "S_RP_EXTRA_PRMTRS_MST"
+      }
+    ]
+  },
+  {
+    "name": "S_RP_EXTRA_PRMTRS_MST",
+    "columns": [
+      {
+        "name": "DOC_NO",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "DOC_SRL",
+        "type": "NUMBER(38, 0)"
+      },
+      {
+        "name": "DOC_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "DOC_USE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "DOC_DSC",
+        "type": "VARCHAR2(500)"
+      },
+      {
+        "name": "WHR_SQL",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "DOC_SRL"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_SCR_CSS",
+    "columns": [
+      {
+        "name": "SYS_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SCR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "LABEL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "SCR_PARNT_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "INACTIVE",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "DFLT_FLG",
+        "type": "NUMBER(1\n, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SCR_TYP",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "FILE_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "SCR_ICON",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "SCR_COLOR",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "SCR_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_SCR_CSS_PRV",
+    "columns": [
+      {
+        "name": "SCR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "C_CODE",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "INC_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "SCR_NO",
+      "C_CODE"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "C_CODE"
+        ],
+        "references_table": "CUSTOMER"
+      }
+    ]
+  },
+  {
+    "name": "S_SCR_LBL",
+    "columns": [
+      {
+        "name": "LANG_NO",
+        "type": "NUMBER(2, 0)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "OBJ_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "FLD_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LBL_TXT",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "FLD_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10,\n 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "LANG_NO",
+      "FORM_NO",
+      "OBJ_NM",
+      "FLD_NM"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_SCR_LNK",
+    "columns": [
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FORM_NO_LNKD",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "ORDR_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "SYS_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "U_ID",
+      "FORM_NO",
+      "FORM_NO_LNKD"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "FORM_NO"
+        ],
+        "references_table": "FORM_DETAIL"
+      },
+      {
+        "columns": [
+          "FORM_NO_LNKD"
+        ],
+        "references_table": "FORM_DETAIL"
+      },
+      {
+        "columns": [
+          "U_ID"
+        ],
+        "references_table": "USER_R"
+      }
+    ]
+  },
+  {
+    "name": "S_SEQ_CTL",
+    "columns": [
+      {
+        "name": "S_TAB_NAME",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_COL_NAME",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_SEQ_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "S_COL1",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_COL2",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_COL3",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_COL4",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_COL5",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_COL6",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_INCRBY_VAL",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "S_INIT_VAL",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "S_SEQ_CONC",
+        "type": "VARCHAR2(300)"
+      },
+      {
+        "name": "TRIG_NAME",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "ONLY_IF_NULL",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "S_TAB_NAME",
+      "S_COL_NAME"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_SEQ_VALUES",
+    "columns": [
+      {
+        "name": "S_TAB_NAME",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_COL_NAME",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "S_VAL1",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "S_VAL2",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "S_VAL3",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "S_VAL4",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "S_VAL5",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "S_VAL6",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "S_INCRBY_VAL",
+        "type": "NUMBER(3,\n 0)"
+      },
+      {
+        "name": "S_INIT_VAL",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "S_SEQ_VAL",
+        "type": "NUMBER(20, 0)"
+      },
+      {
+        "name": "S_SEQ_TYP",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6, 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_SLCT_FLD",
+    "columns": [
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FLD_ID",
+        "type": "NUMBER"
+      },
+      {
+        "name": "FLD_NAME",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "CMP_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "BRN_NO",
+        "type": "NUMBER(6,\n 0)"
+      },
+      {
+        "name": "BRN_YEAR",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "BRN_USR",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "FORM_NO",
+      "FLD_ID",
+      "BRN_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_THMS",
+    "columns": [
+      {
+        "name": "THM_NO",
+        "type": "NUMBER(3, 0)"
+      },
+      {
+        "name": "THM_COLR_DATA",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "THM_COLR_USR",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "THM_CRNT_RCRD_COLR",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "THM_PATTERN",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "THM_FRGRNDCLR",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "THM_TXT_BG_DATA",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "THM_TXT_BG_USR",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "THM_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      }
+    ],
+    "primary_keys": [
+      "THM_NO"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_TP",
+    "columns": [
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "OBJ_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "TP_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "LBL_NO",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "FORM_NO",
+      "OBJ_NM",
+      "TP_NM"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "FORM_NO"
+        ],
+        "references_table": "FORM_DETAIL"
+      }
+    ]
+  },
+  {
+    "name": "S_USR_TP_PRV",
+    "columns": [
+      {
+        "name": "U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "OBJ_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "TP_NM",
+        "type": "VARCHAR2(30)"
+      },
+      {
+        "name": "PRV_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      }
+    ],
+    "primary_keys": [
+      "U_ID",
+      "FORM_NO",
+      "OBJ_NM",
+      "TP_NM"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "FORM_NO",
+          "OBJ_NM",
+          "TP_NM"
+        ],
+        "references_table": "S_TP"
+      },
+      {
+        "columns": [
+          "FORM_NO"
+        ],
+        "references_table": "FORM_DETAIL"
+      },
+      {
+        "columns": [
+          "U_ID"
+        ],
+        "references_table": "USER_R"
+      }
+    ]
+  },
+  {
+    "name": "S_YR_RE_MOV_DATA_DTL",
+    "columns": [
+      {
+        "name": "ORDER_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "IAS_USER",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "TABLE_NM_MST",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "TABLE_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BSC_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "RE_MOV_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "RE_MOV_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "RE_MOV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "RE_MOV_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "TABLE_NM",
+      "TABLE_NM_MST"
+    ],
+    "foreign_keys": [
+      {
+        "columns": [
+          "TABLE_NM_MST"
+        ],
+        "references_table": "S_YR_RE_MOV_DATA_MST"
+      }
+    ]
+  },
+  {
+    "name": "S_YR_RE_MOV_DATA_MST",
+    "columns": [
+      {
+        "name": "ORDER_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "FORM_NO",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "IAS_USER",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "TABLE_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "BSC_WHR",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "ROW_CNT",
+        "type": "NUMBER"
+      },
+      {
+        "name": "INACTIVE_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "INACTIVE_CLMN_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "INACTIVE_LST_NM",
+        "type": "VARCHAR2(100)"
+      },
+      {
+        "name": "INACTIVE_LST_SLCT",
+        "type": "VARCHAR2(4000)"
+      },
+      {
+        "name": "RE_MOV_FLG",
+        "type": "NUMBER(1, 0)"
+      },
+      {
+        "name": "RE_MOV_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "RE_MOV_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "RE_MOV_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "TABLE_NM"
+    ],
+    "foreign_keys": []
+  },
+  {
+    "name": "S_ZONE",
+    "columns": [
+      {
+        "name": "ZONE_NO",
+        "type": "NUMBER(4, 0)"
+      },
+      {
+        "name": "ZONE_L_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "ZONE_F_NM",
+        "type": "VARCHAR2(60)"
+      },
+      {
+        "name": "ZONE_SHRT",
+        "type": "VARCHAR2(10)"
+      },
+      {
+        "name": "AD_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "AD_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_U_ID",
+        "type": "NUMBER(5, 0)"
+      },
+      {
+        "name": "UP_DATE",
+        "type": "DATE"
+      },
+      {
+        "name": "UP_CNT",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "PR_REP",
+        "type": "NUMBER(10, 0)"
+      },
+      {
+        "name": "AD_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      },
+      {
+        "name": "UP_TRMNL_NM",
+        "type": "VARCHAR2(50)"
+      }
+    ],
+    "primary_keys": [
+      "ZONE_NO"
+    ],
+    "foreign_keys": []
+  }
+]
