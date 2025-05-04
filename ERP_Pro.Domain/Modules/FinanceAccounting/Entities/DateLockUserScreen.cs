@@ -7,7 +7,7 @@ using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// DateLockUserScreen Entity
+/// الكلاس يمثل قفل التواريخ للمستخدم على الشاشة ويحتوي على جميع خصائص قفل التواريخ
 /// </summary>
 public class DateLockUserScreen : Entity<DateLockUserScreenId>
 {
@@ -21,50 +21,44 @@ public class DateLockUserScreen : Entity<DateLockUserScreenId>
     }
 
     /// <summary>
-    /// The unique identifier for the DateLockUserScreen
-    /// المعرف الفريد لـ DateLockUserScreen
+    /// معرف فريد لقفل التواريخ للمستخدم
     /// </summary>
     public DateLockUserScreenId Id { get; private set; }
 
     /// <summary>
-    /// FormNumber of the DateLockUserScreen
-    /// FormNumber الخاص بـ DateLockUserScreen
+    /// رقم النموذج
     /// </summary>
     public decimal? FormNumber { get; private set; }
 
     /// <summary>
-    /// UfdFlag of the DateLockUserScreen
-    /// UfdFlag الخاص بـ DateLockUserScreen
+    /// علم تاريخ البداية الأولى
     /// </summary>
     public DateTime? UfdFlag { get; private set; }
 
     /// <summary>
-    /// UtdFlag of the DateLockUserScreen
-    /// UtdFlag الخاص بـ DateLockUserScreen
+    /// علم تاريخ النهاية الأولى
     /// </summary>
     public DateTime? UtdFlag { get; private set; }
 
     /// <summary>
-    /// LfdFlag of the DateLockUserScreen
-    /// LfdFlag الخاص بـ DateLockUserScreen
+    /// علم تاريخ البداية الأخيرة
     /// </summary>
     public DateTime? LfdFlag { get; private set; }
 
     /// <summary>
-    /// LtdFlag of the DateLockUserScreen
-    /// LtdFlag الخاص بـ DateLockUserScreen
+    /// علم تاريخ النهاية الأخيرة
     /// </summary>
     public DateTime? LtdFlag { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع المستخدم (متعدد إلى واحد)
     /// </summary>
     public User User { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

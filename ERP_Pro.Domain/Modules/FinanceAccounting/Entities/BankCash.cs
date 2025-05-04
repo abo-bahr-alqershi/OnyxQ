@@ -7,7 +7,7 @@ using ERP_Pro.Domain.ERP.JudicialLegal.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BankCash Entity
+/// الكلاس يمثل كيان البنك النقدي ويحتوي على جميع خصائص البنوك النقدية
 /// </summary>
 public class BankCash : Entity<BankCashId>
 {
@@ -21,202 +21,172 @@ public class BankCash : Entity<BankCashId>
     }
 
     /// <summary>
-    /// The unique identifier for the BankCash
-    /// المعرف الفريد لـ BankCash
+    /// معرف فريد للبنك النقدي
     /// </summary>
     public BankCashId Id { get; private set; }
 
     /// <summary>
-    /// BankNumber of the BankCash
-    /// BankNumber الخاص بـ BankCash
+    /// رقم البنك
     /// </summary>
     public decimal? BankNumber { get; private set; }
 
     /// <summary>
-    /// BankName of the BankCash
-    /// BankName الخاص بـ BankCash
+    /// اسم البنك
     /// </summary>
     public string BankName { get; private set; }
 
     /// <summary>
-    /// BankNameEnglish of the BankCash
-    /// BankNameEnglish الخاص بـ BankCash
+    /// اسم البنك بالإنجليزية
     /// </summary>
     public string BankNameEnglish { get; private set; }
 
     /// <summary>
-    /// BankSerial of the BankCash
-    /// BankSerial الخاص بـ BankCash
+    /// التسلسل البنكي
     /// </summary>
     public decimal? BankSerial { get; private set; }
 
     /// <summary>
-    /// BankAccountShort of the BankCash
-    /// BankAccountShort الخاص بـ BankCash
+    /// رقم الحساب المختصر للبنك
     /// </summary>
     public string BankAccountShort { get; private set; }
 
     /// <summary>
-    /// ConnectionBranchNumber of the BankCash
-    /// ConnectionBranchNumber الخاص بـ BankCash
+    /// رقم فرع الاتصال
     /// </summary>
     public decimal? ConnectionBranchNumber { get; private set; }
 
     /// <summary>
-    /// BankTelephone of the BankCash
-    /// BankTelephone الخاص بـ BankCash
+    /// هاتف البنك
     /// </summary>
     public string BankTelephone { get; private set; }
 
     /// <summary>
-    /// BankFax of the BankCash
-    /// BankFax الخاص بـ BankCash
+    /// فاكس البنك
     /// </summary>
     public string BankFax { get; private set; }
 
     /// <summary>
-    /// BankBox of the BankCash
-    /// BankBox الخاص بـ BankCash
+    /// صندوق البنك
     /// </summary>
     public string BankBox { get; private set; }
 
     /// <summary>
-    /// BankAddress of the BankCash
-    /// BankAddress الخاص بـ BankCash
+    /// عنوان البنك
     /// </summary>
     public string BankAddress { get; private set; }
 
     /// <summary>
-    /// BankEmail of the BankCash
-    /// BankEmail الخاص بـ BankCash
+    /// بريد البنك الإلكتروني
     /// </summary>
     public string BankEmail { get; private set; }
 
     /// <summary>
-    /// BankWebsite of the BankCash
-    /// BankWebsite الخاص بـ BankCash
+    /// موقع البنك الإلكتروني
     /// </summary>
     public string BankWebsite { get; private set; }
 
     /// <summary>
-    /// CountryNumber of the BankCash
-    /// CountryNumber الخاص بـ BankCash
+    /// رقم الدولة
     /// </summary>
     public decimal? CountryNumber { get; private set; }
 
     /// <summary>
-    /// CityNumber of the BankCash
-    /// CityNumber الخاص بـ BankCash
+    /// رقم المدينة
     /// </summary>
     public decimal? CityNumber { get; private set; }
 
     /// <summary>
-    /// MediatorFlag of the BankCash
-    /// MediatorFlag الخاص بـ BankCash
+    /// علم الوسيط
     /// </summary>
     public decimal? MediatorFlag { get; private set; }
 
     /// <summary>
-    /// InactiveFlag of the BankCash
-    /// InactiveFlag الخاص بـ BankCash
+    /// حالة التعطيل
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
-    /// InactiveDate of the BankCash
-    /// InactiveDate الخاص بـ BankCash
+    /// تاريخ التعطيل
     /// </summary>
     public DateTime? InactiveDate { get; private set; }
 
     /// <summary>
-    /// InactiveReason of the BankCash
-    /// InactiveReason الخاص بـ BankCash
+    /// سبب التعطيل
     /// </summary>
     public string InactiveReason { get; private set; }
 
     /// <summary>
-    /// BankImage of the BankCash
-    /// BankImage الخاص بـ BankCash
+    /// صورة البنك
     /// </summary>
     public string BankImage { get; private set; }
 
     /// <summary>
-    /// ReceiveLetter of the BankCash
-    /// ReceiveLetter الخاص بـ BankCash
+    /// خطاب الاستلام
     /// </summary>
     public string ReceiveLetter { get; private set; }
 
     /// <summary>
-    /// PaymentLetter of the BankCash
-    /// PaymentLetter الخاص بـ BankCash
+    /// خطاب الدفع
     /// </summary>
     public string PaymentLetter { get; private set; }
 
     /// <summary>
-    /// RepSample of the BankCash
-    /// RepSample الخاص بـ BankCash
+    /// عينة المندوب
     /// </summary>
     public decimal? RepSample { get; private set; }
 
     /// <summary>
-    /// ConfigLastDate of the BankCash
-    /// ConfigLastDate الخاص بـ BankCash
+    /// تاريخ آخر إعداد
     /// </summary>
     public DateTime? ConfigLastDate { get; private set; }
 
     /// <summary>
-    /// OchkAutoSerial of the BankCash
-    /// OchkAutoSerial الخاص بـ BankCash
+    /// تسلسل الشيك التلقائي
     /// </summary>
     public decimal? OchkAutoSerial { get; private set; }
 
     /// <summary>
-    /// BankCode of the BankCash
-    /// BankCode الخاص بـ BankCash
+    /// كود البنك
     /// </summary>
     public decimal? BankCode { get; private set; }
 
     /// <summary>
-    /// ReceiptSerialType of the BankCash
-    /// ReceiptSerialType الخاص بـ BankCash
+    /// نوع تسلسل الإيصال
     /// </summary>
     public decimal? ReceiptSerialType { get; private set; }
 
     /// <summary>
-    /// PaymentTypeNumberDefault of the BankCash
-    /// PaymentTypeNumberDefault الخاص بـ BankCash
+    /// نوع الدفع الافتراضي
     /// </summary>
     public decimal? PaymentTypeNumberDefault { get; private set; }
 
     /// <summary>
-    /// ReceivedTypeNumberDefault of the BankCash
-    /// ReceivedTypeNumberDefault الخاص بـ BankCash
+    /// نوع الاستلام الافتراضي
     /// </summary>
     public decimal? ReceivedTypeNumberDefault { get; private set; }
 
     /// <summary>
-    /// BankNetworkCode of the BankCash
-    /// BankNetworkCode الخاص بـ BankCash
+    /// كود شبكة البنك
     /// </summary>
     public string BankNetworkCode { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع الحساب (متعدد إلى واحد)
     /// </summary>
     public Account Account { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع حساب شيك الدفع الوسيط (متعدد إلى واحد)
     /// </summary>
     public Account AccountChqPayIntrmAc { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع مجموعة البنوك (متعدد إلى واحد)
     /// </summary>
     public BankGroup BankGroup { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

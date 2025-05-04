@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// JudicialDocumentJournalVoucherTypeConnectAccount Entity
+/// الكلاس يمثل ربط نوع قيد اليومية للمستند القضائي مع الحسابات ويحتوي على جميع خصائص الربط
 /// </summary>
 public class JudicialDocumentJournalVoucherTypeConnectAccount : Entity<JudicialDocumentJournalVoucherTypeConnectAccountId>
 {
@@ -22,73 +22,62 @@ public class JudicialDocumentJournalVoucherTypeConnectAccount : Entity<JudicialD
     }
 
     /// <summary>
-    /// The unique identifier for the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// المعرف الفريد لـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// معرف فريد للربط
     /// </summary>
     public JudicialDocumentJournalVoucherTypeConnectAccountId Id { get; private set; }
 
     /// <summary>
-    /// DocTyp of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// DocTyp الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// نوع المستند
     /// </summary>
     public decimal? DocTyp { get; private set; }
 
     /// <summary>
-    /// JournalVoucherType of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// JournalVoucherType الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// نوع قيد اليومية
     /// </summary>
     public decimal? JournalVoucherType { get; private set; }
 
     /// <summary>
-    /// AccountCode of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// AccountCode الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// كود الحساب
     /// </summary>
     public string AccountCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// AccountDetailCode الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// AccountDetailType الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// AccountCodeStatus of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// AccountCodeStatus الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// حالة كود الحساب
     /// </summary>
     public decimal? AccountCodeStatus { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// CompanyNumberShort الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// BranchNumber الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// BranchYear الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the JudicialDocumentJournalVoucherTypeConnectAccount
-    /// BranchUser الخاص بـ JudicialDocumentJournalVoucherTypeConnectAccount
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CashManagementMaster Entity
+/// الكلاس يمثل كيان إدارة النقد الرئيسي ويحتوي على جميع خصائص المستندات النقدية الرئيسية
 /// </summary>
 public class CashManagementMaster : Entity<CashManagementMasterId>
 {
@@ -20,120 +20,103 @@ public class CashManagementMaster : Entity<CashManagementMasterId>
     }
 
     /// <summary>
-    /// The unique identifier for the CashManagementMaster
-    /// المعرف الفريد لـ CashManagementMaster
+    /// معرف فريد للكيان
     /// </summary>
     public CashManagementMasterId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the CashManagementMaster
-    /// DocNo الخاص بـ CashManagementMaster
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// DocSer of the CashManagementMaster
-    /// DocSer الخاص بـ CashManagementMaster
+    /// رقم تسلسلي للمستند
     /// </summary>
     public decimal? DocSer { get; private set; }
 
     /// <summary>
-    /// DocDate of the CashManagementMaster
-    /// DocDate الخاص بـ CashManagementMaster
+    /// تاريخ المستند
     /// </summary>
     public DateTime? DocDate { get; private set; }
 
     /// <summary>
-    /// DocDesc of the CashManagementMaster
-    /// DocDesc الخاص بـ CashManagementMaster
+    /// وصف المستند
     /// </summary>
     public string DocDesc { get; private set; }
 
     /// <summary>
-    /// CashBalanceLocation of the CashManagementMaster
-    /// CashBalanceLocation الخاص بـ CashManagementMaster
+    /// موقع رصيد النقدية
     /// </summary>
     public decimal? CashBalanceLocation { get; private set; }
 
     /// <summary>
-    /// DiffAmtLoc of the CashManagementMaster
-    /// DiffAmtLoc الخاص بـ CashManagementMaster
+    /// فرق المبلغ المحلي
     /// </summary>
     public decimal? DiffAmtLoc { get; private set; }
 
     /// <summary>
-    /// Person1 of the CashManagementMaster
-    /// Person1 الخاص بـ CashManagementMaster
+    /// اسم الشخص الأول
     /// </summary>
     public string Person1 { get; private set; }
 
     /// <summary>
-    /// Person2 of the CashManagementMaster
-    /// Person2 الخاص بـ CashManagementMaster
+    /// اسم الشخص الثاني
     /// </summary>
     public string Person2 { get; private set; }
 
     /// <summary>
-    /// Person3 of the CashManagementMaster
-    /// Person3 الخاص بـ CashManagementMaster
+    /// اسم الشخص الثالث
     /// </summary>
     public string Person3 { get; private set; }
 
     /// <summary>
-    /// Person4 of the CashManagementMaster
-    /// Person4 الخاص بـ CashManagementMaster
+    /// اسم الشخص الرابع
     /// </summary>
     public string Person4 { get; private set; }
 
     /// <summary>
-    /// Person5 of the CashManagementMaster
-    /// Person5 الخاص بـ CashManagementMaster
+    /// اسم الشخص الخامس
     /// </summary>
     public string Person5 { get; private set; }
 
     /// <summary>
-    /// Person6 of the CashManagementMaster
-    /// Person6 الخاص بـ CashManagementMaster
+    /// اسم الشخص السادس
     /// </summary>
     public string Person6 { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the CashManagementMaster
-    /// CompanyNumberShort الخاص بـ CashManagementMaster
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the CashManagementMaster
-    /// BranchNumber الخاص بـ CashManagementMaster
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the CashManagementMaster
-    /// BranchYear الخاص بـ CashManagementMaster
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the CashManagementMaster
-    /// BranchUser الخاص بـ CashManagementMaster
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع الحساب (متعدد إلى واحد)
     /// </summary>
     public Account Account { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع النقدية باليد (متعدد إلى واحد)
     /// </summary>
     public HandCash HandCash { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

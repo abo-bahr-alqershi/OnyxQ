@@ -7,7 +7,7 @@ using ERP_Pro.Domain.ERP.GeneralLedger.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BudgetBalanceMaster Entity
+/// الكلاس يمثل كيان الرصيد الرئيسي للميزانية ويحتوي على جميع خصائص مستندات الرصيد
 /// </summary>
 public class BudgetBalanceMaster : Entity<BudgetBalanceMasterId>
 {
@@ -21,134 +21,114 @@ public class BudgetBalanceMaster : Entity<BudgetBalanceMasterId>
     }
 
     /// <summary>
-    /// The unique identifier for the BudgetBalanceMaster
-    /// المعرف الفريد لـ BudgetBalanceMaster
+    /// معرف فريد للرصيد الرئيسي للميزانية
     /// </summary>
     public BudgetBalanceMasterId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the BudgetBalanceMaster
-    /// DocNo الخاص بـ BudgetBalanceMaster
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// DocSer of the BudgetBalanceMaster
-    /// DocSer الخاص بـ BudgetBalanceMaster
+    /// رقم تسلسلي للمستند
     /// </summary>
     public decimal? DocSer { get; private set; }
 
     /// <summary>
-    /// DocDate of the BudgetBalanceMaster
-    /// DocDate الخاص بـ BudgetBalanceMaster
+    /// تاريخ المستند
     /// </summary>
     public DateTime? DocDate { get; private set; }
 
     /// <summary>
-    /// DocDesc of the BudgetBalanceMaster
-    /// DocDesc الخاص بـ BudgetBalanceMaster
+    /// وصف المستند
     /// </summary>
     public string DocDesc { get; private set; }
 
     /// <summary>
-    /// DocNote of the BudgetBalanceMaster
-    /// DocNote الخاص بـ BudgetBalanceMaster
+    /// ملاحظات المستند
     /// </summary>
     public string DocNote { get; private set; }
 
     /// <summary>
-    /// ReferenceNumber of the BudgetBalanceMaster
-    /// ReferenceNumber الخاص بـ BudgetBalanceMaster
+    /// رقم المرجع
     /// </summary>
     public string ReferenceNumber { get; private set; }
 
     /// <summary>
-    /// BudgetPeriodType of the BudgetBalanceMaster
-    /// BudgetPeriodType الخاص بـ BudgetBalanceMaster
+    /// نوع فترة الميزانية
     /// </summary>
     public decimal? BudgetPeriodType { get; private set; }
 
     /// <summary>
-    /// BudgetType of the BudgetBalanceMaster
-    /// BudgetType الخاص بـ BudgetBalanceMaster
+    /// نوع الميزانية
     /// </summary>
     public decimal? BudgetType { get; private set; }
 
     /// <summary>
-    /// ApprovedFlag of the BudgetBalanceMaster
-    /// ApprovedFlag الخاص بـ BudgetBalanceMaster
+    /// حالة الاعتماد
     /// </summary>
     public decimal? ApprovedFlag { get; private set; }
 
     /// <summary>
-    /// ApprovalUserId of the BudgetBalanceMaster
-    /// ApprovalUserId الخاص بـ BudgetBalanceMaster
+    /// رقم مستخدم الاعتماد
     /// </summary>
     public decimal? ApprovalUserId { get; private set; }
 
     /// <summary>
-    /// ApprovalDate of the BudgetBalanceMaster
-    /// ApprovalDate الخاص بـ BudgetBalanceMaster
+    /// تاريخ الاعتماد
     /// </summary>
     public DateTime? ApprovalDate { get; private set; }
 
     /// <summary>
-    /// ApprovalDescription of the BudgetBalanceMaster
-    /// ApprovalDescription الخاص بـ BudgetBalanceMaster
+    /// وصف الاعتماد
     /// </summary>
     public string ApprovalDescription { get; private set; }
 
     /// <summary>
-    /// DocNoRef of the BudgetBalanceMaster
-    /// DocNoRef الخاص بـ BudgetBalanceMaster
+    /// رقم المستند المرجعي
     /// </summary>
     public decimal? DocNoRef { get; private set; }
 
     /// <summary>
-    /// DocSerRef of the BudgetBalanceMaster
-    /// DocSerRef الخاص بـ BudgetBalanceMaster
+    /// رقم تسلسلي للمستند المرجعي
     /// </summary>
     public decimal? DocSerRef { get; private set; }
 
     /// <summary>
-    /// Dflt of the BudgetBalanceMaster
-    /// Dflt الخاص بـ BudgetBalanceMaster
+    /// افتراضي
     /// </summary>
     public decimal? Dflt { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the BudgetBalanceMaster
-    /// CompanyNumberShort الخاص بـ BudgetBalanceMaster
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the BudgetBalanceMaster
-    /// BranchNumber الخاص بـ BudgetBalanceMaster
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the BudgetBalanceMaster
-    /// BranchYear الخاص بـ BudgetBalanceMaster
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the BudgetBalanceMaster
-    /// BranchUser الخاص بـ BudgetBalanceMaster
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع سعر الصرف (متعدد إلى واحد)
     /// </summary>
     public ExchangeRate ExchangeRate { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

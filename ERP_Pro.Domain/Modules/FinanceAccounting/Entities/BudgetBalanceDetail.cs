@@ -8,7 +8,7 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BudgetBalanceDetail Entity
+/// الكلاس يمثل تفاصيل رصيد الميزانية ويحتوي على جميع خصائص التفاصيل المالية
 /// </summary>
 public class BudgetBalanceDetail : Entity<BudgetBalanceDetailId>
 {
@@ -27,202 +27,174 @@ public class BudgetBalanceDetail : Entity<BudgetBalanceDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the BudgetBalanceDetail
-    /// المعرف الفريد لـ BudgetBalanceDetail
+    /// معرف فريد لتفاصيل رصيد الميزانية
     /// </summary>
     public BudgetBalanceDetailId Id { get; private set; }
 
     /// <summary>
-    /// BudgetType of the BudgetBalanceDetail
-    /// BudgetType الخاص بـ BudgetBalanceDetail
+    /// نوع الميزانية
     /// </summary>
     public decimal? BudgetType { get; private set; }
 
     /// <summary>
-    /// BudgetPeriodType of the BudgetBalanceDetail
-    /// BudgetPeriodType الخاص بـ BudgetBalanceDetail
+    /// نوع فترة الميزانية
     /// </summary>
     public decimal? BudgetPeriodType { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the BudgetBalanceDetail
-    /// RecordNumber الخاص بـ BudgetBalanceDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// DocNo of the BudgetBalanceDetail
-    /// DocNo الخاص بـ BudgetBalanceDetail
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// PeriodNumberShort of the BudgetBalanceDetail
-    /// PeriodNumberShort الخاص بـ BudgetBalanceDetail
+    /// رقم الفترة المختصر
     /// </summary>
     public decimal? PeriodNumberShort { get; private set; }
 
     /// <summary>
-    /// FDate of the BudgetBalanceDetail
-    /// FDate الخاص بـ BudgetBalanceDetail
+    /// تاريخ البداية
     /// </summary>
     public DateTime? FDate { get; private set; }
 
     /// <summary>
-    /// TDate of the BudgetBalanceDetail
-    /// TDate الخاص بـ BudgetBalanceDetail
+    /// تاريخ النهاية
     /// </summary>
     public DateTime? TDate { get; private set; }
 
     /// <summary>
-    /// AmountLocal of the BudgetBalanceDetail
-    /// AmountLocal الخاص بـ BudgetBalanceDetail
+    /// المبلغ المحلي
     /// </summary>
     public decimal? AmountLocal { get; private set; }
 
     /// <summary>
-    /// AmountForeign of the BudgetBalanceDetail
-    /// AmountForeign الخاص بـ BudgetBalanceDetail
+    /// المبلغ بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeign { get; private set; }
 
     /// <summary>
-    /// AmountLocalAdditionalMovement of the BudgetBalanceDetail
-    /// AmountLocalAdditionalMovement الخاص بـ BudgetBalanceDetail
+    /// حركة الإضافة المحلية
     /// </summary>
     public decimal? AmountLocalAdditionalMovement { get; private set; }
 
     /// <summary>
-    /// AmountForeignAdditionalMovement of the BudgetBalanceDetail
-    /// AmountForeignAdditionalMovement الخاص بـ BudgetBalanceDetail
+    /// حركة الإضافة بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeignAdditionalMovement { get; private set; }
 
     /// <summary>
-    /// AmountLocalDiscountMovement of the BudgetBalanceDetail
-    /// AmountLocalDiscountMovement الخاص بـ BudgetBalanceDetail
+    /// حركة الخصم المحلية
     /// </summary>
     public decimal? AmountLocalDiscountMovement { get; private set; }
 
     /// <summary>
-    /// AmountForeignDiscountMovement of the BudgetBalanceDetail
-    /// AmountForeignDiscountMovement الخاص بـ BudgetBalanceDetail
+    /// حركة الخصم بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeignDiscountMovement { get; private set; }
 
     /// <summary>
-    /// AccountRate of the BudgetBalanceDetail
-    /// AccountRate الخاص بـ BudgetBalanceDetail
+    /// سعر الحساب
     /// </summary>
     public decimal? AccountRate { get; private set; }
 
     /// <summary>
-    /// DocDesc of the BudgetBalanceDetail
-    /// DocDesc الخاص بـ BudgetBalanceDetail
+    /// وصف المستند
     /// </summary>
     public string DocDesc { get; private set; }
 
     /// <summary>
-    /// DocNoRef of the BudgetBalanceDetail
-    /// DocNoRef الخاص بـ BudgetBalanceDetail
+    /// رقم المستند المرجعي
     /// </summary>
     public decimal? DocNoRef { get; private set; }
 
     /// <summary>
-    /// DocSerRef of the BudgetBalanceDetail
-    /// DocSerRef الخاص بـ BudgetBalanceDetail
+    /// رقم تسلسلي للمستند المرجعي
     /// </summary>
     public decimal? DocSerRef { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the BudgetBalanceDetail
-    /// CompanyNumberShort الخاص بـ BudgetBalanceDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the BudgetBalanceDetail
-    /// BranchNumber الخاص بـ BudgetBalanceDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the BudgetBalanceDetail
-    /// BranchYear الخاص بـ BudgetBalanceDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the BudgetBalanceDetail
-    /// BranchUser الخاص بـ BudgetBalanceDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the BudgetBalanceDetail
-    /// AccountDetailCode الخاص بـ BudgetBalanceDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the BudgetBalanceDetail
-    /// AccountDetailType الخاص بـ BudgetBalanceDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// AmountLocalAdditional of the BudgetBalanceDetail
-    /// AmountLocalAdditional الخاص بـ BudgetBalanceDetail
+    /// إضافة محلية
     /// </summary>
     public decimal? AmountLocalAdditional { get; private set; }
 
     /// <summary>
-    /// AmountForeignAdditional of the BudgetBalanceDetail
-    /// AmountForeignAdditional الخاص بـ BudgetBalanceDetail
+    /// إضافة بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeignAdditional { get; private set; }
 
     /// <summary>
-    /// AmountLocalDiscount of the BudgetBalanceDetail
-    /// AmountLocalDiscount الخاص بـ BudgetBalanceDetail
+    /// خصم محلي
     /// </summary>
     public decimal? AmountLocalDiscount { get; private set; }
 
     /// <summary>
-    /// AmountForeignDiscount of the BudgetBalanceDetail
-    /// AmountForeignDiscount الخاص بـ BudgetBalanceDetail
+    /// خصم بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeignDiscount { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع الأنشطة (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Activity> Activity => _activity;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع الحسابات (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Account> Account => _account;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع أسعار الصرف (متعدد إلى متعدد)
     /// </summary>
     public ICollection<ExchangeRate> ExchangeRate => _exchangeRate;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع الرصيد الرئيسي للميزانية (متعدد إلى متعدد)
     /// </summary>
     public ICollection<BudgetBalanceMaster> BudgetBalanceMaster => _budgetBalanceMaster;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع المشاريع (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Project> Project => _project;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع مراكز التكلفة (متعدد إلى متعدد)
     /// </summary>
     public ICollection<CostCenter> CostCenter => _costCenter;
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

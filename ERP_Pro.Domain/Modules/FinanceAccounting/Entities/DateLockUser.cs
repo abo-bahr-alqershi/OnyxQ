@@ -7,7 +7,7 @@ using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// DateLockUser Entity
+/// الكلاس يمثل قفل التواريخ للمستخدم ويحتوي على جميع خصائص قفل التواريخ للمستخدم
 /// </summary>
 public class DateLockUser : Entity<DateLockUserId>
 {
@@ -20,44 +20,39 @@ public class DateLockUser : Entity<DateLockUserId>
     }
 
     /// <summary>
-    /// The unique identifier for the DateLockUser
-    /// المعرف الفريد لـ DateLockUser
+    /// معرف فريد لقفل التواريخ للمستخدم
     /// </summary>
     public DateLockUserId Id { get; private set; }
 
     /// <summary>
-    /// UfdFlag of the DateLockUser
-    /// UfdFlag الخاص بـ DateLockUser
+    /// علم تاريخ البداية الأولى
     /// </summary>
     public DateTime? UfdFlag { get; private set; }
 
     /// <summary>
-    /// UtdFlag of the DateLockUser
-    /// UtdFlag الخاص بـ DateLockUser
+    /// علم تاريخ النهاية الأولى
     /// </summary>
     public DateTime? UtdFlag { get; private set; }
 
     /// <summary>
-    /// LfdFlag of the DateLockUser
-    /// LfdFlag الخاص بـ DateLockUser
+    /// علم تاريخ البداية الأخيرة
     /// </summary>
     public DateTime? LfdFlag { get; private set; }
 
     /// <summary>
-    /// LtdFlag of the DateLockUser
-    /// LtdFlag الخاص بـ DateLockUser
+    /// علم تاريخ النهاية الأخيرة
     /// </summary>
     public DateTime? LtdFlag { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: OneToOne
+    /// علاقة مرجعية مع المستخدم (واحد إلى واحد)
     /// </summary>
     public User User { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

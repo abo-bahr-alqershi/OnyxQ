@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// AccountConfirmBalanceDetail Entity
+/// الكلاس يمثل تفاصيل تأكيد رصيد الحساب ويحتوي على جميع خصائص التأكيدات المالية
 /// </summary>
 public class AccountConfirmBalanceDetail : Entity<AccountConfirmBalanceDetailId>
 {
@@ -19,158 +19,134 @@ public class AccountConfirmBalanceDetail : Entity<AccountConfirmBalanceDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the AccountConfirmBalanceDetail
-    /// المعرف الفريد لـ AccountConfirmBalanceDetail
+    /// معرف فريد لتفاصيل تأكيد رصيد الحساب
     /// </summary>
     public AccountConfirmBalanceDetailId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the AccountConfirmBalanceDetail
-    /// DocNo الخاص بـ AccountConfirmBalanceDetail
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// AccountCode of the AccountConfirmBalanceDetail
-    /// AccountCode الخاص بـ AccountConfirmBalanceDetail
+    /// كود الحساب
     /// </summary>
     public string AccountCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the AccountConfirmBalanceDetail
-    /// AccountDetailCode الخاص بـ AccountConfirmBalanceDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the AccountConfirmBalanceDetail
-    /// AccountDetailType الخاص بـ AccountConfirmBalanceDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// AccountCurrency of the AccountConfirmBalanceDetail
-    /// AccountCurrency الخاص بـ AccountConfirmBalanceDetail
+    /// عملة الحساب
     /// </summary>
     public string AccountCurrency { get; private set; }
 
     /// <summary>
-    /// CostCenterCode of the AccountConfirmBalanceDetail
-    /// CostCenterCode الخاص بـ AccountConfirmBalanceDetail
+    /// كود مركز التكلفة
     /// </summary>
     public string CostCenterCode { get; private set; }
 
     /// <summary>
-    /// ProjectNumber of the AccountConfirmBalanceDetail
-    /// ProjectNumber الخاص بـ AccountConfirmBalanceDetail
+    /// رقم المشروع
     /// </summary>
     public string ProjectNumber { get; private set; }
 
     /// <summary>
-    /// ActivityNumber of the AccountConfirmBalanceDetail
-    /// ActivityNumber الخاص بـ AccountConfirmBalanceDetail
+    /// رقم النشاط
     /// </summary>
     public string ActivityNumber { get; private set; }
 
     /// <summary>
-    /// RepCode of the AccountConfirmBalanceDetail
-    /// RepCode الخاص بـ AccountConfirmBalanceDetail
+    /// كود المندوب
     /// </summary>
     public string RepCode { get; private set; }
 
     /// <summary>
-    /// BalanceAmount of the AccountConfirmBalanceDetail
-    /// BalanceAmount الخاص بـ AccountConfirmBalanceDetail
+    /// مبلغ الرصيد
     /// </summary>
     public decimal? BalanceAmount { get; private set; }
 
     /// <summary>
-    /// BalanceAmountManual of the AccountConfirmBalanceDetail
-    /// BalanceAmountManual الخاص بـ AccountConfirmBalanceDetail
+    /// مبلغ الرصيد اليدوي
     /// </summary>
     public decimal? BalanceAmountManual { get; private set; }
 
     /// <summary>
-    /// ConfirmDescription of the AccountConfirmBalanceDetail
-    /// ConfirmDescription الخاص بـ AccountConfirmBalanceDetail
+    /// وصف التأكيد
     /// </summary>
     public string ConfirmDescription { get; private set; }
 
     /// <summary>
-    /// ConfirmDate of the AccountConfirmBalanceDetail
-    /// ConfirmDate الخاص بـ AccountConfirmBalanceDetail
+    /// تاريخ التأكيد
     /// </summary>
     public DateTime? ConfirmDate { get; private set; }
 
     /// <summary>
-    /// CustomerConfirmDescription of the AccountConfirmBalanceDetail
-    /// CustomerConfirmDescription الخاص بـ AccountConfirmBalanceDetail
+    /// وصف تأكيد العميل
     /// </summary>
     public string CustomerConfirmDescription { get; private set; }
 
     /// <summary>
-    /// ConfirmClassFlag of the AccountConfirmBalanceDetail
-    /// ConfirmClassFlag الخاص بـ AccountConfirmBalanceDetail
+    /// علم فئة التأكيد
     /// </summary>
     public decimal? ConfirmClassFlag { get; private set; }
 
     /// <summary>
-    /// CustomerConfirmFlag of the AccountConfirmBalanceDetail
-    /// CustomerConfirmFlag الخاص بـ AccountConfirmBalanceDetail
+    /// علم تأكيد العميل
     /// </summary>
     public decimal? CustomerConfirmFlag { get; private set; }
 
     /// <summary>
-    /// CustomerConfirmDate of the AccountConfirmBalanceDetail
-    /// CustomerConfirmDate الخاص بـ AccountConfirmBalanceDetail
+    /// تاريخ تأكيد العميل
     /// </summary>
     public DateTime? CustomerConfirmDate { get; private set; }
 
     /// <summary>
-    /// AccountRate of the AccountConfirmBalanceDetail
-    /// AccountRate الخاص بـ AccountConfirmBalanceDetail
+    /// سعر الحساب
     /// </summary>
     public decimal? AccountRate { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the AccountConfirmBalanceDetail
-    /// RecordNumber الخاص بـ AccountConfirmBalanceDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the AccountConfirmBalanceDetail
-    /// CompanyNumberShort الخاص بـ AccountConfirmBalanceDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the AccountConfirmBalanceDetail
-    /// BranchNumber الخاص بـ AccountConfirmBalanceDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the AccountConfirmBalanceDetail
-    /// BranchYear الخاص بـ AccountConfirmBalanceDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the AccountConfirmBalanceDetail
-    /// BranchUser الخاص بـ AccountConfirmBalanceDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع تأكيد رصيد الحساب الرئيسي (متعدد إلى واحد)
     /// </summary>
     public AccountConfirmBalanceMaster AccountConfirmBalanceMaster { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

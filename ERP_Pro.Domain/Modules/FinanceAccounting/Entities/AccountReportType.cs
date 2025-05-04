@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// AccountReportType Entity
+/// الكلاس يمثل نوع تقرير الحساب ويحتوي على جميع خصائص أنواع تقارير الحسابات
 /// </summary>
 public class AccountReportType : Entity<AccountReportTypeId>
 {
@@ -20,37 +20,32 @@ public class AccountReportType : Entity<AccountReportTypeId>
     }
 
     /// <summary>
-    /// The unique identifier for the AccountReportType
-    /// المعرف الفريد لـ AccountReportType
+    /// معرف فريد لنوع تقرير الحساب
     /// </summary>
     public AccountReportTypeId Id { get; private set; }
 
     /// <summary>
-    /// ReportType of the AccountReportType
-    /// ReportType الخاص بـ AccountReportType
+    /// نوع التقرير
     /// </summary>
     public decimal? ReportType { get; private set; }
 
     /// <summary>
-    /// ReportName of the AccountReportType
-    /// ReportName الخاص بـ AccountReportType
+    /// اسم التقرير
     /// </summary>
     public string ReportName { get; private set; }
 
     /// <summary>
-    /// ReportNameEnglish of the AccountReportType
-    /// ReportNameEnglish الخاص بـ AccountReportType
+    /// اسم التقرير بالإنجليزية
     /// </summary>
     public string ReportNameEnglish { get; private set; }
 
     /// <summary>
-    /// ReportBalanceSheet of the AccountReportType
-    /// ReportBalanceSheet الخاص بـ AccountReportType
+    /// تقرير الميزانية العمومية
     /// </summary>
     public decimal? ReportBalanceSheet { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

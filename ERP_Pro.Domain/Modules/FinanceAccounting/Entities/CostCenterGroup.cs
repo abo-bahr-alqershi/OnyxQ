@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CostCenterGroup Entity
+/// الكلاس يمثل مجموعة مراكز التكلفة ويحتوي على جميع خصائص مجموعات مراكز التكلفة
 /// </summary>
 public class CostCenterGroup : Entity<CostCenterGroupId>
 {
@@ -20,31 +20,27 @@ public class CostCenterGroup : Entity<CostCenterGroupId>
     }
 
     /// <summary>
-    /// The unique identifier for the CostCenterGroup
-    /// المعرف الفريد لـ CostCenterGroup
+    /// معرف فريد لمجموعة مراكز التكلفة
     /// </summary>
     public CostCenterGroupId Id { get; private set; }
 
     /// <summary>
-    /// GroupNumber of the CostCenterGroup
-    /// GroupNumber الخاص بـ CostCenterGroup
+    /// رقم المجموعة
     /// </summary>
     public decimal? GroupNumber { get; private set; }
 
     /// <summary>
-    /// GroupName of the CostCenterGroup
-    /// GroupName الخاص بـ CostCenterGroup
+    /// اسم المجموعة
     /// </summary>
     public string GroupName { get; private set; }
 
     /// <summary>
-    /// GroupNameEnglish of the CostCenterGroup
-    /// GroupNameEnglish الخاص بـ CostCenterGroup
+    /// اسم المجموعة بالإنجليزية
     /// </summary>
     public string GroupNameEnglish { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

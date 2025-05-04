@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BankAdjustmentDetail Entity
+/// الكلاس يمثل تفاصيل تسوية البنك ويحتوي على جميع خصائص تفاصيل تسويات البنوك
 /// </summary>
 public class BankAdjustmentDetail : Entity<BankAdjustmentDetailId>
 {
@@ -20,184 +20,157 @@ public class BankAdjustmentDetail : Entity<BankAdjustmentDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the BankAdjustmentDetail
-    /// المعرف الفريد لـ BankAdjustmentDetail
+    /// معرف فريد لتفاصيل تسوية البنك
     /// </summary>
     public BankAdjustmentDetailId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the BankAdjustmentDetail
-    /// DocNo الخاص بـ BankAdjustmentDetail
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the BankAdjustmentDetail
-    /// AccountDetailCode الخاص بـ BankAdjustmentDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the BankAdjustmentDetail
-    /// AccountDetailType الخاص بـ BankAdjustmentDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// BranchBankNumber of the BankAdjustmentDetail
-    /// BranchBankNumber الخاص بـ BankAdjustmentDetail
+    /// رقم فرع البنك
     /// </summary>
     public decimal? BranchBankNumber { get; private set; }
 
     /// <summary>
-    /// BankBalance of the BankAdjustmentDetail
-    /// BankBalance الخاص بـ BankAdjustmentDetail
+    /// رصيد البنك
     /// </summary>
     public decimal? BankBalance { get; private set; }
 
     /// <summary>
-    /// DocDesc of the BankAdjustmentDetail
-    /// DocDesc الخاص بـ BankAdjustmentDetail
+    /// وصف المستند
     /// </summary>
     public string DocDesc { get; private set; }
 
     /// <summary>
-    /// JournalAmount of the BankAdjustmentDetail
-    /// JournalAmount الخاص بـ BankAdjustmentDetail
+    /// مبلغ القيد
     /// </summary>
     public decimal? JournalAmount { get; private set; }
 
     /// <summary>
-    /// JournalAmountForeign of the BankAdjustmentDetail
-    /// JournalAmountForeign الخاص بـ BankAdjustmentDetail
+    /// مبلغ القيد بالعملة الأجنبية
     /// </summary>
     public decimal? JournalAmountForeign { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the BankAdjustmentDetail
-    /// RecordNumber الخاص بـ BankAdjustmentDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the BankAdjustmentDetail
-    /// CompanyNumberShort الخاص بـ BankAdjustmentDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the BankAdjustmentDetail
-    /// BranchNumber الخاص بـ BankAdjustmentDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the BankAdjustmentDetail
-    /// BranchYear الخاص بـ BankAdjustmentDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the BankAdjustmentDetail
-    /// BranchUser الخاص بـ BankAdjustmentDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     /// <summary>
-    /// CostCenterCode of the BankAdjustmentDetail
-    /// CostCenterCode الخاص بـ BankAdjustmentDetail
+    /// كود مركز التكلفة
     /// </summary>
     public string CostCenterCode { get; private set; }
 
     /// <summary>
-    /// ProjectNumber of the BankAdjustmentDetail
-    /// ProjectNumber الخاص بـ BankAdjustmentDetail
+    /// رقم المشروع
     /// </summary>
     public string ProjectNumber { get; private set; }
 
     /// <summary>
-    /// ActivityNumber of the BankAdjustmentDetail
-    /// ActivityNumber الخاص بـ BankAdjustmentDetail
+    /// رقم النشاط
     /// </summary>
     public string ActivityNumber { get; private set; }
 
     /// <summary>
-    /// ReferenceNumber of the BankAdjustmentDetail
-    /// ReferenceNumber الخاص بـ BankAdjustmentDetail
+    /// رقم المرجع
     /// </summary>
     public string ReferenceNumber { get; private set; }
 
     /// <summary>
-    /// DocBrnNo of the BankAdjustmentDetail
-    /// DocBrnNo الخاص بـ BankAdjustmentDetail
+    /// رقم مستند الفرع
     /// </summary>
     public decimal? DocBrnNo { get; private set; }
 
     /// <summary>
-    /// DocTypRef of the BankAdjustmentDetail
-    /// DocTypRef الخاص بـ BankAdjustmentDetail
+    /// نوع المستند المرجعي
     /// </summary>
     public decimal? DocTypRef { get; private set; }
 
     /// <summary>
-    /// DocJvTypRef of the BankAdjustmentDetail
-    /// DocJvTypRef الخاص بـ BankAdjustmentDetail
+    /// نوع قيد اليومية المرجعي
     /// </summary>
     public decimal? DocJvTypRef { get; private set; }
 
     /// <summary>
-    /// DocNoRef of the BankAdjustmentDetail
-    /// DocNoRef الخاص بـ BankAdjustmentDetail
+    /// رقم المستند المرجعي
     /// </summary>
     public decimal? DocNoRef { get; private set; }
 
     /// <summary>
-    /// DocSrlRef of the BankAdjustmentDetail
-    /// DocSrlRef الخاص بـ BankAdjustmentDetail
+    /// رقم تسلسلي للمستند المرجعي
     /// </summary>
     public decimal? DocSrlRef { get; private set; }
 
     /// <summary>
-    /// DocSqRef of the BankAdjustmentDetail
-    /// DocSqRef الخاص بـ BankAdjustmentDetail
+    /// تسلسل المستند المرجعي
     /// </summary>
     public decimal? DocSqRef { get; private set; }
 
     /// <summary>
-    /// DocSq of the BankAdjustmentDetail
-    /// DocSq الخاص بـ BankAdjustmentDetail
+    /// تسلسل المستند
     /// </summary>
     public decimal? DocSq { get; private set; }
 
     /// <summary>
-    /// ExchangeRate of the BankAdjustmentDetail
-    /// ExchangeRate الخاص بـ BankAdjustmentDetail
+    /// سعر الصرف
     /// </summary>
     public decimal? ExchangeRate { get; private set; }
 
     /// <summary>
-    /// AccountDetailSubCode of the BankAdjustmentDetail
-    /// AccountDetailSubCode الخاص بـ BankAdjustmentDetail
+    /// كود فرعي لتفاصيل الحساب
     /// </summary>
     public string AccountDetailSubCode { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع عملة الحساب (متعدد إلى واحد)
     /// </summary>
     public AccountCurrency AccountCurrency { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع مستند تسوية البنك (متعدد إلى واحد)
     /// </summary>
     public BankAdjustmentMaster BankAdjustmentMaster { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع تفاصيل النقدية في البنك (متعدد إلى واحد)
     /// </summary>
     public CashAtBankDetail CashAtBankDetail { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

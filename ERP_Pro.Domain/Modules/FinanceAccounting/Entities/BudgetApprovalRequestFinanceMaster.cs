@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BudgetApprovalRequestFinanceMaster Entity
+/// الكلاس يمثل كيان طلب اعتماد الميزانية الرئيسي ويحتوي على جميع خصائص مستندات طلبات الاعتماد
 /// </summary>
 public class BudgetApprovalRequestFinanceMaster : Entity<BudgetApprovalRequestFinanceMasterId>
 {
@@ -20,289 +20,242 @@ public class BudgetApprovalRequestFinanceMaster : Entity<BudgetApprovalRequestFi
     }
 
     /// <summary>
-    /// The unique identifier for the BudgetApprovalRequestFinanceMaster
-    /// المعرف الفريد لـ BudgetApprovalRequestFinanceMaster
+    /// معرف فريد لطلب اعتماد الميزانية الرئيسي
     /// </summary>
     public BudgetApprovalRequestFinanceMasterId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the BudgetApprovalRequestFinanceMaster
-    /// DocNo الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// DocSrl of the BudgetApprovalRequestFinanceMaster
-    /// DocSrl الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم تسلسلي للمستند
     /// </summary>
     public decimal? DocSrl { get; private set; }
 
     /// <summary>
-    /// DocDate of the BudgetApprovalRequestFinanceMaster
-    /// DocDate الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// تاريخ المستند
     /// </summary>
     public DateTime? DocDate { get; private set; }
 
     /// <summary>
-    /// DocDsc of the BudgetApprovalRequestFinanceMaster
-    /// DocDsc الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// وصف المستند
     /// </summary>
     public string DocDsc { get; private set; }
 
     /// <summary>
-    /// BeneficiaryName of the BudgetApprovalRequestFinanceMaster
-    /// BeneficiaryName الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// اسم المستفيد
     /// </summary>
     public string BeneficiaryName { get; private set; }
 
     /// <summary>
-    /// ReceiverName of the BudgetApprovalRequestFinanceMaster
-    /// ReceiverName الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// اسم المستلم
     /// </summary>
     public string ReceiverName { get; private set; }
 
     /// <summary>
-    /// ReferenceNumber of the BudgetApprovalRequestFinanceMaster
-    /// ReferenceNumber الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم المرجع
     /// </summary>
     public string ReferenceNumber { get; private set; }
 
     /// <summary>
-    /// AccountCode of the BudgetApprovalRequestFinanceMaster
-    /// AccountCode الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// كود الحساب
     /// </summary>
     public string AccountCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the BudgetApprovalRequestFinanceMaster
-    /// AccountDetailCode الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the BudgetApprovalRequestFinanceMaster
-    /// AccountDetailType الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// TypeNumberShort of the BudgetApprovalRequestFinanceMaster
-    /// TypeNumberShort الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// نوع الرقم المختصر
     /// </summary>
     public decimal? TypeNumberShort { get; private set; }
 
     /// <summary>
-    /// CurCode of the BudgetApprovalRequestFinanceMaster
-    /// CurCode الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// كود العملة
     /// </summary>
     public string CurCode { get; private set; }
 
     /// <summary>
-    /// CurRate of the BudgetApprovalRequestFinanceMaster
-    /// CurRate الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// سعر العملة
     /// </summary>
     public decimal? CurRate { get; private set; }
 
     /// <summary>
-    /// AmountLocal of the BudgetApprovalRequestFinanceMaster
-    /// AmountLocal الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// المبلغ المحلي
     /// </summary>
     public decimal? AmountLocal { get; private set; }
 
     /// <summary>
-    /// AmountForeign of the BudgetApprovalRequestFinanceMaster
-    /// AmountForeign الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// المبلغ بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeign { get; private set; }
 
     /// <summary>
-    /// CostCenterCode of the BudgetApprovalRequestFinanceMaster
-    /// CostCenterCode الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// كود مركز التكلفة
     /// </summary>
     public string CostCenterCode { get; private set; }
 
     /// <summary>
-    /// ProjectNumber of the BudgetApprovalRequestFinanceMaster
-    /// ProjectNumber الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم المشروع
     /// </summary>
     public string ProjectNumber { get; private set; }
 
     /// <summary>
-    /// ActivityNumber of the BudgetApprovalRequestFinanceMaster
-    /// ActivityNumber الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم النشاط
     /// </summary>
     public string ActivityNumber { get; private set; }
 
     /// <summary>
-    /// AttachmentNumber of the BudgetApprovalRequestFinanceMaster
-    /// AttachmentNumber الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم المرفق
     /// </summary>
     public decimal? AttachmentNumber { get; private set; }
 
     /// <summary>
-    /// PaymentMethod of the BudgetApprovalRequestFinanceMaster
-    /// PaymentMethod الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// طريقة الدفع
     /// </summary>
     public decimal? PaymentMethod { get; private set; }
 
     /// <summary>
-    /// ApprovedFlag of the BudgetApprovalRequestFinanceMaster
-    /// ApprovedFlag الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حالة الاعتماد
     /// </summary>
     public decimal? ApprovedFlag { get; private set; }
 
     /// <summary>
-    /// ApprovalUserId of the BudgetApprovalRequestFinanceMaster
-    /// ApprovalUserId الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم مستخدم الاعتماد
     /// </summary>
     public decimal? ApprovalUserId { get; private set; }
 
     /// <summary>
-    /// ApprovalDate of the BudgetApprovalRequestFinanceMaster
-    /// ApprovalDate الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// تاريخ الاعتماد
     /// </summary>
     public DateTime? ApprovalDate { get; private set; }
 
     /// <summary>
-    /// ApprovalDescription of the BudgetApprovalRequestFinanceMaster
-    /// ApprovalDescription الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// وصف الاعتماد
     /// </summary>
     public string ApprovalDescription { get; private set; }
 
     /// <summary>
-    /// InactiveFlag of the BudgetApprovalRequestFinanceMaster
-    /// InactiveFlag الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حالة التعطيل
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
-    /// InactiveReason of the BudgetApprovalRequestFinanceMaster
-    /// InactiveReason الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// سبب التعطيل
     /// </summary>
     public string InactiveReason { get; private set; }
 
     /// <summary>
-    /// InactivatedByUserId of the BudgetApprovalRequestFinanceMaster
-    /// InactivatedByUserId الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم المستخدم الذي قام بالتعطيل
     /// </summary>
     public decimal? InactivatedByUserId { get; private set; }
 
     /// <summary>
-    /// InactiveDate of the BudgetApprovalRequestFinanceMaster
-    /// InactiveDate الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// تاريخ التعطيل
     /// </summary>
     public DateTime? InactiveDate { get; private set; }
 
     /// <summary>
-    /// ProcessedFlag of the BudgetApprovalRequestFinanceMaster
-    /// ProcessedFlag الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حالة المعالجة
     /// </summary>
     public decimal? ProcessedFlag { get; private set; }
 
     /// <summary>
-    /// RepCode of the BudgetApprovalRequestFinanceMaster
-    /// RepCode الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// كود المندوب
     /// </summary>
     public string RepCode { get; private set; }
 
     /// <summary>
-    /// StandByFlag of the BudgetApprovalRequestFinanceMaster
-    /// StandByFlag الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حالة الانتظار
     /// </summary>
     public decimal? StandByFlag { get; private set; }
 
     /// <summary>
-    /// PostedFlag of the BudgetApprovalRequestFinanceMaster
-    /// PostedFlag الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حالة الترحيل
     /// </summary>
     public decimal? PostedFlag { get; private set; }
 
     /// <summary>
-    /// Field1 of the BudgetApprovalRequestFinanceMaster
-    /// Field1 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 1
     /// </summary>
     public string Field1 { get; private set; }
 
     /// <summary>
-    /// Field2 of the BudgetApprovalRequestFinanceMaster
-    /// Field2 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 2
     /// </summary>
     public string Field2 { get; private set; }
 
     /// <summary>
-    /// Field3 of the BudgetApprovalRequestFinanceMaster
-    /// Field3 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 3
     /// </summary>
     public string Field3 { get; private set; }
 
     /// <summary>
-    /// Field4 of the BudgetApprovalRequestFinanceMaster
-    /// Field4 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 4
     /// </summary>
     public string Field4 { get; private set; }
 
     /// <summary>
-    /// Field5 of the BudgetApprovalRequestFinanceMaster
-    /// Field5 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 5
     /// </summary>
     public string Field5 { get; private set; }
 
     /// <summary>
-    /// Field6 of the BudgetApprovalRequestFinanceMaster
-    /// Field6 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 6
     /// </summary>
     public string Field6 { get; private set; }
 
     /// <summary>
-    /// Field7 of the BudgetApprovalRequestFinanceMaster
-    /// Field7 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 7
     /// </summary>
     public string Field7 { get; private set; }
 
     /// <summary>
-    /// Field8 of the BudgetApprovalRequestFinanceMaster
-    /// Field8 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 8
     /// </summary>
     public string Field8 { get; private set; }
 
     /// <summary>
-    /// Field9 of the BudgetApprovalRequestFinanceMaster
-    /// Field9 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 9
     /// </summary>
     public string Field9 { get; private set; }
 
     /// <summary>
-    /// Field10 of the BudgetApprovalRequestFinanceMaster
-    /// Field10 الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// حقل إضافي 10
     /// </summary>
     public string Field10 { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the BudgetApprovalRequestFinanceMaster
-    /// CompanyNumberShort الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the BudgetApprovalRequestFinanceMaster
-    /// BranchNumber الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the BudgetApprovalRequestFinanceMaster
-    /// BranchYear الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the BudgetApprovalRequestFinanceMaster
-    /// BranchUser الخاص بـ BudgetApprovalRequestFinanceMaster
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

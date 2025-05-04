@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// AssociationAccount Entity
+/// الكلاس يمثل حساب الجمعية ويحتوي على جميع خصائص حسابات الجمعيات
 /// </summary>
 public class AssociationAccount : Entity<AssociationAccountId>
 {
@@ -20,80 +20,69 @@ public class AssociationAccount : Entity<AssociationAccountId>
     }
 
     /// <summary>
-    /// The unique identifier for the AssociationAccount
-    /// المعرف الفريد لـ AssociationAccount
+    /// معرف فريد لحساب الجمعية
     /// </summary>
     public AssociationAccountId Id { get; private set; }
 
     /// <summary>
-    /// AssessmentNumber of the AssociationAccount
-    /// AssessmentNumber الخاص بـ AssociationAccount
+    /// رقم التقييم
     /// </summary>
     public decimal? AssessmentNumber { get; private set; }
 
     /// <summary>
-    /// AssessmentLastName of the AssociationAccount
-    /// AssessmentLastName الخاص بـ AssociationAccount
+    /// اسم العائلة للتقييم
     /// </summary>
     public string AssessmentLastName { get; private set; }
 
     /// <summary>
-    /// AssessmentFirstName of the AssociationAccount
-    /// AssessmentFirstName الخاص بـ AssociationAccount
+    /// الاسم الأول للتقييم
     /// </summary>
     public string AssessmentFirstName { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the AssociationAccount
-    /// AccountDetailCode الخاص بـ AssociationAccount
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the AssociationAccount
-    /// AccountDetailType الخاص بـ AssociationAccount
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// AssessmentDefaultFlag of the AssociationAccount
-    /// AssessmentDefaultFlag الخاص بـ AssociationAccount
+    /// علم التقييم الافتراضي
     /// </summary>
     public decimal? AssessmentDefaultFlag { get; private set; }
 
     /// <summary>
-    /// InactiveFlag of the AssociationAccount
-    /// InactiveFlag الخاص بـ AssociationAccount
+    /// حالة التعطيل
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
-    /// InactivatedByUserId of the AssociationAccount
-    /// InactivatedByUserId الخاص بـ AssociationAccount
+    /// رقم المستخدم الذي قام بالتعطيل
     /// </summary>
     public decimal? InactivatedByUserId { get; private set; }
 
     /// <summary>
-    /// InactiveDate of the AssociationAccount
-    /// InactiveDate الخاص بـ AssociationAccount
+    /// تاريخ التعطيل
     /// </summary>
     public DateTime? InactiveDate { get; private set; }
 
     /// <summary>
-    /// InactiveReason of the AssociationAccount
-    /// InactiveReason الخاص بـ AssociationAccount
+    /// سبب التعطيل
     /// </summary>
     public string InactiveReason { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع الحساب (متعدد إلى واحد)
     /// </summary>
     public Account Account { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

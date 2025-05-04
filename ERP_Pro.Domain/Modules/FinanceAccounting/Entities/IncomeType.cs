@@ -8,7 +8,7 @@ using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// IncomeType Entity
+/// الكلاس يمثل نوع الدخل ويحتوي على جميع خصائص أنواع الدخل
 /// </summary>
 public class IncomeType : Entity<IncomeTypeId>
 {
@@ -22,55 +22,47 @@ public class IncomeType : Entity<IncomeTypeId>
     }
 
     /// <summary>
-    /// The unique identifier for the IncomeType
-    /// المعرف الفريد لـ IncomeType
+    /// معرف فريد لنوع الدخل
     /// </summary>
     public IncomeTypeId Id { get; private set; }
 
     /// <summary>
-    /// IncomeType of the IncomeType
-    /// IncomeType الخاص بـ IncomeType
+    /// نوع الدخل
     /// </summary>
     public decimal? IncomeType { get; private set; }
 
     /// <summary>
-    /// IncomeName of the IncomeType
-    /// IncomeName الخاص بـ IncomeType
+    /// اسم الدخل
     /// </summary>
     public string IncomeName { get; private set; }
 
     /// <summary>
-    /// IncomeNameEnglish of the IncomeType
-    /// IncomeNameEnglish الخاص بـ IncomeType
+    /// اسم الدخل بالإنجليزية
     /// </summary>
     public string IncomeNameEnglish { get; private set; }
 
     /// <summary>
-    /// IncomeReason of the IncomeType
-    /// IncomeReason الخاص بـ IncomeType
+    /// سبب الدخل
     /// </summary>
     public decimal? IncomeReason { get; private set; }
 
     /// <summary>
-    /// ConnectionWithPurchaseInvoice of the IncomeType
-    /// ConnectionWithPurchaseInvoice الخاص بـ IncomeType
+    /// الربط مع فاتورة الشراء
     /// </summary>
     public decimal? ConnectionWithPurchaseInvoice { get; private set; }
 
     /// <summary>
-    /// IncomeSerial of the IncomeType
-    /// IncomeSerial الخاص بـ IncomeType
+    /// التسلسل للدخل
     /// </summary>
     public decimal? IncomeSerial { get; private set; }
 
     /// <summary>
-    /// CalcTypeNumberTax of the IncomeType
-    /// CalcTypeNumberTax الخاص بـ IncomeType
+    /// نوع حساب الضريبة
     /// </summary>
     public decimal? CalcTypeNumberTax { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

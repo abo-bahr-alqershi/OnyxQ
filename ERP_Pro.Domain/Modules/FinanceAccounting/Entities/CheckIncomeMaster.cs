@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CheckIncomeMaster Entity
+/// الكلاس يمثل مستند دخل الشيكات ويحتوي على جميع خصائص مستندات دخل الشيكات
 /// </summary>
 public class CheckIncomeMaster : Entity<CheckIncomeMasterId>
 {
@@ -20,127 +20,107 @@ public class CheckIncomeMaster : Entity<CheckIncomeMasterId>
     }
 
     /// <summary>
-    /// The unique identifier for the CheckIncomeMaster
-    /// المعرف الفريد لـ CheckIncomeMaster
+    /// معرف فريد لمستند دخل الشيكات
     /// </summary>
     public CheckIncomeMasterId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the CheckIncomeMaster
-    /// DocNo الخاص بـ CheckIncomeMaster
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// DocSer of the CheckIncomeMaster
-    /// DocSer الخاص بـ CheckIncomeMaster
+    /// رقم تسلسلي للمستند
     /// </summary>
     public decimal? DocSer { get; private set; }
 
     /// <summary>
-    /// DocType of the CheckIncomeMaster
-    /// DocType الخاص بـ CheckIncomeMaster
+    /// نوع المستند
     /// </summary>
     public decimal? DocType { get; private set; }
 
     /// <summary>
-    /// DocDate of the CheckIncomeMaster
-    /// DocDate الخاص بـ CheckIncomeMaster
+    /// تاريخ المستند
     /// </summary>
     public DateTime? DocDate { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the CheckIncomeMaster
-    /// AccountDetailCode الخاص بـ CheckIncomeMaster
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the CheckIncomeMaster
-    /// AccountDetailType الخاص بـ CheckIncomeMaster
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// VendorCode of the CheckIncomeMaster
-    /// VendorCode الخاص بـ CheckIncomeMaster
+    /// كود المورد
     /// </summary>
     public string VendorCode { get; private set; }
 
     /// <summary>
-    /// VendorName of the CheckIncomeMaster
-    /// VendorName الخاص بـ CheckIncomeMaster
+    /// اسم المورد
     /// </summary>
     public string VendorName { get; private set; }
 
     /// <summary>
-    /// WarehouseCode of the CheckIncomeMaster
-    /// WarehouseCode الخاص بـ CheckIncomeMaster
+    /// كود المستودع
     /// </summary>
     public decimal? WarehouseCode { get; private set; }
 
     /// <summary>
-    /// ReferenceNumber of the CheckIncomeMaster
-    /// ReferenceNumber الخاص بـ CheckIncomeMaster
+    /// رقم المرجع
     /// </summary>
     public string ReferenceNumber { get; private set; }
 
     /// <summary>
-    /// DocDesc of the CheckIncomeMaster
-    /// DocDesc الخاص بـ CheckIncomeMaster
+    /// وصف المستند
     /// </summary>
     public string DocDesc { get; private set; }
 
     /// <summary>
-    /// CostCenterCode of the CheckIncomeMaster
-    /// CostCenterCode الخاص بـ CheckIncomeMaster
+    /// كود مركز التكلفة
     /// </summary>
     public string CostCenterCode { get; private set; }
 
     /// <summary>
-    /// ProjectNumber of the CheckIncomeMaster
-    /// ProjectNumber الخاص بـ CheckIncomeMaster
+    /// رقم المشروع
     /// </summary>
     public string ProjectNumber { get; private set; }
 
     /// <summary>
-    /// ActivityNumber of the CheckIncomeMaster
-    /// ActivityNumber الخاص بـ CheckIncomeMaster
+    /// رقم النشاط
     /// </summary>
     public string ActivityNumber { get; private set; }
 
     /// <summary>
-    /// ProcessedFlagFull of the CheckIncomeMaster
-    /// ProcessedFlagFull الخاص بـ CheckIncomeMaster
+    /// حالة المعالجة
     /// </summary>
     public decimal? ProcessedFlagFull { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the CheckIncomeMaster
-    /// CompanyNumberShort الخاص بـ CheckIncomeMaster
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the CheckIncomeMaster
-    /// BranchNumber الخاص بـ CheckIncomeMaster
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the CheckIncomeMaster
-    /// BranchYear الخاص بـ CheckIncomeMaster
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the CheckIncomeMaster
-    /// BranchUser الخاص بـ CheckIncomeMaster
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

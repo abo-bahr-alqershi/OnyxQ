@@ -8,7 +8,7 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BudgetApprovalRequestFinanceDetail Entity
+/// الكلاس يمثل تفاصيل طلب اعتماد الميزانية ويحتوي على جميع خصائص التفاصيل المالية للطلب
 /// </summary>
 public class BudgetApprovalRequestFinanceDetail : Entity<BudgetApprovalRequestFinanceDetailId>
 {
@@ -22,144 +22,125 @@ public class BudgetApprovalRequestFinanceDetail : Entity<BudgetApprovalRequestFi
     }
 
     /// <summary>
-    /// The unique identifier for the BudgetApprovalRequestFinanceDetail
-    /// المعرف الفريد لـ BudgetApprovalRequestFinanceDetail
+    /// معرف فريد لتفاصيل طلب اعتماد الميزانية
     /// </summary>
     public BudgetApprovalRequestFinanceDetailId Id { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the BudgetApprovalRequestFinanceDetail
-    /// RecordNumber الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// DocNo of the BudgetApprovalRequestFinanceDetail
-    /// DocNo الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the BudgetApprovalRequestFinanceDetail
-    /// AccountDetailCode الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the BudgetApprovalRequestFinanceDetail
-    /// AccountDetailType الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// CurRate of the BudgetApprovalRequestFinanceDetail
-    /// CurRate الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// سعر العملة
     /// </summary>
     public decimal? CurRate { get; private set; }
 
     /// <summary>
-    /// AmountLocal of the BudgetApprovalRequestFinanceDetail
-    /// AmountLocal الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// المبلغ المحلي
     /// </summary>
     public decimal? AmountLocal { get; private set; }
 
     /// <summary>
-    /// AmountForeign of the BudgetApprovalRequestFinanceDetail
-    /// AmountForeign الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// المبلغ بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeign { get; private set; }
 
     /// <summary>
-    /// ActualBalance of the BudgetApprovalRequestFinanceDetail
-    /// ActualBalance الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// الرصيد الفعلي
     /// </summary>
     public decimal? ActualBalance { get; private set; }
 
     /// <summary>
-    /// IssueAmount of the BudgetApprovalRequestFinanceDetail
-    /// IssueAmount الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// مبلغ الصرف
     /// </summary>
     public decimal? IssueAmount { get; private set; }
 
     /// <summary>
-    /// NotIssueAmount of the BudgetApprovalRequestFinanceDetail
-    /// NotIssueAmount الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// مبلغ غير مصروف
     /// </summary>
     public decimal? NotIssueAmount { get; private set; }
 
     /// <summary>
-    /// RepCode of the BudgetApprovalRequestFinanceDetail
-    /// RepCode الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// كود المندوب
     /// </summary>
     public string RepCode { get; private set; }
 
     /// <summary>
-    /// DocDsc of the BudgetApprovalRequestFinanceDetail
-    /// DocDsc الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// وصف المستند
     /// </summary>
     public string DocDsc { get; private set; }
 
     /// <summary>
-    /// DocSeq of the BudgetApprovalRequestFinanceDetail
-    /// DocSeq الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// تسلسل المستند
     /// </summary>
     public decimal? DocSeq { get; private set; }
 
     /// <summary>
-    /// DocBrnNo of the BudgetApprovalRequestFinanceDetail
-    /// DocBrnNo الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// رقم فرع المستند
     /// </summary>
     public decimal? DocBrnNo { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the BudgetApprovalRequestFinanceDetail
-    /// CompanyNumberShort الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the BudgetApprovalRequestFinanceDetail
-    /// BranchNumber الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the BudgetApprovalRequestFinanceDetail
-    /// BranchYear الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the BudgetApprovalRequestFinanceDetail
-    /// BranchUser الخاص بـ BudgetApprovalRequestFinanceDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع النشاط (متعدد إلى واحد)
     /// </summary>
     public Activity Activity { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع عملة الحساب (متعدد إلى واحد)
     /// </summary>
     public AccountCurrency AccountCurrency { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع المشروع (متعدد إلى واحد)
     /// </summary>
     public Project Project { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع طلب اعتماد الميزانية الرئيسي (متعدد إلى واحد)
     /// </summary>
     public BudgetApprovalRequestFinanceMaster BudgetApprovalRequestFinanceMaster { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع مركز التكلفة (متعدد إلى واحد)
     /// </summary>
     public CostCenter CostCenter { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

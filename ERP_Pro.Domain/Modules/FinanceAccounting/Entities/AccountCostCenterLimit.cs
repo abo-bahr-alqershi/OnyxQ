@@ -8,7 +8,7 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// AccountCostCenterLimit Entity
+/// الكلاس يمثل حدود مركز تكلفة الحساب ويحتوي على جميع خصائص حدود الصلاحيات المالية
 /// </summary>
 public class AccountCostCenterLimit : Entity<AccountCostCenterLimitId>
 {
@@ -25,158 +25,136 @@ public class AccountCostCenterLimit : Entity<AccountCostCenterLimitId>
     }
 
     /// <summary>
-    /// The unique identifier for the AccountCostCenterLimit
     /// المعرف الفريد لـ AccountCostCenterLimit
     /// </summary>
     public AccountCostCenterLimitId Id { get; private set; }
 
     /// <summary>
-    /// AccountCurrency of the AccountCostCenterLimit
-    /// AccountCurrency الخاص بـ AccountCostCenterLimit
+    /// العملة الخاصة بـ AccountCostCenterLimit
     /// </summary>
     public string AccountCurrency { get; private set; }
 
     /// <summary>
-    /// MinAmount of the AccountCostCenterLimit
-    /// MinAmount الخاص بـ AccountCostCenterLimit
+    /// الحد الأدنى للمبلغ الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? MinAmount { get; private set; }
 
     /// <summary>
-    /// MaxAmount of the AccountCostCenterLimit
-    /// MaxAmount الخاص بـ AccountCostCenterLimit
+    /// الحد الأقصى للمبلغ الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? MaxAmount { get; private set; }
 
     /// <summary>
-    /// MinTransactionAmount of the AccountCostCenterLimit
-    /// MinTransactionAmount الخاص بـ AccountCostCenterLimit
+    /// الحد الأدنى لمبلغ المعاملة الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? MinTransactionAmount { get; private set; }
 
     /// <summary>
-    /// MaxTransactionAmount of the AccountCostCenterLimit
-    /// MaxTransactionAmount الخاص بـ AccountCostCenterLimit
+    /// الحد الأقصى لمبلغ المعاملة الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? MaxTransactionAmount { get; private set; }
 
     /// <summary>
-    /// MaxLimitPercent of the AccountCostCenterLimit
-    /// MaxLimitPercent الخاص بـ AccountCostCenterLimit
+    /// الحد الأقصى للنسبة المئوية للحد الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? MaxLimitPercent { get; private set; }
 
     /// <summary>
-    /// MaxLimitPossible of the AccountCostCenterLimit
-    /// MaxLimitPossible الخاص بـ AccountCostCenterLimit
+    /// الحد الأقصى الممكن للحد الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? MaxLimitPossible { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the AccountCostCenterLimit
-    /// BranchNumber الخاص بـ AccountCostCenterLimit
+    /// رقم الفرع الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// ExceedLimit of the AccountCostCenterLimit
-    /// ExceedLimit الخاص بـ AccountCostCenterLimit
+    /// تجاوز الحد الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? ExceedLimit { get; private set; }
 
     /// <summary>
-    /// DrCr of the AccountCostCenterLimit
     /// DrCr الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? DrCr { get; private set; }
 
     /// <summary>
-    /// LimitDescription of the AccountCostCenterLimit
-    /// LimitDescription الخاص بـ AccountCostCenterLimit
+    /// وصف الحد الخاص بـ AccountCostCenterLimit
     /// </summary>
     public string LimitDescription { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the AccountCostCenterLimit
-    /// AccountDetailCode الخاص بـ AccountCostCenterLimit
+    /// رمز تفاصيل الحساب الخاص بـ AccountCostCenterLimit
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the AccountCostCenterLimit
-    /// AccountDetailType الخاص بـ AccountCostCenterLimit
+    /// نوع تفاصيل الحساب الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// FacilityAmount of the AccountCostCenterLimit
-    /// FacilityAmount الخاص بـ AccountCostCenterLimit
+    /// مبلغ التسهيلات الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? FacilityAmount { get; private set; }
 
     /// <summary>
-    /// FacilityStatus of the AccountCostCenterLimit
-    /// FacilityStatus الخاص بـ AccountCostCenterLimit
+    /// حالة التسهيلات الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? FacilityStatus { get; private set; }
 
     /// <summary>
-    /// InactiveFlag of the AccountCostCenterLimit
-    /// InactiveFlag الخاص بـ AccountCostCenterLimit
+    /// علم التعطيل الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
-    /// DalyAmt of the AccountCostCenterLimit
-    /// DalyAmt الخاص بـ AccountCostCenterLimit
+    /// المبلغ اليومي الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? DalyAmt { get; private set; }
 
     /// <summary>
-    /// MonthlyAmount of the AccountCostCenterLimit
-    /// MonthlyAmount الخاص بـ AccountCostCenterLimit
+    /// المبلغ الشهري الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? MonthlyAmount { get; private set; }
 
     /// <summary>
-    /// AnnualAmount of the AccountCostCenterLimit
-    /// AnnualAmount الخاص بـ AccountCostCenterLimit
+    /// المبلغ السنوي الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? AnnualAmount { get; private set; }
 
     /// <summary>
-    /// AccountDetailSubCode of the AccountCostCenterLimit
-    /// AccountDetailSubCode الخاص بـ AccountCostCenterLimit
+    /// رمز تفاصيل الحساب الفرعي الخاص بـ AccountCostCenterLimit
     /// </summary>
     public string AccountDetailSubCode { get; private set; }
 
     /// <summary>
-    /// ExternalPostFlag of the AccountCostCenterLimit
-    /// ExternalPostFlag الخاص بـ AccountCostCenterLimit
+    /// علم النشر الخارجي الخاص بـ AccountCostCenterLimit
     /// </summary>
     public decimal? ExternalPostFlag { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميع: ManyToMany
     /// </summary>
     public ICollection<Activity> Activity => _activity;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميع: ManyToMany
     /// </summary>
     public ICollection<Account> Account => _account;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميع: ManyToMany
     /// </summary>
     public ICollection<Project> Project => _project;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميع: ManyToMany
     /// </summary>
     public ICollection<CostCenter> CostCenter => _costCenter;
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // أضف طرق منطق المجال هنا
     #endregion
 }
 }

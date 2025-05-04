@@ -7,7 +7,7 @@ using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// VoucherChequeDetail Entity
+/// الكلاس يمثل تفاصيل شيكات السندات المالية ويحتوي على جميع خصائص الشيكات المرتبطة بالسندات
 /// </summary>
 public class VoucherChequeDetail : Entity<VoucherChequeDetailId>
 {
@@ -21,148 +21,127 @@ public class VoucherChequeDetail : Entity<VoucherChequeDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the VoucherChequeDetail
-    /// المعرف الفريد لـ VoucherChequeDetail
+    /// معرف فريد لتفاصيل شيك السند
     /// </summary>
     public VoucherChequeDetailId Id { get; private set; }
 
     /// <summary>
-    /// VoucherTypeFull of the VoucherChequeDetail
-    /// VoucherTypeFull الخاص بـ VoucherChequeDetail
+    /// نوع السند الكامل
     /// </summary>
     public decimal? VoucherTypeFull { get; private set; }
 
     /// <summary>
-    /// VoucherNumber of the VoucherChequeDetail
-    /// VoucherNumber الخاص بـ VoucherChequeDetail
+    /// رقم السند
     /// </summary>
     public decimal? VoucherNumber { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the VoucherChequeDetail
-    /// RecordNumber الخاص بـ VoucherChequeDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// DocSequence of the VoucherChequeDetail
-    /// DocSequence الخاص بـ VoucherChequeDetail
+    /// تسلسل المستند
     /// </summary>
     public decimal? DocSequence { get; private set; }
 
     /// <summary>
-    /// CashNumber of the VoucherChequeDetail
-    /// CashNumber الخاص بـ VoucherChequeDetail
+    /// رقم النقدية
     /// </summary>
     public decimal? CashNumber { get; private set; }
 
     /// <summary>
-    /// BankNumber of the VoucherChequeDetail
-    /// BankNumber الخاص بـ VoucherChequeDetail
+    /// رقم البنك
     /// </summary>
     public decimal? BankNumber { get; private set; }
 
     /// <summary>
-    /// AccountCode of the VoucherChequeDetail
-    /// AccountCode الخاص بـ VoucherChequeDetail
+    /// كود الحساب
     /// </summary>
     public string AccountCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the VoucherChequeDetail
-    /// AccountDetailCode الخاص بـ VoucherChequeDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the VoucherChequeDetail
-    /// AccountDetailType الخاص بـ VoucherChequeDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// AccountCurrency of the VoucherChequeDetail
-    /// AccountCurrency الخاص بـ VoucherChequeDetail
+    /// عملة الحساب
     /// </summary>
     public string AccountCurrency { get; private set; }
 
     /// <summary>
-    /// CashBankNumber of the VoucherChequeDetail
-    /// CashBankNumber الخاص بـ VoucherChequeDetail
+    /// رقم النقدية/البنك
     /// </summary>
     public decimal? CashBankNumber { get; private set; }
 
     /// <summary>
-    /// AccountDescriptionShort of the VoucherChequeDetail
-    /// AccountDescriptionShort الخاص بـ VoucherChequeDetail
+    /// وصف الحساب المختصر
     /// </summary>
     public string AccountDescriptionShort { get; private set; }
 
     /// <summary>
-    /// AccountAmount of the VoucherChequeDetail
-    /// AccountAmount الخاص بـ VoucherChequeDetail
+    /// مبلغ الحساب
     /// </summary>
     public decimal? AccountAmount { get; private set; }
 
     /// <summary>
-    /// AccountAmountForeign of the VoucherChequeDetail
-    /// AccountAmountForeign الخاص بـ VoucherChequeDetail
+    /// مبلغ الحساب بالعملة الأجنبية
     /// </summary>
     public decimal? AccountAmountForeign { get; private set; }
 
     /// <summary>
-    /// ExchangeRate of the VoucherChequeDetail
-    /// ExchangeRate الخاص بـ VoucherChequeDetail
+    /// سعر الصرف
     /// </summary>
     public decimal? ExchangeRate { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the VoucherChequeDetail
-    /// CompanyNumberShort الخاص بـ VoucherChequeDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the VoucherChequeDetail
-    /// BranchNumber الخاص بـ VoucherChequeDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the VoucherChequeDetail
-    /// BranchYear الخاص بـ VoucherChequeDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the VoucherChequeDetail
-    /// BranchUser الخاص بـ VoucherChequeDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     /// <summary>
-    /// DocBrnNo of the VoucherChequeDetail
-    /// DocBrnNo الخاص بـ VoucherChequeDetail
+    /// رقم فرع المستند
     /// </summary>
     public decimal? DocBrnNo { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع العميل (متعدد إلى واحد)
     /// </summary>
     public Customer Customer { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع تفاصيل السند (متعدد إلى واحد)
     /// </summary>
     public VoucherDetail VoucherDetail { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع تفاصيل السندات (متعدد إلى واحد)
     /// </summary>
     public VoucherDetails VoucherDetails { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

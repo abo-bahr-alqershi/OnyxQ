@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// AccountGroup Entity
+/// الكلاس يمثل مجموعة الحسابات ويحتوي على جميع خصائص مجموعات الحسابات
 /// </summary>
 public class AccountGroup : Entity<AccountGroupId>
 {
@@ -20,31 +20,27 @@ public class AccountGroup : Entity<AccountGroupId>
     }
 
     /// <summary>
-    /// The unique identifier for the AccountGroup
-    /// المعرف الفريد لـ AccountGroup
+    /// معرف فريد لمجموعة الحسابات
     /// </summary>
     public AccountGroupId Id { get; private set; }
 
     /// <summary>
-    /// GroupNumber of the AccountGroup
-    /// GroupNumber الخاص بـ AccountGroup
+    /// رقم المجموعة
     /// </summary>
     public decimal? GroupNumber { get; private set; }
 
     /// <summary>
-    /// GroupName of the AccountGroup
-    /// GroupName الخاص بـ AccountGroup
+    /// اسم المجموعة
     /// </summary>
     public string GroupName { get; private set; }
 
     /// <summary>
-    /// GroupNameEnglish of the AccountGroup
-    /// GroupNameEnglish الخاص بـ AccountGroup
+    /// اسم المجموعة بالإنجليزية
     /// </summary>
     public string GroupNameEnglish { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CashManagementDetail Entity
+/// الكلاس يمثل تفاصيل إدارة النقد ويحتوي على جميع خصائص تفاصيل العمليات النقدية
 /// </summary>
 public class CashManagementDetail : Entity<CashManagementDetailId>
 {
@@ -22,106 +22,92 @@ public class CashManagementDetail : Entity<CashManagementDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the CashManagementDetail
-    /// المعرف الفريد لـ CashManagementDetail
+    /// معرف فريد لتفاصيل إدارة النقد
     /// </summary>
     public CashManagementDetailId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the CashManagementDetail
-    /// DocNo الخاص بـ CashManagementDetail
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// AccountRate of the CashManagementDetail
-    /// AccountRate الخاص بـ CashManagementDetail
+    /// سعر الحساب
     /// </summary>
     public decimal? AccountRate { get; private set; }
 
     /// <summary>
-    /// Amount of the CashManagementDetail
-    /// Amount الخاص بـ CashManagementDetail
+    /// المبلغ
     /// </summary>
     public decimal? Amount { get; private set; }
 
     /// <summary>
-    /// AmountForeign of the CashManagementDetail
-    /// AmountForeign الخاص بـ CashManagementDetail
+    /// المبلغ بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeign { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the CashManagementDetail
-    /// RecordNumber الخاص بـ CashManagementDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// MoneyClass of the CashManagementDetail
-    /// MoneyClass الخاص بـ CashManagementDetail
+    /// نوع النقدية
     /// </summary>
     public string MoneyClass { get; private set; }
 
     /// <summary>
-    /// CashAmount of the CashManagementDetail
-    /// CashAmount الخاص بـ CashManagementDetail
+    /// مبلغ النقدية
     /// </summary>
     public decimal? CashAmount { get; private set; }
 
     /// <summary>
-    /// CashBalance of the CashManagementDetail
-    /// CashBalance الخاص بـ CashManagementDetail
+    /// رصيد النقدية
     /// </summary>
     public decimal? CashBalance { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the CashManagementDetail
-    /// CompanyNumberShort الخاص بـ CashManagementDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the CashManagementDetail
-    /// BranchNumber الخاص بـ CashManagementDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the CashManagementDetail
-    /// BranchYear الخاص بـ CashManagementDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the CashManagementDetail
-    /// BranchUser الخاص بـ CashManagementDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     /// <summary>
-    /// ClassCount of the CashManagementDetail
-    /// ClassCount الخاص بـ CashManagementDetail
+    /// عدد الأصناف
     /// </summary>
     public decimal? ClassCount { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع عملات الحساب (متعدد إلى متعدد)
     /// </summary>
     public ICollection<AccountCurrency> AccountCurrency => _accountCurrency;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع تفاصيل النقدية باليد (متعدد إلى متعدد)
     /// </summary>
     public ICollection<CashInHandDetail> CashInHandDetail => _cashInHandDetail;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع إدارة النقد الرئيسية (متعدد إلى متعدد)
     /// </summary>
     public ICollection<CashManagementMaster> CashManagementMaster => _cashManagementMaster;
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// ExchangeRateTrace Entity
+/// الكلاس يمثل تتبع أسعار الصرف ويحتوي على جميع خصائص تتبع أسعار العملات
 /// </summary>
 public class ExchangeRateTrace : Entity<ExchangeRateTraceId>
 {
@@ -19,43 +19,37 @@ public class ExchangeRateTrace : Entity<ExchangeRateTraceId>
     }
 
     /// <summary>
-    /// The unique identifier for the ExchangeRateTrace
-    /// المعرف الفريد لـ ExchangeRateTrace
+    /// معرف فريد لتتبع سعر الصرف
     /// </summary>
     public ExchangeRateTraceId Id { get; private set; }
 
     /// <summary>
-    /// CurNo of the ExchangeRateTrace
-    /// CurNo الخاص بـ ExchangeRateTrace
+    /// رقم العملة
     /// </summary>
     public decimal? CurNo { get; private set; }
 
     /// <summary>
-    /// CurCode of the ExchangeRateTrace
-    /// CurCode الخاص بـ ExchangeRateTrace
+    /// كود العملة
     /// </summary>
     public string CurCode { get; private set; }
 
     /// <summary>
-    /// CurRate of the ExchangeRateTrace
-    /// CurRate الخاص بـ ExchangeRateTrace
+    /// سعر العملة
     /// </summary>
     public decimal? CurRate { get; private set; }
 
     /// <summary>
-    /// MaxCurrencyRate of the ExchangeRateTrace
-    /// MaxCurrencyRate الخاص بـ ExchangeRateTrace
+    /// أعلى سعر للعملة
     /// </summary>
     public decimal? MaxCurrencyRate { get; private set; }
 
     /// <summary>
-    /// MinCurrencyRate of the ExchangeRateTrace
-    /// MinCurrencyRate الخاص بـ ExchangeRateTrace
+    /// أقل سعر للعملة
     /// </summary>
     public decimal? MinCurrencyRate { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

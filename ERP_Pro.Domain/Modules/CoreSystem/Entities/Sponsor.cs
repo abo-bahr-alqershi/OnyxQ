@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-
 using ERP_Pro.Domain.Common.Entities;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.CoreSystem.ValueObjects;
-
 namespace ERP_Pro.Domain.ERP.CoreSystem.Entities
 {
     // كيان يمثل الكفيل ويحتوي على جميع بيانات الكفيل الأساسية والتفصيلية.

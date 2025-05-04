@@ -7,7 +7,7 @@ using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CustomerAccount Entity
+/// الكلاس يمثل حساب العميل ويحتوي على جميع خصائص حسابات العملاء
 /// </summary>
 public class CustomerAccount : Entity<CustomerAccountId>
 {
@@ -22,60 +22,53 @@ public class CustomerAccount : Entity<CustomerAccountId>
     }
 
     /// <summary>
-    /// The unique identifier for the CustomerAccount
-    /// المعرف الفريد لـ CustomerAccount
+    /// معرف فريد لحساب العميل
     /// </summary>
     public CustomerAccountId Id { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the CustomerAccount
-    /// RecordNumber الخاص بـ CustomerAccount
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// AccountTypeShort of the CustomerAccount
-    /// AccountTypeShort الخاص بـ CustomerAccount
+    /// نوع الحساب المختصر
     /// </summary>
     public decimal? AccountTypeShort { get; private set; }
 
     /// <summary>
-    /// InactiveFlag of the CustomerAccount
-    /// InactiveFlag الخاص بـ CustomerAccount
+    /// حالة التعطيل
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
-    /// InactiveDate of the CustomerAccount
-    /// InactiveDate الخاص بـ CustomerAccount
+    /// تاريخ التعطيل
     /// </summary>
     public DateTime? InactiveDate { get; private set; }
 
     /// <summary>
-    /// InactiveReason of the CustomerAccount
-    /// InactiveReason الخاص بـ CustomerAccount
+    /// سبب التعطيل
     /// </summary>
     public string InactiveReason { get; private set; }
 
     /// <summary>
-    /// InactivatedByUserId of the CustomerAccount
-    /// InactivatedByUserId الخاص بـ CustomerAccount
+    /// رقم المستخدم الذي قام بالتعطيل
     /// </summary>
     public decimal? InactivatedByUserId { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع الحسابات (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Account> Account => _account;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع العملاء (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Customer> Customer => _customer;
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

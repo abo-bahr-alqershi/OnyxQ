@@ -10,7 +10,7 @@ using ERP_Pro.Domain.ERP.JudicialLegal.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// ExchangeCurrencyDetail Entity
+/// الكلاس يمثل تفاصيل صرف العملات ويحتوي على جميع خصائص العمليات التفصيلية لصرف العملات
 /// </summary>
 public class ExchangeCurrencyDetail : Entity<ExchangeCurrencyDetailId>
 {
@@ -31,198 +31,172 @@ public class ExchangeCurrencyDetail : Entity<ExchangeCurrencyDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the ExchangeCurrencyDetail
-    /// المعرف الفريد لـ ExchangeCurrencyDetail
+    /// معرف فريد لتفاصيل صرف العملات
     /// </summary>
     public ExchangeCurrencyDetailId Id { get; private set; }
 
     /// <summary>
-    /// DocNo of the ExchangeCurrencyDetail
-    /// DocNo الخاص بـ ExchangeCurrencyDetail
+    /// رقم المستند
     /// </summary>
     public decimal? DocNo { get; private set; }
 
     /// <summary>
-    /// TypeNumberShort of the ExchangeCurrencyDetail
-    /// TypeNumberShort الخاص بـ ExchangeCurrencyDetail
+    /// نوع العملية المختصر
     /// </summary>
     public decimal? TypeNumberShort { get; private set; }
 
     /// <summary>
-    /// CashBankNumber of the ExchangeCurrencyDetail
-    /// CashBankNumber الخاص بـ ExchangeCurrencyDetail
+    /// رقم النقدية/البنك
     /// </summary>
     public decimal? CashBankNumber { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the ExchangeCurrencyDetail
-    /// AccountDetailCode الخاص بـ ExchangeCurrencyDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailSubCode of the ExchangeCurrencyDetail
-    /// AccountDetailSubCode الخاص بـ ExchangeCurrencyDetail
+    /// كود تفاصيل الحساب الفرعي
     /// </summary>
     public string AccountDetailSubCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the ExchangeCurrencyDetail
-    /// AccountDetailType الخاص بـ ExchangeCurrencyDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// DocDsc of the ExchangeCurrencyDetail
-    /// DocDsc الخاص بـ ExchangeCurrencyDetail
+    /// وصف المستند
     /// </summary>
     public string DocDsc { get; private set; }
 
     /// <summary>
-    /// AmountLocal of the ExchangeCurrencyDetail
-    /// AmountLocal الخاص بـ ExchangeCurrencyDetail
+    /// المبلغ المحلي
     /// </summary>
     public decimal? AmountLocal { get; private set; }
 
     /// <summary>
-    /// AmountForeign of the ExchangeCurrencyDetail
-    /// AmountForeign الخاص بـ ExchangeCurrencyDetail
+    /// المبلغ بالعملة الأجنبية
     /// </summary>
     public decimal? AmountForeign { get; private set; }
 
     /// <summary>
-    /// CurRate of the ExchangeCurrencyDetail
-    /// CurRate الخاص بـ ExchangeCurrencyDetail
+    /// سعر العملة
     /// </summary>
     public decimal? CurRate { get; private set; }
 
     /// <summary>
-    /// ReferenceNumber of the ExchangeCurrencyDetail
-    /// ReferenceNumber الخاص بـ ExchangeCurrencyDetail
+    /// رقم المرجع
     /// </summary>
     public string ReferenceNumber { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the ExchangeCurrencyDetail
-    /// RecordNumber الخاص بـ ExchangeCurrencyDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// DocSq of the ExchangeCurrencyDetail
-    /// DocSq الخاص بـ ExchangeCurrencyDetail
+    /// تسلسل المستند
     /// </summary>
     public decimal? DocSq { get; private set; }
 
     /// <summary>
-    /// DocTypRef of the ExchangeCurrencyDetail
-    /// DocTypRef الخاص بـ ExchangeCurrencyDetail
+    /// نوع المستند المرجعي
     /// </summary>
     public decimal? DocTypRef { get; private set; }
 
     /// <summary>
-    /// DocJvTypRef of the ExchangeCurrencyDetail
-    /// DocJvTypRef الخاص بـ ExchangeCurrencyDetail
+    /// نوع قيد اليومية المرجعي
     /// </summary>
     public decimal? DocJvTypRef { get; private set; }
 
     /// <summary>
-    /// DocNoRef of the ExchangeCurrencyDetail
-    /// DocNoRef الخاص بـ ExchangeCurrencyDetail
+    /// رقم المستند المرجعي
     /// </summary>
     public decimal? DocNoRef { get; private set; }
 
     /// <summary>
-    /// DocSrlRef of the ExchangeCurrencyDetail
-    /// DocSrlRef الخاص بـ ExchangeCurrencyDetail
+    /// رقم تسلسلي للمستند المرجعي
     /// </summary>
     public decimal? DocSrlRef { get; private set; }
 
     /// <summary>
-    /// DocSqRef of the ExchangeCurrencyDetail
-    /// DocSqRef الخاص بـ ExchangeCurrencyDetail
+    /// تسلسل المستند المرجعي
     /// </summary>
     public decimal? DocSqRef { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the ExchangeCurrencyDetail
-    /// CompanyNumberShort الخاص بـ ExchangeCurrencyDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the ExchangeCurrencyDetail
-    /// BranchNumber الخاص بـ ExchangeCurrencyDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the ExchangeCurrencyDetail
-    /// BranchYear الخاص بـ ExchangeCurrencyDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the ExchangeCurrencyDetail
-    /// BranchUser الخاص بـ ExchangeCurrencyDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     /// <summary>
-    /// DocBrnNo of the ExchangeCurrencyDetail
-    /// DocBrnNo الخاص بـ ExchangeCurrencyDetail
+    /// رقم فرع المستند
     /// </summary>
     public decimal? DocBrnNo { get; private set; }
 
     /// <summary>
-    /// NoteNumber of the ExchangeCurrencyDetail
-    /// NoteNumber الخاص بـ ExchangeCurrencyDetail
+    /// رقم السند
     /// </summary>
     public string NoteNumber { get; private set; }
 
     /// <summary>
-    /// ExternalPostFlag of the ExchangeCurrencyDetail
-    /// ExternalPostFlag الخاص بـ ExchangeCurrencyDetail
+    /// علم الترحيل الخارجي
     /// </summary>
     public decimal? ExternalPostFlag { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع الأنشطة (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Activity> Activity => _activity;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع عملات الحساب (متعدد إلى متعدد)
     /// </summary>
     public ICollection<AccountCurrency> AccountCurrency => _accountCurrency;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع المشاريع (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Project> Project => _project;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع مندوبي المبيعات (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Salesman> Salesman => _salesman;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع المحصلين (متعدد إلى متعدد)
     /// </summary>
     public ICollection<Collector> Collector => _collector;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع مراكز التكلفة (متعدد إلى متعدد)
     /// </summary>
     public ICollection<CostCenter> CostCenter => _costCenter;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع خطابات الاعتماد (متعدد إلى متعدد)
     /// </summary>
     public ICollection<LetterOfCreditMaster> LetterOfCreditMaster => _letterOfCreditMaster;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع مستند صرف العملات الرئيسي (متعدد إلى متعدد)
     /// </summary>
     public ICollection<ExchangeCurrencyMaster> ExchangeCurrencyMaster => _exchangeCurrencyMaster;
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

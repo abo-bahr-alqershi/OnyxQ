@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// PeriodExchangeRateDay Entity
+/// الكلاس يمثل سعر صرف العملة لفترة يومية ويحتوي على جميع خصائص أسعار الصرف اليومية للفترات
 /// </summary>
 public class PeriodExchangeRateDay : Entity<PeriodExchangeRateDayId>
 {
@@ -22,43 +22,37 @@ public class PeriodExchangeRateDay : Entity<PeriodExchangeRateDayId>
     }
 
     /// <summary>
-    /// The unique identifier for the PeriodExchangeRateDay
-    /// المعرف الفريد لـ PeriodExchangeRateDay
+    /// معرف فريد لسعر صرف العملة لفترة يومية
     /// </summary>
     public PeriodExchangeRateDayId Id { get; private set; }
 
     /// <summary>
-    /// FDate of the PeriodExchangeRateDay
-    /// FDate الخاص بـ PeriodExchangeRateDay
+    /// تاريخ البداية
     /// </summary>
     public DateTime? FDate { get; private set; }
 
     /// <summary>
-    /// TDate of the PeriodExchangeRateDay
-    /// TDate الخاص بـ PeriodExchangeRateDay
+    /// تاريخ النهاية
     /// </summary>
     public DateTime? TDate { get; private set; }
 
     /// <summary>
-    /// AccountCurrency of the PeriodExchangeRateDay
-    /// AccountCurrency الخاص بـ PeriodExchangeRateDay
+    /// عملة الحساب
     /// </summary>
     public string AccountCurrency { get; private set; }
 
     /// <summary>
-    /// CurRate of the PeriodExchangeRateDay
-    /// CurRate الخاص بـ PeriodExchangeRateDay
+    /// سعر العملة
     /// </summary>
     public decimal? CurRate { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the PeriodExchangeRateDay
-    /// BranchNumber الخاص بـ PeriodExchangeRateDay
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

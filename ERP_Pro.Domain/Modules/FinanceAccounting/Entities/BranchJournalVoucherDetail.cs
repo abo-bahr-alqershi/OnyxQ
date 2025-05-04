@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BranchJournalVoucherDetail Entity
+/// الكلاس يمثل تفاصيل قيد اليومية للفرع ويحتوي على جميع خصائص تفاصيل قيود اليومية للفروع
 /// </summary>
 public class BranchJournalVoucherDetail : Entity<BranchJournalVoucherDetailId>
 {
@@ -21,302 +21,254 @@ public class BranchJournalVoucherDetail : Entity<BranchJournalVoucherDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the BranchJournalVoucherDetail
-    /// المعرف الفريد لـ BranchJournalVoucherDetail
+    /// معرف فريد لتفاصيل قيد اليومية للفرع
     /// </summary>
     public BranchJournalVoucherDetailId Id { get; private set; }
 
     /// <summary>
-    /// JournalVoucherTypeFull of the BranchJournalVoucherDetail
-    /// JournalVoucherTypeFull الخاص بـ BranchJournalVoucherDetail
+    /// نوع قيد اليومية الكامل
     /// </summary>
     public decimal? JournalVoucherTypeFull { get; private set; }
 
     /// <summary>
-    /// JournalDocumentNumber of the BranchJournalVoucherDetail
-    /// JournalDocumentNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم مستند القيد
     /// </summary>
     public decimal? JournalDocumentNumber { get; private set; }
 
     /// <summary>
-    /// AccountCode of the BranchJournalVoucherDetail
-    /// AccountCode الخاص بـ BranchJournalVoucherDetail
+    /// كود الحساب
     /// </summary>
     public string AccountCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the BranchJournalVoucherDetail
-    /// AccountDetailCode الخاص بـ BranchJournalVoucherDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the BranchJournalVoucherDetail
-    /// AccountDetailType الخاص بـ BranchJournalVoucherDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// AccountCurrency of the BranchJournalVoucherDetail
-    /// AccountCurrency الخاص بـ BranchJournalVoucherDetail
+    /// عملة الحساب
     /// </summary>
     public string AccountCurrency { get; private set; }
 
     /// <summary>
-    /// JournalDescription of the BranchJournalVoucherDetail
-    /// JournalDescription الخاص بـ BranchJournalVoucherDetail
+    /// وصف القيد
     /// </summary>
     public string JournalDescription { get; private set; }
 
     /// <summary>
-    /// JournalAmount of the BranchJournalVoucherDetail
-    /// JournalAmount الخاص بـ BranchJournalVoucherDetail
+    /// مبلغ القيد
     /// </summary>
     public decimal? JournalAmount { get; private set; }
 
     /// <summary>
-    /// JournalAmountForeign of the BranchJournalVoucherDetail
-    /// JournalAmountForeign الخاص بـ BranchJournalVoucherDetail
+    /// مبلغ القيد بالعملة الأجنبية
     /// </summary>
     public decimal? JournalAmountForeign { get; private set; }
 
     /// <summary>
-    /// AccountRate of the BranchJournalVoucherDetail
-    /// AccountRate الخاص بـ BranchJournalVoucherDetail
+    /// سعر الحساب
     /// </summary>
     public decimal? AccountRate { get; private set; }
 
     /// <summary>
-    /// CostCenterCode of the BranchJournalVoucherDetail
-    /// CostCenterCode الخاص بـ BranchJournalVoucherDetail
+    /// كود مركز التكلفة
     /// </summary>
     public string CostCenterCode { get; private set; }
 
     /// <summary>
-    /// ProjectNumber of the BranchJournalVoucherDetail
-    /// ProjectNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم المشروع
     /// </summary>
     public string ProjectNumber { get; private set; }
 
     /// <summary>
-    /// ActivityNumber of the BranchJournalVoucherDetail
-    /// ActivityNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم النشاط
     /// </summary>
     public string ActivityNumber { get; private set; }
 
     /// <summary>
-    /// CCode of the BranchJournalVoucherDetail
-    /// CCode الخاص بـ BranchJournalVoucherDetail
+    /// كود العميل
     /// </summary>
     public string CCode { get; private set; }
 
     /// <summary>
-    /// VendorCode of the BranchJournalVoucherDetail
-    /// VendorCode الخاص بـ BranchJournalVoucherDetail
+    /// كود المورد
     /// </summary>
     public string VendorCode { get; private set; }
 
     /// <summary>
-    /// RepCode of the BranchJournalVoucherDetail
-    /// RepCode الخاص بـ BranchJournalVoucherDetail
+    /// كود المندوب
     /// </summary>
     public string RepCode { get; private set; }
 
     /// <summary>
-    /// ColumnNumberShort of the BranchJournalVoucherDetail
-    /// ColumnNumberShort الخاص بـ BranchJournalVoucherDetail
+    /// رقم العمود المختصر
     /// </summary>
     public decimal? ColumnNumberShort { get; private set; }
 
     /// <summary>
-    /// LetterCreditNumber of the BranchJournalVoucherDetail
-    /// LetterCreditNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم اعتماد مستندي
     /// </summary>
     public string LetterCreditNumber { get; private set; }
 
     /// <summary>
-    /// GroupNumberFull of the BranchJournalVoucherDetail
-    /// GroupNumberFull الخاص بـ BranchJournalVoucherDetail
+    /// رقم المجموعة الكامل
     /// </summary>
     public string GroupNumberFull { get; private set; }
 
     /// <summary>
-    /// CashBankNumber of the BranchJournalVoucherDetail
-    /// CashBankNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم النقدية أو البنك
     /// </summary>
     public decimal? CashBankNumber { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the BranchJournalVoucherDetail
-    /// RecordNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// RecordNumberOrder of the BranchJournalVoucherDetail
-    /// RecordNumberOrder الخاص بـ BranchJournalVoucherDetail
+    /// ترتيب رقم السجل
     /// </summary>
     public decimal? RecordNumberOrder { get; private set; }
 
     /// <summary>
-    /// DocTypeRef of the BranchJournalVoucherDetail
-    /// DocTypeRef الخاص بـ BranchJournalVoucherDetail
+    /// نوع المستند المرجعي
     /// </summary>
     public decimal? DocTypeRef { get; private set; }
 
     /// <summary>
-    /// DocJvTypeRef of the BranchJournalVoucherDetail
-    /// DocJvTypeRef الخاص بـ BranchJournalVoucherDetail
+    /// نوع قيد اليومية المرجعي
     /// </summary>
     public decimal? DocJvTypeRef { get; private set; }
 
     /// <summary>
-    /// DocNoRef of the BranchJournalVoucherDetail
-    /// DocNoRef الخاص بـ BranchJournalVoucherDetail
+    /// رقم المستند المرجعي
     /// </summary>
     public decimal? DocNoRef { get; private set; }
 
     /// <summary>
-    /// DocSerRef of the BranchJournalVoucherDetail
-    /// DocSerRef الخاص بـ BranchJournalVoucherDetail
+    /// رقم تسلسلي للمستند المرجعي
     /// </summary>
     public decimal? DocSerRef { get; private set; }
 
     /// <summary>
-    /// DocDueDate of the BranchJournalVoucherDetail
-    /// DocDueDate الخاص بـ BranchJournalVoucherDetail
+    /// تاريخ استحقاق المستند
     /// </summary>
     public DateTime? DocDueDate { get; private set; }
 
     /// <summary>
-    /// BillNumber of the BranchJournalVoucherDetail
-    /// BillNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم الفاتورة
     /// </summary>
     public decimal? BillNumber { get; private set; }
 
     /// <summary>
-    /// BillSerial of the BranchJournalVoucherDetail
-    /// BillSerial الخاص بـ BranchJournalVoucherDetail
+    /// تسلسل الفاتورة
     /// </summary>
     public decimal? BillSerial { get; private set; }
 
     /// <summary>
-    /// CashierNumber of the BranchJournalVoucherDetail
-    /// CashierNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم أمين الصندوق
     /// </summary>
     public decimal? CashierNumber { get; private set; }
 
     /// <summary>
-    /// ItemNumber of the BranchJournalVoucherDetail
-    /// ItemNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم البند
     /// </summary>
     public decimal? ItemNumber { get; private set; }
 
     /// <summary>
-    /// WorkOrderNumber of the BranchJournalVoucherDetail
-    /// WorkOrderNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم أمر العمل
     /// </summary>
     public decimal? WorkOrderNumber { get; private set; }
 
     /// <summary>
-    /// WorkOrderSerial of the BranchJournalVoucherDetail
-    /// WorkOrderSerial الخاص بـ BranchJournalVoucherDetail
+    /// تسلسل أمر العمل
     /// </summary>
     public decimal? WorkOrderSerial { get; private set; }
 
     /// <summary>
-    /// ReferenceNumber of the BranchJournalVoucherDetail
-    /// ReferenceNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم المرجع
     /// </summary>
     public string ReferenceNumber { get; private set; }
 
     /// <summary>
-    /// ChequeNumber of the BranchJournalVoucherDetail
-    /// ChequeNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم الشيك
     /// </summary>
     public decimal? ChequeNumber { get; private set; }
 
     /// <summary>
-    /// NoteNumber of the BranchJournalVoucherDetail
-    /// NoteNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم السند
     /// </summary>
     public string NoteNumber { get; private set; }
 
     /// <summary>
-    /// DocSequence of the BranchJournalVoucherDetail
-    /// DocSequence الخاص بـ BranchJournalVoucherDetail
+    /// تسلسل المستند
     /// </summary>
     public decimal? DocSequence { get; private set; }
 
     /// <summary>
-    /// ExternalPostFlag of the BranchJournalVoucherDetail
-    /// ExternalPostFlag الخاص بـ BranchJournalVoucherDetail
+    /// علم الترحيل الخارجي
     /// </summary>
     public decimal? ExternalPostFlag { get; private set; }
 
     /// <summary>
-    /// DocBrnNo of the BranchJournalVoucherDetail
-    /// DocBrnNo الخاص بـ BranchJournalVoucherDetail
+    /// رقم مستند الفرع
     /// </summary>
     public decimal? DocBrnNo { get; private set; }
 
     /// <summary>
-    /// Note of the BranchJournalVoucherDetail
-    /// Note الخاص بـ BranchJournalVoucherDetail
+    /// ملاحظة
     /// </summary>
     public string Note { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the BranchJournalVoucherDetail
-    /// CompanyNumberShort الخاص بـ BranchJournalVoucherDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the BranchJournalVoucherDetail
-    /// BranchNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the BranchJournalVoucherDetail
-    /// BranchYear الخاص بـ BranchJournalVoucherDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the BranchJournalVoucherDetail
-    /// BranchUser الخاص بـ BranchJournalVoucherDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     /// <summary>
-    /// ContractNumber of the BranchJournalVoucherDetail
-    /// ContractNumber الخاص بـ BranchJournalVoucherDetail
+    /// رقم العقد
     /// </summary>
     public decimal? ContractNumber { get; private set; }
 
     /// <summary>
-    /// ContractSerialShort of the BranchJournalVoucherDetail
-    /// ContractSerialShort الخاص بـ BranchJournalVoucherDetail
+    /// تسلسل العقد المختصر
     /// </summary>
     public decimal? ContractSerialShort { get; private set; }
 
     /// <summary>
-    /// ContractBatch of the BranchJournalVoucherDetail
-    /// ContractBatch الخاص بـ BranchJournalVoucherDetail
+    /// دفعة العقد
     /// </summary>
     public decimal? ContractBatch { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع مستند قيد اليومية (متعدد إلى واحد)
     /// </summary>
     public JournalVoucherMaster JournalVoucherMaster { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

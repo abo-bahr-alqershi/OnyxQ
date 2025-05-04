@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// JournalVoucherType Entity
+/// الكلاس يمثل نوع قيد اليومية ويحتوي على جميع خصائص أنواع قيود اليومية
 /// </summary>
 public class JournalVoucherType : Entity<JournalVoucherTypeId>
 {
@@ -20,86 +20,72 @@ public class JournalVoucherType : Entity<JournalVoucherTypeId>
     }
 
     /// <summary>
-    /// The unique identifier for the JournalVoucherType
-    /// المعرف الفريد لـ JournalVoucherType
+    /// معرف فريد لنوع قيد اليومية
     /// </summary>
     public JournalVoucherTypeId Id { get; private set; }
 
     /// <summary>
-    /// JournalVoucherTypeFull of the JournalVoucherType
-    /// JournalVoucherTypeFull الخاص بـ JournalVoucherType
+    /// نوع قيد اليومية الكامل
     /// </summary>
     public decimal? JournalVoucherTypeFull { get; private set; }
 
     /// <summary>
-    /// JournalVoucherName of the JournalVoucherType
-    /// JournalVoucherName الخاص بـ JournalVoucherType
+    /// اسم قيد اليومية
     /// </summary>
     public string JournalVoucherName { get; private set; }
 
     /// <summary>
-    /// JournalVoucherNameEnglish of the JournalVoucherType
-    /// JournalVoucherNameEnglish الخاص بـ JournalVoucherType
+    /// اسم قيد اليومية بالإنجليزية
     /// </summary>
     public string JournalVoucherNameEnglish { get; private set; }
 
     /// <summary>
-    /// SequencedFlag of the JournalVoucherType
-    /// SequencedFlag الخاص بـ JournalVoucherType
+    /// علم التسلسل
     /// </summary>
     public decimal? SequencedFlag { get; private set; }
 
     /// <summary>
-    /// PaymentReceipt of the JournalVoucherType
-    /// PaymentReceipt الخاص بـ JournalVoucherType
+    /// إيصال الدفع
     /// </summary>
     public decimal? PaymentReceipt { get; private set; }
 
     /// <summary>
-    /// GroupTypeFull of the JournalVoucherType
-    /// GroupTypeFull الخاص بـ JournalVoucherType
+    /// نوع المجموعة الكامل
     /// </summary>
     public decimal? GroupTypeFull { get; private set; }
 
     /// <summary>
-    /// RepSample of the JournalVoucherType
-    /// RepSample الخاص بـ JournalVoucherType
+    /// نموذج التقرير
     /// </summary>
     public decimal? RepSample { get; private set; }
 
     /// <summary>
-    /// ConnectionJournalVoucherRequest of the JournalVoucherType
-    /// ConnectionJournalVoucherRequest الخاص بـ JournalVoucherType
+    /// طلب ربط قيد اليومية
     /// </summary>
     public decimal? ConnectionJournalVoucherRequest { get; private set; }
 
     /// <summary>
-    /// KimbType of the JournalVoucherType
-    /// KimbType الخاص بـ JournalVoucherType
+    /// نوع Kimb
     /// </summary>
     public decimal? KimbType { get; private set; }
 
     /// <summary>
-    /// VatCorrection of the JournalVoucherType
-    /// VatCorrection الخاص بـ JournalVoucherType
+    /// تصحيح ضريبة القيمة المضافة
     /// </summary>
     public decimal? VatCorrection { get; private set; }
 
     /// <summary>
-    /// VatDeferredProvider of the JournalVoucherType
-    /// VatDeferredProvider الخاص بـ JournalVoucherType
+    /// مزود ضريبة القيمة المضافة المؤجلة
     /// </summary>
     public decimal? VatDeferredProvider { get; private set; }
 
     /// <summary>
-    /// VatProviderReverse of the JournalVoucherType
-    /// VatProviderReverse الخاص بـ JournalVoucherType
+    /// عكس مزود ضريبة القيمة المضافة
     /// </summary>
     public decimal? VatProviderReverse { get; private set; }
 
     /// <summary>
-    /// ExpenseTaxFlag of the JournalVoucherType
-    /// ExpenseTaxFlag الخاص بـ JournalVoucherType
+    /// علم ضريبة المصروفات
     /// </summary>
     public decimal? ExpenseTaxFlag { get; private set; }
 

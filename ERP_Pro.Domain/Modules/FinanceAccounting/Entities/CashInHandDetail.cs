@@ -7,7 +7,7 @@ using ERP_Pro.Domain.ERP.StationsFuel.Entities;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CashInHandDetail Entity
+/// الكلاس يمثل تفاصيل النقدية باليد ويحتوي على جميع خصائص النقدية باليد
 /// </summary>
 public class CashInHandDetail : Entity<CashInHandDetailId>
 {
@@ -20,90 +20,78 @@ public class CashInHandDetail : Entity<CashInHandDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the CashInHandDetail
-    /// المعرف الفريد لـ CashInHandDetail
+    /// معرف فريد لتفاصيل النقدية باليد
     /// </summary>
     public CashInHandDetailId Id { get; private set; }
 
     /// <summary>
-    /// OpenBalanceLocal of the CashInHandDetail
-    /// OpenBalanceLocal الخاص بـ CashInHandDetail
+    /// الرصيد الافتتاحي بالعملة المحلية
     /// </summary>
     public decimal? OpenBalanceLocal { get; private set; }
 
     /// <summary>
-    /// OpenBalanceForeign of the CashInHandDetail
-    /// OpenBalanceForeign الخاص بـ CashInHandDetail
+    /// الرصيد الافتتاحي بالعملة الأجنبية
     /// </summary>
     public decimal? OpenBalanceForeign { get; private set; }
 
     /// <summary>
-    /// CurrBalL of the CashInHandDetail
-    /// CurrBalL الخاص بـ CashInHandDetail
+    /// الرصيد الحالي بالعملة المحلية
     /// </summary>
     public decimal? CurrBalL { get; private set; }
 
     /// <summary>
-    /// CurrBalF of the CashInHandDetail
-    /// CurrBalF الخاص بـ CashInHandDetail
+    /// الرصيد الحالي بالعملة الأجنبية
     /// </summary>
     public decimal? CurrBalF { get; private set; }
 
     /// <summary>
-    /// InactiveFlag of the CashInHandDetail
-    /// InactiveFlag الخاص بـ CashInHandDetail
+    /// حالة التعطيل
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
-    /// MinLimitAmount of the CashInHandDetail
-    /// MinLimitAmount الخاص بـ CashInHandDetail
+    /// الحد الأدنى للمبلغ
     /// </summary>
     public decimal? MinLimitAmount { get; private set; }
 
     /// <summary>
-    /// MaxLimitAmount of the CashInHandDetail
-    /// MaxLimitAmount الخاص بـ CashInHandDetail
+    /// الحد الأعلى للمبلغ
     /// </summary>
     public decimal? MaxLimitAmount { get; private set; }
 
     /// <summary>
-    /// MaxLimitTransactionAmount of the CashInHandDetail
-    /// MaxLimitTransactionAmount الخاص بـ CashInHandDetail
+    /// الحد الأعلى لمبلغ العملية
     /// </summary>
     public decimal? MaxLimitTransactionAmount { get; private set; }
 
     /// <summary>
-    /// MinLimitTransactionAmount of the CashInHandDetail
-    /// MinLimitTransactionAmount الخاص بـ CashInHandDetail
+    /// الحد الأدنى لمبلغ العملية
     /// </summary>
     public decimal? MinLimitTransactionAmount { get; private set; }
 
     /// <summary>
-    /// PassportLimit of the CashInHandDetail
-    /// PassportLimit الخاص بـ CashInHandDetail
+    /// حد الجواز
     /// </summary>
     public decimal? PassportLimit { get; private set; }
 
     /// <summary>
-    /// InactiveDate of the CashInHandDetail
-    /// InactiveDate الخاص بـ CashInHandDetail
+    /// تاريخ التعطيل
     /// </summary>
     public DateTime? InactiveDate { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع عملة الحساب (متعدد إلى واحد)
     /// </summary>
     public AccountCurrency AccountCurrency { get; private set; }
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع النقدية باليد (متعدد إلى واحد)
     /// </summary>
     public HandCash HandCash { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

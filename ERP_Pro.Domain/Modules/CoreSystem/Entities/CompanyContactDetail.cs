@@ -1,3 +1,5 @@
+using ERP_Pro.Domain.Common.Entities;
+
 namespace ERP_Pro.Domain.ERP.CoreSystem.Entities
 {
     // كيان يمثل تفاصيل الاتصال الخاصة بالشركة ويحتوي على معلومات الاتصال الخاصة بكل شركة.

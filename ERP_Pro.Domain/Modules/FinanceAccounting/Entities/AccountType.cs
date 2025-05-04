@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// AccountType Entity
+/// الكلاس يمثل نوع الحساب ويحتوي على جميع خصائص أنواع الحسابات
 /// </summary>
 public class AccountType : Entity<AccountTypeId>
 {
@@ -20,37 +20,32 @@ public class AccountType : Entity<AccountTypeId>
     }
 
     /// <summary>
-    /// The unique identifier for the AccountType
-    /// المعرف الفريد لـ AccountType
+    /// معرف فريد لنوع الحساب
     /// </summary>
     public AccountTypeId Id { get; private set; }
 
     /// <summary>
-    /// AccountType of the AccountType
-    /// AccountType الخاص بـ AccountType
+    /// نوع الحساب
     /// </summary>
     public decimal? AccountType { get; private set; }
 
     /// <summary>
-    /// AccountName of the AccountType
-    /// AccountName الخاص بـ AccountType
+    /// اسم نوع الحساب
     /// </summary>
     public string AccountName { get; private set; }
 
     /// <summary>
-    /// AccountNameEnglish of the AccountType
-    /// AccountNameEnglish الخاص بـ AccountType
+    /// اسم نوع الحساب بالإنجليزية
     /// </summary>
     public string AccountNameEnglish { get; private set; }
 
     /// <summary>
-    /// AffectedByTransactionFlag of the AccountType
-    /// AffectedByTransactionFlag الخاص بـ AccountType
+    /// علم التأثر بالمعاملات
     /// </summary>
     public decimal? AffectedByTransactionFlag { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

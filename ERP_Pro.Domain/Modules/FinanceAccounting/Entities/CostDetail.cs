@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CostDetail Entity
+/// الكلاس يمثل تفاصيل التكلفة ويحتوي على جميع خصائص تفاصيل التكاليف
 /// </summary>
 public class CostDetail : Entity<CostDetailId>
 {
@@ -21,108 +21,93 @@ public class CostDetail : Entity<CostDetailId>
     }
 
     /// <summary>
-    /// The unique identifier for the CostDetail
-    /// المعرف الفريد لـ CostDetail
+    /// معرف فريد لتفاصيل التكلفة
     /// </summary>
     public CostDetailId Id { get; private set; }
 
     /// <summary>
-    /// PurchaseInvoiceNumber of the CostDetail
-    /// PurchaseInvoiceNumber الخاص بـ CostDetail
+    /// رقم فاتورة الشراء
     /// </summary>
     public decimal? PurchaseInvoiceNumber { get; private set; }
 
     /// <summary>
-    /// GroupNumberFull of the CostDetail
-    /// GroupNumberFull الخاص بـ CostDetail
+    /// رقم المجموعة الكامل
     /// </summary>
     public decimal? GroupNumberFull { get; private set; }
 
     /// <summary>
-    /// DocSer of the CostDetail
-    /// DocSer الخاص بـ CostDetail
+    /// رقم تسلسلي للمستند
     /// </summary>
     public decimal? DocSer { get; private set; }
 
     /// <summary>
-    /// AccountDetailCode of the CostDetail
-    /// AccountDetailCode الخاص بـ CostDetail
+    /// كود تفاصيل الحساب
     /// </summary>
     public string AccountDetailCode { get; private set; }
 
     /// <summary>
-    /// AccountDetailType of the CostDetail
-    /// AccountDetailType الخاص بـ CostDetail
+    /// نوع تفاصيل الحساب
     /// </summary>
     public decimal? AccountDetailType { get; private set; }
 
     /// <summary>
-    /// AccountCurrencyAmount of the CostDetail
-    /// AccountCurrencyAmount الخاص بـ CostDetail
+    /// مبلغ عملة الحساب
     /// </summary>
     public decimal? AccountCurrencyAmount { get; private set; }
 
     /// <summary>
-    /// AccountInvoiceCurrencyAmount of the CostDetail
-    /// AccountInvoiceCurrencyAmount الخاص بـ CostDetail
+    /// مبلغ عملة الفاتورة
     /// </summary>
     public decimal? AccountInvoiceCurrencyAmount { get; private set; }
 
     /// <summary>
-    /// CostDistributionType of the CostDetail
-    /// CostDistributionType الخاص بـ CostDetail
+    /// نوع توزيع التكلفة
     /// </summary>
     public decimal? CostDistributionType { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the CostDetail
-    /// RecordNumber الخاص بـ CostDetail
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// ExchangeRate of the CostDetail
-    /// ExchangeRate الخاص بـ CostDetail
+    /// سعر الصرف
     /// </summary>
     public decimal? ExchangeRate { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the CostDetail
-    /// CompanyNumberShort الخاص بـ CostDetail
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the CostDetail
-    /// BranchNumber الخاص بـ CostDetail
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the CostDetail
-    /// BranchYear الخاص بـ CostDetail
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the CostDetail
-    /// BranchUser الخاص بـ CostDetail
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع عملات الحساب (متعدد إلى متعدد)
     /// </summary>
     public ICollection<AccountCurrency> AccountCurrency => _accountCurrency;
     /// <summary>
-    /// Collection relationship: ManyToMany
+    /// علاقة تجميعية مع التكاليف الرئيسية (متعدد إلى متعدد)
     /// </summary>
     public ICollection<CostMaster> CostMaster => _costMaster;
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

@@ -6,7 +6,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// AccountExpenseDistribution Entity
+/// الكلاس يمثل توزيع مصروف الحساب ويحتوي على جميع خصائص توزيع المصروفات
 /// </summary>
 public class AccountExpenseDistribution : Entity<AccountExpenseDistributionId>
 {
@@ -19,73 +19,62 @@ public class AccountExpenseDistribution : Entity<AccountExpenseDistributionId>
     }
 
     /// <summary>
-    /// The unique identifier for the AccountExpenseDistribution
-    /// المعرف الفريد لـ AccountExpenseDistribution
+    /// معرف فريد لتوزيع مصروف الحساب
     /// </summary>
     public AccountExpenseDistributionId Id { get; private set; }
 
     /// <summary>
-    /// RecordNumber of the AccountExpenseDistribution
-    /// RecordNumber الخاص بـ AccountExpenseDistribution
+    /// رقم السجل
     /// </summary>
     public decimal? RecordNumber { get; private set; }
 
     /// <summary>
-    /// AccountCode of the AccountExpenseDistribution
-    /// AccountCode الخاص بـ AccountExpenseDistribution
+    /// كود الحساب
     /// </summary>
     public string AccountCode { get; private set; }
 
     /// <summary>
-    /// CostCenterCode of the AccountExpenseDistribution
-    /// CostCenterCode الخاص بـ AccountExpenseDistribution
+    /// كود مركز التكلفة
     /// </summary>
     public string CostCenterCode { get; private set; }
 
     /// <summary>
-    /// ProjectNumber of the AccountExpenseDistribution
-    /// ProjectNumber الخاص بـ AccountExpenseDistribution
+    /// رقم المشروع
     /// </summary>
     public string ProjectNumber { get; private set; }
 
     /// <summary>
-    /// ActivityNumber of the AccountExpenseDistribution
-    /// ActivityNumber الخاص بـ AccountExpenseDistribution
+    /// رقم النشاط
     /// </summary>
     public string ActivityNumber { get; private set; }
 
     /// <summary>
-    /// ExpensePercent of the AccountExpenseDistribution
-    /// ExpensePercent الخاص بـ AccountExpenseDistribution
+    /// نسبة المصروف
     /// </summary>
     public decimal? ExpensePercent { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the AccountExpenseDistribution
-    /// CompanyNumberShort الخاص بـ AccountExpenseDistribution
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the AccountExpenseDistribution
-    /// BranchNumber الخاص بـ AccountExpenseDistribution
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the AccountExpenseDistribution
-    /// BranchYear الخاص بـ AccountExpenseDistribution
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the AccountExpenseDistribution
-    /// BranchUser الخاص بـ AccountExpenseDistribution
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }

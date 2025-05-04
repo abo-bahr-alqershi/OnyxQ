@@ -19,6 +19,7 @@ namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// AccountCurrency Entity
+/// الكلاس يمثل عملة الحساب ويحتوي على جميع خصائص عملات الحسابات
 /// </summary>
 public class AccountCurrency : Entity<AccountCurrencyId>
 {
@@ -33,34 +34,40 @@ public class AccountCurrency : Entity<AccountCurrencyId>
     /// <summary>
     /// The unique identifier for the AccountCurrency
     /// المعرف الفريد لـ AccountCurrency
+    /// معرف فريد لعملة الحساب
     /// </summary>
     public AccountCurrencyId Id { get; private set; }
 
     /// <summary>
     /// InactiveFlag of the AccountCurrency
     /// InactiveFlag الخاص بـ AccountCurrency
+    /// علم التعطيل
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
     /// UsedFlag of the AccountCurrency
     /// UsedFlag الخاص بـ AccountCurrency
+    /// علم الاستخدام
     /// </summary>
     public decimal? UsedFlag { get; private set; }
 
     #region Navigation Properties
     /// <summary>
     /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع الحساب (متعدد إلى واحد)
     /// </summary>
     public Account Account { get; private set; }
     /// <summary>
     /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع سعر الصرف (متعدد إلى واحد)
     /// </summary>
     public ExchangeRate ExchangeRate { get; private set; }
     #endregion
 
     #region Methods
     // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }
