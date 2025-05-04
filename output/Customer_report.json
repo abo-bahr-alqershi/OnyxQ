@@ -1,0 +1,262 @@
+{
+  "entity": {
+    "name": "Customer",
+    "table_name": "CUSTOMER",
+    "module": "Sales & Customers"
+  },
+  "value_objects": {
+    "BankInfo": [
+      "UseBankDepositAccountIntermediate",
+      "AccountBankCode",
+      "BankAccountCode",
+      "BankAccountType"
+    ],
+    "Money": [
+      "UseCalculateColumnAmount",
+      "UseCalculateCommissionLevelPriceFlag",
+      "UseCalculateTaxFreeQuantity",
+      "UsePurchaseInvoiceCalculateTaxFreeQuantity",
+      "UsePriceWarehouseTransferReceiveCost",
+      "VatAmountDiscountMaster",
+      "WeightCalculateQuantityByIncludePrice",
+      "WeightPriceForceLength",
+      "SaleRateForeignIncomeDegree",
+      "SocialClassNoPanAmount",
+      "SocialClassPanAmount",
+      "ServiceAccountRate",
+      "ServiceAmount",
+      "ShowStockCostInQuantityDiscountFreeQuantity",
+      "ShowAmountQuantityStaticArabicReport",
+      "LoadAmountLocalLimit",
+      "MethodVatCalculationItemUsed",
+      "NetIncomeAmount",
+      "AccountCurrencyAmount",
+      "AccountInvoiceCurrencyAmount",
+      "AccountAmount",
+      "AccountAmountForeign",
+      "AccountRate",
+      "AdditionalDiscountAmountDetail",
+      "AdditionalDiscountAmountMaster",
+      "AdditionalDiscountAmountMasterPrevious",
+      "AllowChangeDeliveryServiceAmount",
+      "AmountForeignDiscountMovement",
+      "AmountLocalDiscountMovement",
+      "AccountsPayableItemChargeCalculationAmountType",
+      "CalcInsuranceLoadAmountMethod",
+      "CalcTaxAdvancePayment",
+      "CalcTaxDiscount2",
+      "CalcTaxDiscount3",
+      "CalcTaxFreeQuantityFlag",
+      "CalcTaxInsuranceCompanyFlag",
+      "CalcTaxType",
+      "CalcTypeNumberTax",
+      "CalcVatPriceType",
+      "IncomeAmount",
+      "IncomeCost",
+      "IncomeNetAmount",
+      "InsuranceLimitAmountLocalDocument",
+      "ItemDiscountAmount",
+      "ItemLastIncomePrice",
+      "LetterCreditAmount",
+      "LetterCreditCostTypeNumber",
+      "LetterCreditCreditAmount",
+      "LetterCreditExpenseAmount",
+      "LetterCreditExpenseAmountForeign",
+      "LetterCreditExpenseRate",
+      "LetterCreditOpenAmount",
+      "LetterCreditRate",
+      "LetterCreditRotateAmount",
+      "LimitAmountLocalChronicDocument",
+      "LimitAmountLocalNetDocument",
+      "LimitAmountLocalOutNetDocument",
+      "LimitAmountNetLocalYear",
+      "BillAccountAmount",
+      "BalanceAmount",
+      "BalanceAmountManual",
+      "CalculateMeasurePrice",
+      "CalculateVatAmountType",
+      "CalculateVatAmountTypeAccountsPayable",
+      "CheckLimitPriceMinusDiscountSalesInvoice",
+      "PointAmountCalculationType",
+      "PointReplaceAmount",
+      "PostTaxDueAccountCode",
+      "PriceIncludeVatServiceItem",
+      "ForceDifferenceDiscountAfterVatAccount",
+      "SourceIncomeRate",
+      "StockAccountRate",
+      "TotalNetIncomeAmount",
+      "TransactionNotReceivedAmount"
+    ],
+    "IdentityInfo": [
+      "UseDiscountCardSale",
+      "WebServiceUuid",
+      "ReceiveInvoiceUserId",
+      "NotAllowDeleteDocumentConnectedSerialNumber",
+      "PaidDocumentNumber",
+      "PaidDocumentSerial",
+      "PaidDocumentType",
+      "ApprovalReceivedUserId",
+      "AccountsReceivableAdditionalDiscountSerial",
+      "ArReceiptDocumentSerial",
+      "ArRequestAdditionalDiscountSerial",
+      "CalcPaidMethod",
+      "CreditCardDocumentNumberReference",
+      "CreditCardDocumentNumberReferenceSecond",
+      "CreditCardDocumentNumberReferenceThird",
+      "CreditCardDescriptionSecond",
+      "CreditCardDescriptionThird",
+      "CalculateAllSlides",
+      "CardSecondAddress",
+      "SalesInvoiceHideDiscountPercent"
+    ],
+    "PersonInfo": [
+      "ReceiverName",
+      "ServiceName",
+      "LocationFirstName",
+      "LocationLastName",
+      "AccountDetailFullName",
+      "AccountDetailLastName",
+      "CalcTypeFirstName",
+      "CalcTypeLastName",
+      "AttachmentDescriptionNameArabic",
+      "AttachmentDescriptionNameEnglish",
+      "BatchDescriptionNameArabic",
+      "BatchDescriptionNameEnglish",
+      "CostCenterNameArabic",
+      "CostCenterNameEnglish",
+      "CostCenterName",
+      "SubCustomerFirstName",
+      "SubCustomerLastName"
+    ],
+    "DateRange": [
+      "SalesDiscountPeriodic",
+      "HolidayCalculationStartDate"
+    ],
+    "ContactInfo": [
+      "MobileAttendanceSync",
+      "AttendanceMobileSerial",
+      "AttendanceMobileType",
+      "CardSecondEmail",
+      "CardSecondTelephone"
+    ]
+  },
+  "events": {
+    "Created": {
+      "category": "lifecycle",
+      "description": "يتم إطلاق هذا الحدث عند إنشاء كيان جديد"
+    },
+    "Updated": {
+      "category": "lifecycle",
+      "description": "يتم إطلاق هذا الحدث عند تحديث بيانات الكيان"
+    },
+    "Deleted": {
+      "category": "lifecycle",
+      "description": "يتم إطلاق هذا الحدث عند حذف الكيان (منطقي أو فعلي)"
+    },
+    "Archived": {
+      "category": "lifecycle",
+      "description": "يتم إطلاق هذا الحدث عند أرشفة الكيان"
+    },
+    "StatusChanged": {
+      "category": "status",
+      "description": "يتم إطلاق هذا الحدث عند تغيير حالة الكيان الرئيسية"
+    },
+    "Activated": {
+      "category": "status",
+      "description": "يتم إطلاق هذا الحدث عند تفعيل الكيان"
+    },
+    "Deactivated": {
+      "category": "status",
+      "description": "يتم إطلاق هذا الحدث عند إلغاء تفعيل الكيان"
+    },
+    "Locked": {
+      "category": "status",
+      "description": "يتم إطلاق هذا الحدث عند قفل الكيان"
+    },
+    "Unlocked": {
+      "category": "status",
+      "description": "يتم إطلاق هذا الحدث عند إلغاء قفل الكيان"
+    },
+    "PaymentReceived": {
+      "category": "financial",
+      "description": "يتم إطلاق هذا الحدث عند استلام دفعة"
+    },
+    "PaymentIssued": {
+      "category": "financial",
+      "description": "يتم إطلاق هذا الحدث عند إصدار دفعة"
+    },
+    "InvoiceIssued": {
+      "category": "financial",
+      "description": "يتم إطلاق هذا الحدث عند إصدار فاتورة"
+    },
+    "BalanceChanged": {
+      "category": "financial",
+      "description": "يتم إطلاق هذا الحدث عند تغير الرصيد"
+    },
+    "CreditLimitChanged": {
+      "category": "financial",
+      "description": "يتم إطلاق هذا الحدث عند تغيير حد الائتمان"
+    },
+    "TaxCalculated": {
+      "category": "financial",
+      "description": "يتم إطلاق هذا الحدث عند احتساب الضريبة"
+    },
+    "OrderPlaced": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند إنشاء طلب"
+    },
+    "OrderConfirmed": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند تأكيد طلب"
+    },
+    "OrderShipped": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند شحن طلب"
+    },
+    "OrderDelivered": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند توصيل طلب"
+    },
+    "OrderReturned": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند إرجاع طلب"
+    },
+    "QuotationIssued": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند إصدار عرض سعر"
+    },
+    "QuotationAccepted": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند قبول عرض سعر"
+    },
+    "DiscountApplied": {
+      "category": "sales",
+      "description": "يتم إطلاق هذا الحدث عند تطبيق خصم"
+    },
+    "Approved": {
+      "category": "approval",
+      "description": "يتم إطلاق هذا الحدث عند الموافقة على الكيان"
+    },
+    "Rejected": {
+      "category": "approval",
+      "description": "يتم إطلاق هذا الحدث عند رفض الكيان"
+    },
+    "Submitted": {
+      "category": "approval",
+      "description": "يتم إطلاق هذا الحدث عند تقديم الكيان للموافقة"
+    },
+    "Returned": {
+      "category": "approval",
+      "description": "يتم إطلاق هذا الحدث عند إرجاع الكيان بعد المراجعة"
+    },
+    "Validated": {
+      "category": "validation",
+      "description": "يتم إطلاق هذا الحدث عند اكتمال عملية التحقق من الكيان"
+    },
+    "ValidationFailed": {
+      "category": "validation",
+      "description": "يتم إطلاق هذا الحدث عند فشل التحقق من الكيان"
+    }
+  },
+  "enums": {}
+}

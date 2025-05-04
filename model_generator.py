@@ -2,7 +2,7 @@ import os
 import json
 import re
 import glob
-from typing import Dict, List, Tuple, Set, Optional
+from typing import Dict, List, Tuple, Set, Optional, Any
 
 # Configuration
 MODULES_DIR = "Modules"
@@ -55,35 +55,51 @@ class RelationshipType:
     MANY_TO_ONE = "ManyToOne"
     MANY_TO_MANY = "ManyToMany"
 
-# DTO paths
-class DotNetClass:
-    def __init__(self, name: str, module: str):
+class Relationship:
+    def __init__(self, from_entity: str, to_entity: str, 
+                 from_fields: List[str], to_fields: List[str], 
+                 type: str, navigation_property: str = None):
+        self.from_entity = from_entity
+        self.to_entity = to_entity
+        self.from_fields = from_fields
+        self.to_fields = to_fields
+        self.type = type
+        self.navigation_property = navigation_property if navigation_property else to_entity
+        
+    def __repr__(self):
+        return f"Relationship({self.from_entity} → {self.to_entity}, {self.type}, {self.from_fields} → {self.to_fields})"
+
+class Entity:
+    def __init__(self, name: str, module: str, old_table_name: str):
         self.name = name
         self.module = module
+        self.old_table_name = old_table_name
         self.properties = []
         self.imports = set()
-        self.related_entities = {}
         self.primary_keys = []
         self.foreign_keys = []
-        # Fields for enhanced relationship detection
-        self.incoming_relationships = {}  # Tables that reference this table
-        self.outgoing_relationships = {}  # Tables this table references
-
-    def add_property(self, name, type_name, is_key=False, summary_en="", summary_ar=""):
+        self.relationships = []  # List of outgoing relationships 
+        self.inverse_relationships = []  # List of incoming relationships
+    
+    def add_property(self, name: str, type_name: str, is_key: bool = False, 
+                     summary_en: str = "", summary_ar: str = "",
+                     nullable: bool = True):
+        # Add nullable marker (?) for value types if nullable
+        is_value_type = (type_name in ["int", "long", "decimal", "float", "double", 
+                                     "DateTime", "bool", "Guid", "short", "byte"])
+        
+        # Only add nullable marker for value types 
+        if nullable and is_value_type:
+            type_name = f"{type_name}?"
+            
         self.properties.append({
             "name": name,
             "type": type_name,
             "is_key": is_key,
             "summary_en": summary_en,
-            "summary_ar": summary_ar
+            "summary_ar": summary_ar,
+            "nullable": nullable
         })
-
-    def add_related_entity(self, name, type_name, relationship_type, is_collection=False):
-        self.related_entities[name] = {
-            "type": type_name,
-            "relationship_type": relationship_type,
-            "is_collection": is_collection
-        }
         
     def set_primary_keys(self, keys: List[str]):
         self.primary_keys = keys
@@ -93,23 +109,19 @@ class DotNetClass:
             "columns": columns,
             "references_table": references_table
         })
-
-    def add_incoming_relationship(self, table_name: str, columns: List[str], rel_type: str):
-        """Add a table that references this table"""
-        self.incoming_relationships[table_name] = {
-            "columns": columns,
-            "relationship_type": rel_type
-        }
-
-    def add_outgoing_relationship(self, table_name: str, columns: List[str], rel_type: str):
-        """Add a table that this table references"""
-        self.outgoing_relationships[table_name] = {
-            "columns": columns,
-            "relationship_type": rel_type
-        }
+        
+    def add_relationship(self, relationship: Relationship):
+        self.relationships.append(relationship)
+        
+    def add_inverse_relationship(self, relationship: Relationship):
+        self.inverse_relationships.append(relationship)
+        
+    def get_all_relationships(self):
+        return self.relationships + self.inverse_relationships
         
     def generate_entity_file_content(self) -> str:
         """Generate C# entity class content"""
+        # Add imports for referenced entities from other modules
         base_path = f"ERP.Domain.ERP.{self.module}"
         imports = [
             "using System;",
@@ -118,19 +130,132 @@ class DotNetClass:
             "using ERP_Pro.Domain.Common.ValueObjects;"
         ]
         
-        if len(self.imports) > 0:
-            for imp in self.imports:
+        # Add module-specific imports
+        module_imports = {}
+        for rel in self.get_all_relationships():
+            if rel.from_entity == self.name:
+                # This is a relationship to another entity
+                entity_module = find_entity_module(rel.to_entity, rel.to_entity)
+                if entity_module and entity_module != self.module:
+                    module_imports[entity_module] = True
+            elif rel.to_entity == self.name:
+                # This is a relationship from another entity
+                entity_module = find_entity_module(rel.from_entity, rel.from_entity)
+                if entity_module and entity_module != self.module:
+                    module_imports[entity_module] = True
+        
+        for module_name in module_imports.keys():
+            imports.append(f"using ERP_Pro.Domain.ERP.{module_name}.Entities;")
+        
+        # Add user-specific imports
+        for imp in self.imports:
+            if imp not in imports:
                 imports.append(f"using {imp};")
         
+        # Class definition and documentation
         class_content = []
         class_content.append("/// <summary>")
         class_content.append(f"/// {self.name} Entity")
         class_content.append("/// </summary>")
         class_content.append(f"public class {self.name} : Entity<{self.name}Id>")
         class_content.append("{")
+
+        # Add private backing fields for collections 
+        collection_backing_fields = []
         
-        # Constructor
+        # Process all relationships
+        outgoing_relationships = {}
+        incoming_relationships = {}
+        
+        # Process outgoing relationships
+        for rel in self.relationships:
+            if rel.from_entity == self.name:
+                property_name = rel.navigation_property
+                entity_type = rel.to_entity
+                
+                if rel.type in [RelationshipType.ONE_TO_MANY, RelationshipType.MANY_TO_MANY]:
+                    outgoing_relationships[property_name] = {
+                        "type": entity_type,
+                        "relationship_type": rel.type,
+                        "is_collection": True
+                    }
+                    # Add backing field for collection
+                    field_name = f"_{property_name[0].lower()}{property_name[1:]}"
+                    collection_backing_fields.append((field_name, entity_type, property_name))
+                else:
+                    outgoing_relationships[property_name] = {
+                        "type": entity_type,
+                        "relationship_type": rel.type,
+                        "is_collection": False
+                    }
+                    
+        # Process inverse relationships
+        for rel in self.inverse_relationships:
+            if rel.to_entity == self.name:
+                # For inverse relationships, we need to determine the property name
+                if rel.type == RelationshipType.ONE_TO_MANY:
+                    # This is a collection on the inverse side
+                    property_name = pluralize(rel.from_entity)
+                    incoming_relationships[property_name] = {
+                        "type": rel.from_entity,
+                        "relationship_type": RelationshipType.MANY_TO_ONE,  # Inverse of ONE_TO_MANY
+                        "is_collection": True
+                    }
+                    # Add backing field for collection
+                    field_name = f"_{property_name[0].lower()}{property_name[1:]}"
+                    collection_backing_fields.append((field_name, rel.from_entity, property_name))
+                elif rel.type == RelationshipType.MANY_TO_ONE:
+                    # This is a single reference on the inverse side
+                    property_name = rel.from_entity
+                    incoming_relationships[property_name] = {
+                        "type": rel.from_entity,
+                        "relationship_type": RelationshipType.ONE_TO_MANY,  # Inverse of MANY_TO_ONE
+                        "is_collection": False
+                    }
+                elif rel.type == RelationshipType.ONE_TO_ONE:
+                    # This is a single reference on the inverse side
+                    property_name = rel.from_entity
+                    incoming_relationships[property_name] = {
+                        "type": rel.from_entity,
+                        "relationship_type": RelationshipType.ONE_TO_ONE,
+                        "is_collection": False
+                    }
+                elif rel.type == RelationshipType.MANY_TO_MANY:
+                    # This is a collection on the inverse side
+                    property_name = pluralize(rel.from_entity)
+                    incoming_relationships[property_name] = {
+                        "type": rel.from_entity,
+                        "relationship_type": RelationshipType.MANY_TO_MANY,
+                        "is_collection": True
+                    }
+                    # Add backing field for collection
+                    field_name = f"_{property_name[0].lower()}{property_name[1:]}"
+                    collection_backing_fields.append((field_name, rel.from_entity, property_name))
+        
+        # Add private backing fields for collections
+        for field_name, entity_type, property_name in collection_backing_fields:
+            class_content.append(f"    private readonly List<{entity_type}> {field_name} = new List<{entity_type}>();")
+        
+        # Private default constructor 
+        class_content.append("")
         class_content.append(f"    private {self.name}() {{ }}")
+        
+        # Generate constructor with required parameters
+        required_props = [p for p in self.properties if p["is_key"] or not p["nullable"]]
+        if required_props:
+            constructor_params = []
+            constructor_body = []
+            
+            for prop in required_props:
+                param_name = prop["name"][0].lower() + prop["name"][1:]
+                constructor_params.append(f"{prop['type']} {param_name}")
+                constructor_body.append(f"        {prop['name']} = {param_name};")
+            
+            class_content.append("")
+            class_content.append(f"    public {self.name}({', '.join(constructor_params)})")
+            class_content.append("    {")
+            class_content.append("\n".join(constructor_body))
+            class_content.append("    }")
         
         # Properties
         for prop in self.properties:
@@ -144,27 +269,41 @@ class DotNetClass:
             class_content.append(f"    public {prop['type']} {prop['name']} {{ get; private set; }}")
         
         # Navigation properties
-        if self.related_entities:
+        if outgoing_relationships or incoming_relationships:
             class_content.append("")
             class_content.append("    #region Navigation Properties")
-            for name, entity in self.related_entities.items():
+            
+            # Combine all relationships
+            all_relationships = {**outgoing_relationships, **incoming_relationships}
+            
+            for name, entity in all_relationships.items():
                 type_name = entity["type"]
                 rel_type = entity.get("relationship_type", "")
                 
-                if rel_type == RelationshipType.ONE_TO_MANY or entity["is_collection"]:
-                    class_content.append(f"    /// <summary>")
-                    class_content.append(f"    /// One-to-many relationship: {self.name} to {type_name}")
-                    class_content.append(f"    /// </summary>")
-                    class_content.append(f"    public IReadOnlyCollection<{type_name}> {name} {{ get; private set; }}")
+                if entity["is_collection"]:
+                    field_name = f"_{name[0].lower()}{name[1:]}"
+                    class_content.append("    /// <summary>")
+                    class_content.append(f"    /// Collection relationship: {rel_type}")
+                    class_content.append("    /// </summary>")
+                    class_content.append(f"    public ICollection<{type_name}> {name} => {field_name};")
                 else:
-                    class_content.append(f"    /// <summary>")
-                    class_content.append(f"    /// {rel_type} relationship to {type_name}")
-                    class_content.append(f"    /// </summary>")
+                    class_content.append("    /// <summary>")
+                    class_content.append(f"    /// Reference relationship: {rel_type}")
+                    class_content.append("    /// </summary>")
                     class_content.append(f"    public {type_name} {name} {{ get; private set; }}")
+            
             class_content.append("    #endregion")
+            
+        # Methods region for domain logic
+        class_content.append("")
+        class_content.append("    #region Methods")
+        class_content.append("    // Add domain logic methods here")
+        class_content.append("    #endregion")
         
+        # Class end
         class_content.append("}")
         
+        # Generate complete file with namespace and imports
         return "\n".join(imports) + "\n\nnamespace ERP_Pro.Domain.ERP." + self.module + ".Entities\n{\n" + "\n".join(class_content) + "\n}\n"
 
     def generate_id_file_content(self) -> str:
@@ -231,7 +370,8 @@ class DotNetClass:
         """Generate C# events file content"""
         imports = [
             "using System;",
-            "using ERP_Pro.Domain.Common.Events;"
+            "using ERP_Pro.Domain.Common.Events;",
+            f"using ERP_Pro.Domain.ERP.{self.module}.ValueObjects;"
         ]
         
         class_content = []
@@ -275,6 +415,20 @@ class DotNetClass:
         class_content.append("}")
         
         return "\n".join(imports) + "\n\nnamespace ERP_Pro.Domain.ERP." + self.module + ".Events\n{\n" + "\n".join(class_content) + "\n}\n"
+
+# Global entity registry (old_table_name -> Entity)
+entity_registry = {}
+entity_name_registry = {}  # model_name -> Entity
+
+def find_entity_module(entity_name, entity_table_name=None):
+    """Find the module for a given entity"""
+    if entity_name in entity_name_registry:
+        return entity_name_registry[entity_name].module
+    
+    if entity_table_name and entity_table_name in entity_registry:
+        return entity_registry[entity_table_name].module
+    
+    return None
 
 def load_db_to_net_type_mapping():
     """Load database type to .NET type mapping from file"""
@@ -332,7 +486,7 @@ def load_field_name_mapping() -> Dict[str, str]:
         with open(file_path, 'r', encoding='utf-8') as f:
             for line in f:
                 line = line.strip()
-                if not line:
+                if not line or '=>' not in line:
                     continue
                     
                 parts = line.split('=>')
@@ -348,41 +502,35 @@ def load_table_schema() -> Dict[str, Dict]:
     with open(OUTPUT_JSON_PATH, 'r', encoding='utf-8') as f:
         schema_data = json.load(f)
     
-    # Create a dictionary of tables for easier lookup
-    table_schema = {}
-    
-    # Handle both formats: array of tables or dictionary with table names as keys
-    if isinstance(schema_data, list):
-        # Format is an array of tables like output_tmp.json
-        for table in schema_data:
-            table_schema[table['name']] = table
-    elif isinstance(schema_data, dict):
-        # Format is a dictionary with table names as keys
-        for table_name, table_data in schema_data.items():
-            table_schema[table_name] = table_data
-    
-    return table_schema
+    return schema_data
 
 def get_net_type_for_db_type(db_type: str) -> str:
     """Get the corresponding .NET type for a database type"""
-    # Extract the base type (e.g., "NUMBER(3, 0)" -> "NUMBER(3, 0)")
+    # Extract the base type (e.g., "NUMBER(3, 0)" -> "NUMBER")
     db_type_parts = db_type.split('(')
-    if len(db_type_parts) > 1:
-        base_type_with_params = db_type
-    else:
-        base_type_with_params = db_type
+    base_type_with_params = db_type
+    base_type = db_type_parts[0]
     
+    # Try with full type and parameters first
     if base_type_with_params in DB_TYPE_TO_NET_TYPE:
         return DB_TYPE_TO_NET_TYPE[base_type_with_params]
     
-    # If not found with parameters, try just the base type
-    base_type = db_type_parts[0]
+    # Then try with just the base type
     if base_type in DB_TYPE_TO_NET_TYPE:
         return DB_TYPE_TO_NET_TYPE[base_type]
     
     # Default to string if unknown
     print(f"Warning: Unknown DB type {db_type}, defaulting to string")
     return "string"
+
+def pluralize(name: str) -> str:
+    """Pluralize a name for collection properties"""
+    if name.endswith('y') and name[-2] not in 'aeiou':
+        return name[:-1] + 'ies'
+    elif name.endswith('s') or name.endswith('x') or name.endswith('z') or name.endswith('ch') or name.endswith('sh'):
+        return name + 'es'
+    else:
+        return name + 's'
 
 def create_module_directories(modules: List[str]) -> None:
     """Create the module directories"""
@@ -400,287 +548,402 @@ def create_module_directories(modules: List[str]) -> None:
             if not os.path.exists(subdir_path):
                 os.makedirs(subdir_path)
 
-def pluralize(name: str) -> str:
-    """Pluralize a name for collection properties"""
-    if name.endswith('y'):
-        return name[:-1] + 'ies'
-    elif name.endswith('s') or name.endswith('x') or name.endswith('z') or name.endswith('ch') or name.endswith('sh'):
-        return name + 'es'
-    else:
-        return name + 's'
-
-def analyze_relationships(module_table_mapping: Dict[str, Dict[str, str]], 
-                         table_schema: Dict[str, Dict]) -> Dict[str, DotNetClass]:
-    """
-    Analyze relationships between tables and build a map of entities with their relationships
-    Returns a dictionary mapping table names to DotNetClass objects
-    """
-    entities = {}
-    
-    # First, create all entity objects
+def create_entities(module_table_mapping: Dict[str, Dict[str, str]], 
+                   table_schema: Dict[str, Dict]) -> Dict[str, Entity]:
+    """Create entity objects from table schema"""
     for module, table_mapping in module_table_mapping.items():
         for old_table, new_model in table_mapping.items():
             if old_table not in table_schema:
                 continue
             
-            if old_table not in entities:
-                entities[old_table] = DotNetClass(new_model, module)
-                if "primary_keys" in table_schema[old_table]:
-                    entities[old_table].set_primary_keys(table_schema[old_table]["primary_keys"])
-    
-    # Build a dictionary to map from table name to entity/model name
-    table_to_entity = {}
-    for module, table_mapping in module_table_mapping.items():
-        for old_table, new_model in table_mapping.items():
-            table_to_entity[old_table] = new_model
-    
-    # First pass: Process direct foreign key relationships
-    for old_table, entity in entities.items():
-        table_data = table_schema.get(old_table, {})
-        
-        # Add foreign keys from this table
-        foreign_keys = table_data.get("foreign_keys", [])
-        for fk in foreign_keys:
-            ref_table = fk["references_table"]
-            if ref_table in table_to_entity:
-                ref_entity_name = table_to_entity[ref_table]
-                
-                # Determine relationship type
-                is_part_of_pk = False
-                if "primary_keys" in table_data:
-                    pk_columns = table_data["primary_keys"]
-                    is_part_of_pk = any(column in pk_columns for column in fk["columns"])
-                
-                is_entire_pk = False
-                if "primary_keys" in table_data:
-                    pk_columns = table_data["primary_keys"]
-                    is_entire_pk = set(fk["columns"]) == set(pk_columns) and len(fk["columns"]) > 0
-                
-                # Default relationship type
-                rel_type = RelationshipType.MANY_TO_ONE
-                
-                if is_entire_pk:
-                    rel_type = RelationshipType.ONE_TO_ONE
-                elif is_part_of_pk and not is_entire_pk:
-                    # Composite key with other non-FK columns
-                    rel_type = RelationshipType.MANY_TO_ONE
-                
-                # Add relationship to this entity
-                entity.add_related_entity(ref_entity_name, ref_entity_name, rel_type, False)
-                
-                # Add the inverse relationship to the referenced entity if it exists
-                if ref_table in entities:
-                    ref_entity = entities[ref_table]
-                    inverse_rel_type = RelationshipType.ONE_TO_MANY if rel_type == RelationshipType.MANY_TO_ONE else RelationshipType.ONE_TO_ONE
-                    
-                    if inverse_rel_type == RelationshipType.ONE_TO_MANY:
-                        # Use plural form for collections
-                        plural_name = pluralize(entity.name)
-                        ref_entity.add_related_entity(plural_name, entity.name, inverse_rel_type, True)
-                    else:
-                        ref_entity.add_related_entity(entity.name, entity.name, inverse_rel_type, False)
-    
-    # Second pass: Find junction tables for many-to-many relationships
-    junction_tables = set()
-    for old_table, entity in entities.items():
-        table_data = table_schema.get(old_table, {})
-        
-        # Check if this is a junction table (only has foreign keys and composite primary key)
-        if "foreign_keys" in table_data and "primary_keys" in table_data:
-            foreign_keys = table_data["foreign_keys"]
-            primary_keys = table_data["primary_keys"]
-            
-            # Junction table typically has at least 2 foreign keys 
-            # and its primary key is composed entirely of those foreign keys
-            if len(foreign_keys) >= 2:
-                fk_columns = []
-                for fk in foreign_keys:
-                    fk_columns.extend(fk["columns"])
-                
-                # Check if primary key is composed entirely of foreign key columns
-                if set(primary_keys).issubset(set(fk_columns)) and len(primary_keys) > 0:
-                    junction_tables.add(old_table)
-                    
-                    # Get the tables referenced by this junction table
-                    referenced_tables = [fk["references_table"] for fk in foreign_keys]
-                    
-                    # Make sure we have pairs of referenced tables
-                    for i in range(len(referenced_tables)):
-                        for j in range(i + 1, len(referenced_tables)):
-                            table1 = referenced_tables[i]
-                            table2 = referenced_tables[j]
-                            
-                            if table1 in entities and table2 in entities:
-                                entity1 = entities[table1]
-                                entity2 = entities[table2]
-                                
-                                # Add many-to-many relationships in both directions
-                                plural_name2 = pluralize(entity2.name)
-                                entity1.add_related_entity(plural_name2, entity2.name, RelationshipType.MANY_TO_MANY, True)
-                                
-                                plural_name1 = pluralize(entity1.name)
-                                entity2.add_related_entity(plural_name1, entity1.name, RelationshipType.MANY_TO_MANY, True)
-    
-    # Third pass: Find indirect relationships (tables referenced by others)
-    references = {}  # Map of tables to tables that reference them
-    for old_table, table_data in table_schema.items():
-        if "foreign_keys" in table_data:
-            for fk in table_data["foreign_keys"]:
-                ref_table = fk["references_table"]
-                if ref_table not in references:
-                    references[ref_table] = []
-                
-                references[ref_table].append((old_table, fk["columns"]))
-    
-    # Process indirect relationships
-    for old_table, entity in entities.items():
-        if old_table in references:
-            for referencing_table, columns in references[old_table]:
-                # Skip if we've already processed this as a junction table
-                if referencing_table in junction_tables:
-                    continue
-                
-                if referencing_table in entities:
-                    referencing_entity = entities[referencing_table]
-                    
-                    # Determine the relationship type based on primary keys
-                    ref_table_data = table_schema.get(referencing_table, {})
-                    is_part_of_pk = False
-                    if "primary_keys" in ref_table_data:
-                        pk_columns = ref_table_data["primary_keys"]
-                        is_part_of_pk = any(column in pk_columns for column in columns)
-                    
-                    is_entire_pk = False
-                    if "primary_keys" in ref_table_data:
-                        pk_columns = ref_table_data["primary_keys"]
-                        is_entire_pk = set(columns) == set(pk_columns) and len(columns) > 0
-                    
-                    # Determine relationship type
-                    if is_entire_pk:
-                        rel_type = RelationshipType.ONE_TO_ONE
-                    else:
-                        rel_type = RelationshipType.ONE_TO_MANY
-                    
-                    # Add the relationship if it doesn't already exist
-                    has_relationship = False
-                    for rel_name, rel_data in entity.related_entities.items():
-                        if rel_name == pluralize(referencing_entity.name) or rel_name == referencing_entity.name:
-                            has_relationship = True
-                            break
-                    
-                    if not has_relationship:
-                        if rel_type == RelationshipType.ONE_TO_MANY:
-                            plural_name = pluralize(referencing_entity.name)
-                            entity.add_related_entity(plural_name, referencing_entity.name, rel_type, True)
-                        else:
-                            entity.add_related_entity(referencing_entity.name, referencing_entity.name, rel_type, False)
-    
-    return entities
-
-def generate_entity_files(module_table_mapping: Dict[str, Dict[str, str]], 
-                         table_schema: Dict[str, Dict],
-                         field_mapping: Dict[str, str]) -> None:
-    """Generate entity class files for each model"""
-    # Analyze relationships between tables
-    entities = analyze_relationships(module_table_mapping, table_schema)
-    
-    # Create a mapping from old table names to their corresponding entities
-    old_table_to_entity = {}
-    for old_table, entity in entities.items():
-        old_table_to_entity[old_table] = entity
-    
-    # Process each table
-    for module, table_mapping in module_table_mapping.items():
-        for old_table, new_model in table_mapping.items():
-            if old_table not in table_schema:
-                print(f"Warning: Table {old_table} not found in schema")
-                continue
-            
-            table_data = table_schema[old_table]
-            
-            # Get the pre-analyzed entity if available, otherwise create a new one
-            if old_table in entities:
-                entity = entities[old_table]
-            else:
-                entity = DotNetClass(new_model, module)
-            
-            # Add ID property
-            entity.add_property("Id", f"{new_model}Id", True, 
-                               f"The unique identifier for the {new_model}",
-                               f"المعرف الفريد لـ {new_model}")
-            
-            # Add properties based on table columns
-            if "columns" in table_data:
-                for column in table_data["columns"]:
-                    old_field_name = column["name"]
-                    field_type = column["type"]
-                    
-                    # Skip system fields like AD_DATE, AD_U_ID, etc.
-                    if old_field_name in ['AD_DATE', 'AD_U_ID', 'UP_DATE', 'UP_U_ID', 'UP_CNT', 'PR_REP', 
-                                        'AD_TRMNL_NM', 'UP_TRMNL_NM']:
-                        continue
-                    
-                    # Use new field name if available
-                    if old_field_name in field_mapping:
-                        new_field_name = field_mapping[old_field_name]
-                    else:
-                        # Convert snake_case to PascalCase
-                        words = old_field_name.lower().split('_')
-                        new_field_name = ''.join(word.capitalize() for word in words)
-                    
-                    # Get .NET type
-                    net_type = get_net_type_for_db_type(field_type)
-                    
-                    # Add property
-                    is_key = "primary_keys" in table_data and old_field_name in table_data["primary_keys"]
-                    entity.add_property(new_field_name, net_type, is_key, 
-                                     f"{new_field_name} of the {new_model}",
-                                     f"{new_field_name} الخاص بـ {new_model}")
+            entity = Entity(new_model, module, old_table)
+            entity_registry[old_table] = entity
+            entity_name_registry[new_model] = entity
             
             # Set primary keys
-            if "primary_keys" in table_data:
-                entity.set_primary_keys(table_data["primary_keys"])
+            if "primary_keys" in table_schema[old_table]:
+                entity.set_primary_keys(table_schema[old_table]["primary_keys"])
             
-            # Handle foreign keys for import statements
+            # Add foreign keys
+            if "foreign_keys" in table_schema[old_table]:
+                for fk in table_schema[old_table]["foreign_keys"]:
+                    entity.add_foreign_key(fk["columns"], fk["references_table"])
+    
+    return entity_registry
+
+def analyze_relationships(entity_registry: Dict[str, Entity], 
+                         table_schema: Dict[str, Dict],
+                         module_table_mapping: Dict[str, Dict[str, str]]) -> None:
+    """Analyze and set up relationships between entities"""
+    # First, set up entity name lookup (from old table name to new entity name)
+    old_table_to_entity_name = {}
+    for module, table_mapping in module_table_mapping.items():
+        for old_table, new_model in table_mapping.items():
+            old_table_to_entity_name[old_table] = new_model
+    
+    # For each entity, analyze its foreign keys to establish relationships
+    for old_table_name, entity in entity_registry.items():
+        if old_table_name not in table_schema:
+            continue
+            
+        table_data = table_schema[old_table_name]
+        
+        # Process foreign keys to establish outgoing (many-to-one) relationships
+        if "foreign_keys" in table_data:
+            # Tracking navigation property names to handle duplicates
+            navigation_property_counts = {}
+            
+            for fk in table_data["foreign_keys"]:
+                ref_table = fk["references_table"]
+                if ref_table not in old_table_to_entity_name:
+                    continue  # Skip if referenced table is not mapped
+                
+                ref_entity_name = old_table_to_entity_name[ref_table]
+                fk_columns = fk["columns"]
+                ref_entity = entity_registry.get(ref_table)
+                
+                if not ref_entity:
+                    continue  # Skip if referenced entity is not found
+                
+                # Determine the relationship type based on primary keys
+                
+                # Check if this FK is the entire primary key
+                is_entire_pk = False
+                if "primary_keys" in table_data and table_data["primary_keys"]:
+                    is_entire_pk = set(fk_columns) == set(table_data["primary_keys"])
+                
+                # Get the target table's primary keys
+                ref_primary_keys = []
+                if "primary_keys" in table_schema.get(ref_table, {}):
+                    ref_primary_keys = table_schema[ref_table]["primary_keys"]
+                
+                # Determine relationship type
+                if is_entire_pk and len(fk_columns) == 1 and len(ref_primary_keys) == 1:
+                    # One-to-one relationship if this foreign key is the primary key
+                    rel_type = RelationshipType.ONE_TO_ONE
+                else:
+                    # Default many-to-one relationship (this entity has a foreign key to another entity)
+                    rel_type = RelationshipType.MANY_TO_ONE
+                    
+                    # Check for junction table (many-to-many) pattern
+                    if ("foreign_keys" in table_data and len(table_data["foreign_keys"]) >= 2 and
+                        "primary_keys" in table_data and 
+                        all(any(pk == fk_col for fk_col in fk_col_list["columns"]) 
+                            for pk in table_data["primary_keys"] 
+                            for fk_col_list in table_data["foreign_keys"])):
+                        # This appears to be a junction table for many-to-many relationship
+                        rel_type = RelationshipType.MANY_TO_MANY
+                
+                # Handle duplicate navigation properties by adding a suffix
+                nav_property = ref_entity_name
+                if nav_property in navigation_property_counts:
+                    navigation_property_counts[nav_property] += 1
+                    # Use the column name to make the navigation property unique
+                    if fk_columns and len(fk_columns) > 0:
+                        # Try to use foreign key column name to create a meaningful navigation property name
+                        column_suffix = ''.join(col.capitalize() for col in fk_columns[0].split('_'))
+                        nav_property = f"{nav_property}{column_suffix}"
+                    else:
+                        # Fallback to using a number
+                        nav_property = f"{nav_property}{navigation_property_counts[nav_property]}"
+                else:
+                    navigation_property_counts[nav_property] = 1
+                
+                # Create and add the relationship
+                relationship = Relationship(
+                    from_entity=entity.name,
+                    to_entity=ref_entity_name,
+                    from_fields=fk_columns,
+                    to_fields=ref_primary_keys,
+                    type=rel_type,
+                    navigation_property=nav_property
+                )
+                
+                entity.add_relationship(relationship)
+                
+                # Add the inverse relationship to the referenced entity
+                if rel_type == RelationshipType.MANY_TO_ONE:
+                    inverse_rel_type = RelationshipType.ONE_TO_MANY
+                elif rel_type == RelationshipType.ONE_TO_ONE:
+                    inverse_rel_type = RelationshipType.ONE_TO_ONE
+                else:  # MANY_TO_MANY
+                    inverse_rel_type = RelationshipType.MANY_TO_MANY
+                
+                # Use entity name as the inverse navigation property
+                inverse_nav_property = entity.name
+                
+                inverse_relationship = Relationship(
+                    from_entity=ref_entity_name,
+                    to_entity=entity.name,
+                    from_fields=ref_primary_keys,
+                    to_fields=fk_columns,
+                    type=inverse_rel_type,
+                    navigation_property=inverse_nav_property
+                )
+                
+                ref_entity.add_inverse_relationship(inverse_relationship)
+
+def add_properties_to_entities(entity_registry: Dict[str, Entity], 
+                             table_schema: Dict[str, Dict],
+                             field_mapping: Dict[str, str]) -> None:
+    """Add properties to entities based on table columns"""
+    for old_table_name, entity in entity_registry.items():
+        if old_table_name not in table_schema:
+            continue
+            
+        table_data = table_schema[old_table_name]
+        
+        # Add ID property for domain entities
+        entity.add_property("Id", f"{entity.name}Id", True, 
+                         f"The unique identifier for the {entity.name}",
+                         f"المعرف الفريد لـ {entity.name}",
+                         nullable=False)
+        
+        # Add properties based on table columns
+        for column in table_data["columns"]:
+            old_field_name = column["name"]
+            field_type = column["type"]
+            
+            # Skip system audit fields
+            if old_field_name in ['AD_DATE', 'AD_U_ID', 'UP_DATE', 'UP_U_ID', 'UP_CNT', 'PR_REP', 
+                                  'AD_TRMNL_NM', 'UP_TRMNL_NM']:
+                continue
+            
+            # Use new field name if available, otherwise convert from snake_case
+            if old_field_name in field_mapping:
+                new_field_name = field_mapping[old_field_name]
+            else:
+                # Convert snake_case to PascalCase
+                words = old_field_name.lower().split('_')
+                new_field_name = ''.join(word.capitalize() for word in words)
+            
+            # Get .NET type
+            net_type = get_net_type_for_db_type(field_type)
+            
+            # Determine nullability based on field type and primary key
+            nullable = True
+            is_key = "primary_keys" in table_data and old_field_name in table_data["primary_keys"]
+            
+            if is_key:
+                nullable = False
+            
+            # For foreign key fields, we'll add the navigation property instead
+            is_foreign_key = False
             if "foreign_keys" in table_data:
                 for fk in table_data["foreign_keys"]:
-                    ref_table = fk["references_table"]
-                    
-                    # Find the module for the referenced table
-                    for ref_module, ref_tables in module_table_mapping.items():
-                        if ref_table in ref_tables and ref_module != module:
-                            entity.imports.add(f"ERP_Pro.Domain.ERP.{ref_module}.Entities")
-                            break
+                    if old_field_name in fk["columns"]:
+                        is_foreign_key = True
+                        break
             
-            # Generate and write entity class file
-            entity_path = os.path.join(MODULES_DIR, module, "Entities", f"{new_model}.cs")
-            with open(entity_path, 'w', encoding='utf-8') as f:
-                f.write(entity.generate_entity_file_content())
-            
-            # Generate and write ID value object file
-            id_path = os.path.join(MODULES_DIR, module, "ValueObjects", f"{new_model}Id.cs")
-            with open(id_path, 'w', encoding='utf-8') as f:
-                f.write(entity.generate_id_file_content())
-            
-            # Generate and write events file
-            events_path = os.path.join(MODULES_DIR, module, "Events", f"{new_model}Events.cs")
-            with open(events_path, 'w', encoding='utf-8') as f:
-                f.write(entity.generate_events_file_content())
+            # Only add the property if it's not a foreign key field that will be replaced by a navigation property
+            if not is_foreign_key:
+                entity.add_property(
+                    name=new_field_name, 
+                    type_name=net_type, 
+                    is_key=is_key,
+                    summary_en=f"{new_field_name} of the {entity.name}",
+                    summary_ar=f"{new_field_name} الخاص بـ {entity.name}",
+                    nullable=nullable
+                )
+
+def write_entity_files(entity: Entity) -> None:
+    """Write entity class files to disk"""
+    module_path = os.path.join(MODULES_DIR, entity.module)
+    
+    # Entity class file
+    entity_file_path = os.path.join(module_path, "Entities", f"{entity.name}.cs")
+    with open(entity_file_path, 'w', encoding='utf-8') as f:
+        f.write(entity.generate_entity_file_content())
+    
+    # ID value object file
+    id_file_path = os.path.join(module_path, "ValueObjects", f"{entity.name}Id.cs")
+    with open(id_file_path, 'w', encoding='utf-8') as f:
+        f.write(entity.generate_id_file_content())
+    
+    # Events file
+    events_file_path = os.path.join(module_path, "Events", f"{entity.name}Events.cs")
+    with open(events_file_path, 'w', encoding='utf-8') as f:
+        f.write(entity.generate_events_file_content())
 
 def main():
     # Load mappings and schema
+    print("Loading database type mappings...")
     load_db_to_net_type_mapping()
+    
+    print("Parsing module table mappings...")
     module_table_mapping = parse_module_table_mapping()
+    
+    print("Loading field name mappings...")
     field_mapping = load_field_name_mapping()
+    
+    print("Loading table schema...")
     table_schema = load_table_schema()
     
     # Create directory structure
+    print("Creating module directories...")
     create_module_directories(module_table_mapping.keys())
     
-    # Generate entity files
-    generate_entity_files(module_table_mapping, table_schema, field_mapping)
+    # Create entities
+    print("Creating entity objects...")
+    entity_registry = create_entities(module_table_mapping, table_schema)
     
-    print(f"Model generation completed successfully. Files created in {MODULES_DIR} directory.")
+    # Analyze relationships
+    print("Analyzing relationships between entities...")
+    analyze_relationships(entity_registry, table_schema, module_table_mapping)
+    
+    # Add properties to entities
+    print("Adding properties to entities...")
+    add_properties_to_entities(entity_registry, table_schema, field_mapping)
+    
+    # Verify relationships
+    print("Verifying relationships consistency...")
+    verify_relationships(entity_registry, table_schema, module_table_mapping)
+    
+    # Write entity files
+    print("Writing entity files...")
+    entity_count = 0
+    relationship_count = 0
+    for entity in entity_registry.values():
+        write_entity_files(entity)
+        entity_count += 1
+        relationship_count += len(entity.relationships)
+    
+    print(f"Model generation completed successfully. Created {entity_count} entities with {relationship_count} relationships in {len(module_table_mapping.keys())} modules.")
+
+def verify_relationships(entity_registry: Dict[str, Entity], 
+                       table_schema: Dict[str, Dict],
+                       module_table_mapping: Dict[str, Dict[str, str]]) -> None:
+    """Verify that all foreign keys in the schema have corresponding relationships in entities"""
+    old_to_new = {}
+    new_to_old = {}
+    for module, table_mapping in module_table_mapping.items():
+        for old_table, new_model in table_mapping.items():
+            old_to_new[old_table] = new_model
+            new_to_old[new_model] = old_table
+    
+    missing_relationships = []
+    bad_mappings = []
+    fixed_entities = []
+    
+    for old_table_name, table_info in table_schema.items():
+        if "foreign_keys" not in table_info or not table_info["foreign_keys"]:
+            continue
+            
+        entity_name = old_to_new.get(old_table_name)
+        if not entity_name:
+            bad_mappings.append(old_table_name)
+            continue
+            
+        entity = entity_registry.get(old_table_name)
+        if not entity:
+            missing_relationships.append(f"Table {old_table_name} mapped to {entity_name} not found in entity registry")
+            continue
+        
+        # Check that all foreign keys have been mapped to relationships
+        fk_count = len(table_info.get("foreign_keys", []))
+        relationship_count = len(entity.relationships)
+        
+        if fk_count != relationship_count:
+            missing_relationships.append(f"Entity {entity_name} (table {old_table_name}) has {fk_count} FKs but only {relationship_count} relationships")
+            
+            # Force recreate all relationships for this entity
+            entity.relationships = []  # Clear existing relationships
+            relationships_added = 0
+            
+            for fk in table_info.get("foreign_keys", []):
+                ref_table = fk["references_table"]
+                if ref_table not in old_to_new:
+                    continue  # Skip if referenced table is not mapped
+                    
+                ref_entity_name = old_to_new.get(ref_table)
+                ref_entity = entity_registry.get(ref_table)
+                
+                if not ref_entity:
+                    continue  # Skip if referenced entity not found
+                
+                # Get the target table's primary keys
+                ref_primary_keys = []
+                if "primary_keys" in table_schema.get(ref_table, {}):
+                    ref_primary_keys = table_schema[ref_table]["primary_keys"]
+                
+                # Create and add the relationship
+                relationship = Relationship(
+                    from_entity=entity.name,
+                    to_entity=ref_entity_name,
+                    from_fields=fk["columns"],
+                    to_fields=ref_primary_keys,
+                    type=RelationshipType.MANY_TO_ONE,
+                    navigation_property=ref_entity_name
+                )
+                
+                entity.add_relationship(relationship)
+                relationships_added += 1
+                
+                # Add the inverse relationship to the referenced entity
+                inverse_relationship = Relationship(
+                    from_entity=ref_entity_name,
+                    to_entity=entity.name,
+                    from_fields=ref_primary_keys,
+                    to_fields=fk["columns"],
+                    type=RelationshipType.ONE_TO_MANY,
+                    navigation_property=entity.name
+                )
+                
+                ref_entity.add_inverse_relationship(inverse_relationship)
+            
+            if relationships_added > 0:
+                fixed_entities.append(entity.name)
+                print(f"Fixed entity {entity.name}: Added {relationships_added} relationships")
+    
+    # Check special cases that need attention
+    branch_entity = None
+    for entity in entity_registry.values():
+        if entity.name == "Branch":
+            branch_entity = entity
+            break
+    
+    if branch_entity and len(branch_entity.relationships) == 0:
+        # Check that Branch has the expected relationships
+        old_table_name = new_to_old.get("Branch")
+        if old_table_name and old_table_name in table_schema:
+            table_info = table_schema[old_table_name]
+            if "foreign_keys" in table_info:
+                print(f"Manually fixing Branch entity relationships...")
+                
+                for fk in table_info["foreign_keys"]:
+                    ref_table = fk["references_table"]
+                    if ref_table not in old_to_new:
+                        continue  # Skip if referenced table is not mapped
+                        
+                    ref_entity_name = old_to_new.get(ref_table)
+                    ref_entity = entity_registry.get(ref_table)
+                    
+                    if not ref_entity:
+                        continue  # Skip if referenced entity not found
+                    
+                    # Add the relationship
+                    relationship = Relationship(
+                        from_entity="Branch",
+                        to_entity=ref_entity_name,
+                        from_fields=fk["columns"],
+                        to_fields=[],  # We don't have this info, but it's not critical
+                        type=RelationshipType.MANY_TO_ONE,
+                        navigation_property=ref_entity_name
+                    )
+                    
+                    branch_entity.add_relationship(relationship)
+                    print(f"  Added relationship: Branch -> {ref_entity_name}")
+                
+                fixed_entities.append("Branch")
+    
+    if fixed_entities:
+        print(f"Fixed relationships in {len(fixed_entities)} entities: {', '.join(fixed_entities[:5])}{'...' if len(fixed_entities) > 5 else ''}")
+    
+    if missing_relationships:
+        print(f"Warning: Found {len(missing_relationships)} entities with missing relationships")
+    
+    if bad_mappings:
+        print(f"Warning: {len(bad_mappings)} tables in the schema have no mapping to entity names")
 
 if __name__ == "__main__":
     main() 

@@ -1,0 +1,97 @@
+{
+  "summary": {
+    "total_entities": 879,
+    "entities_with_fields": 11,
+    "entities_with_value_objects": 5
+  },
+  "entities": {
+    "Branch": {
+      "table_name": "S_BRN",
+      "module": "Core System",
+      "value_objects": {
+        "Address": [
+          "BranchBoxArabic",
+          "BranchBoxEnglish",
+          "BranchBoxFull",
+          "BranchBoxLast"
+        ],
+        "ContactInfo": [
+          "BranchFaxArabic",
+          "BranchTelephoneArabic",
+          "BranchFaxEnglish",
+          "BranchTelephoneEnglish",
+          "BranchFaxFull",
+          "BranchTelephoneFull",
+          "BranchFaxLast",
+          "BranchTelephoneLast",
+          "BranchTelephoneNumber"
+        ],
+        "PersonInfo": [
+          "BranchFirstName",
+          "BranchLastName"
+        ]
+      }
+    },
+    "User": {
+      "table_name": "USER_R",
+      "module": "Users & Permissions",
+      "value_objects": {
+        "PersonInfo": [
+          "UserArabicName",
+          "UserEnglishName"
+        ],
+        "IdentityInfo": [
+          "UserFingerId",
+          "UserId"
+        ]
+      }
+    },
+    "Account": {
+      "table_name": "ACCOUNT",
+      "module": "Finance & Accounting",
+      "value_objects": {
+        "PersonInfo": [
+          "AccountNameEnglish",
+          "AccountName",
+          "AccountDetailFullName",
+          "AccountDetailLastName"
+        ],
+        "BankInfo": [
+          "AccountSub",
+          "AccountType",
+          "AccountBankCode"
+        ],
+        "Money": [
+          "AccountAmount",
+          "AccountAmountForeign",
+          "AccountRate"
+        ]
+      }
+    },
+    "Note": {
+      "table_name": "NOTE",
+      "module": "Archiving & Documents",
+      "value_objects": {
+        "Money": [
+          "NoteAmount",
+          "NoteAmountForeign",
+          "NoteRate"
+        ],
+        "PersonInfo": [
+          "NoteNameArabic",
+          "NoteNameEnglish"
+        ]
+      }
+    },
+    "Country": {
+      "table_name": "CNTRY",
+      "module": "Projects & Regions",
+      "value_objects": {
+        "PersonInfo": [
+          "CountryNameArabic",
+          "CountryNameEnglish"
+        ]
+      }
+    }
+  }
+}

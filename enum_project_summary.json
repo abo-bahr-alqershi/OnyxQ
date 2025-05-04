@@ -1,0 +1,223 @@
+{
+  "overview": {
+    "total_modules": 58,
+    "total_enums": 2269,
+    "total_entities": 872,
+    "entities_with_enums": 422,
+    "total_enum_references": 426
+  },
+  "module_enum_counts": {
+    "Purchasing & Vendors": 91,
+    "Replication & Duplication": 9,
+    "FormsSurveys": 0,
+    "Activities": 5,
+    "ArchivingDocuments": 0,
+    "Settings & Parameters": 369,
+    "Transportation & Shipping": 9,
+    "Doctors & Patients": 7,
+    "Web Services & Interfaces": 9,
+    "DoctorsPatients": 0,
+    "ArticlesContent": 0,
+    "JudicialLegal": 0,
+    "Users & Permissions": 243,
+    "Messages & Notifications": 27,
+    "PurchasingVendors": 0,
+    "ReplicationDuplication": 0,
+    "Judicial & Legal": 20,
+    "Attendance": 2,
+    "UsersPermissions": 0,
+    "Stations & Fuel": 27,
+    "ProductionManufacturing": 0,
+    "FinanceAccounting": 0,
+    "InventoryWarehousing": 0,
+    "TemporaryTables": 0,
+    "Sales & Customers": 284,
+    "TrackingMonitoring": 0,
+    "Archiving & Documents": 45,
+    "ServicesMaintenance": 0,
+    "ProjectsRegions": 0,
+    "SalesCustomers": 0,
+    "GeneralLedger": 0,
+    "FixedAssets": 0,
+    "General Ledger": 49,
+    "StationsFuel": 0,
+    "TaxFees": 0,
+    "Guarantees & Warranties": 29,
+    "Fixed Assets": 6,
+    "TransportationShipping": 0,
+    "Insurance & Claims": 24,
+    "Tax & Fees": 22,
+    "HumanResources": 0,
+    "Finance & Accounting": 202,
+    "Articles & Content": 17,
+    "MessagesNotifications": 0,
+    "SettingsParameters": 0,
+    "Forms & Surveys": 9,
+    "Tracking & Monitoring": 13,
+    "Services & Maintenance": 4,
+    "Temporary Tables": 7,
+    "CoreSystem": 0,
+    "Production & Manufacturing": 10,
+    "Core System": 151,
+    "InsuranceClaims": 0,
+    "WebServicesInterfaces": 0,
+    "Inventory & Warehousing": 467,
+    "Projects & Regions": 15,
+    "GuaranteesWarranties": 0,
+    "Human Resources": 97
+  },
+  "module_entity_stats": {
+    "FormsSurveys": {
+      "total_entities": 19,
+      "entities_with_enums": 5
+    },
+    "Activities": {
+      "total_entities": 5,
+      "entities_with_enums": 2
+    },
+    "ArchivingDocuments": {
+      "total_entities": 21,
+      "entities_with_enums": 10
+    },
+    "DoctorsPatients": {
+      "total_entities": 3,
+      "entities_with_enums": 2
+    },
+    "ArticlesContent": {
+      "total_entities": 1,
+      "entities_with_enums": 1
+    },
+    "JudicialLegal": {
+      "total_entities": 4,
+      "entities_with_enums": 4
+    },
+    "PurchasingVendors": {
+      "total_entities": 70,
+      "entities_with_enums": 36
+    },
+    "ReplicationDuplication": {
+      "total_entities": 3,
+      "entities_with_enums": 2
+    },
+    "Attendance": {
+      "total_entities": 1,
+      "entities_with_enums": 1
+    },
+    "UsersPermissions": {
+      "total_entities": 40,
+      "entities_with_enums": 19
+    },
+    "ProductionManufacturing": {
+      "total_entities": 13,
+      "entities_with_enums": 5
+    },
+    "FinanceAccounting": {
+      "total_entities": 78,
+      "entities_with_enums": 43
+    },
+    "InventoryWarehousing": {
+      "total_entities": 143,
+      "entities_with_enums": 70
+    },
+    "TemporaryTables": {
+      "total_entities": 35,
+      "entities_with_enums": 4
+    },
+    "TrackingMonitoring": {
+      "total_entities": 14,
+      "entities_with_enums": 5
+    },
+    "ServicesMaintenance": {
+      "total_entities": 4,
+      "entities_with_enums": 3
+    },
+    "ProjectsRegions": {
+      "total_entities": 12,
+      "entities_with_enums": 4
+    },
+    "SalesCustomers": {
+      "total_entities": 163,
+      "entities_with_enums": 67
+    },
+    "GeneralLedger": {
+      "total_entities": 44,
+      "entities_with_enums": 18
+    },
+    "FixedAssets": {
+      "total_entities": 5,
+      "entities_with_enums": 5
+    },
+    "StationsFuel": {
+      "total_entities": 19,
+      "entities_with_enums": 11
+    },
+    "TaxFees": {
+      "total_entities": 16,
+      "entities_with_enums": 7
+    },
+    "TransportationShipping": {
+      "total_entities": 7,
+      "entities_with_enums": 4
+    },
+    "HumanResources": {
+      "total_entities": 20,
+      "entities_with_enums": 12
+    },
+    "MessagesNotifications": {
+      "total_entities": 15,
+      "entities_with_enums": 10
+    },
+    "SettingsParameters": {
+      "total_entities": 14,
+      "entities_with_enums": 8
+    },
+    "CoreSystem": {
+      "total_entities": 71,
+      "entities_with_enums": 41
+    },
+    "InsuranceClaims": {
+      "total_entities": 17,
+      "entities_with_enums": 12
+    },
+    "WebServicesInterfaces": {
+      "total_entities": 4,
+      "entities_with_enums": 3
+    },
+    "GuaranteesWarranties": {
+      "total_entities": 11,
+      "entities_with_enums": 8
+    }
+  },
+  "enum_references": {
+    "FormsSurveys": 5,
+    "Activities": 5,
+    "ArchivingDocuments": 10,
+    "DoctorsPatients": 2,
+    "ArticlesContent": 1,
+    "JudicialLegal": 4,
+    "PurchasingVendors": 36,
+    "ReplicationDuplication": 2,
+    "Attendance": 2,
+    "UsersPermissions": 19,
+    "ProductionManufacturing": 5,
+    "FinanceAccounting": 43,
+    "InventoryWarehousing": 70,
+    "TemporaryTables": 4,
+    "TrackingMonitoring": 5,
+    "ServicesMaintenance": 3,
+    "ProjectsRegions": 4,
+    "SalesCustomers": 67,
+    "GeneralLedger": 18,
+    "FixedAssets": 5,
+    "StationsFuel": 11,
+    "TaxFees": 7,
+    "TransportationShipping": 4,
+    "HumanResources": 12,
+    "MessagesNotifications": 10,
+    "SettingsParameters": 8,
+    "CoreSystem": 41,
+    "InsuranceClaims": 12,
+    "WebServicesInterfaces": 3,
+    "GuaranteesWarranties": 8
+  }
+}
