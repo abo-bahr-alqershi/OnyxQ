@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
-using ERP_Pro.Domain.Common.Primitives;
+
+using ERP_Pro.Domain.Common.Entities;
 using ERP_Pro.Domain.Common.ValueObjects;
+using ERP_Pro.Domain.ERP.CoreSystem.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;

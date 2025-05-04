@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
-using ERP_Pro.Domain.Common.Primitives;
+
+using ERP_Pro.Domain.Common.Entities;
 using ERP_Pro.Domain.Common.ValueObjects;
+using ERP_Pro.Domain.ERP.CoreSystem.ValueObjects;
 
 namespace ERP_Pro.Domain.ERP.CoreSystem.Entities
 {
 /// <summary>
-/// ScreenReportSample Entity
+/// كيان يمثل عينة تقرير الشاشة ويحتوي على جميع خصائص العينة المرتبطة بالنماذج والتقارير.
 /// </summary>
 public class ScreenReportSample : Entity<ScreenReportSampleId>
 {
@@ -21,44 +23,37 @@ public class ScreenReportSample : Entity<ScreenReportSampleId>
     }
 
     /// <summary>
-    /// The unique identifier for the ScreenReportSample
-    /// المعرف الفريد لـ ScreenReportSample
+    /// المعرف الفريد لعينة تقرير الشاشة (مفتاح رئيسي).
     /// </summary>
     public ScreenReportSampleId Id { get; private set; }
 
     /// <summary>
-    /// FormNumber of the ScreenReportSample
-    /// FormNumber الخاص بـ ScreenReportSample
+    /// رقم النموذج المرتبط بالعينة.
     /// </summary>
     public decimal? FormNumber { get; private set; }
 
     /// <summary>
-    /// SampleNumber of the ScreenReportSample
-    /// SampleNumber الخاص بـ ScreenReportSample
+    /// رقم العينة.
     /// </summary>
     public decimal? SampleNumber { get; private set; }
 
     /// <summary>
-    /// SampleLastName of the ScreenReportSample
-    /// SampleLastName الخاص بـ ScreenReportSample
+    /// الاسم الأخير للعينة.
     /// </summary>
     public string SampleLastName { get; private set; }
 
     /// <summary>
-    /// SampleFirstName of the ScreenReportSample
-    /// SampleFirstName الخاص بـ ScreenReportSample
+    /// الاسم الأول للعينة.
     /// </summary>
     public string SampleFirstName { get; private set; }
 
     /// <summary>
-    /// SampleStatus of the ScreenReportSample
-    /// SampleStatus الخاص بـ ScreenReportSample
+    /// حالة العينة.
     /// </summary>
     public decimal? SampleStatus { get; private set; }
 
     /// <summary>
-    /// SampleOrder of the ScreenReportSample
-    /// SampleOrder الخاص بـ ScreenReportSample
+    /// ترتيب العينة.
     /// </summary>
     public decimal? SampleOrder { get; private set; }
 

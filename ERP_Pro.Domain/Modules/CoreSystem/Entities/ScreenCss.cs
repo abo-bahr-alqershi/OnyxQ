@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using ERP_Pro.Domain.Common.Primitives;
+
+using ERP_Pro.Domain.Common.Entities;
 using ERP_Pro.Domain.Common.ValueObjects;
+using ERP_Pro.Domain.ERP.CoreSystem.ValueObjects;
 
 namespace ERP_Pro.Domain.ERP.CoreSystem.Entities
 {
-/// <summary>
-/// ScreenCss Entity
-/// </summary>
+// كيان يمثل خصائص CSS لشاشة النظام ويحتوي على جميع خصائص التصميم والألوان للشاشة.
 public class ScreenCss : Entity<ScreenCssId>
 {
 
@@ -19,76 +19,40 @@ public class ScreenCss : Entity<ScreenCssId>
         ScreenNumber = screenNumber;
     }
 
-    /// <summary>
-    /// The unique identifier for the ScreenCss
-    /// المعرف الفريد لـ ScreenCss
-    /// </summary>
+    // المعرف الفريد لخصائص CSS للشاشة (مفتاح رئيسي).
     public ScreenCssId Id { get; private set; }
 
-    /// <summary>
-    /// SystemNumber of the ScreenCss
-    /// SystemNumber الخاص بـ ScreenCss
-    /// </summary>
+    // رقم النظام المرتبط بالخصائص.
     public decimal? SystemNumber { get; private set; }
 
-    /// <summary>
-    /// ScreenNumber of the ScreenCss
-    /// ScreenNumber الخاص بـ ScreenCss
-    /// </summary>
+    // رقم الشاشة.
     public decimal? ScreenNumber { get; private set; }
 
-    /// <summary>
-    /// LabelNumber of the ScreenCss
-    /// LabelNumber الخاص بـ ScreenCss
-    /// </summary>
+    // رقم التسمية للشاشة.
     public decimal? LabelNumber { get; private set; }
 
-    /// <summary>
-    /// ScreenParentNumberShort of the ScreenCss
-    /// ScreenParentNumberShort الخاص بـ ScreenCss
-    /// </summary>
+    // رقم الشاشة الأب المختصر.
     public decimal? ScreenParentNumberShort { get; private set; }
 
-    /// <summary>
-    /// InactiveFlag of the ScreenCss
-    /// InactiveFlag الخاص بـ ScreenCss
-    /// </summary>
+    // علم التعطيل للخصائص.
     public decimal? InactiveFlag { get; private set; }
 
-    /// <summary>
-    /// DfltFlg of the ScreenCss
-    /// DfltFlg الخاص بـ ScreenCss
-    /// </summary>
+    // علم الافتراضية للخصائص.
     public decimal? DfltFlg { get; private set; }
 
-    /// <summary>
-    /// OrderNumberShort of the ScreenCss
-    /// OrderNumberShort الخاص بـ ScreenCss
-    /// </summary>
+    // رقم ترتيب الخصائص.
     public decimal? OrderNumberShort { get; private set; }
 
-    /// <summary>
-    /// ScreenType of the ScreenCss
-    /// ScreenType الخاص بـ ScreenCss
-    /// </summary>
+    // نوع الشاشة.
     public decimal? ScreenType { get; private set; }
 
-    /// <summary>
-    /// FileNameShort of the ScreenCss
-    /// FileNameShort الخاص بـ ScreenCss
-    /// </summary>
+    // اسم ملف الشاشة المختصر.
     public string FileNameShort { get; private set; }
 
-    /// <summary>
-    /// ScreenIcon of the ScreenCss
-    /// ScreenIcon الخاص بـ ScreenCss
-    /// </summary>
+    // أيقونة الشاشة.
     public string ScreenIcon { get; private set; }
 
-    /// <summary>
-    /// ScreenColor of the ScreenCss
-    /// ScreenColor الخاص بـ ScreenCss
-    /// </summary>
+    // لون الشاشة.
     public string ScreenColor { get; private set; }
 
     #region Methods
