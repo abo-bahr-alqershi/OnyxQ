@@ -1,0 +1,86 @@
+using System;
+using System.Collections.Generic;
+using ERP_Pro.Domain.Common.Primitives;
+using ERP_Pro.Domain.Common.ValueObjects;
+
+namespace ERP_Pro.Domain.ERP.StationsFuel.Entities
+{
+/// <summary>
+/// StationFuelType Entity
+/// </summary>
+public class StationFuelType : Entity<StationFuelTypeId>
+{
+    private StationFuelType() { }
+
+    /// <summary>
+    /// The unique identifier for the StationFuelType
+    /// المعرف الفريد لـ StationFuelType
+    /// </summary>
+    public StationFuelTypeId Id { get; private set; }
+
+    /// <summary>
+    /// FuelTypeNumber of the StationFuelType
+    /// FuelTypeNumber الخاص بـ StationFuelType
+    /// </summary>
+    public decimal? FuelTypeNumber { get; private set; }
+
+    /// <summary>
+    /// FuelTypeNameArabic of the StationFuelType
+    /// FuelTypeNameArabic الخاص بـ StationFuelType
+    /// </summary>
+    public string FuelTypeNameArabic { get; private set; }
+
+    /// <summary>
+    /// FuelTypeFirstName of the StationFuelType
+    /// FuelTypeFirstName الخاص بـ StationFuelType
+    /// </summary>
+    public string FuelTypeFirstName { get; private set; }
+
+    /// <summary>
+    /// ItemCode of the StationFuelType
+    /// ItemCode الخاص بـ StationFuelType
+    /// </summary>
+    public string ItemCode { get; private set; }
+
+    /// <summary>
+    /// ItemUnit of the StationFuelType
+    /// ItemUnit الخاص بـ StationFuelType
+    /// </summary>
+    public string ItemUnit { get; private set; }
+
+    /// <summary>
+    /// AccountCurrency of the StationFuelType
+    /// AccountCurrency الخاص بـ StationFuelType
+    /// </summary>
+    public string AccountCurrency { get; private set; }
+
+    /// <summary>
+    /// ItemPriceShort of the StationFuelType
+    /// ItemPriceShort الخاص بـ StationFuelType
+    /// </summary>
+    public decimal? ItemPriceShort { get; private set; }
+
+    #region Navigation Properties
+    /// <summary>
+    /// One-to-many relationship: StationFuelType to StationBillCoupon
+    /// </summary>
+    public IReadOnlyCollection<StationBillCoupon> StationBillCoupons { get; private set; }
+    /// <summary>
+    /// One-to-many relationship: StationFuelType to StationBillCredit
+    /// </summary>
+    public IReadOnlyCollection<StationBillCredit> StationBillCredits { get; private set; }
+    /// <summary>
+    /// One-to-many relationship: StationFuelType to StationBillDetail
+    /// </summary>
+    public IReadOnlyCollection<StationBillDetail> StationBillDetails { get; private set; }
+    /// <summary>
+    /// One-to-many relationship: StationFuelType to StationCounter
+    /// </summary>
+    public IReadOnlyCollection<StationCounter> StationCounters { get; private set; }
+    /// <summary>
+    /// One-to-many relationship: StationFuelType to StationCouponSalesDetail
+    /// </summary>
+    public IReadOnlyCollection<StationCouponSalesDetail> StationCouponSalesDetails { get; private set; }
+    #endregion
+}
+}
