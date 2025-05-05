@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.ReplicationDuplication.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ReplicationDuplication.Entities
 {
 /// <summary>
 /// ReplicaTableMaster Entity
 /// </summary>
-public class ReplicaTableMaster : Entity<ReplicaTableMasterId>
+public class ReplicaTableMaster : AggregateRoot<ReplicaTableMasterId>
 {
 
     private ReplicaTableMaster() { }
@@ -73,3 +74,4 @@ public class ReplicaTableMaster : Entity<ReplicaTableMasterId>
     #endregion
 }
 }
+

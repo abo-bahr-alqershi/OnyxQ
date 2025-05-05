@@ -7,12 +7,13 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.GeneralLedger.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// Voucher Entity
 /// </summary>
-public class Voucher : Entity<VoucherId>
+public class Voucher : AggregateRoot<VoucherId>
 {
 
     private Voucher() { }
@@ -377,3 +378,4 @@ public class Voucher : Entity<VoucherId>
     #endregion
 }
 }
+

@@ -7,6 +7,7 @@ using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
@@ -202,3 +203,4 @@ public class AccountsPayableOtherChargeItem : Entity<AccountsPayableOtherChargeI
     #endregion
 }
 }
+

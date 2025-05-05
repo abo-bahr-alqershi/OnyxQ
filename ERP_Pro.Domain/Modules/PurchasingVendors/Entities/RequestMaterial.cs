@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 using ERP_Pro.Domain.ERP.ArchivingDocuments.Entities;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
@@ -108,3 +109,4 @@ public class RequestMaterial : Entity<RequestMaterialId>
     #endregion
 }
 }
+

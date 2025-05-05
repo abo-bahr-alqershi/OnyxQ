@@ -7,6 +7,7 @@ using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.ProjectsRegions.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ProjectsRegions.Entities
 {
 /// <summary>
@@ -113,3 +114,4 @@ public class Country : Entity<CountryId>
     #endregion
 }
 }
+

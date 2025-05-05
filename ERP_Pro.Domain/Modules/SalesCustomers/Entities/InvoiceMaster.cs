@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// InvoiceMaster Entity
 /// </summary>
-public class InvoiceMaster : Entity<InvoiceMasterId>
+public class InvoiceMaster : AggregateRoot<InvoiceMasterId>
 {
 
     private InvoiceMaster() { }
@@ -126,3 +127,4 @@ public class InvoiceMaster : Entity<InvoiceMasterId>
     #endregion
 }
 }
+

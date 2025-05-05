@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// الكلاس يمثل مستند تأكيد رصيد الحساب ويحتوي على جميع خصائص تأكيدات الأرصدة
 /// </summary>
-public class AccountConfirmBalanceMaster : Entity<AccountConfirmBalanceMasterId>
+public class AccountConfirmBalanceMaster : AggregateRoot<AccountConfirmBalanceMasterId>
 {
 
     private AccountConfirmBalanceMaster() { }
@@ -109,3 +110,4 @@ public class AccountConfirmBalanceMaster : Entity<AccountConfirmBalanceMasterId>
     #endregion
 }
 }
+

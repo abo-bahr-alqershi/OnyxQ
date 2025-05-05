@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.MessagesNotifications.ValueObjects;
 namespace ERP_Pro.Domain.ERP.MessagesNotifications.Entities
 {
 /// <summary>
 /// GeneralCodeMaster Entity
 /// </summary>
-public class GeneralCodeMaster : Entity<GeneralCodeMasterId>
+public class GeneralCodeMaster : AggregateRoot<GeneralCodeMasterId>
 {
 
     private GeneralCodeMaster() { }
@@ -72,3 +73,4 @@ public class GeneralCodeMaster : Entity<GeneralCodeMasterId>
     #endregion
 }
 }
+

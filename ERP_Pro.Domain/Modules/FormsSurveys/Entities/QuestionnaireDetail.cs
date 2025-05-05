@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 using ERP_Pro.Domain.ERP.CoreSystem.Entities;
 
+using ERP_Pro.Domain.ERP.FormsSurveys.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FormsSurveys.Entities
 {
 /// <summary>
@@ -83,3 +84,4 @@ public class QuestionnaireDetail : Entity<QuestionnaireDetailId>
     #endregion
 }
 }
+

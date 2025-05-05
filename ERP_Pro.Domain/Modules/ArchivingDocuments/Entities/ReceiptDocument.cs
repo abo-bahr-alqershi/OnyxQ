@@ -8,6 +8,7 @@ using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.PurchasingVendors.Entities;
 
+using ERP_Pro.Domain.ERP.ArchivingDocuments.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ArchivingDocuments.Entities
 {
 /// <summary>
@@ -634,3 +635,4 @@ public class ReceiptDocument : Entity<ReceiptDocumentId>
     #endregion
 }
 }
+

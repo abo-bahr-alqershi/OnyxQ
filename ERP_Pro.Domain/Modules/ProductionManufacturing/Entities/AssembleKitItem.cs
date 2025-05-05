@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 
+using ERP_Pro.Domain.ERP.ProductionManufacturing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ProductionManufacturing.Entities
 {
 /// <summary>
@@ -229,3 +230,4 @@ public class AssembleKitItem : Entity<AssembleKitItemId>
     #endregion
 }
 }
+

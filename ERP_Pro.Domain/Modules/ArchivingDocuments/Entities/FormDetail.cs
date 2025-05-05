@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.CoreSystem.Entities;
 using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 
+using ERP_Pro.Domain.ERP.ArchivingDocuments.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ArchivingDocuments.Entities
 {
 /// <summary>
@@ -104,3 +105,4 @@ public class FormDetail : Entity<FormDetailId>
     #endregion
 }
 }
+

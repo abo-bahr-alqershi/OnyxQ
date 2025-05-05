@@ -8,12 +8,13 @@ using ERP_Pro.Domain.ERP.GeneralLedger.Entities;
 using ERP_Pro.Domain.ERP.GuaranteesWarranties.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 
+using ERP_Pro.Domain.ERP.JudicialLegal.ValueObjects;
 namespace ERP_Pro.Domain.ERP.JudicialLegal.Entities
 {
 /// <summary>
 /// LetterOfCreditMaster Entity
 /// </summary>
-public class LetterOfCreditMaster : Entity<LetterOfCreditMasterId>
+public class LetterOfCreditMaster : AggregateRoot<LetterOfCreditMasterId>
 {
 
     private LetterOfCreditMaster() { }
@@ -530,3 +531,4 @@ public class LetterOfCreditMaster : Entity<LetterOfCreditMasterId>
     #endregion
 }
 }
+

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// CheckDocumentInOutQuantityMaster Entity
 /// </summary>
-public class CheckDocumentInOutQuantityMaster : Entity<CheckDocumentInOutQuantityMasterId>
+public class CheckDocumentInOutQuantityMaster : AggregateRoot<CheckDocumentInOutQuantityMasterId>
 {
 
     private CheckDocumentInOutQuantityMaster() { }
@@ -288,3 +289,4 @@ public class CheckDocumentInOutQuantityMaster : Entity<CheckDocumentInOutQuantit
     #endregion
 }
 }
+

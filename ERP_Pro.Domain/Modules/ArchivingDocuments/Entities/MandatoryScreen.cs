@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.ArchivingDocuments.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ArchivingDocuments.Entities
 {
 /// <summary>
@@ -49,3 +50,4 @@ public class MandatoryScreen : Entity<MandatoryScreenId>
     #endregion
 }
 }
+

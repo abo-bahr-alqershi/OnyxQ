@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.DoctorsPatients.ValueObjects;
 namespace ERP_Pro.Domain.ERP.DoctorsPatients.Entities
 {
 /// <summary>
 /// Doctor Entity
 /// </summary>
-public class Doctor : Entity<DoctorId>
+public class Doctor : AggregateRoot<DoctorId>
 {
 
     private Doctor() { }
@@ -300,3 +301,4 @@ public class Doctor : Entity<DoctorId>
     #endregion
 }
 }
+

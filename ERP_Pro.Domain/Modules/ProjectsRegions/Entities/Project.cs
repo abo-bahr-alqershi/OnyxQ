@@ -14,12 +14,13 @@ using ERP_Pro.Domain.ERP.GuaranteesWarranties.Entities;
 using ERP_Pro.Domain.ERP.SettingsParameters.Entities;
 using ERP_Pro.Domain.ERP.TaxFees.Entities;
 
+using ERP_Pro.Domain.ERP.ProjectsRegions.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ProjectsRegions.Entities
 {
 /// <summary>
 /// Project Entity
 /// </summary>
-public class Project : Entity<ProjectId>
+public class Project : AggregateRoot<ProjectId>
 {
 
     private Project() { }
@@ -450,3 +451,4 @@ public class Project : Entity<ProjectId>
     #endregion
 }
 }
+

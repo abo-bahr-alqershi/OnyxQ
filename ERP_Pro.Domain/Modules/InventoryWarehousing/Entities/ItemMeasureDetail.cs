@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
@@ -150,3 +151,4 @@ public class ItemMeasureDetail : Entity<ItemMeasureDetailId>
     #endregion
 }
 }
+

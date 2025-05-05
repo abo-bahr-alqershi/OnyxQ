@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// SalesmanCollectionConditionMaster Entity
 /// </summary>
-public class SalesmanCollectionConditionMaster : Entity<SalesmanCollectionConditionMasterId>
+public class SalesmanCollectionConditionMaster : AggregateRoot<SalesmanCollectionConditionMasterId>
 {
 
     private SalesmanCollectionConditionMaster() { }
@@ -132,3 +133,4 @@ public class SalesmanCollectionConditionMaster : Entity<SalesmanCollectionCondit
     #endregion
 }
 }
+

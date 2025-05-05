@@ -6,6 +6,7 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.JudicialLegal.Entities;
 
+using ERP_Pro.Domain.ERP.FormsSurveys.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FormsSurveys.Entities
 {
 /// <summary>
@@ -482,3 +483,4 @@ public class RequestVoucherDetail : Entity<RequestVoucherDetailId>
     #endregion
 }
 }
+

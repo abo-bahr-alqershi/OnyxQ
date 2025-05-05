@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// InventoryRequestAssemblyMaster Entity
 /// </summary>
-public class InventoryRequestAssemblyMaster : Entity<InventoryRequestAssemblyMasterId>
+public class InventoryRequestAssemblyMaster : AggregateRoot<InventoryRequestAssemblyMasterId>
 {
 
     private InventoryRequestAssemblyMaster() { }
@@ -192,3 +193,4 @@ public class InventoryRequestAssemblyMaster : Entity<InventoryRequestAssemblyMas
     #endregion
 }
 }
+

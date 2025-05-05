@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// InventoryBatchNumberMethodMaster Entity
 /// </summary>
-public class InventoryBatchNumberMethodMaster : Entity<InventoryBatchNumberMethodMasterId>
+public class InventoryBatchNumberMethodMaster : AggregateRoot<InventoryBatchNumberMethodMasterId>
 {
 
     private InventoryBatchNumberMethodMaster() { }
@@ -54,3 +55,4 @@ public class InventoryBatchNumberMethodMaster : Entity<InventoryBatchNumberMetho
     #endregion
 }
 }
+

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// CustomerCommissionSetupMaster Entity
 /// </summary>
-public class CustomerCommissionSetupMaster : Entity<CustomerCommissionSetupMasterId>
+public class CustomerCommissionSetupMaster : AggregateRoot<CustomerCommissionSetupMasterId>
 {
 
     private CustomerCommissionSetupMaster() { }
@@ -156,3 +157,4 @@ public class CustomerCommissionSetupMaster : Entity<CustomerCommissionSetupMaste
     #endregion
 }
 }
+

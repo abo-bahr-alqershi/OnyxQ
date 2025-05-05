@@ -4,12 +4,13 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.GeneralLedger.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// الكلاس يمثل كيان الرصيد الرئيسي للميزانية ويحتوي على جميع خصائص مستندات الرصيد
 /// </summary>
-public class BudgetBalanceMaster : Entity<BudgetBalanceMasterId>
+public class BudgetBalanceMaster : AggregateRoot<BudgetBalanceMasterId>
 {
 
     private BudgetBalanceMaster() { }
@@ -132,3 +133,4 @@ public class BudgetBalanceMaster : Entity<BudgetBalanceMasterId>
     #endregion
 }
 }
+

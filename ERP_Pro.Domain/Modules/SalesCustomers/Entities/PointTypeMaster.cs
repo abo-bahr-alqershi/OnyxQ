@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// PointTypeMaster Entity
 /// </summary>
-public class PointTypeMaster : Entity<PointTypeMasterId>
+public class PointTypeMaster : AggregateRoot<PointTypeMasterId>
 {
 
     private PointTypeMaster() { }
@@ -126,3 +127,4 @@ public class PointTypeMaster : Entity<PointTypeMasterId>
     #endregion
 }
 }
+

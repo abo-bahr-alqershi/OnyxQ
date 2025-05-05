@@ -10,12 +10,13 @@ using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.StationsFuel.Entities;
 using ERP_Pro.Domain.ERP.ArchivingDocuments.Entities;
 
+using ERP_Pro.Domain.ERP.HumanResources.ValueObjects;
 namespace ERP_Pro.Domain.ERP.HumanResources.Entities
 {
 /// <summary>
 /// Employee Entity
 /// </summary>
-public class Employee : Entity<EmployeeId>
+public class Employee : AggregateRoot<EmployeeId>
 {
     private readonly List<Employee> _employees = new List<Employee>();
     private readonly List<Employee> _employees = new List<Employee>();
@@ -1272,3 +1273,4 @@ public class Employee : Entity<EmployeeId>
     #endregion
 }
 }
+

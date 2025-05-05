@@ -4,12 +4,13 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// ItemSerialNumber Entity
 /// </summary>
-public class ItemSerialNumber : Entity<ItemSerialNumberId>
+public class ItemSerialNumber : AggregateRoot<ItemSerialNumberId>
 {
 
     private ItemSerialNumber() { }
@@ -227,3 +228,4 @@ public class ItemSerialNumber : Entity<ItemSerialNumberId>
     #endregion
 }
 }
+

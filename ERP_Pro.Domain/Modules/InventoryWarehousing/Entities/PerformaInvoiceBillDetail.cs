@@ -6,6 +6,7 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
@@ -665,3 +666,4 @@ public class PerformaInvoiceBillDetail : Entity<PerformaInvoiceBillDetailId>
     #endregion
 }
 }
+

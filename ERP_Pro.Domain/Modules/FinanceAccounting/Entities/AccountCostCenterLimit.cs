@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
@@ -158,3 +159,4 @@ public class AccountCostCenterLimit : Entity<AccountCostCenterLimitId>
     #endregion
 }
 }
+

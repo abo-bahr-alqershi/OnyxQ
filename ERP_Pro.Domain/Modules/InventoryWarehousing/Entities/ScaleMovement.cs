@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 using ERP_Pro.Domain.ERP.TransportationShipping.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
@@ -247,3 +248,4 @@ public class ScaleMovement : Entity<ScaleMovementId>
     #endregion
 }
 }
+

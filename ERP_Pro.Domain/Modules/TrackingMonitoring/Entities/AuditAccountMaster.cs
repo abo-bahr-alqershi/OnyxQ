@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TrackingMonitoring.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TrackingMonitoring.Entities
 {
 /// <summary>
 /// AuditAccountMaster Entity
 /// </summary>
-public class AuditAccountMaster : Entity<AuditAccountMasterId>
+public class AuditAccountMaster : AggregateRoot<AuditAccountMasterId>
 {
 
     private AuditAccountMaster() { }
@@ -271,3 +272,4 @@ public class AuditAccountMaster : Entity<AuditAccountMasterId>
     #endregion
 }
 }
+

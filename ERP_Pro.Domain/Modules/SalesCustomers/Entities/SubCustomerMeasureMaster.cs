@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// SubCustomerMeasureMaster Entity
 /// </summary>
-public class SubCustomerMeasureMaster : Entity<SubCustomerMeasureMasterId>
+public class SubCustomerMeasureMaster : AggregateRoot<SubCustomerMeasureMasterId>
 {
 
     private SubCustomerMeasureMaster() { }
@@ -55,3 +56,4 @@ public class SubCustomerMeasureMaster : Entity<SubCustomerMeasureMasterId>
     #endregion
 }
 }
+

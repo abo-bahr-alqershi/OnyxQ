@@ -6,12 +6,13 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// WarehouseTransferMaster Entity
 /// </summary>
-public class WarehouseTransferMaster : Entity<WarehouseTransferMasterId>
+public class WarehouseTransferMaster : AggregateRoot<WarehouseTransferMasterId>
 {
 
     private WarehouseTransferMaster() { }
@@ -344,3 +345,4 @@ public class WarehouseTransferMaster : Entity<WarehouseTransferMasterId>
     #endregion
 }
 }
+

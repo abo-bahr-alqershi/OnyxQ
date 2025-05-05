@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FixedAssets.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FixedAssets.Entities
 {
 /// <summary>
@@ -83,3 +84,4 @@ public class Reevaluate : Entity<ReevaluateId>
     #endregion
 }
 }
+

@@ -12,12 +12,13 @@ using ERP_Pro.Domain.ERP.ServicesMaintenance.Entities;
 using ERP_Pro.Domain.ERP.TransportationShipping.Entities;
 using ERP_Pro.Domain.ERP.SettingsParameters.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// Warehouse Entity
 /// </summary>
-public class Warehouse : Entity<WarehouseId>
+public class Warehouse : AggregateRoot<WarehouseId>
 {
 
     private Warehouse() { }
@@ -324,3 +325,4 @@ public class Warehouse : Entity<WarehouseId>
     #endregion
 }
 }
+

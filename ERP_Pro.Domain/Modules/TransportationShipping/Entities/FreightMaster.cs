@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TransportationShipping.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TransportationShipping.Entities
 {
 /// <summary>
 /// FreightMaster Entity
 /// </summary>
-public class FreightMaster : Entity<FreightMasterId>
+public class FreightMaster : AggregateRoot<FreightMasterId>
 {
 
     private FreightMaster() { }
@@ -312,3 +313,4 @@ public class FreightMaster : Entity<FreightMasterId>
     #endregion
 }
 }
+

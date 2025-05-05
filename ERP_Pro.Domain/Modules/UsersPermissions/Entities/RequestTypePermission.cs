@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.PurchasingVendors.Entities;
 
+using ERP_Pro.Domain.ERP.UsersPermissions.ValueObjects;
 namespace ERP_Pro.Domain.ERP.UsersPermissions.Entities
 {
 /// <summary>
@@ -59,3 +60,4 @@ public class RequestTypePermission : Entity<RequestTypePermissionId>
     #endregion
 }
 }
+

@@ -6,12 +6,13 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// GoodsReceiptIncomingMaster Entity
 /// </summary>
-public class GoodsReceiptIncomingMaster : Entity<GoodsReceiptIncomingMasterId>
+public class GoodsReceiptIncomingMaster : AggregateRoot<GoodsReceiptIncomingMasterId>
 {
 
     private GoodsReceiptIncomingMaster() { }
@@ -218,3 +219,4 @@ public class GoodsReceiptIncomingMaster : Entity<GoodsReceiptIncomingMasterId>
     #endregion
 }
 }
+

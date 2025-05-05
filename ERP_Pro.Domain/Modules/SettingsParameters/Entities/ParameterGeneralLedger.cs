@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SettingsParameters.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SettingsParameters.Entities
 {
 /// <summary>
@@ -576,3 +577,4 @@ public class ParameterGeneralLedger : Entity<ParameterGeneralLedgerId>
     #endregion
 }
 }
+

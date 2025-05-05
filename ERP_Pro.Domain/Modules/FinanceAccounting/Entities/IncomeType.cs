@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
@@ -66,3 +67,4 @@ public class IncomeType : Entity<IncomeTypeId>
     #endregion
 }
 }
+

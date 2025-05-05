@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TransportationShipping.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TransportationShipping.Entities
 {
 /// <summary>
@@ -73,3 +74,4 @@ public class CityDistance : Entity<CityDistanceId>
     #endregion
 }
 }
+

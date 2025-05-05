@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// AutoSalesOrderMaster Entity
 /// </summary>
-public class AutoSalesOrderMaster : Entity<AutoSalesOrderMasterId>
+public class AutoSalesOrderMaster : AggregateRoot<AutoSalesOrderMasterId>
 {
 
     private AutoSalesOrderMaster() { }
@@ -73,3 +74,4 @@ public class AutoSalesOrderMaster : Entity<AutoSalesOrderMasterId>
     #endregion
 }
 }
+

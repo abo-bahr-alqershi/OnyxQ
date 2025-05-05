@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// الكلاس يمثل مستند تسوية البنك ويحتوي على جميع خصائص مستندات تسوية البنوك
 /// </summary>
-public class BankAdjustmentMaster : Entity<BankAdjustmentMasterId>
+public class BankAdjustmentMaster : AggregateRoot<BankAdjustmentMasterId>
 {
 
     private BankAdjustmentMaster() { }
@@ -225,3 +226,4 @@ public class BankAdjustmentMaster : Entity<BankAdjustmentMasterId>
     #endregion
 }
 }
+

@@ -7,12 +7,13 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// IncomingOutgoingMaster Entity
 /// </summary>
-public class IncomingOutgoingMaster : Entity<IncomingOutgoingMasterId>
+public class IncomingOutgoingMaster : AggregateRoot<IncomingOutgoingMasterId>
 {
 
     private IncomingOutgoingMaster() { }
@@ -207,3 +208,4 @@ public class IncomingOutgoingMaster : Entity<IncomingOutgoingMasterId>
     #endregion
 }
 }
+

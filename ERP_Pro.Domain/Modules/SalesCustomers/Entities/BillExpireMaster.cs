@@ -4,12 +4,13 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// BillExpireMaster Entity
 /// </summary>
-public class BillExpireMaster : Entity<BillExpireMasterId>
+public class BillExpireMaster : AggregateRoot<BillExpireMasterId>
 {
 
     private BillExpireMaster() { }
@@ -146,3 +147,4 @@ public class BillExpireMaster : Entity<BillExpireMasterId>
     #endregion
 }
 }
+

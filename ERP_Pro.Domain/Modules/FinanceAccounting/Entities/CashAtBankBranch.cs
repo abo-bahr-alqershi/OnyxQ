@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CashAtBankBranch Entity
+/// الكيان يمثل النقدية في البنك للفرع ويحتوي على جميع خصائص النقدية في البنوك للفروع
 /// </summary>
 public class CashAtBankBranch : Entity<CashAtBankBranchId>
 {
@@ -20,68 +21,60 @@ public class CashAtBankBranch : Entity<CashAtBankBranchId>
     }
 
     /// <summary>
-    /// The unique identifier for the CashAtBankBranch
-    /// المعرف الفريد لـ CashAtBankBranch
+    /// المعرف الفريد للنقدية في البنك للفرع
     /// </summary>
     public CashAtBankBranchId Id { get; private set; }
 
     /// <summary>
-    /// BranchBankNumber of the CashAtBankBranch
-    /// BranchBankNumber الخاص بـ CashAtBankBranch
+    /// رقم البنك للفرع
     /// </summary>
     public decimal? BranchBankNumber { get; private set; }
 
     /// <summary>
-    /// AccountCode of the CashAtBankBranch
-    /// AccountCode الخاص بـ CashAtBankBranch
+    /// كود الحساب
     /// </summary>
     public string AccountCode { get; private set; }
 
     /// <summary>
-    /// OpenBalanceLocal of the CashAtBankBranch
-    /// OpenBalanceLocal الخاص بـ CashAtBankBranch
+    /// الرصيد الافتتاحي بالعملة المحلية
     /// </summary>
     public decimal? OpenBalanceLocal { get; private set; }
 
     /// <summary>
-    /// OpenBalanceForeign of the CashAtBankBranch
-    /// OpenBalanceForeign الخاص بـ CashAtBankBranch
+    /// الرصيد الافتتاحي بالعملة الأجنبية
     /// </summary>
     public decimal? OpenBalanceForeign { get; private set; }
 
     /// <summary>
-    /// CurrBalL of the CashAtBankBranch
-    /// CurrBalL الخاص بـ CashAtBankBranch
+    /// الرصيد الحالي بالعملة المحلية
     /// </summary>
     public decimal? CurrBalL { get; private set; }
 
     /// <summary>
-    /// CurrBalF of the CashAtBankBranch
-    /// CurrBalF الخاص بـ CashAtBankBranch
+    /// الرصيد الحالي بالعملة الأجنبية
     /// </summary>
     public decimal? CurrBalF { get; private set; }
 
     /// <summary>
-    /// InactiveFlag of the CashAtBankBranch
-    /// InactiveFlag الخاص بـ CashAtBankBranch
+    /// علم التعطيل
     /// </summary>
     public decimal? InactiveFlag { get; private set; }
 
     /// <summary>
-    /// InactiveDate of the CashAtBankBranch
-    /// InactiveDate الخاص بـ CashAtBankBranch
+    /// تاريخ التعطيل
     /// </summary>
     public DateTime? InactiveDate { get; private set; }
 
     #region Navigation Properties
     /// <summary>
-    /// Reference relationship: ManyToOne
+    /// علاقة مرجعية مع البنك النقدي (متعدد إلى واحد)
     /// </summary>
     public BankCash BankCash { get; private set; }
     #endregion
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }
+

@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
@@ -338,3 +339,4 @@ public class VendorQuotationMaster : Entity<VendorQuotationMasterId>
     #endregion
 }
 }
+

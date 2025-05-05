@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TrackingMonitoring.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TrackingMonitoring.Entities
 {
 /// <summary>
@@ -247,3 +248,4 @@ public class AuditLimitExceeded : Entity<AuditLimitExceededId>
     #endregion
 }
 }
+

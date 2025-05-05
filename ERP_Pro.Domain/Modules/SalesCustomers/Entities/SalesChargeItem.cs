@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 using ERP_Pro.Domain.ERP.SettingsParameters.Entities;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
@@ -98,3 +99,4 @@ public class SalesChargeItem : Entity<SalesChargeItemId>
     #endregion
 }
 }
+

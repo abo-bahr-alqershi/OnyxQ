@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.StationsFuel.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
@@ -95,3 +96,4 @@ public class CashInHandDetail : Entity<CashInHandDetailId>
     #endregion
 }
 }
+

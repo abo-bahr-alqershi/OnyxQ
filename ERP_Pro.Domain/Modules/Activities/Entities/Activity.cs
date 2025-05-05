@@ -18,12 +18,13 @@ using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 using ERP_Pro.Domain.ERP.SettingsParameters.Entities;
 using ERP_Pro.Domain.ERP.TaxFees.Entities;
 
+using ERP_Pro.Domain.ERP.Activities.ValueObjects;
 namespace ERP_Pro.Domain.ERP.Activities.Entities
 {
 /// <summary>
 /// Activity Entity
 /// </summary>
-public class Activity : Entity<ActivityId>
+public class Activity : AggregateRoot<ActivityId>
 {
 
     private Activity() { }
@@ -250,3 +251,4 @@ public class Activity : Entity<ActivityId>
     #endregion
 }
 }
+

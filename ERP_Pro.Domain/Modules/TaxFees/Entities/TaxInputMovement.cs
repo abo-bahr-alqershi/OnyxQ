@@ -6,6 +6,7 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.TaxFees.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TaxFees.Entities
 {
 /// <summary>
@@ -206,3 +207,4 @@ public class TaxInputMovement : Entity<TaxInputMovementId>
     #endregion
 }
 }
+

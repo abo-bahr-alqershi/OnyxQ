@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InsuranceClaims.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InsuranceClaims.Entities
 {
 /// <summary>
@@ -138,3 +139,4 @@ public class InsuranceClaimDetail : Entity<InsuranceClaimDetailId>
     #endregion
 }
 }
+

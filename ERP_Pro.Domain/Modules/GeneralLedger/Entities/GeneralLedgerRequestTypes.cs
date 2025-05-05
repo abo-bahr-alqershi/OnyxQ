@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 
+using ERP_Pro.Domain.ERP.GeneralLedger.ValueObjects;
 namespace ERP_Pro.Domain.ERP.GeneralLedger.Entities
 {
 /// <summary>
@@ -81,3 +82,4 @@ public class GeneralLedgerRequestTypes : Entity<GeneralLedgerRequestTypesId>
     #endregion
 }
 }
+

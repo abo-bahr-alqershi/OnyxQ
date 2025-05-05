@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// OutgoingPlanMaster Entity
 /// </summary>
-public class OutgoingPlanMaster : Entity<OutgoingPlanMasterId>
+public class OutgoingPlanMaster : AggregateRoot<OutgoingPlanMasterId>
 {
 
     private OutgoingPlanMaster() { }
@@ -90,3 +91,4 @@ public class OutgoingPlanMaster : Entity<OutgoingPlanMasterId>
     #endregion
 }
 }
+

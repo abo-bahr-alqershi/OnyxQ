@@ -8,12 +8,13 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
 /// PurchaseBillMaster Entity
 /// </summary>
-public class PurchaseBillMaster : Entity<PurchaseBillMasterId>
+public class PurchaseBillMaster : AggregateRoot<PurchaseBillMasterId>
 {
 
     private PurchaseBillMaster() { }
@@ -526,3 +527,4 @@ public class PurchaseBillMaster : Entity<PurchaseBillMasterId>
     #endregion
 }
 }
+

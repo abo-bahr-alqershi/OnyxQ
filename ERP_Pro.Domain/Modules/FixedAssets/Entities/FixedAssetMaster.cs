@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FixedAssets.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FixedAssets.Entities
 {
 /// <summary>
 /// FixedAssetMaster Entity
 /// </summary>
-public class FixedAssetMaster : Entity<FixedAssetMasterId>
+public class FixedAssetMaster : AggregateRoot<FixedAssetMasterId>
 {
 
     private FixedAssetMaster() { }
@@ -65,3 +66,4 @@ public class FixedAssetMaster : Entity<FixedAssetMasterId>
     #endregion
 }
 }
+

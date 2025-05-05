@@ -8,6 +8,7 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 
+using ERP_Pro.Domain.ERP.GeneralLedger.ValueObjects;
 namespace ERP_Pro.Domain.ERP.GeneralLedger.Entities
 {
 /// <summary>
@@ -174,3 +175,4 @@ public class GeneralLedgerRequestVoucherMasterAccount : Entity<GeneralLedgerRequ
     #endregion
 }
 }
+

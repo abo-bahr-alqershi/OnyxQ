@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.ProductionManufacturing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ProductionManufacturing.Entities
 {
 /// <summary>
@@ -144,3 +145,4 @@ public class AssembleItemExpand : Entity<AssembleItemExpandId>
     #endregion
 }
 }
+

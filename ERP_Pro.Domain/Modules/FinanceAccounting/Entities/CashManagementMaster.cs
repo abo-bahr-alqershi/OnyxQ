@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// الكلاس يمثل كيان إدارة النقد الرئيسي ويحتوي على جميع خصائص المستندات النقدية الرئيسية
 /// </summary>
-public class CashManagementMaster : Entity<CashManagementMasterId>
+public class CashManagementMaster : AggregateRoot<CashManagementMasterId>
 {
 
     private CashManagementMaster() { }
@@ -120,3 +121,4 @@ public class CashManagementMaster : Entity<CashManagementMasterId>
     #endregion
 }
 }
+

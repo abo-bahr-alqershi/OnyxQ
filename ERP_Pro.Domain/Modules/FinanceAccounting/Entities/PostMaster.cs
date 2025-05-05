@@ -6,12 +6,13 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.CoreSystem.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// PostMaster Entity
 /// </summary>
-public class PostMaster : Entity<PostMasterId>
+public class PostMaster : AggregateRoot<PostMasterId>
 {
 
     private PostMaster() { }
@@ -248,3 +249,4 @@ public class PostMaster : Entity<PostMasterId>
     #endregion
 }
 }
+

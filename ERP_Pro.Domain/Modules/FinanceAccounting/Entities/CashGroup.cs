@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// CashGroup Entity
+/// الكيان يمثل مجموعة النقدية ويحتوي على جميع خصائص مجموعات النقدية
 /// </summary>
 public class CashGroup : Entity<CashGroupId>
 {
@@ -20,31 +21,28 @@ public class CashGroup : Entity<CashGroupId>
     }
 
     /// <summary>
-    /// The unique identifier for the CashGroup
-    /// المعرف الفريد لـ CashGroup
+    /// المعرف الفريد لمجموعة النقدية
     /// </summary>
     public CashGroupId Id { get; private set; }
 
     /// <summary>
-    /// GroupNumber of the CashGroup
-    /// GroupNumber الخاص بـ CashGroup
+    /// رقم المجموعة
     /// </summary>
     public decimal? GroupNumber { get; private set; }
 
     /// <summary>
-    /// GroupName of the CashGroup
-    /// GroupName الخاص بـ CashGroup
+    /// اسم المجموعة
     /// </summary>
     public string GroupName { get; private set; }
 
     /// <summary>
-    /// GroupNameEnglish of the CashGroup
-    /// GroupNameEnglish الخاص بـ CashGroup
+    /// اسم المجموعة بالإنجليزية
     /// </summary>
     public string GroupNameEnglish { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }
+

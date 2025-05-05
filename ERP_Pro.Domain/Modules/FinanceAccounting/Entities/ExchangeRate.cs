@@ -10,6 +10,7 @@ using ERP_Pro.Domain.ERP.ProductionManufacturing.Entities;
 using ERP_Pro.Domain.ERP.HumanResources.Entities;
 using ERP_Pro.Domain.ERP.GuaranteesWarranties.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
@@ -115,3 +116,4 @@ public class ExchangeRate : Entity<ExchangeRateId>
     #endregion
 }
 }
+

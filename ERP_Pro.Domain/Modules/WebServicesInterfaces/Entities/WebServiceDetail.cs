@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.WebServicesInterfaces.ValueObjects;
 namespace ERP_Pro.Domain.ERP.WebServicesInterfaces.Entities
 {
 /// <summary>
@@ -49,3 +50,4 @@ public class WebServiceDetail : Entity<WebServiceDetailId>
     #endregion
 }
 }
+

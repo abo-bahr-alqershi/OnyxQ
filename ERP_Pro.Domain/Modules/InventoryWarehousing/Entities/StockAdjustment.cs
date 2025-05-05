@@ -5,12 +5,13 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// StockAdjustment Entity
 /// </summary>
-public class StockAdjustment : Entity<StockAdjustmentId>
+public class StockAdjustment : AggregateRoot<StockAdjustmentId>
 {
 
     private StockAdjustment() { }
@@ -213,3 +214,4 @@ public class StockAdjustment : Entity<StockAdjustmentId>
     #endregion
 }
 }
+

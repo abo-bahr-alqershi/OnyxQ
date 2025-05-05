@@ -4,12 +4,13 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 
+using ERP_Pro.Domain.ERP.GeneralLedger.ValueObjects;
 namespace ERP_Pro.Domain.ERP.GeneralLedger.Entities
 {
 /// <summary>
 /// GeneralLedgerRequestMaster Entity
 /// </summary>
-public class GeneralLedgerRequestMaster : Entity<GeneralLedgerRequestMasterId>
+public class GeneralLedgerRequestMaster : AggregateRoot<GeneralLedgerRequestMasterId>
 {
 
     private GeneralLedgerRequestMaster() { }
@@ -254,3 +255,4 @@ public class GeneralLedgerRequestMaster : Entity<GeneralLedgerRequestMasterId>
     #endregion
 }
 }
+

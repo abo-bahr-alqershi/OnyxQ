@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FormsSurveys.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FormsSurveys.Entities
 {
 /// <summary>
@@ -144,3 +145,4 @@ public class CompensationQuantitySetupDetail : Entity<CompensationQuantitySetupD
     #endregion
 }
 }
+

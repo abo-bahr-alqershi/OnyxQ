@@ -6,12 +6,13 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
 /// Quotation Entity
 /// </summary>
-public class Quotation : Entity<QuotationId>
+public class Quotation : AggregateRoot<QuotationId>
 {
 
     private Quotation() { }
@@ -464,3 +465,4 @@ public class Quotation : Entity<QuotationId>
     #endregion
 }
 }
+

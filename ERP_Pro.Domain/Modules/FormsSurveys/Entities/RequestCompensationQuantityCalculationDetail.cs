@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.FormsSurveys.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FormsSurveys.Entities
 {
 /// <summary>
@@ -199,3 +200,4 @@ public class RequestCompensationQuantityCalculationDetail : Entity<RequestCompen
     #endregion
 }
 }
+

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
-/// BranchVoucher Entity
+/// الكيان يمثل سند الفرع ويحتوي على جميع خصائص سندات الفروع
 /// </summary>
 public class BranchVoucher : Entity<BranchVoucherId>
 {
@@ -20,337 +21,283 @@ public class BranchVoucher : Entity<BranchVoucherId>
     }
 
     /// <summary>
-    /// The unique identifier for the BranchVoucher
-    /// المعرف الفريد لـ BranchVoucher
+    /// المعرف الفريد لسند الفرع
     /// </summary>
     public BranchVoucherId Id { get; private set; }
 
     /// <summary>
-    /// VoucherTypeFull of the BranchVoucher
-    /// VoucherTypeFull الخاص بـ BranchVoucher
+    /// نوع قيد السند الكامل
     /// </summary>
     public decimal? VoucherTypeFull { get; private set; }
 
     /// <summary>
-    /// VoucherPayTypeShort of the BranchVoucher
-    /// VoucherPayTypeShort الخاص بـ BranchVoucher
+    /// نوع دفع السند المختصر
     /// </summary>
     public decimal? VoucherPayTypeShort { get; private set; }
 
     /// <summary>
-    /// VoucherNumber of the BranchVoucher
-    /// VoucherNumber الخاص بـ BranchVoucher
+    /// رقم السند
     /// </summary>
     public decimal? VoucherNumber { get; private set; }
 
     /// <summary>
-    /// CashNumber of the BranchVoucher
-    /// CashNumber الخاص بـ BranchVoucher
+    /// رقم النقدية
     /// </summary>
     public decimal? CashNumber { get; private set; }
 
     /// <summary>
-    /// AccountCurrency of the BranchVoucher
-    /// AccountCurrency الخاص بـ BranchVoucher
+    /// عملة الحساب
     /// </summary>
     public string AccountCurrency { get; private set; }
 
     /// <summary>
-    /// VendorSerialShort of the BranchVoucher
-    /// VendorSerialShort الخاص بـ BranchVoucher
+    /// الرقم المختصر للمورد
     /// </summary>
     public decimal? VendorSerialShort { get; private set; }
 
     /// <summary>
-    /// VoucherDate of the BranchVoucher
-    /// VoucherDate الخاص بـ BranchVoucher
+    /// تاريخ السند
     /// </summary>
     public DateTime? VoucherDate { get; private set; }
 
     /// <summary>
-    /// CashAmount of the BranchVoucher
-    /// CashAmount الخاص بـ BranchVoucher
+    /// مبلغ النقدية
     /// </summary>
     public decimal? CashAmount { get; private set; }
 
     /// <summary>
-    /// CashAmountForeign of the BranchVoucher
-    /// CashAmountForeign الخاص بـ BranchVoucher
+    /// مبلغ النقدية بالعملة الأجنبية
     /// </summary>
     public decimal? CashAmountForeign { get; private set; }
 
     /// <summary>
-    /// ExchangeRate of the BranchVoucher
-    /// ExchangeRate الخاص بـ BranchVoucher
+    /// سعر الصرف
     /// </summary>
     public decimal? ExchangeRate { get; private set; }
 
     /// <summary>
-    /// VoucherPostFlag of the BranchVoucher
-    /// VoucherPostFlag الخاص بـ BranchVoucher
+    /// علم ترحيل السند
     /// </summary>
     public decimal? VoucherPostFlag { get; private set; }
 
     /// <summary>
-    /// ReferenceNumber of the BranchVoucher
-    /// ReferenceNumber الخاص بـ BranchVoucher
+    /// رقم المرجع
     /// </summary>
     public string ReferenceNumber { get; private set; }
 
     /// <summary>
-    /// ReferenceName of the BranchVoucher
-    /// ReferenceName الخاص بـ BranchVoucher
+    /// اسم المرجع
     /// </summary>
     public string ReferenceName { get; private set; }
 
     /// <summary>
-    /// AccountDescription of the BranchVoucher
-    /// AccountDescription الخاص بـ BranchVoucher
+    /// وصف الحساب
     /// </summary>
     public string AccountDescription { get; private set; }
 
     /// <summary>
-    /// ReceiverName of the BranchVoucher
-    /// ReceiverName الخاص بـ BranchVoucher
+    /// اسم المستلم
     /// </summary>
     public string ReceiverName { get; private set; }
 
     /// <summary>
-    /// StandByFlag of the BranchVoucher
-    /// StandByFlag الخاص بـ BranchVoucher
+    /// علم الانتظار
     /// </summary>
     public decimal? StandByFlag { get; private set; }
 
     /// <summary>
-    /// TransferFlag of the BranchVoucher
-    /// TransferFlag الخاص بـ BranchVoucher
+    /// علم التحويل
     /// </summary>
     public decimal? TransferFlag { get; private set; }
 
     /// <summary>
-    /// ChequeType of the BranchVoucher
-    /// ChequeType الخاص بـ BranchVoucher
+    /// نوع الشيك
     /// </summary>
     public decimal? ChequeType { get; private set; }
 
     /// <summary>
-    /// ColumnNumberShort of the BranchVoucher
-    /// ColumnNumberShort الخاص بـ BranchVoucher
+    /// رقم العمود المختصر
     /// </summary>
     public decimal? ColumnNumberShort { get; private set; }
 
     /// <summary>
-    /// CostCenterCode of the BranchVoucher
-    /// CostCenterCode الخاص بـ BranchVoucher
+    /// كود مركز التكلفة
     /// </summary>
     public string CostCenterCode { get; private set; }
 
     /// <summary>
-    /// ProjectNumber of the BranchVoucher
-    /// ProjectNumber الخاص بـ BranchVoucher
+    /// رقم المشروع
     /// </summary>
     public string ProjectNumber { get; private set; }
 
     /// <summary>
-    /// ActivityNumber of the BranchVoucher
-    /// ActivityNumber الخاص بـ BranchVoucher
+    /// رقم النشاط
     /// </summary>
     public string ActivityNumber { get; private set; }
 
     /// <summary>
-    /// AttachmentNumber of the BranchVoucher
-    /// AttachmentNumber الخاص بـ BranchVoucher
+    /// رقم المرفق
     /// </summary>
     public decimal? AttachmentNumber { get; private set; }
 
     /// <summary>
-    /// CommissionPercent of the BranchVoucher
-    /// CommissionPercent الخاص بـ BranchVoucher
+    /// نسبة العمولة
     /// </summary>
     public decimal? CommissionPercent { get; private set; }
 
     /// <summary>
-    /// VoucherNumberPaymentYear of the BranchVoucher
-    /// VoucherNumberPaymentYear الخاص بـ BranchVoucher
+    /// رقم سند الدفع السنوي
     /// </summary>
     public decimal? VoucherNumberPaymentYear { get; private set; }
 
     /// <summary>
-    /// VoucherDatePaymentYear of the BranchVoucher
-    /// VoucherDatePaymentYear الخاص بـ BranchVoucher
+    /// تاريخ سند الدفع السنوي
     /// </summary>
     public DateTime? VoucherDatePaymentYear { get; private set; }
 
     /// <summary>
-    /// MoveChequePaymentYear of the BranchVoucher
-    /// MoveChequePaymentYear الخاص بـ BranchVoucher
+    /// حركة الشيك السنوية
     /// </summary>
     public decimal? MoveChequePaymentYear { get; private set; }
 
     /// <summary>
-    /// MoveChequeCurrencyYear of the BranchVoucher
-    /// MoveChequeCurrencyYear الخاص بـ BranchVoucher
+    /// حركة عملة الشيك السنوية
     /// </summary>
     public decimal? MoveChequeCurrencyYear { get; private set; }
 
     /// <summary>
-    /// VendorTypeNumber of the BranchVoucher
-    /// VendorTypeNumber الخاص بـ BranchVoucher
+    /// رقم نوع المورد
     /// </summary>
     public decimal? VendorTypeNumber { get; private set; }
 
     /// <summary>
-    /// ExternalPostFlag of the BranchVoucher
-    /// ExternalPostFlag الخاص بـ BranchVoucher
+    /// علم الترحيل الخارجي
     /// </summary>
     public decimal? ExternalPostFlag { get; private set; }
 
     /// <summary>
-    /// AuditReference of the BranchVoucher
-    /// AuditReference الخاص بـ BranchVoucher
+    /// مرجع التدقيق
     /// </summary>
     public decimal? AuditReference { get; private set; }
 
     /// <summary>
-    /// AuditReferenceDescription of the BranchVoucher
-    /// AuditReferenceDescription الخاص بـ BranchVoucher
+    /// وصف مرجع التدقيق
     /// </summary>
     public string AuditReferenceDescription { get; private set; }
 
     /// <summary>
-    /// AuditReferenceUserId of the BranchVoucher
-    /// AuditReferenceUserId الخاص بـ BranchVoucher
+    /// رقم مستخدم مرجع التدقيق
     /// </summary>
     public decimal? AuditReferenceUserId { get; private set; }
 
     /// <summary>
-    /// AuditReferenceDate of the BranchVoucher
-    /// AuditReferenceDate الخاص بـ BranchVoucher
+    /// تاريخ مرجع التدقيق
     /// </summary>
     public DateTime? AuditReferenceDate { get; private set; }
 
     /// <summary>
-    /// Field1 of the BranchVoucher
-    /// Field1 الخاص بـ BranchVoucher
+    /// حقل إضافي 1
     /// </summary>
     public string Field1 { get; private set; }
 
     /// <summary>
-    /// Field2 of the BranchVoucher
-    /// Field2 الخاص بـ BranchVoucher
+    /// حقل إضافي 2
     /// </summary>
     public string Field2 { get; private set; }
 
     /// <summary>
-    /// Field3 of the BranchVoucher
-    /// Field3 الخاص بـ BranchVoucher
+    /// حقل إضافي 3
     /// </summary>
     public string Field3 { get; private set; }
 
     /// <summary>
-    /// Field4 of the BranchVoucher
-    /// Field4 الخاص بـ BranchVoucher
+    /// حقل إضافي 4
     /// </summary>
     public string Field4 { get; private set; }
 
     /// <summary>
-    /// Field5 of the BranchVoucher
-    /// Field5 الخاص بـ BranchVoucher
+    /// حقل إضافي 5
     /// </summary>
     public string Field5 { get; private set; }
 
     /// <summary>
-    /// Field6 of the BranchVoucher
-    /// Field6 الخاص بـ BranchVoucher
+    /// حقل إضافي 6
     /// </summary>
     public string Field6 { get; private set; }
 
     /// <summary>
-    /// Field7 of the BranchVoucher
-    /// Field7 الخاص بـ BranchVoucher
+    /// حقل إضافي 7
     /// </summary>
     public string Field7 { get; private set; }
 
     /// <summary>
-    /// Field8 of the BranchVoucher
-    /// Field8 الخاص بـ BranchVoucher
+    /// حقل إضافي 8
     /// </summary>
     public string Field8 { get; private set; }
 
     /// <summary>
-    /// Field9 of the BranchVoucher
-    /// Field9 الخاص بـ BranchVoucher
+    /// حقل إضافي 9
     /// </summary>
     public string Field9 { get; private set; }
 
     /// <summary>
-    /// Field10 of the BranchVoucher
-    /// Field10 الخاص بـ BranchVoucher
+    /// حقل إضافي 10
     /// </summary>
     public string Field10 { get; private set; }
 
     /// <summary>
-    /// PostUserId of the BranchVoucher
-    /// PostUserId الخاص بـ BranchVoucher
+    /// رقم مستخدم الترحيل
     /// </summary>
     public decimal? PostUserId { get; private set; }
 
     /// <summary>
-    /// PostDate of the BranchVoucher
-    /// PostDate الخاص بـ BranchVoucher
+    /// تاريخ الترحيل
     /// </summary>
     public DateTime? PostDate { get; private set; }
 
     /// <summary>
-    /// UnpostUserId of the BranchVoucher
-    /// UnpostUserId الخاص بـ BranchVoucher
+    /// رقم مستخدم إلغاء الترحيل
     /// </summary>
     public decimal? UnpostUserId { get; private set; }
 
     /// <summary>
-    /// UnpostDate of the BranchVoucher
-    /// UnpostDate الخاص بـ BranchVoucher
+    /// تاريخ إلغاء الترحيل
     /// </summary>
     public DateTime? UnpostDate { get; private set; }
 
     /// <summary>
-    /// DocSequence of the BranchVoucher
-    /// DocSequence الخاص بـ BranchVoucher
+    /// تسلسل المستند
     /// </summary>
     public decimal? DocSequence { get; private set; }
 
     /// <summary>
-    /// DocBrnNo of the BranchVoucher
-    /// DocBrnNo الخاص بـ BranchVoucher
+    /// رقم مستند الفرع
     /// </summary>
     public decimal? DocBrnNo { get; private set; }
 
     /// <summary>
-    /// CompanyNumberShort of the BranchVoucher
-    /// CompanyNumberShort الخاص بـ BranchVoucher
+    /// رقم الشركة المختصر
     /// </summary>
     public decimal? CompanyNumberShort { get; private set; }
 
     /// <summary>
-    /// BranchNumber of the BranchVoucher
-    /// BranchNumber الخاص بـ BranchVoucher
+    /// رقم الفرع
     /// </summary>
     public decimal? BranchNumber { get; private set; }
 
     /// <summary>
-    /// BranchYear of the BranchVoucher
-    /// BranchYear الخاص بـ BranchVoucher
+    /// سنة الفرع
     /// </summary>
     public decimal? BranchYear { get; private set; }
 
     /// <summary>
-    /// BranchUser of the BranchVoucher
-    /// BranchUser الخاص بـ BranchVoucher
+    /// مستخدم الفرع
     /// </summary>
     public decimal? BranchUser { get; private set; }
 
     #region Methods
-    // Add domain logic methods here
+    // توضع هنا دوال منطق الدومين
     #endregion
 }
 }
+

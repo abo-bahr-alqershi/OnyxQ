@@ -4,12 +4,13 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.GeneralLedger.ValueObjects;
 namespace ERP_Pro.Domain.ERP.GeneralLedger.Entities
 {
 /// <summary>
 /// GeneralLedgerAdvanceExpenseRevenueMaster Entity
 /// </summary>
-public class GeneralLedgerAdvanceExpenseRevenueMaster : Entity<GeneralLedgerAdvanceExpenseRevenueMasterId>
+public class GeneralLedgerAdvanceExpenseRevenueMaster : AggregateRoot<GeneralLedgerAdvanceExpenseRevenueMasterId>
 {
 
     private GeneralLedgerAdvanceExpenseRevenueMaster() { }
@@ -372,3 +373,4 @@ public class GeneralLedgerAdvanceExpenseRevenueMaster : Entity<GeneralLedgerAdva
     #endregion
 }
 }
+

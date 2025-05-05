@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.ProductionManufacturing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ProductionManufacturing.Entities
 {
 /// <summary>
@@ -222,3 +223,4 @@ public class WorkOrderMaster : Entity<WorkOrderMasterId>
     #endregion
 }
 }
+

@@ -5,12 +5,13 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 
+using ERP_Pro.Domain.ERP.ArchivingDocuments.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ArchivingDocuments.Entities
 {
 /// <summary>
 /// Note Entity
 /// </summary>
-public class Note : Entity<NoteId>
+public class Note : AggregateRoot<NoteId>
 {
 
     private Note() { }
@@ -229,3 +230,4 @@ public class Note : Entity<NoteId>
     #endregion
 }
 }
+

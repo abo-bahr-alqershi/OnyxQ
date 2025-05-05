@@ -5,12 +5,13 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 
+using ERP_Pro.Domain.ERP.StationsFuel.ValueObjects;
 namespace ERP_Pro.Domain.ERP.StationsFuel.Entities
 {
 /// <summary>
 /// StationBillMaster Entity
 /// </summary>
-public class StationBillMaster : Entity<StationBillMasterId>
+public class StationBillMaster : AggregateRoot<StationBillMasterId>
 {
 
     private StationBillMaster() { }
@@ -337,3 +338,4 @@ public class StationBillMaster : Entity<StationBillMasterId>
     #endregion
 }
 }
+

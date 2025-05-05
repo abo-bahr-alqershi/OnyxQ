@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// الكلاس يمثل مستند دخل الشيكات ويحتوي على جميع خصائص مستندات دخل الشيكات
 /// </summary>
-public class CheckIncomeMaster : Entity<CheckIncomeMasterId>
+public class CheckIncomeMaster : AggregateRoot<CheckIncomeMasterId>
 {
 
     private CheckIncomeMaster() { }
@@ -124,3 +125,4 @@ public class CheckIncomeMaster : Entity<CheckIncomeMasterId>
     #endregion
 }
 }
+

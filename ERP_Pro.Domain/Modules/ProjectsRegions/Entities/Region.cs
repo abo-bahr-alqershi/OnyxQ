@@ -7,6 +7,7 @@ using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 using ERP_Pro.Domain.ERP.TransportationShipping.Entities;
 
+using ERP_Pro.Domain.ERP.ProjectsRegions.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ProjectsRegions.Entities
 {
 /// <summary>
@@ -81,3 +82,4 @@ public class Region : Entity<RegionId>
     #endregion
 }
 }
+

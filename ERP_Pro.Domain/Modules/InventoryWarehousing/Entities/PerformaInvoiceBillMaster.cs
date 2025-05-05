@@ -7,12 +7,13 @@ using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.PurchasingVendors.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// PerformaInvoiceBillMaster Entity
 /// </summary>
-public class PerformaInvoiceBillMaster : Entity<PerformaInvoiceBillMasterId>
+public class PerformaInvoiceBillMaster : AggregateRoot<PerformaInvoiceBillMasterId>
 {
 
     private PerformaInvoiceBillMaster() { }
@@ -647,3 +648,4 @@ public class PerformaInvoiceBillMaster : Entity<PerformaInvoiceBillMasterId>
     #endregion
 }
 }
+

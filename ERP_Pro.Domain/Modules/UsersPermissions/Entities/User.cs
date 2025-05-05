@@ -9,12 +9,13 @@ using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.UsersPermissions.ValueObjects;
 namespace ERP_Pro.Domain.ERP.UsersPermissions.Entities
 {
 /// <summary>
 /// User Entity
 /// </summary>
-public class User : Entity<UserId>
+public class User : AggregateRoot<UserId>
 {
 
     private User() { }
@@ -445,3 +446,4 @@ public class User : Entity<UserId>
     #endregion
 }
 }
+

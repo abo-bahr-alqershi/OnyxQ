@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TransportationShipping.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TransportationShipping.Entities
 {
 /// <summary>
 /// RouteMaster Entity
 /// </summary>
-public class RouteMaster : Entity<RouteMasterId>
+public class RouteMaster : AggregateRoot<RouteMasterId>
 {
 
     private RouteMaster() { }
@@ -66,3 +67,4 @@ public class RouteMaster : Entity<RouteMasterId>
     #endregion
 }
 }
+

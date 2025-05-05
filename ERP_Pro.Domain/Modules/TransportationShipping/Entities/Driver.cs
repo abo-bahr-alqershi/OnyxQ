@@ -5,12 +5,13 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.TransportationShipping.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TransportationShipping.Entities
 {
 /// <summary>
 /// Driver Entity
 /// </summary>
-public class Driver : Entity<DriverId>
+public class Driver : AggregateRoot<DriverId>
 {
 
     private Driver() { }
@@ -159,3 +160,4 @@ public class Driver : Entity<DriverId>
     #endregion
 }
 }
+

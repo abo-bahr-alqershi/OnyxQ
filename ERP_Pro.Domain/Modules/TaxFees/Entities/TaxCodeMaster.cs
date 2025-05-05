@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TaxFees.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TaxFees.Entities
 {
 /// <summary>
 /// TaxCodeMaster Entity
 /// </summary>
-public class TaxCodeMaster : Entity<TaxCodeMasterId>
+public class TaxCodeMaster : AggregateRoot<TaxCodeMasterId>
 {
 
     private TaxCodeMaster() { }
@@ -96,3 +97,4 @@ public class TaxCodeMaster : Entity<TaxCodeMasterId>
     #endregion
 }
 }
+

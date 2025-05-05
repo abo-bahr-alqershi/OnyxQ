@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// ItemMeasureMaster Entity
 /// </summary>
-public class ItemMeasureMaster : Entity<ItemMeasureMasterId>
+public class ItemMeasureMaster : AggregateRoot<ItemMeasureMasterId>
 {
 
     private ItemMeasureMaster() { }
@@ -54,3 +55,4 @@ public class ItemMeasureMaster : Entity<ItemMeasureMasterId>
     #endregion
 }
 }
+

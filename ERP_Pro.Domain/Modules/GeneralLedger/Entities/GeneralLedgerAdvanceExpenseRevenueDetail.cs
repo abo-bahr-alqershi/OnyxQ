@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.GeneralLedger.ValueObjects;
 namespace ERP_Pro.Domain.ERP.GeneralLedger.Entities
 {
 /// <summary>
@@ -217,3 +218,4 @@ public class GeneralLedgerAdvanceExpenseRevenueDetail : Entity<GeneralLedgerAdva
     #endregion
 }
 }
+

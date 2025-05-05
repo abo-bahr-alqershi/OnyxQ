@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TaxFees.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TaxFees.Entities
 {
 /// <summary>
@@ -84,3 +85,4 @@ public class TaxSlice : Entity<TaxSliceId>
     #endregion
 }
 }
+

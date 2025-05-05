@@ -6,12 +6,13 @@ using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.GeneralLedger.ValueObjects;
 namespace ERP_Pro.Domain.ERP.GeneralLedger.Entities
 {
 /// <summary>
 /// GeneralLedgerRequestExchangeCurrencyMaster Entity
 /// </summary>
-public class GeneralLedgerRequestExchangeCurrencyMaster : Entity<GeneralLedgerRequestExchangeCurrencyMasterId>
+public class GeneralLedgerRequestExchangeCurrencyMaster : AggregateRoot<GeneralLedgerRequestExchangeCurrencyMasterId>
 {
 
     private GeneralLedgerRequestExchangeCurrencyMaster() { }
@@ -318,3 +319,4 @@ public class GeneralLedgerRequestExchangeCurrencyMaster : Entity<GeneralLedgerRe
     #endregion
 }
 }
+

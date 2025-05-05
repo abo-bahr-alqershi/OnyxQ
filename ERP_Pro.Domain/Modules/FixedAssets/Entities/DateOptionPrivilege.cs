@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 
+using ERP_Pro.Domain.ERP.FixedAssets.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FixedAssets.Entities
 {
 /// <summary>
@@ -49,3 +50,4 @@ public class DateOptionPrivilege : Entity<DateOptionPrivilegeId>
     #endregion
 }
 }
+

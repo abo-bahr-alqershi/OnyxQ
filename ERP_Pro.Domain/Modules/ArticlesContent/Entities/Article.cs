@@ -4,12 +4,13 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.UsersPermissions.Entities;
 
+using ERP_Pro.Domain.ERP.ArticlesContent.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ArticlesContent.Entities
 {
 /// <summary>
 /// Article Entity
 /// </summary>
-public class Article : Entity<ArticleId>
+public class Article : AggregateRoot<ArticleId>
 {
 
     private Article() { }
@@ -265,3 +266,4 @@ public class Article : Entity<ArticleId>
     #endregion
 }
 }
+

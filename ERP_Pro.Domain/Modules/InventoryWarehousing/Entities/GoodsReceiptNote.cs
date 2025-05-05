@@ -7,12 +7,13 @@ using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// GoodsReceiptNote Entity
 /// </summary>
-public class GoodsReceiptNote : Entity<GoodsReceiptNoteId>
+public class GoodsReceiptNote : AggregateRoot<GoodsReceiptNoteId>
 {
 
     private GoodsReceiptNote() { }
@@ -417,3 +418,4 @@ public class GoodsReceiptNote : Entity<GoodsReceiptNoteId>
     #endregion
 }
 }
+

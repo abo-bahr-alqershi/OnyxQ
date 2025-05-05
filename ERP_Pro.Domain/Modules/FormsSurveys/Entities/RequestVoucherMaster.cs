@@ -7,6 +7,7 @@ using ERP_Pro.Domain.ERP.SalesCustomers.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.GeneralLedger.Entities;
 
+using ERP_Pro.Domain.ERP.FormsSurveys.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FormsSurveys.Entities
 {
 /// <summary>
@@ -383,3 +384,4 @@ public class RequestVoucherMaster : Entity<RequestVoucherMasterId>
     #endregion
 }
 }
+

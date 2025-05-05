@@ -11,12 +11,13 @@ using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 using ERP_Pro.Domain.ERP.GuaranteesWarranties.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// Salesman Entity
 /// </summary>
-public class Salesman : Entity<SalesmanId>
+public class Salesman : AggregateRoot<SalesmanId>
 {
     private readonly List<Salesman> _salesmans = new List<Salesman>();
 
@@ -508,3 +509,4 @@ public class Salesman : Entity<SalesmanId>
     #endregion
 }
 }
+

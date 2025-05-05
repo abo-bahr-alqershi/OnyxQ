@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// GateGoodsReceiptMaster Entity
 /// </summary>
-public class GateGoodsReceiptMaster : Entity<GateGoodsReceiptMasterId>
+public class GateGoodsReceiptMaster : AggregateRoot<GateGoodsReceiptMasterId>
 {
 
     private GateGoodsReceiptMaster() { }
@@ -103,3 +104,4 @@ public class GateGoodsReceiptMaster : Entity<GateGoodsReceiptMasterId>
     #endregion
 }
 }
+

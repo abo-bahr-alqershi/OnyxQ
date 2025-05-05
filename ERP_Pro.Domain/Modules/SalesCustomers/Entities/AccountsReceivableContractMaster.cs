@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// AccountsReceivableContractMaster Entity
 /// </summary>
-public class AccountsReceivableContractMaster : Entity<AccountsReceivableContractMasterId>
+public class AccountsReceivableContractMaster : AggregateRoot<AccountsReceivableContractMasterId>
 {
 
     private AccountsReceivableContractMaster() { }
@@ -336,3 +337,4 @@ public class AccountsReceivableContractMaster : Entity<AccountsReceivableContrac
     #endregion
 }
 }
+

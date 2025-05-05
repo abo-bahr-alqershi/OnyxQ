@@ -13,12 +13,13 @@ using ERP_Pro.Domain.ERP.ArchivingDocuments.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 using ERP_Pro.Domain.ERP.TaxFees.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// ItemMaster Entity
 /// </summary>
-public class ItemMaster : Entity<ItemMasterId>
+public class ItemMaster : AggregateRoot<ItemMasterId>
 {
 
     private ItemMaster() { }
@@ -1055,3 +1056,4 @@ public class ItemMaster : Entity<ItemMasterId>
     #endregion
 }
 }
+

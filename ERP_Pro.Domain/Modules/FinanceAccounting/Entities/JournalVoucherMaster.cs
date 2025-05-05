@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// JournalVoucherMaster Entity
 /// </summary>
-public class JournalVoucherMaster : Entity<JournalVoucherMasterId>
+public class JournalVoucherMaster : AggregateRoot<JournalVoucherMasterId>
 {
 
     private JournalVoucherMaster() { }
@@ -271,3 +272,4 @@ public class JournalVoucherMaster : Entity<JournalVoucherMasterId>
     #endregion
 }
 }
+

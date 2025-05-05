@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.WebServicesInterfaces.ValueObjects;
 namespace ERP_Pro.Domain.ERP.WebServicesInterfaces.Entities
 {
 /// <summary>
 /// WebServiceMaster Entity
 /// </summary>
-public class WebServiceMaster : Entity<WebServiceMasterId>
+public class WebServiceMaster : AggregateRoot<WebServiceMasterId>
 {
 
     private WebServiceMaster() { }
@@ -150,3 +151,4 @@ public class WebServiceMaster : Entity<WebServiceMasterId>
     #endregion
 }
 }
+

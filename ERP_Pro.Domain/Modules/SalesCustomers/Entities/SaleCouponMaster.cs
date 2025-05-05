@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// SaleCouponMaster Entity
 /// </summary>
-public class SaleCouponMaster : Entity<SaleCouponMasterId>
+public class SaleCouponMaster : AggregateRoot<SaleCouponMasterId>
 {
 
     private SaleCouponMaster() { }
@@ -336,3 +337,4 @@ public class SaleCouponMaster : Entity<SaleCouponMasterId>
     #endregion
 }
 }
+

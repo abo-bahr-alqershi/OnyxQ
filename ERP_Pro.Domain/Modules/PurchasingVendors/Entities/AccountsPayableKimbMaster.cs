@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
 /// AccountsPayableKimbMaster Entity
 /// </summary>
-public class AccountsPayableKimbMaster : Entity<AccountsPayableKimbMasterId>
+public class AccountsPayableKimbMaster : AggregateRoot<AccountsPayableKimbMasterId>
 {
 
     private AccountsPayableKimbMaster() { }
@@ -312,3 +313,4 @@ public class AccountsPayableKimbMaster : Entity<AccountsPayableKimbMasterId>
     #endregion
 }
 }
+

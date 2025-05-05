@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.CoreSystem.Entities;
 
+using ERP_Pro.Domain.ERP.TaxFees.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TaxFees.Entities
 {
 /// <summary>
@@ -71,3 +72,4 @@ public class TaxTypeCalculationBranch : Entity<TaxTypeCalculationBranchId>
     #endregion
 }
 }
+

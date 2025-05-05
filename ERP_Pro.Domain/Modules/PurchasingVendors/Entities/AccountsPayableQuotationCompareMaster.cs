@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
 /// AccountsPayableQuotationCompareMaster Entity
 /// </summary>
-public class AccountsPayableQuotationCompareMaster : Entity<AccountsPayableQuotationCompareMasterId>
+public class AccountsPayableQuotationCompareMaster : AggregateRoot<AccountsPayableQuotationCompareMasterId>
 {
 
     private AccountsPayableQuotationCompareMaster() { }
@@ -228,3 +229,4 @@ public class AccountsPayableQuotationCompareMaster : Entity<AccountsPayableQuota
     #endregion
 }
 }
+

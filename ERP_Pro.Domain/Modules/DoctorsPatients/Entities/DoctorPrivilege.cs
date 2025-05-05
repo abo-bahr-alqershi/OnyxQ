@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.DoctorsPatients.ValueObjects;
 namespace ERP_Pro.Domain.ERP.DoctorsPatients.Entities
 {
 /// <summary>
@@ -55,3 +56,4 @@ public class DoctorPrivilege : Entity<DoctorPrivilegeId>
     #endregion
 }
 }
+

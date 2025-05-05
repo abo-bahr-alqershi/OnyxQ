@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.ServicesMaintenance.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ServicesMaintenance.Entities
 {
 /// <summary>
@@ -126,3 +127,4 @@ public class RepairOrderDetail : Entity<RepairOrderDetailId>
     #endregion
 }
 }
+

@@ -7,12 +7,13 @@ using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 
+using ERP_Pro.Domain.ERP.PurchasingVendors.ValueObjects;
 namespace ERP_Pro.Domain.ERP.PurchasingVendors.Entities
 {
 /// <summary>
 /// PurchaseRequest Entity
 /// </summary>
-public class PurchaseRequest : Entity<PurchaseRequestId>
+public class PurchaseRequest : AggregateRoot<PurchaseRequestId>
 {
 
     private PurchaseRequest() { }
@@ -249,3 +250,4 @@ public class PurchaseRequest : Entity<PurchaseRequestId>
     #endregion
 }
 }
+

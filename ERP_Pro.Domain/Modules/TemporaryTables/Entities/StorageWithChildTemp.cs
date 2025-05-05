@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.TemporaryTables.ValueObjects;
 namespace ERP_Pro.Domain.ERP.TemporaryTables.Entities
 {
 /// <summary>
@@ -95,3 +96,4 @@ public class StorageWithChildTemp : Entity<StorageWithChildTempId>
     #endregion
 }
 }
+

@@ -9,6 +9,7 @@ using ERP_Pro.Domain.ERP.ServicesMaintenance.Entities;
 using ERP_Pro.Domain.ERP.ArchivingDocuments.Entities;
 using ERP_Pro.Domain.ERP.SettingsParameters.Entities;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
@@ -172,3 +173,4 @@ public class ItemDetail : Entity<ItemDetailId>
     #endregion
 }
 }
+

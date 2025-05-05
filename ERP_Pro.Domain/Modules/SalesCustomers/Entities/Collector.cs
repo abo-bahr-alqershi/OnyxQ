@@ -10,12 +10,13 @@ using ERP_Pro.Domain.ERP.GuaranteesWarranties.Entities;
 using ERP_Pro.Domain.ERP.StationsFuel.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// Collector Entity
 /// </summary>
-public class Collector : Entity<CollectorId>
+public class Collector : AggregateRoot<CollectorId>
 {
 
     private Collector() { }
@@ -176,3 +177,4 @@ public class Collector : Entity<CollectorId>
     #endregion
 }
 }
+

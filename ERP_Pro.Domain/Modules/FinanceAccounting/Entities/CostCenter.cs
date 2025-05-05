@@ -15,12 +15,13 @@ using ERP_Pro.Domain.ERP.ArchivingDocuments.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 using ERP_Pro.Domain.ERP.TaxFees.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// الكلاس يمثل مركز التكلفة ويحتوي على جميع خصائص مراكز التكلفة
 /// </summary>
-public class CostCenter : Entity<CostCenterId>
+public class CostCenter : AggregateRoot<CostCenterId>
 {
 
     private CostCenter() { }
@@ -177,3 +178,4 @@ public class CostCenter : Entity<CostCenterId>
     #endregion
 }
 }
+

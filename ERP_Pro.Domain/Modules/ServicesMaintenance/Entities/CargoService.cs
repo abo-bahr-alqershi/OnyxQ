@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.ServicesMaintenance.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ServicesMaintenance.Entities
 {
 /// <summary>
 /// CargoService Entity
 /// </summary>
-public class CargoService : Entity<CargoServiceId>
+public class CargoService : AggregateRoot<CargoServiceId>
 {
 
     private CargoService() { }
@@ -162,3 +163,4 @@ public class CargoService : Entity<CargoServiceId>
     #endregion
 }
 }
+

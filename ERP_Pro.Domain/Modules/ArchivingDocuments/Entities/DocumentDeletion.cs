@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 
+using ERP_Pro.Domain.ERP.ArchivingDocuments.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ArchivingDocuments.Entities
 {
 /// <summary>
@@ -193,3 +194,4 @@ public class DocumentDeletion : Entity<DocumentDeletionId>
     #endregion
 }
 }
+

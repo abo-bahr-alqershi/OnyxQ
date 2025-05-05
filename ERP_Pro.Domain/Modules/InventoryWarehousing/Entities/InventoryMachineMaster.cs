@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.InventoryWarehousing.ValueObjects;
 namespace ERP_Pro.Domain.ERP.InventoryWarehousing.Entities
 {
 /// <summary>
 /// InventoryMachineMaster Entity
 /// </summary>
-public class InventoryMachineMaster : Entity<InventoryMachineMasterId>
+public class InventoryMachineMaster : AggregateRoot<InventoryMachineMasterId>
 {
 
     private InventoryMachineMaster() { }
@@ -156,3 +157,4 @@ public class InventoryMachineMaster : Entity<InventoryMachineMasterId>
     #endregion
 }
 }
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.ProjectsRegions.ValueObjects;
 namespace ERP_Pro.Domain.ERP.ProjectsRegions.Entities
 {
 /// <summary>
@@ -48,3 +49,4 @@ public class ProjectGroup : Entity<ProjectGroupId>
     #endregion
 }
 }
+

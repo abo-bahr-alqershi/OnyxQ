@@ -5,6 +5,7 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.InventoryWarehousing.Entities;
 using ERP_Pro.Domain.ERP.FinanceAccounting.Entities;
 
+using ERP_Pro.Domain.ERP.Activities.ValueObjects;
 namespace ERP_Pro.Domain.ERP.Activities.Entities
 {
 /// <summary>
@@ -144,3 +145,4 @@ public class ActivitySerialNumberDetail : Entity<ActivitySerialNumberDetailId>
     #endregion
 }
 }
+

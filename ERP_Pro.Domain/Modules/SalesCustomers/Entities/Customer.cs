@@ -11,12 +11,13 @@ using ERP_Pro.Domain.ERP.StationsFuel.Entities;
 using ERP_Pro.Domain.ERP.ArchivingDocuments.Entities;
 using ERP_Pro.Domain.ERP.FormsSurveys.Entities;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// Customer Entity
 /// </summary>
-public class Customer : Entity<CustomerId>
+public class Customer : AggregateRoot<CustomerId>
 {
 
     private Customer() { }
@@ -1237,3 +1238,4 @@ public class Customer : Entity<CustomerId>
     #endregion
 }
 }
+

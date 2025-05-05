@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.SalesCustomers.ValueObjects;
 namespace ERP_Pro.Domain.ERP.SalesCustomers.Entities
 {
 /// <summary>
 /// CollectionPlanMaster Entity
 /// </summary>
-public class CollectionPlanMaster : Entity<CollectionPlanMasterId>
+public class CollectionPlanMaster : AggregateRoot<CollectionPlanMasterId>
 {
 
     private CollectionPlanMaster() { }
@@ -102,3 +103,4 @@ public class CollectionPlanMaster : Entity<CollectionPlanMasterId>
     #endregion
 }
 }
+

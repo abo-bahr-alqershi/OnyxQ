@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.GeneralLedger.ValueObjects;
 namespace ERP_Pro.Domain.ERP.GeneralLedger.Entities
 {
 /// <summary>
 /// GeneralLedgerBankChequeMaster Entity
 /// </summary>
-public class GeneralLedgerBankChequeMaster : Entity<GeneralLedgerBankChequeMasterId>
+public class GeneralLedgerBankChequeMaster : AggregateRoot<GeneralLedgerBankChequeMasterId>
 {
 
     private GeneralLedgerBankChequeMaster() { }
@@ -68,3 +69,4 @@ public class GeneralLedgerBankChequeMaster : Entity<GeneralLedgerBankChequeMaste
     #endregion
 }
 }
+

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 
+using ERP_Pro.Domain.ERP.Activities.ValueObjects;
 namespace ERP_Pro.Domain.ERP.Activities.Entities
 {
 /// <summary>
@@ -115,3 +116,4 @@ public class ActivityTree : Entity<ActivityTreeId>
     #endregion
 }
 }
+

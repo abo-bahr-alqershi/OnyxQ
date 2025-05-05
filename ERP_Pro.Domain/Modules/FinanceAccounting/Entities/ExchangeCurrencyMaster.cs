@@ -5,12 +5,13 @@ using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.Activities.Entities;
 using ERP_Pro.Domain.ERP.ProjectsRegions.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// ExchangeCurrencyMaster Entity
 /// </summary>
-public class ExchangeCurrencyMaster : Entity<ExchangeCurrencyMasterId>
+public class ExchangeCurrencyMaster : AggregateRoot<ExchangeCurrencyMasterId>
 {
 
     private ExchangeCurrencyMaster() { }
@@ -311,3 +312,4 @@ public class ExchangeCurrencyMaster : Entity<ExchangeCurrencyMasterId>
     #endregion
 }
 }
+

@@ -11,12 +11,13 @@ using ERP_Pro.Domain.ERP.StationsFuel.Entities;
 using ERP_Pro.Domain.ERP.TaxFees.Entities;
 using ERP_Pro.Domain.ERP.TemporaryTables.Entities;
 
+using ERP_Pro.Domain.ERP.FinanceAccounting.ValueObjects;
 namespace ERP_Pro.Domain.ERP.FinanceAccounting.Entities
 {
 /// <summary>
 /// الكلاس يمثل الحساب المالي ويحتوي على جميع خصائص الحسابات المالية
 /// </summary>
-public class Account : Entity<AccountId>
+public class Account : AggregateRoot<AccountId>
 {
 
     private Account() { }
@@ -181,3 +182,4 @@ public class Account : Entity<AccountId>
     #endregion
 }
 }
+

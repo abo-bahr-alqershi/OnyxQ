@@ -4,6 +4,7 @@ using ERP_Pro.Domain.Common.Primitives;
 using ERP_Pro.Domain.Common.ValueObjects;
 using ERP_Pro.Domain.ERP.HumanResources.Entities;
 
+using ERP_Pro.Domain.ERP.Attendance.ValueObjects;
 namespace ERP_Pro.Domain.ERP.Attendance.Entities
 {
 /// <summary>
@@ -103,3 +104,4 @@ public class GeneralAttendanceLocation : Entity<GeneralAttendanceLocationId>
     #endregion
 }
 }
+
