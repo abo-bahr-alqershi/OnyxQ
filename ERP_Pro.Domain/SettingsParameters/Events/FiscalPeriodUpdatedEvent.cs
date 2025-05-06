@@ -1,5 +1,5 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
@@ -7,7 +7,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
     /// <summary>
     /// حدث تحديث فترة محاسبية
     /// </summary>
-    public class FiscalPeriodUpdatedEvent : IDomainEvent
+    public class FiscalPeriodUpdatedEvent : DomainEvent
     {
         /// <summary>
         /// معرف الفترة المحاسبية
@@ -71,4 +71,4 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
             Timestamp = DateTime.UtcNow;
         }
     }
-} 
+}

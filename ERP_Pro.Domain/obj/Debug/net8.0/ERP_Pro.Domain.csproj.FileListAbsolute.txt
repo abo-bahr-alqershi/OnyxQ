@@ -1,0 +1,6 @@
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Domain/obj/Debug/net8.0/ERP_Pro.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Domain/obj/Debug/net8.0/ERP_Pro.Domain.AssemblyInfoInputs.cache
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Domain/obj/Debug/net8.0/ERP_Pro.Domain.AssemblyInfo.cs
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Domain/obj/Debug/net8.0/ERP_Pro.Domain.csproj.CoreCompileInputs.cache
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Domain/obj/Debug/net8.0/ERP_Pro.Domain.sourcelink.json
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Domain/obj/Debug/net8.0/ERP_Pro.Domain.csproj.AssemblyReference.cache

@@ -11,5 +11,5 @@ public interface IFileStorageService
     Task<string> GetFileUrlAsync(string filePath);
     Task<IEnumerable<string>> GetFilesAsync(string? searchPattern = null, string? subDirectory = null);
     Task<long> GetFileSizeAsync(string filePath);
-    Task<DateTime> GetLastModifiedAsync(string filePath);
+    Task<System.DateTime> GetLastModifiedAsync(string filePath);
 } 

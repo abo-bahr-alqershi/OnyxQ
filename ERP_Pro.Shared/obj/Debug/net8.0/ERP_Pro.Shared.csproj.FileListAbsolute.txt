@@ -1,0 +1,16 @@
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.csproj.AssemblyReference.cache
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.csproj.GenerateResource.cache
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.Resources.SharedResources.resources
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.Resources.ValidationMessages.resources
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.AssemblyInfoInputs.cache
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.AssemblyInfo.cs
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.csproj.CoreCompileInputs.cache
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.sourcelink.json
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/bin/Debug/net8.0/ERP_Pro.Shared.deps.json
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/bin/Debug/net8.0/ERP_Pro.Shared.dll
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/bin/Debug/net8.0/ERP_Pro.Shared.pdb
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.dll
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/refint/ERP_Pro.Shared.dll
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ERP_Pro.Shared.pdb
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net8.0/ref/ERP_Pro.Shared.dll

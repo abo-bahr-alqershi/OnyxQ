@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "15FAMk979wI=",
+  "dgSpecHash": "sL9AWWGKaDI=",
   "success": true,
   "projectFilePath": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Server/ERP_Pro.Server.csproj",
   "expectedPackageFiles": [
+    "/home/ameen/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/home/ameen/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/ameen/.nuget/packages/azure.core/1.24.0/azure.core.1.24.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
@@ -11,7 +13,7 @@
     "/home/ameen/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.7.1/fluentvalidation.dependencyinjectionextensions.11.7.1.nupkg.sha512",
     "/home/ameen/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/ameen/.nuget/packages/mailkit/4.1.0/mailkit.4.1.0.nupkg.sha512",
-    "/home/ameen/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
+    "/home/ameen/.nuget/packages/mediatr/12.5.0/mediatr.12.5.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.10/microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.10/microsoft.aspnetcore.cryptography.internal.7.0.10.nupkg.sha512",
@@ -21,7 +23,7 @@
     "/home/ameen/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/7.0.10/microsoft.aspnetcore.identity.entityframeworkcore.7.0.10.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "/home/ameen/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/ameen/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.data.sqlclient/5.0.2/microsoft.data.sqlclient.5.0.2.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.0.1/microsoft.data.sqlclient.sni.runtime.5.0.1.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
@@ -36,7 +38,7 @@
     "/home/ameen/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.extensions.configuration.binder/7.0.4/microsoft.extensions.configuration.binder.7.0.4.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
-    "/home/ameen/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",
+    "/home/ameen/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.extensions.dependencymodel/7.0.0/microsoft.extensions.dependencymodel.7.0.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.extensions.fileproviders.abstractions/7.0.0/microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/microsoft.extensions.hosting.abstractions/7.0.0/microsoft.extensions.hosting.abstractions.7.0.0.nupkg.sha512",
@@ -110,10 +112,7 @@
     "/home/ameen/.nuget/packages/system.text.json/7.0.3/system.text.json.7.0.3.nupkg.sha512",
     "/home/ameen/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/home/ameen/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "/home/ameen/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512",
-    "/home/ameen/.nuget/packages/microsoft.netcore.app.ref/7.0.20/microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
-    "/home/ameen/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.20/microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
-    "/home/ameen/.nuget/packages/microsoft.netcore.app.host.linux-x64/7.0.20/microsoft.netcore.app.host.linux-x64.7.0.20.nupkg.sha512"
+    "/home/ameen/.nuget/packages/system.windows.extensions/5.0.0/system.windows.extensions.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

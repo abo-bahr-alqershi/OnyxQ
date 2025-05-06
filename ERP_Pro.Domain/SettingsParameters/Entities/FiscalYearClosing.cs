@@ -7,7 +7,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
     /// <summary>
     /// كيان إقفال السنة المالية
     /// </summary>
-    public class FiscalYearClosing : AuditableEntity
+    public class FiscalYearClosing : ERP_Pro.Domain.Common.Base.AuditableEntity<Guid>
     {
         /// <summary>
         /// معرف السنة المالية

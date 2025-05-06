@@ -47,7 +47,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// <summary>
         /// حالة الرقم الملغى
         /// </summary>
-        public CanceledNumberStatusEnum Status { get; private set; }
+        public ERP_Pro.Shared.Enums.Domain.CanceledNumberStatusEnum Status { get; private set; }
 
         // المُنشئ الخاص - لا يُستخدم مباشرة
         private CanceledNumber() { }
@@ -70,7 +70,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             CancellationReason = cancellationReason;
             CanceledByUserId = canceledByUserId;
             CancellationDate = cancellationDate;
-            Status = CanceledNumberStatusEnum.Canceled;
+            Status = ERP_Pro.Shared.Enums.Domain.CanceledNumberStatusEnum.Canceled;
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// <summary>
         /// تحديث حالة الرقم الملغى
         /// </summary>
-        public void UpdateStatus(CanceledNumberStatusEnum newStatus)
+        public void UpdateStatus(ERP_Pro.Shared.Enums.Domain.CanceledNumberStatusEnum newStatus)
         {
             Status = newStatus;
         }

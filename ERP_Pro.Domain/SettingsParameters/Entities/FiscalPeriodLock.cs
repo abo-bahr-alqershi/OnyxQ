@@ -7,7 +7,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
     /// <summary>
     /// كيان تأمين الفترة المحاسبية
     /// </summary>
-    public class FiscalPeriodLock : AuditableEntity
+    public class FiscalPeriodLock : ERP_Pro.Domain.Common.Base.AuditableEntity<Guid>
     {
         /// <summary>
         /// معرف الفترة المحاسبية

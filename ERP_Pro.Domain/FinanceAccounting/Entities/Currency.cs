@@ -8,9 +8,9 @@ using ERP_Pro.Shared.Enums.Domain;
 namespace ERP_Pro.Domain.FinanceAccounting.Entities
 {
     /// <summary>
-    /// كيان العملة
+    /// كيان العملة - يمثل عملة يتم استخدامها في النظام
     /// </summary>
-    public class Currency : AuditableEntity, IAggregateRoot
+    public class Currency : Entity
     {
         /// <summary>
         /// رمز العملة (مثل USD، EUR، SAR)
@@ -70,7 +70,7 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         /// <summary>
         /// موقع عرض رمز العملة (قبل المبلغ، بعد المبلغ)
         /// </summary>
-        public CurrencySymbolPositionEnum SymbolPosition { get; private set; }
+        public ERP_Pro.Shared.Enums.Domain.CurrencySymbolPositionEnum SymbolPosition { get; private set; }
 
         /// <summary>
         /// هل تضاف فراغ بين الرمز والقيمة
@@ -85,7 +85,7 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         /// <summary>
         /// نوع التقريب المستخدم
         /// </summary>
-        public CurrencyRoundingTypeEnum RoundingType { get; private set; }
+        public ERP_Pro.Shared.Enums.Domain.CurrencyRoundingTypeEnum RoundingType { get; private set; }
 
         /// <summary>
         /// الوحدة التي يتم التقريب إليها
@@ -110,7 +110,7 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         /// <summary>
         /// حالة العملة
         /// </summary>
-        public CurrencyStatusEnum Status { get; private set; }
+        public ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum Status { get; private set; }
 
         /// <summary>
         /// ملاحظات
@@ -166,15 +166,15 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
                 FractionValue = 0.01m,
                 ThousandsSeparator = ",",
                 DecimalSeparator = ".",
-                SymbolPosition = CurrencySymbolPositionEnum.BeforeAmount,
+                SymbolPosition = ERP_Pro.Shared.Enums.Domain.CurrencySymbolPositionEnum.BeforeAmount,
                 UseSpaceWithSymbol = false,
                 ShowTrailingZeros = true,
-                RoundingType = CurrencyRoundingTypeEnum.Mathematical,
+                RoundingType = ERP_Pro.Shared.Enums.Domain.CurrencyRoundingTypeEnum.Mathematical,
                 RoundingUnit = 0.01m,
                 ArWordsTemplate = "[$n] $c",
                 EnWordsTemplate = "$n $c",
                 IsBase = isBase,
-                Status = CurrencyStatusEnum.Active
+                Status = ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum.Active
             };
         }
 
@@ -209,7 +209,7 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
             decimal fractionValue,
             string thousandsSeparator,
             string decimalSeparator,
-            CurrencySymbolPositionEnum symbolPosition,
+            ERP_Pro.Shared.Enums.Domain.CurrencySymbolPositionEnum symbolPosition,
             bool useSpaceWithSymbol,
             bool showTrailingZeros)
         {
@@ -229,7 +229,7 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         /// تحديث قواعد التقريب
         /// </summary>
         public void UpdateRoundingRules(
-            CurrencyRoundingTypeEnum roundingType,
+            ERP_Pro.Shared.Enums.Domain.CurrencyRoundingTypeEnum roundingType,
             decimal roundingUnit)
         {
             RoundingType = roundingType;
@@ -284,14 +284,14 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         }
 
         /// <summary>
-        /// تفعيل العملة
+        /// تنشيط العملة
         /// </summary>
         public void Activate()
         {
-            if (Status != CurrencyStatusEnum.Active)
+            if (Status != ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum.Active)
             {
-                Status = CurrencyStatusEnum.Active;
-                AddDomainEvent(new CurrencyStatusChangedEvent(Id, CurrencyStatusEnum.Active));
+                Status = ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum.Active;
+                AddDomainEvent(new CurrencyStatusChangedEvent(Id, ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum.Active));
             }
         }
 
@@ -300,13 +300,13 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         /// </summary>
         public void Deactivate()
         {
-            if (Status != CurrencyStatusEnum.Inactive)
+            if (Status != ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum.Inactive)
             {
                 if (IsBase)
                     throw new InvalidOperationException("لا يمكن تعطيل العملة الأساسية");
 
-                Status = CurrencyStatusEnum.Inactive;
-                AddDomainEvent(new CurrencyStatusChangedEvent(Id, CurrencyStatusEnum.Inactive));
+                Status = ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum.Inactive;
+                AddDomainEvent(new CurrencyStatusChangedEvent(Id, ERP_Pro.Shared.Enums.Domain.CurrencyStatusEnum.Inactive));
             }
         }
 

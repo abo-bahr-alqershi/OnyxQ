@@ -1,5 +1,5 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
@@ -7,7 +7,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
     /// <summary>
     /// حدث إنشاء سنة مالية
     /// </summary>
-    public class FiscalYearCreatedEvent : IDomainEvent
+    public class FiscalYearCreatedEvent : DomainEvent
     {
         /// <summary>
         /// معرف السنة المالية
@@ -15,7 +15,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         public Guid FiscalYearId { get; }
 
         /// <summary>
-        /// معرف الشركة
+        /// معرف معلومات الشركة
         /// </summary>
         public Guid CompanyInfoId { get; }
 
@@ -23,6 +23,11 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         /// رمز السنة المالية
         /// </summary>
         public string Code { get; }
+
+        /// <summary>
+        /// اسم السنة المالية
+        /// </summary>
+        public string Name { get; }
 
         /// <summary>
         /// تاريخ البداية
@@ -51,6 +56,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
             Guid fiscalYearId,
             Guid companyInfoId,
             string code,
+            string name,
             DateTime startDate,
             DateTime endDate,
             FiscalYearStatusEnum status)
@@ -58,6 +64,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
             FiscalYearId = fiscalYearId;
             CompanyInfoId = companyInfoId;
             Code = code;
+            Name = name;
             StartDate = startDate;
             EndDate = endDate;
             Status = status;

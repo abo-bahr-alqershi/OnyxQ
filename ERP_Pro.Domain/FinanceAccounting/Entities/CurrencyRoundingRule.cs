@@ -1,5 +1,6 @@
 using System;
 using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.FinanceAccounting.Events;
 using ERP_Pro.Domain.FinanceAccounting.ValueObjects;
 using ERP_Pro.Shared.Enums.Domain;
 
@@ -80,7 +81,7 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
             if (minAmount.HasValue && maxAmount.HasValue && minAmount > maxAmount)
                 throw new ArgumentException("الحد الأدنى يجب أن يكون أقل من أو يساوي الحد الأقصى", nameof(minAmount));
 
-            return new CurrencyRoundingRule
+            var roundingRule = new CurrencyRoundingRule
             {
                 Id = Guid.NewGuid(),
                 CurrencyId = currencyId,
@@ -92,6 +93,11 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
                 TransactionType = transactionType,
                 IsActive = isActive
             };
+            
+            // إضافة حدث إنشاء قاعدة تقريب جديدة
+            roundingRule.AddDomainEvent(new RoundingRuleCreatedEvent(roundingRule));
+            
+            return roundingRule;
         }
 
         /// <summary>
@@ -121,6 +127,9 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
                 
             if (transactionType != null)
                 TransactionType = transactionType;
+                
+            // إضافة حدث تحديث قاعدة التقريب
+            AddDomainEvent(new RoundingRuleUpdatedEvent(this));
         }
 
         /// <summary>
@@ -128,7 +137,13 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         /// </summary>
         public void Activate()
         {
-            IsActive = true;
+            if (!IsActive)
+            {
+                IsActive = true;
+                
+                // إضافة حدث تحديث قاعدة التقريب
+                AddDomainEvent(new RoundingRuleUpdatedEvent(this));
+            }
         }
 
         /// <summary>
@@ -136,7 +151,22 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         /// </summary>
         public void Deactivate()
         {
-            IsActive = false;
+            if (IsActive)
+            {
+                IsActive = false;
+                
+                // إضافة حدث تحديث قاعدة التقريب
+                AddDomainEvent(new RoundingRuleUpdatedEvent(this));
+            }
+        }
+        
+        /// <summary>
+        /// حذف قاعدة التقريب
+        /// </summary>
+        public void Delete()
+        {
+            // إضافة حدث حذف قاعدة التقريب
+            AddDomainEvent(new RoundingRuleDeletedEvent(Id, CurrencyId));
         }
 
         /// <summary>

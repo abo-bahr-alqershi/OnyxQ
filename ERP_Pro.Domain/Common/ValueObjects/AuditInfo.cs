@@ -1,4 +1,5 @@
 using System;
+using ERP_Pro.Shared.Exceptions.Base;
 
 namespace ERP_Pro.Domain.Common.ValueObjects
 {

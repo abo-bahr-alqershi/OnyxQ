@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.Common.Events;
+using ERP_Pro.Domain.Common.Interfaces;
 using ERP_Pro.Domain.SettingsParameters.Events;
 using ERP_Pro.Domain.SettingsParameters.ValueObjects;
 using ERP_Pro.Shared.Enums.Domain;
@@ -10,8 +12,11 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
     /// <summary>
     /// كيان تعريف التسلسل الرقمي
     /// </summary>
-    public class SequenceDefinition : AuditableEntity, IAggregateRoot
+    public class SequenceDefinition : ERP_Pro.Domain.Common.Base.AuditableEntity<Guid>, IAggregateRoot
     {
+        private readonly List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
         /// <summary>
         /// رمز التسلسل (مثل INV لفواتير المبيعات، PO لأوامر الشراء)
         /// </summary>
@@ -45,7 +50,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// <summary>
         /// حالة التسلسل (نشط أو غير نشط)
         /// </summary>
-        public SequenceStatusEnum Status { get; private set; }
+        public ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum Status { get; private set; }
         
         /// <summary>
         /// قائمة الشاشات التي تستخدم هذا التسلسل
@@ -233,7 +238,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
                 NameEn = nameEn ?? nameAr,
                 DocumentType = documentType,
                 Group = group,
-                Status = SequenceStatusEnum.Active,
+                Status = ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Active,
                 Prefix = prefix,
                 Suffix = suffix,
                 IncludeFiscalYearCode = false,
@@ -384,10 +389,10 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// </summary>
         public void Activate()
         {
-            if (Status != SequenceStatusEnum.Active)
+            if (Status != ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Active)
             {
-                Status = SequenceStatusEnum.Active;
-                AddDomainEvent(new SequenceStatusChangedEvent(Id, SequenceStatusEnum.Active));
+                Status = ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Active;
+                AddDomainEvent(new SequenceStatusChangedEvent(Id, ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Active));
             }
         }
 
@@ -396,10 +401,10 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// </summary>
         public void Deactivate()
         {
-            if (Status != SequenceStatusEnum.Inactive)
+            if (Status != ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Inactive)
             {
-                Status = SequenceStatusEnum.Inactive;
-                AddDomainEvent(new SequenceStatusChangedEvent(Id, SequenceStatusEnum.Inactive));
+                Status = ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Inactive;
+                AddDomainEvent(new SequenceStatusChangedEvent(Id, ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Inactive));
             }
         }
 
@@ -413,7 +418,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             string userCode = null,
             string fiscalYearCode = null)
         {
-            if (Status != SequenceStatusEnum.Active)
+            if (Status != ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Active)
                 throw new InvalidOperationException("لا يمكن الحصول على رقم من تسلسل غير نشط");
 
             if (CurrentNumber > EndNumber)
@@ -467,7 +472,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             Guid? branchId = null,
             DateTime? expiryDate = null)
         {
-            if (Status != SequenceStatusEnum.Active)
+            if (Status != ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum.Active)
                 throw new InvalidOperationException("لا يمكن حجز أرقام من تسلسل غير نشط");
 
             if (rangeStart < StartNumber || rangeStart > EndNumber)
@@ -655,6 +660,30 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
 
             // دمج الأجزاء باستخدام الفواصل المناسبة
             return string.Join(PrefixSeparator, parts);
+        }
+
+        /// <summary>
+        /// إضافة حدث نطاق
+        /// </summary>
+        public void AddDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents.Add(domainEvent);
+        }
+
+        /// <summary>
+        /// إزالة حدث نطاق
+        /// </summary>
+        public void RemoveDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents.Remove(domainEvent);
+        }
+
+        /// <summary>
+        /// مسح جميع أحداث النطاق
+        /// </summary>
+        public void ClearDomainEvents()
+        {
+            _domainEvents.Clear();
         }
     }
 } 

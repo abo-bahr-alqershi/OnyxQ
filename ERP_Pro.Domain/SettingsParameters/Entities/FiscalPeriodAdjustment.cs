@@ -7,7 +7,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
     /// <summary>
     /// كيان تسوية الفترة المحاسبية
     /// </summary>
-    public class FiscalPeriodAdjustment : AuditableEntity
+    public class FiscalPeriodAdjustment : ERP_Pro.Domain.Common.Base.AuditableEntity<Guid>
     {
         /// <summary>
         /// معرف الفترة المحاسبية

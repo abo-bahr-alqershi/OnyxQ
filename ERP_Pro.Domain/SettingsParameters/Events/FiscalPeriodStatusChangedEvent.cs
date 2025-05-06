@@ -1,13 +1,13 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
 {
     /// <summary>
-    /// حدث تغيير حالة فترة محاسبية
+    /// حدث تغيير حالة الفترة المحاسبية
     /// </summary>
-    public class FiscalPeriodStatusChangedEvent : IDomainEvent
+    public class FiscalPeriodStatusChangedEvent : DomainEvent
     {
         /// <summary>
         /// معرف الفترة المحاسبية
@@ -20,9 +20,19 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         public Guid FiscalYearId { get; }
 
         /// <summary>
+        /// رقم الفترة التسلسلي
+        /// </summary>
+        public int PeriodNumber { get; }
+
+        /// <summary>
+        /// رمز الفترة
+        /// </summary>
+        public string Code { get; }
+
+        /// <summary>
         /// الحالة السابقة
         /// </summary>
-        public FiscalPeriodStatusEnum PreviousStatus { get; }
+        public FiscalPeriodStatusEnum OldStatus { get; }
 
         /// <summary>
         /// الحالة الجديدة
@@ -40,12 +50,16 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         public FiscalPeriodStatusChangedEvent(
             Guid fiscalPeriodId,
             Guid fiscalYearId,
-            FiscalPeriodStatusEnum previousStatus,
+            int periodNumber,
+            string code,
+            FiscalPeriodStatusEnum oldStatus,
             FiscalPeriodStatusEnum newStatus)
         {
             FiscalPeriodId = fiscalPeriodId;
             FiscalYearId = fiscalYearId;
-            PreviousStatus = previousStatus;
+            PeriodNumber = periodNumber;
+            Code = code;
+            OldStatus = oldStatus;
             NewStatus = newStatus;
             Timestamp = DateTime.UtcNow;
         }

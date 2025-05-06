@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.Common.Events;
+using ERP_Pro.Domain.Common.Interfaces;
 using ERP_Pro.Domain.SettingsParameters.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 using ERP_Pro.Domain.SettingsParameters.ValueObjects;
@@ -10,8 +12,11 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
     /// <summary>
     /// كيان السنة المالية
     /// </summary>
-    public class FiscalYear : AuditableEntity, IAggregateRoot
+    public class FiscalYear : ERP_Pro.Domain.Common.Base.AuditableEntity<Guid>, IAggregateRoot
     {
+        private readonly List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
         /// <summary>
         /// معرف الشركة
         /// </summary>
@@ -321,6 +326,30 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         public void UpdateLockSettings(LockSettings settings)
         {
             LockSettings = settings;
+        }
+
+        /// <summary>
+        /// إضافة حدث نطاق
+        /// </summary>
+        public void AddDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents.Add(domainEvent);
+        }
+
+        /// <summary>
+        /// إزالة حدث نطاق
+        /// </summary>
+        public void RemoveDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents.Remove(domainEvent);
+        }
+
+        /// <summary>
+        /// مسح جميع أحداث النطاق
+        /// </summary>
+        public void ClearDomainEvents()
+        {
+            _domainEvents.Clear();
         }
     }
 } 

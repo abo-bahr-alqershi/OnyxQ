@@ -1,5 +1,5 @@
 using System;
-using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.Common.ValueObjects;
 
 namespace ERP_Pro.Domain.SettingsParameters.ValueObjects
 {
@@ -133,42 +133,20 @@ namespace ERP_Pro.Domain.SettingsParameters.ValueObjects
         }
 
         /// <summary>
-        /// المقارنة مع كائن قيمة آخر
+        /// الحصول على عناصر المقارنة للمساواة
         /// </summary>
-        protected override bool EqualsCore(ValueObject other)
+        protected override IEnumerable<object> GetEqualityComponents()
         {
-            var otherSettings = (CarryOverSettings)other;
-            return CarryOverAssets == otherSettings.CarryOverAssets &&
-                   CarryOverLiabilities == otherSettings.CarryOverLiabilities &&
-                   CarryOverEquity == otherSettings.CarryOverEquity &&
-                   CarryOverCustomers == otherSettings.CarryOverCustomers &&
-                   CarryOverVendors == otherSettings.CarryOverVendors &&
-                   CarryOverInventory == otherSettings.CarryOverInventory &&
-                   CarryOverOpenItems == otherSettings.CarryOverOpenItems &&
-                   CarryOverBudgets == otherSettings.CarryOverBudgets &&
-                   AutoAdjustBeforeCarryOver == otherSettings.AutoAdjustBeforeCarryOver &&
-                   RetainedEarningsMethod == otherSettings.RetainedEarningsMethod;
-        }
-
-        /// <summary>
-        /// حساب الهاشكود
-        /// </summary>
-        protected override int GetHashCodeCore()
-        {
-            unchecked
-            {
-                int hashCode = CarryOverAssets.GetHashCode();
-                hashCode = (hashCode * 397) ^ CarryOverLiabilities.GetHashCode();
-                hashCode = (hashCode * 397) ^ CarryOverEquity.GetHashCode();
-                hashCode = (hashCode * 397) ^ CarryOverCustomers.GetHashCode();
-                hashCode = (hashCode * 397) ^ CarryOverVendors.GetHashCode();
-                hashCode = (hashCode * 397) ^ CarryOverInventory.GetHashCode();
-                hashCode = (hashCode * 397) ^ CarryOverOpenItems.GetHashCode();
-                hashCode = (hashCode * 397) ^ CarryOverBudgets.GetHashCode();
-                hashCode = (hashCode * 397) ^ AutoAdjustBeforeCarryOver.GetHashCode();
-                hashCode = (hashCode * 397) ^ (RetainedEarningsMethod != null ? RetainedEarningsMethod.GetHashCode() : 0);
-                return hashCode;
-            }
+            yield return CarryOverAssets;
+            yield return CarryOverLiabilities;
+            yield return CarryOverEquity;
+            yield return CarryOverCustomers;
+            yield return CarryOverVendors;
+            yield return CarryOverInventory;
+            yield return CarryOverOpenItems;
+            yield return CarryOverBudgets;
+            yield return AutoAdjustBeforeCarryOver;
+            yield return RetainedEarningsMethod;
         }
     }
 } 

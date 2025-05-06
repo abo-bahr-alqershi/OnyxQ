@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ERP_Pro.Domain.SettingsParameters.Entities;
 using ERP_Pro.Domain.InventoryWarehousing.Entities;
+using ERP_Pro.Domain.FinanceAccounting.Entities;
 
 namespace ERP_Pro.Application.Common.Interfaces
 {
@@ -25,6 +26,10 @@ namespace ERP_Pro.Application.Common.Interfaces
         
         // كيانات المستودعات
         DbSet<Warehouse> Warehouses { get; set; }
+        
+        // كيانات المالية والمحاسبة
+        DbSet<Currency> Currencies { get; set; }
+        DbSet<CurrencyExchangeRate> CurrencyExchangeRates { get; set; }
         
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
         

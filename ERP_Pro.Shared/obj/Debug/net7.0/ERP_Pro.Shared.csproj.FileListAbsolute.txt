@@ -1,0 +1,2 @@
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net7.0/ERP_Pro.Shared.csproj.AssemblyReference.cache
+/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/obj/Debug/net7.0/ERP_Pro.Shared.csproj.GenerateResource.cache

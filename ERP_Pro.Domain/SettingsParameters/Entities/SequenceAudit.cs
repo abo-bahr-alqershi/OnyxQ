@@ -17,7 +17,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// <summary>
         /// نوع حدث التدقيق
         /// </summary>
-        public SequenceAuditTypeEnum Type { get; private set; }
+        public ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum Type { get; private set; }
         
         /// <summary>
         /// تاريخ الحدث
@@ -78,7 +78,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         public SequenceAudit(
             Guid id,
             Guid sequenceId,
-            SequenceAuditTypeEnum type,
+            ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum type,
             string details,
             Guid userId,
             Guid? branchId = null) : base(id)
@@ -97,7 +97,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         public SequenceAudit(
             Guid id,
             Guid sequenceId,
-            SequenceAuditTypeEnum type,
+            ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum type,
             Guid userId,
             string description,
             Guid? relatedId = null,
@@ -131,7 +131,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             return new SequenceAudit(
                 Guid.NewGuid(),
                 sequenceId,
-                SequenceAuditTypeEnum.SequenceCreated,
+                ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum.SequenceCreated,
                 $"تم إنشاء تسلسل جديد: {sequenceCode} - {sequenceName}",
                 userId,
                 branchId: branchId);
@@ -151,7 +151,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             return new SequenceAudit(
                 Guid.NewGuid(),
                 sequenceId,
-                SequenceAuditTypeEnum.SequenceUpdated,
+                ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum.SequenceUpdated,
                 userId,
                 $"تم تعديل حقل {fieldName} في التسلسل",
                 oldValue: oldValue,
@@ -165,14 +165,14 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         public static SequenceAudit CreateStatusChangedAudit(
             Guid sequenceId,
             Guid userId,
-            SequenceStatusEnum oldStatus,
-            SequenceStatusEnum newStatus,
+            ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum oldStatus,
+            ERP_Pro.Shared.Enums.Domain.SequenceStatusEnum newStatus,
             Guid? branchId = null)
         {
             return new SequenceAudit(
                 Guid.NewGuid(),
                 sequenceId,
-                SequenceAuditTypeEnum.StatusChanged,
+                ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum.StatusChanged,
                 $"تم تغيير حالة التسلسل من {oldStatus} إلى {newStatus}",
                 userId,
                 branchId: branchId);
@@ -191,7 +191,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             return new SequenceAudit(
                 Guid.NewGuid(),
                 sequenceId,
-                SequenceAuditTypeEnum.NumberGenerated,
+                ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum.NumberGenerated,
                 userId,
                 $"تم إنشاء رقم تسلسلي جديد: {formattedNumber}",
                 newValue: formattedNumber,
@@ -212,7 +212,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             return new SequenceAudit(
                 Guid.NewGuid(),
                 sequenceId,
-                SequenceAuditTypeEnum.CounterReset,
+                ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum.CounterReset,
                 userId,
                 $"تم إعادة تعيين عداد التسلسل من {oldValue} إلى {newValue}",
                 oldValue: oldValue.ToString(),
@@ -235,7 +235,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             return new SequenceAudit(
                 Guid.NewGuid(),
                 sequenceId,
-                SequenceAuditTypeEnum.RangeReserved,
+                ERP_Pro.Shared.Enums.Domain.SequenceAuditTypeEnum.RangeReserved,
                 userId,
                 $"تم حجز نطاق من الأرقام: {rangeStart} - {rangeEnd}، السبب: {reason}",
                 relatedId: allocationId,

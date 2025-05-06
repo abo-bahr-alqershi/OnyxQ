@@ -62,7 +62,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// <summary>
         /// حالة التخصيص
         /// </summary>
-        public NumberAllocationStatusEnum Status { get; private set; }
+        public ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum Status { get; private set; }
         
         /// <summary>
         /// الرقم الحالي ضمن النطاق المخصص
@@ -96,7 +96,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             BranchName = branchName;
             AllocationDate = allocationDate;
             ExpiryDate = expiryDate;
-            Status = NumberAllocationStatusEnum.Active;
+            Status = ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum.Active;
             CurrentNumber = rangeStart;
         }
 
@@ -105,7 +105,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// </summary>
         public long GetNextNumber()
         {
-            if (Status != NumberAllocationStatusEnum.Active)
+            if (Status != ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum.Active)
                 throw new InvalidOperationException("لا يمكن الحصول على رقم من نطاق غير نشط");
 
             if (CurrentNumber > RangeEnd)
@@ -132,8 +132,8 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// </summary>
         public void Suspend()
         {
-            if (Status == NumberAllocationStatusEnum.Active)
-                Status = NumberAllocationStatusEnum.Suspended;
+            if (Status == ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum.Active)
+                Status = ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum.Suspended;
         }
 
         /// <summary>
@@ -141,8 +141,8 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// </summary>
         public void Resume()
         {
-            if (Status == NumberAllocationStatusEnum.Suspended)
-                Status = NumberAllocationStatusEnum.Active;
+            if (Status == ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum.Suspended)
+                Status = ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum.Active;
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// </summary>
         public void Terminate()
         {
-            Status = NumberAllocationStatusEnum.Terminated;
+            Status = ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum.Terminated;
         }
 
         /// <summary>

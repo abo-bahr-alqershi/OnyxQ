@@ -3,8 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ERP_Pro.Application.Common.Interfaces;
+using ERP_Pro.Application.Contracts.Persistence.FinanceAccounting;
+using ERP_Pro.Application.Abstractions.Repositories;
 using ERP_Pro.Domain.Common.Interfaces;
-using ERP_Pro.Infrastructure.Persistence;
+using ERP_Pro.Infrastructure.Persistence.Context;
+using ERP_Pro.Infrastructure.Persistence.Repositories.FinanceAccounting;
+using ERP_Pro.Infrastructure.Persistence.Repositories.SettingsParameters;
 using ERP_Pro.Infrastructure.Services;
 
 namespace ERP_Pro.Infrastructure
@@ -29,6 +33,15 @@ namespace ERP_Pro.Infrastructure
             
             // تسجيل خدمات النظام
             services.AddScoped<IBranchService, BranchService>();
+            
+            // تسجيل المستودعات - FinanceAccounting
+            services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+            services.AddScoped<ICurrencyExchangeRateRepository, CurrencyExchangeRateRepository>();
+            services.AddScoped<IFiscalYearRepository, FiscalYearRepository>();
+            services.AddScoped<IFiscalPeriodRepository, FiscalPeriodRepository>();
+            
+            // تسجيل المستودعات - SettingsParameters
+            services.AddScoped<IDocumentNumberingPatternRepository, DocumentNumberingPatternRepository>();
             
             // تسجيل خدمات أحداث النطاق
             services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();

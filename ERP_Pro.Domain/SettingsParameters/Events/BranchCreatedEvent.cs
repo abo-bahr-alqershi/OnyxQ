@@ -1,12 +1,12 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
 {
     /// <summary>
     /// حدث إنشاء فرع
     /// </summary>
-    public class BranchCreatedEvent : IDomainEvent
+    public class BranchCreatedEvent : DomainEventBase
     {
         /// <summary>
         /// المنشئ
@@ -23,7 +23,6 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
             BranchName = branchName;
             CompanyId = companyId;
             IsMainBranch = isMainBranch;
-            CreatedAt = DateTime.UtcNow;
         }
         
         /// <summary>
@@ -50,10 +49,5 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         /// هل هو الفرع الرئيسي
         /// </summary>
         public bool IsMainBranch { get; }
-        
-        /// <summary>
-        /// تاريخ الإنشاء
-        /// </summary>
-        public DateTime CreatedAt { get; }
     }
 } 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.SettingsParameters.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 
@@ -9,7 +10,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
     /// <summary>
     /// كيان الفترة المحاسبية
     /// </summary>
-    public class FiscalPeriod : AuditableEntity
+    public class FiscalPeriod : ERP_Pro.Domain.Common.Base.AuditableEntity<Guid>
     {
         /// <summary>
         /// معرف السنة المالية

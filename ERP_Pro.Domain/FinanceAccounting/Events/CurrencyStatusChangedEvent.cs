@@ -1,11 +1,11 @@
 using System;
-using ERP_Pro.Domain.Common.Base;
-using ERP_Pro.Shared.Enums.Domain;
+using ERP_Pro.Domain.Common.Events;
+using ERP_Pro.Domain.FinanceAccounting.Entities;
 
 namespace ERP_Pro.Domain.FinanceAccounting.Events
 {
     /// <summary>
-    /// حدث تغيير حالة العملة
+    /// حدث تغيير حالة العملة (تفعيل/تعطيل)
     /// </summary>
     public class CurrencyStatusChangedEvent : DomainEvent
     {
@@ -13,19 +13,28 @@ namespace ERP_Pro.Domain.FinanceAccounting.Events
         /// معرف العملة
         /// </summary>
         public Guid CurrencyId { get; }
-
+        
         /// <summary>
-        /// الحالة الجديدة
+        /// العملة التي تم تغيير حالتها
         /// </summary>
-        public CurrencyStatusEnum NewStatus { get; }
+        public Currency Currency { get; }
+        
+        /// <summary>
+        /// الحالة الجديدة للعملة (نشطة أو غير نشطة)
+        /// </summary>
+        public bool IsActive { get; }
 
         /// <summary>
         /// المنشئ
         /// </summary>
-        public CurrencyStatusChangedEvent(Guid currencyId, CurrencyStatusEnum newStatus)
+        public CurrencyStatusChangedEvent(Currency currency)
         {
-            CurrencyId = currencyId;
-            NewStatus = newStatus;
+            if (currency == null)
+                throw new ArgumentNullException(nameof(currency));
+                
+            CurrencyId = currency.Id;
+            Currency = currency;
+            IsActive = currency.IsActive;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
-using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.Common.Events;
+using ERP_Pro.Domain.FinanceAccounting.Entities;
 
 namespace ERP_Pro.Domain.FinanceAccounting.Events
 {
@@ -9,16 +10,25 @@ namespace ERP_Pro.Domain.FinanceAccounting.Events
     public class CurrencyUpdatedEvent : DomainEvent
     {
         /// <summary>
-        /// معرف العملة
+        /// معرف العملة التي تم تحديثها
         /// </summary>
         public Guid CurrencyId { get; }
 
         /// <summary>
+        /// العملة التي تم تحديثها
+        /// </summary>
+        public Currency Currency { get; }
+
+        /// <summary>
         /// المنشئ
         /// </summary>
-        public CurrencyUpdatedEvent(Guid currencyId)
+        public CurrencyUpdatedEvent(Currency currency)
         {
-            CurrencyId = currencyId;
+            if (currency == null)
+                throw new ArgumentNullException(nameof(currency));
+                
+            CurrencyId = currency.Id;
+            Currency = currency;
         }
     }
 } 

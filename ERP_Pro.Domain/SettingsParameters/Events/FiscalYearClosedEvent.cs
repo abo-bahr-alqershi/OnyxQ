@@ -1,13 +1,12 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
-using ERP_Pro.Domain.SettingsParameters.Enums;
+using ERP_Pro.Domain.Common.Events;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
 {
     /// <summary>
-    /// حدث إقفال سنة مالية
+    /// حدث إغلاق السنة المالية
     /// </summary>
-    public class FiscalYearClosedEvent : IDomainEvent
+    public class FiscalYearClosedEvent : DomainEvent
     {
         /// <summary>
         /// معرف السنة المالية
@@ -15,19 +14,34 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         public Guid FiscalYearId { get; }
 
         /// <summary>
-        /// معرف الشركة
+        /// رمز السنة المالية
         /// </summary>
-        public Guid CompanyInfoId { get; }
+        public string Code { get; }
 
         /// <summary>
-        /// معرف عملية الإقفال
+        /// اسم السنة المالية
         /// </summary>
-        public Guid ClosingId { get; }
+        public string Name { get; }
 
         /// <summary>
-        /// نوع الإقفال
+        /// تاريخ البداية
         /// </summary>
-        public ClosingTypeEnum ClosingType { get; }
+        public DateTime StartDate { get; }
+
+        /// <summary>
+        /// تاريخ النهاية
+        /// </summary>
+        public DateTime EndDate { get; }
+
+        /// <summary>
+        /// تاريخ الإغلاق
+        /// </summary>
+        public DateTime ClosingDate { get; }
+
+        /// <summary>
+        /// معرف المستخدم الذي قام بالإغلاق
+        /// </summary>
+        public string ClosedByUserId { get; }
 
         /// <summary>
         /// توقيت الحدث
@@ -39,14 +53,20 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         /// </summary>
         public FiscalYearClosedEvent(
             Guid fiscalYearId,
-            Guid companyInfoId,
-            Guid closingId,
-            ClosingTypeEnum closingType)
+            string code,
+            string name,
+            DateTime startDate,
+            DateTime endDate,
+            DateTime closingDate,
+            string closedByUserId)
         {
             FiscalYearId = fiscalYearId;
-            CompanyInfoId = companyInfoId;
-            ClosingId = closingId;
-            ClosingType = closingType;
+            Code = code;
+            Name = name;
+            StartDate = startDate;
+            EndDate = endDate;
+            ClosingDate = closingDate;
+            ClosedByUserId = closedByUserId;
             Timestamp = DateTime.UtcNow;
         }
     }

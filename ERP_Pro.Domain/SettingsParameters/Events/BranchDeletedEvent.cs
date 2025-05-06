@@ -1,12 +1,12 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
 {
     /// <summary>
     /// حدث حذف فرع
     /// </summary>
-    public class BranchDeletedEvent : IDomainEvent
+    public class BranchDeletedEvent : DomainEvent
     {
         /// <summary>
         /// المنشئ

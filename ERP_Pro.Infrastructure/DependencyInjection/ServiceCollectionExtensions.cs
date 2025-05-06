@@ -72,6 +72,10 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         
+        // Registrar repositorios de FinanceAccounting
+        services.AddScoped<ERP_Pro.Application.Contracts.Persistence.FinanceAccounting.ICurrencyRepository, 
+                          ERP_Pro.Infrastructure.Persistence.Repositories.FinanceAccounting.CurrencyRepository>();
+        
         return services;
     }
 } 

@@ -1,5 +1,5 @@
 using System;
-using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.Common.ValueObjects;
 
 namespace ERP_Pro.Domain.SettingsParameters.ValueObjects
 {
@@ -103,36 +103,17 @@ namespace ERP_Pro.Domain.SettingsParameters.ValueObjects
         }
 
         /// <summary>
-        /// المقارنة مع كائن قيمة آخر
+        /// الحصول على عناصر المقارنة للمساواة
         /// </summary>
-        protected override bool EqualsCore(ValueObject other)
+        protected override IEnumerable<object> GetEqualityComponents()
         {
-            var otherSettings = (LockSettings)other;
-            return AutoLockClosedPeriods == otherSettings.AutoLockClosedPeriods &&
-                   AllowReopenByAuthorizedUsers == otherSettings.AllowReopenByAuthorizedUsers &&
-                   LockPeriodsAfterDuration == otherSettings.LockPeriodsAfterDuration &&
-                   DaysBeforeAutoLock == otherSettings.DaysBeforeAutoLock &&
-                   SendNotificationsBeforeLocking == otherSettings.SendNotificationsBeforeLocking &&
-                   PreventEditingInClosedPeriods == otherSettings.PreventEditingInClosedPeriods &&
-                   AllowLockExceptions == otherSettings.AllowLockExceptions;
-        }
-
-        /// <summary>
-        /// حساب الهاشكود
-        /// </summary>
-        protected override int GetHashCodeCore()
-        {
-            unchecked
-            {
-                int hashCode = AutoLockClosedPeriods.GetHashCode();
-                hashCode = (hashCode * 397) ^ AllowReopenByAuthorizedUsers.GetHashCode();
-                hashCode = (hashCode * 397) ^ LockPeriodsAfterDuration.GetHashCode();
-                hashCode = (hashCode * 397) ^ DaysBeforeAutoLock.GetHashCode();
-                hashCode = (hashCode * 397) ^ SendNotificationsBeforeLocking.GetHashCode();
-                hashCode = (hashCode * 397) ^ PreventEditingInClosedPeriods.GetHashCode();
-                hashCode = (hashCode * 397) ^ AllowLockExceptions.GetHashCode();
-                return hashCode;
-            }
+            yield return AutoLockClosedPeriods;
+            yield return AllowReopenByAuthorizedUsers;
+            yield return LockPeriodsAfterDuration;
+            yield return DaysBeforeAutoLock;
+            yield return SendNotificationsBeforeLocking;
+            yield return PreventEditingInClosedPeriods;
+            yield return AllowLockExceptions;
         }
     }
 } 

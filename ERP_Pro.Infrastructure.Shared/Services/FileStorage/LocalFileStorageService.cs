@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Security.Cryptography;
@@ -147,7 +152,7 @@ public class LocalFileStorageService : IFileStorageService
         }
     }
 
-    public Task<DateTime> GetLastModifiedAsync(string filePath)
+    public Task<System.DateTime> GetLastModifiedAsync(string filePath)
     {
         try
         {
@@ -158,7 +163,7 @@ public class LocalFileStorageService : IFileStorageService
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error getting last modified date for {FilePath}", filePath);
-            return Task.FromResult(DateTime.MinValue);
+            return Task.FromResult(System.DateTime.MinValue);
         }
     }
 
@@ -203,7 +208,7 @@ public class LocalFileStorageService : IFileStorageService
         var directory = Path.GetDirectoryName(filePath);
         var fileName = Path.GetFileNameWithoutExtension(filePath);
         var extension = Path.GetExtension(filePath);
-        var uniqueFileName = $"{fileName}_{DateTime.UtcNow.Ticks}{extension}";
+        var uniqueFileName = $"{fileName}_{System.DateTime.UtcNow.Ticks}{extension}";
 
         return Path.Combine(directory ?? string.Empty, uniqueFileName);
     }

@@ -1,257 +1,165 @@
 using System;
 using ERP_Pro.Domain.Common.Base;
+using ERP_Pro.Domain.FinanceAccounting.Events;
 using ERP_Pro.Domain.FinanceAccounting.ValueObjects;
 using ERP_Pro.Shared.Enums.Domain;
 
 namespace ERP_Pro.Domain.FinanceAccounting.Entities
 {
     /// <summary>
-    /// كيان حد مخاطر العملة - يحدد حدود المخاطر المالية المرتبطة بالعملة
+    /// كيان حد مخاطر العملة - يحدد الحدود المقبولة لأسعار صرف العملة
     /// </summary>
     public class CurrencyRiskLimit : Entity
     {
         /// <summary>
-        /// معرف العملة
+        /// معرف العملة المرتبطة
         /// </summary>
         public Guid CurrencyId { get; private set; }
-
+        
         /// <summary>
-        /// نوع حد المخاطر
+        /// الحد الأدنى لسعر الصرف
         /// </summary>
-        public CurrencyRiskLimitTypeEnum LimitType { get; private set; }
-
+        public decimal MinRate { get; private set; }
+        
         /// <summary>
-        /// قيمة الحد
+        /// الحد الأعلى لسعر الصرف
         /// </summary>
-        public decimal LimitValue { get; private set; }
-
+        public decimal MaxRate { get; private set; }
+        
         /// <summary>
-        /// تاريخ البدء
+        /// نسبة التحذير (%)
         /// </summary>
-        public DateTime StartDate { get; private set; }
-
+        public decimal WarningThreshold { get; private set; }
+        
         /// <summary>
-        /// تاريخ الانتهاء (اختياري)
+        /// سعر المستهدف
         /// </summary>
-        public DateTime? EndDate { get; private set; }
-
+        public decimal TargetRate { get; private set; }
+        
         /// <summary>
-        /// ينطبق على الفروع (رموز الفروع مفصولة بفواصل، إذا كان فارغاً ينطبق على كل الفروع)
+        /// هل التنبيه مفعل
         /// </summary>
-        public string ApplicableBranches { get; private set; }
-
+        public bool AlertEnabled { get; private set; }
+        
         /// <summary>
-        /// مستوى التنبيه (نسبة مئوية من قيمة الحد)
+        /// تاريخ آخر تحديث
         /// </summary>
-        public decimal? AlertThreshold { get; private set; }
-
+        public DateTime LastUpdated { get; private set; }
+        
         /// <summary>
-        /// مستوى التحذير (نسبة مئوية من قيمة الحد)
+        /// محدث بواسطة
         /// </summary>
-        public decimal? WarningThreshold { get; private set; }
-
-        /// <summary>
-        /// هل يتم منع العمليات عند تجاوز الحد؟
-        /// </summary>
-        public bool BlockTransactionsWhenExceeded { get; private set; }
-
-        /// <summary>
-        /// الإجراء المطلوب عند تجاوز الحد
-        /// </summary>
-        public string ActionWhenExceeded { get; private set; }
-
-        /// <summary>
-        /// حالة حد المخاطر
-        /// </summary>
-        public bool IsActive { get; private set; }
-
-        /// <summary>
-        /// ملاحظات
-        /// </summary>
-        public string Notes { get; private set; }
-
+        public string UpdatedBy { get; private set; }
+        
         /// <summary>
         /// العملة (علاقة)
         /// </summary>
-        public Currency Currency { get; private set; }
-
+        public virtual Currency Currency { get; private set; }
+        
         // المُنشئ الخاص - لا يُستخدم مباشرة
         private CurrencyRiskLimit() { }
-
+        
         /// <summary>
-        /// إنشاء كيان حد مخاطر عملة جديد
+        /// إنشاء حد مخاطر جديد
         /// </summary>
         public static CurrencyRiskLimit Create(
             Guid currencyId,
-            CurrencyRiskLimitTypeEnum limitType,
-            decimal limitValue,
-            DateTime startDate,
-            DateTime? endDate = null,
-            string applicableBranches = null,
-            decimal? alertThreshold = null,
-            decimal? warningThreshold = null,
-            bool blockTransactionsWhenExceeded = false,
-            string actionWhenExceeded = null,
-            bool isActive = true,
-            string notes = null)
+            decimal minRate,
+            decimal maxRate,
+            decimal warningThreshold,
+            decimal targetRate,
+            bool alertEnabled,
+            string updatedBy)
         {
             if (currencyId == Guid.Empty)
                 throw new ArgumentException("معرف العملة مطلوب", nameof(currencyId));
-
-            if (limitValue <= 0)
-                throw new ArgumentException("قيمة الحد يجب أن تكون موجبة", nameof(limitValue));
-
-            if (endDate.HasValue && startDate > endDate.Value)
-                throw new ArgumentException("تاريخ البدء يجب أن يكون قبل تاريخ الانتهاء", nameof(startDate));
-
-            if (alertThreshold.HasValue && (alertThreshold.Value <= 0 || alertThreshold.Value > 100))
-                throw new ArgumentException("مستوى التنبيه يجب أن يكون بين 1 و 100", nameof(alertThreshold));
-
-            if (warningThreshold.HasValue && (warningThreshold.Value <= 0 || warningThreshold.Value > 100))
-                throw new ArgumentException("مستوى التحذير يجب أن يكون بين 1 و 100", nameof(warningThreshold));
-
-            if (alertThreshold.HasValue && warningThreshold.HasValue && alertThreshold.Value < warningThreshold.Value)
-                throw new ArgumentException("مستوى التنبيه يجب أن يكون أكبر من أو يساوي مستوى التحذير", nameof(alertThreshold));
-
-            return new CurrencyRiskLimit
+                
+            if (minRate <= 0)
+                throw new ArgumentException("الحد الأدنى لسعر الصرف يجب أن يكون موجباً", nameof(minRate));
+                
+            if (maxRate <= minRate)
+                throw new ArgumentException("الحد الأعلى يجب أن يكون أكبر من الحد الأدنى", nameof(maxRate));
+                
+            if (warningThreshold <= 0 || warningThreshold >= 100)
+                throw new ArgumentException("نسبة التحذير يجب أن تكون بين 0 و 100", nameof(warningThreshold));
+                
+            if (targetRate < minRate || targetRate > maxRate)
+                throw new ArgumentException("السعر المستهدف يجب أن يكون بين الحد الأدنى والحد الأعلى", nameof(targetRate));
+            
+            var riskLimit = new CurrencyRiskLimit
             {
                 Id = Guid.NewGuid(),
                 CurrencyId = currencyId,
-                LimitType = limitType,
-                LimitValue = limitValue,
-                StartDate = startDate,
-                EndDate = endDate,
-                ApplicableBranches = applicableBranches,
-                AlertThreshold = alertThreshold,
+                MinRate = minRate,
+                MaxRate = maxRate,
                 WarningThreshold = warningThreshold,
-                BlockTransactionsWhenExceeded = blockTransactionsWhenExceeded,
-                ActionWhenExceeded = actionWhenExceeded,
-                IsActive = isActive,
-                Notes = notes
+                TargetRate = targetRate,
+                AlertEnabled = alertEnabled,
+                LastUpdated = DateTime.UtcNow,
+                UpdatedBy = updatedBy
             };
+            
+            // إضافة حدث إنشاء حد مخاطر جديد
+            riskLimit.AddDomainEvent(new RiskLimitCreatedEvent(riskLimit));
+            
+            return riskLimit;
         }
-
+        
         /// <summary>
         /// تحديث حد المخاطر
         /// </summary>
         public void Update(
-            decimal limitValue,
-            DateTime? endDate = null,
-            string applicableBranches = null,
-            decimal? alertThreshold = null,
-            decimal? warningThreshold = null,
-            bool? blockTransactionsWhenExceeded = null,
-            string actionWhenExceeded = null,
-            string notes = null)
+            decimal minRate,
+            decimal maxRate,
+            decimal warningThreshold,
+            decimal targetRate,
+            bool alertEnabled,
+            string updatedBy)
         {
-            if (limitValue <= 0)
-                throw new ArgumentException("قيمة الحد يجب أن تكون موجبة", nameof(limitValue));
-
-            if (endDate.HasValue && StartDate > endDate.Value)
-                throw new ArgumentException("تاريخ البدء يجب أن يكون قبل تاريخ الانتهاء", nameof(endDate));
-
-            if (alertThreshold.HasValue && (alertThreshold.Value <= 0 || alertThreshold.Value > 100))
-                throw new ArgumentException("مستوى التنبيه يجب أن يكون بين 1 و 100", nameof(alertThreshold));
-
-            if (warningThreshold.HasValue && (warningThreshold.Value <= 0 || warningThreshold.Value > 100))
-                throw new ArgumentException("مستوى التحذير يجب أن يكون بين 1 و 100", nameof(warningThreshold));
-
-            if (alertThreshold.HasValue && warningThreshold.HasValue && alertThreshold.Value < warningThreshold.Value)
-                throw new ArgumentException("مستوى التنبيه يجب أن يكون أكبر من أو يساوي مستوى التحذير", nameof(alertThreshold));
-
-            LimitValue = limitValue;
+            if (minRate <= 0)
+                throw new ArgumentException("الحد الأدنى لسعر الصرف يجب أن يكون موجباً", nameof(minRate));
+                
+            if (maxRate <= minRate)
+                throw new ArgumentException("الحد الأعلى يجب أن يكون أكبر من الحد الأدنى", nameof(maxRate));
+                
+            if (warningThreshold <= 0 || warningThreshold >= 100)
+                throw new ArgumentException("نسبة التحذير يجب أن تكون بين 0 و 100", nameof(warningThreshold));
+                
+            if (targetRate < minRate || targetRate > maxRate)
+                throw new ArgumentException("السعر المستهدف يجب أن يكون بين الحد الأدنى والحد الأعلى", nameof(targetRate));
             
-            if (endDate.HasValue)
-                EndDate = endDate;
-                
-            if (applicableBranches != null)
-                ApplicableBranches = applicableBranches;
-                
-            if (alertThreshold.HasValue)
-                AlertThreshold = alertThreshold;
-                
-            if (warningThreshold.HasValue)
-                WarningThreshold = warningThreshold;
-                
-            if (blockTransactionsWhenExceeded.HasValue)
-                BlockTransactionsWhenExceeded = blockTransactionsWhenExceeded.Value;
-                
-            if (actionWhenExceeded != null)
-                ActionWhenExceeded = actionWhenExceeded;
-                
-            if (notes != null)
-                Notes = notes;
+            MinRate = minRate;
+            MaxRate = maxRate;
+            WarningThreshold = warningThreshold;
+            TargetRate = targetRate;
+            AlertEnabled = alertEnabled;
+            LastUpdated = DateTime.UtcNow;
+            UpdatedBy = updatedBy;
+            
+            // إضافة حدث تحديث حد المخاطر
+            AddDomainEvent(new RiskLimitUpdatedEvent(this));
         }
-
+        
         /// <summary>
-        /// تفعيل حد المخاطر
+        /// تفعيل أو تعطيل التنبيهات
         /// </summary>
-        public void Activate()
+        public void SetAlertEnabled(bool alertEnabled, string updatedBy)
         {
-            IsActive = true;
+            AlertEnabled = alertEnabled;
+            LastUpdated = DateTime.UtcNow;
+            UpdatedBy = updatedBy;
+            
+            // إضافة حدث تحديث حد المخاطر
+            AddDomainEvent(new RiskLimitUpdatedEvent(this));
         }
-
+        
         /// <summary>
-        /// تعطيل حد المخاطر
+        /// حذف حد المخاطر
         /// </summary>
-        public void Deactivate()
+        public void Delete()
         {
-            IsActive = false;
-        }
-
-        /// <summary>
-        /// التحقق من صلاحية حد المخاطر في تاريخ معين
-        /// </summary>
-        public bool IsValid(DateTime date)
-        {
-            if (date < StartDate)
-                return false;
-
-            if (EndDate.HasValue && date > EndDate.Value)
-                return false;
-
-            return IsActive;
-        }
-
-        /// <summary>
-        /// التحقق من تجاوز حد المخاطر
-        /// </summary>
-        public bool IsExceeded(decimal currentValue)
-        {
-            return currentValue > LimitValue;
-        }
-
-        /// <summary>
-        /// التحقق من وصول الحد إلى مستوى التنبيه
-        /// </summary>
-        public bool IsAlertTriggered(decimal currentValue)
-        {
-            if (!AlertThreshold.HasValue)
-                return false;
-
-            return currentValue >= (LimitValue * AlertThreshold.Value / 100);
-        }
-
-        /// <summary>
-        /// التحقق من وصول الحد إلى مستوى التحذير
-        /// </summary>
-        public bool IsWarningTriggered(decimal currentValue)
-        {
-            if (!WarningThreshold.HasValue)
-                return false;
-
-            return currentValue >= (LimitValue * WarningThreshold.Value / 100);
-        }
-
-        /// <summary>
-        /// التحقق من تطبيق حد المخاطر على فرع معين
-        /// </summary>
-        public bool IsApplicableToBranch(string branchCode)
-        {
-            if (string.IsNullOrWhiteSpace(ApplicableBranches))
-                return true;
-
-            return ApplicableBranches.Contains(branchCode);
+            // إضافة حدث حذف حد المخاطر
+            AddDomainEvent(new RiskLimitDeletedEvent(Id, CurrencyId));
         }
     }
 } 

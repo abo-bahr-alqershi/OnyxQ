@@ -1,13 +1,13 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
 {
     /// <summary>
-    /// حدث تحديث سنة مالية
+    /// حدث تحديث السنة المالية
     /// </summary>
-    public class FiscalYearUpdatedEvent : IDomainEvent
+    public class FiscalYearUpdatedEvent : DomainEvent
     {
         /// <summary>
         /// معرف السنة المالية
@@ -15,14 +15,14 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         public Guid FiscalYearId { get; }
 
         /// <summary>
-        /// معرف الشركة
-        /// </summary>
-        public Guid CompanyInfoId { get; }
-
-        /// <summary>
         /// رمز السنة المالية
         /// </summary>
         public string Code { get; }
+
+        /// <summary>
+        /// اسم السنة المالية
+        /// </summary>
+        public string Name { get; }
 
         /// <summary>
         /// تاريخ البداية
@@ -40,6 +40,11 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         public FiscalYearStatusEnum Status { get; }
 
         /// <summary>
+        /// الحقول التي تم تحديثها
+        /// </summary>
+        public string[] UpdatedFields { get; }
+
+        /// <summary>
         /// توقيت الحدث
         /// </summary>
         public DateTime Timestamp { get; }
@@ -49,19 +54,21 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         /// </summary>
         public FiscalYearUpdatedEvent(
             Guid fiscalYearId,
-            Guid companyInfoId,
             string code,
+            string name,
             DateTime startDate,
             DateTime endDate,
-            FiscalYearStatusEnum status)
+            FiscalYearStatusEnum status,
+            string[] updatedFields)
         {
             FiscalYearId = fiscalYearId;
-            CompanyInfoId = companyInfoId;
             Code = code;
+            Name = name;
             StartDate = startDate;
             EndDate = endDate;
             Status = status;
+            UpdatedFields = updatedFields;
             Timestamp = DateTime.UtcNow;
         }
     }
-} 
+}

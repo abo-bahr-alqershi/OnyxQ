@@ -9,6 +9,7 @@ using ERP_Pro.Domain.Common.Base;
 using ERP_Pro.Domain.Common.Interfaces;
 using ERP_Pro.Domain.SettingsParameters.Entities;
 using ERP_Pro.Domain.InventoryWarehousing.Entities;
+using ERP_Pro.Domain.FinanceAccounting.Entities;
 
 namespace ERP_Pro.Infrastructure.Persistence
 {
@@ -46,6 +47,10 @@ namespace ERP_Pro.Infrastructure.Persistence
         
         // كيانات المستودعات
         public DbSet<Warehouse> Warehouses { get; set; }
+        
+        // كيانات المالية والمحاسبة
+        public DbSet<Currency> Currencies { get; set; }
+        public DbSet<CurrencyExchangeRate> CurrencyExchangeRates { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

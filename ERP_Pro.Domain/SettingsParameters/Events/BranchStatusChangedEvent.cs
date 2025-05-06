@@ -1,12 +1,12 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
 {
     /// <summary>
     /// حدث تغيير حالة فرع
     /// </summary>
-    public class BranchStatusChangedEvent : IDomainEvent
+    public class BranchStatusChangedEvent : DomainEvent
     {
         /// <summary>
         /// المنشئ

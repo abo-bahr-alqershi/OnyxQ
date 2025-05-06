@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
       "BouncyCastle.Cryptography/2.2.1": {
         "type": "package",
         "compile": {
@@ -633,7 +633,7 @@
       },
       "ERP_Pro.Shared/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Microsoft.Extensions.Localization.Abstractions": "7.0.10",
           "Microsoft.Extensions.Logging.Abstractions": "7.0.1",
@@ -1862,7 +1862,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net8.0": [
       "ERP_Pro.Shared >= 1.0.0",
       "FluentValidation >= 11.7.1",
       "FluentValidation.DependencyInjectionExtensions >= 11.7.1",
@@ -1894,14 +1894,14 @@
         "/home/ameen/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
             "/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/ERP_Pro.Shared.csproj": {
               "projectPath": "/home/ameen/projects/OnyxQ/src/ERP_Pro.Shared/ERP_Pro.Shared.csproj"
@@ -1921,8 +1921,8 @@
       }
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "FluentValidation": {
             "target": "Package",
@@ -1984,22 +1984,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.408/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -2011,7 +2001,7 @@
       "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.32.1 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
-        "net7.0"
+        "net8.0"
       ]
     }
   ]

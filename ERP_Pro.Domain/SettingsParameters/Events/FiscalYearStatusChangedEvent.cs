@@ -1,13 +1,13 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
 {
     /// <summary>
-    /// حدث تغيير حالة سنة مالية
+    /// حدث تغيير حالة السنة المالية
     /// </summary>
-    public class FiscalYearStatusChangedEvent : IDomainEvent
+    public class FiscalYearStatusChangedEvent : DomainEvent
     {
         /// <summary>
         /// معرف السنة المالية
@@ -15,19 +15,29 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         public Guid FiscalYearId { get; }
 
         /// <summary>
-        /// معرف الشركة
+        /// رمز السنة المالية
         /// </summary>
-        public Guid CompanyInfoId { get; }
+        public string Code { get; }
+
+        /// <summary>
+        /// اسم السنة المالية
+        /// </summary>
+        public string Name { get; }
 
         /// <summary>
         /// الحالة السابقة
         /// </summary>
-        public FiscalYearStatusEnum PreviousStatus { get; }
+        public FiscalYearStatusEnum OldStatus { get; }
 
         /// <summary>
         /// الحالة الجديدة
         /// </summary>
         public FiscalYearStatusEnum NewStatus { get; }
+
+        /// <summary>
+        /// سبب تغيير الحالة
+        /// </summary>
+        public string Reason { get; }
 
         /// <summary>
         /// توقيت الحدث
@@ -39,14 +49,18 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
         /// </summary>
         public FiscalYearStatusChangedEvent(
             Guid fiscalYearId,
-            Guid companyInfoId,
-            FiscalYearStatusEnum previousStatus,
-            FiscalYearStatusEnum newStatus)
+            string code,
+            string name,
+            FiscalYearStatusEnum oldStatus,
+            FiscalYearStatusEnum newStatus,
+            string reason)
         {
             FiscalYearId = fiscalYearId;
-            CompanyInfoId = companyInfoId;
-            PreviousStatus = previousStatus;
+            Code = code;
+            Name = name;
+            OldStatus = oldStatus;
             NewStatus = newStatus;
+            Reason = reason;
             Timestamp = DateTime.UtcNow;
         }
     }

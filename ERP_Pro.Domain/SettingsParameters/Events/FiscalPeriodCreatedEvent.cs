@@ -1,5 +1,5 @@
 using System;
-using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.SettingsParameters.Enums;
 
 namespace ERP_Pro.Domain.SettingsParameters.Events
@@ -7,7 +7,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Events
     /// <summary>
     /// حدث إنشاء فترة محاسبية
     /// </summary>
-    public class FiscalPeriodCreatedEvent : IDomainEvent
+    public class FiscalPeriodCreatedEvent : DomainEvent
     {
         /// <summary>
         /// معرف الفترة المحاسبية
