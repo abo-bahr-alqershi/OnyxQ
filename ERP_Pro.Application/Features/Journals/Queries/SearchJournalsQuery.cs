@@ -1,2 +1,0 @@
-// SearchJournalsQuery.cs
-// تم إنشاؤه تلقائيًا.

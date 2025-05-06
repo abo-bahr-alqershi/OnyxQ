@@ -1,8 +1,12 @@
 using AutoMapper;
 
-namespace ERP_Pro.Application.Common.Mappings;
-
-public interface IMapFrom<T>
+namespace ERP_Pro.Application.Common.Mappings
 {
-    void Mapping(Profile profile) => profile.CreateMap(typeof(T), GetType());
+    /// <summary>
+    /// واجهة لتعريف التعيين من كيان إلى نموذج العرض
+    /// </summary>
+    public interface IMapFrom<T>
+    {
+        void Mapping(Profile profile) => profile.CreateMap(typeof(T), GetType());
+    }
 } 

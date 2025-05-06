@@ -1,5 +1,10 @@
+using System;
+
 namespace ERP_Pro.Application.Common.Exceptions;
 
+/// <summary>
+/// استثناء عدم العثور على الكيان
+/// </summary>
 public class NotFoundException : Exception
 {
     public NotFoundException()
@@ -18,7 +23,7 @@ public class NotFoundException : Exception
     }
 
     public NotFoundException(string name, object key)
-        : base($"Entity \"{name}\" ({key}) was not found.")
+        : base($"الكيان \"{name}\" ({key}) غير موجود.")
     {
     }
 } 
