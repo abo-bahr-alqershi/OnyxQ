@@ -1,5 +1,5 @@
 using System;
-using ERP_Pro.Shared.Exceptions.Base;
+using ERP_Pro.Domain.Common.Exceptions;
 using ERP_Pro.Domain.Common;
 
 namespace ERP_Pro.Domain.Common.ValueObjects
@@ -7,17 +7,17 @@ namespace ERP_Pro.Domain.Common.ValueObjects
     public record BranchInfo
     {
         /// <summary> رقم الفرع </summary>
-        public int BranchId { get; }
+        public int BranchId { get; init; }
         /// <summary> اسم الفرع </summary>
-        public string BranchName { get; }
+        public string BranchName { get; init; }
         /// <summary> رقم المستودع </summary>
-        public int? WarehouseId { get; }
+        public int? WarehouseId { get; init; }
         /// <summary> اسم المستودع </summary>
-        public string? WarehouseName { get; }
+        public string? WarehouseName { get; init; }
         /// <summary> رقم الصندوق </summary>
-        public int? CashierId { get; }
+        public int? CashierId { get; init; }
         /// <summary> اسم الصندوق </summary>
-        public string? CashierName { get; }
+        public string? CashierName { get; init; }
 
         private BranchInfo(
             int branchId,
@@ -28,16 +28,16 @@ namespace ERP_Pro.Domain.Common.ValueObjects
             string? cashierName = null)
         {
             if (branchId <= 0)
-                throw new DomainException("Branch ID must be greater than zero");
+                throw new ValueObjectValidationException("Branch ID must be greater than zero");
 
             if (string.IsNullOrWhiteSpace(branchName))
-                throw new DomainException("Branch name is required");
+                throw new ValueObjectValidationException("Branch name is required");
 
             if (warehouseId.HasValue && warehouseId.Value <= 0)
-                throw new DomainException("Warehouse ID must be greater than zero");
+                throw new ValueObjectValidationException("Warehouse ID must be greater than zero");
 
             if (cashierId.HasValue && cashierId.Value <= 0)
-                throw new DomainException("Cashier ID must be greater than zero");
+                throw new ValueObjectValidationException("Cashier ID must be greater than zero");
 
             BranchId = branchId;
             BranchName = branchName;

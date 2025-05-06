@@ -4,14 +4,20 @@ using ERP_Pro.Domain.Common.Base;
 using ERP_Pro.Domain.FinanceAccounting.Events;
 using ERP_Pro.Domain.FinanceAccounting.ValueObjects;
 using ERP_Pro.Shared.Enums.Domain;
+using ERP_Pro.Domain.Common.Entities;
+using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Shared.Events.Base;
 
 namespace ERP_Pro.Domain.FinanceAccounting.Entities
 {
     /// <summary>
     /// كيان العملة - يمثل عملة يتم استخدامها في النظام
     /// </summary>
-    public class Currency : Entity
+    public class Currency : Entity, IAggregateRoot
     {
+        private readonly List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
+        public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
         /// <summary>
         /// رمز العملة (مثل USD، EUR، SAR)
         /// </summary>
@@ -352,6 +358,30 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
                 throw new ArgumentNullException(nameof(riskLimit));
 
             _riskLimits.Add(riskLimit);
+        }
+
+        /// <summary>
+        /// إضافة حدث نطاق
+        /// </summary>
+        public void AddDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents.Add(domainEvent);
+        }
+
+        /// <summary>
+        /// إزالة حدث نطاق
+        /// </summary>
+        public void RemoveDomainEvent(IDomainEvent domainEvent)
+        {
+            _domainEvents.Remove(domainEvent);
+        }
+
+        /// <summary>
+        /// مسح أحداث النطاق
+        /// </summary>
+        public void ClearDomainEvents()
+        {
+            _domainEvents.Clear();
         }
     }
 } 

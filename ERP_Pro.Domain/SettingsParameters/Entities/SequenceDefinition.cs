@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using ERP_Pro.Domain.Common.Base;
 using ERP_Pro.Domain.Common.Events;
 using ERP_Pro.Domain.Common.Interfaces;
 using ERP_Pro.Domain.SettingsParameters.Events;
 using ERP_Pro.Domain.SettingsParameters.ValueObjects;
 using ERP_Pro.Shared.Enums.Domain;
+using SharedNumberAllocationStatusEnum = ERP_Pro.Shared.Enums.Domain.NumberAllocationStatusEnum;
 
 namespace ERP_Pro.Domain.SettingsParameters.Entities
 {
@@ -482,17 +484,17 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
                 throw new ArgumentException("نهاية النطاق المحجوز يجب أن تكون ضمن نطاق الترقيم وأكبر من بدايته", nameof(rangeEnd));
 
             // التحقق من عدم تداخل النطاق المحجوز مع نطاقات أخرى محجوزة
-            foreach (var allocation in _numberAllocations)
+            foreach (var existingAllocation in _numberAllocations)
             {
-                if (allocation.Status == NumberAllocationStatusEnum.Active &&
-                    !(rangeEnd < allocation.RangeStart || rangeStart > allocation.RangeEnd))
+                if (existingAllocation.Status == SharedNumberAllocationStatusEnum.Active &&
+                    !(rangeEnd < existingAllocation.RangeStart || rangeStart > existingAllocation.RangeEnd))
                 {
                     throw new InvalidOperationException("النطاق المطلوب حجزه يتداخل مع نطاق محجوز آخر");
                 }
             }
 
             // إنشاء حجز جديد
-            var allocation = new NumberAllocation(
+            var newAllocation = new NumberAllocation(
                 Guid.NewGuid(),
                 Id,
                 rangeStart,
@@ -500,10 +502,11 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
                 reason,
                 userId,
                 branchId,
+                branchId.HasValue ? GetBranchName(branchId.Value) : null,
                 DateTime.UtcNow,
                 expiryDate);
 
-            _numberAllocations.Add(allocation);
+            _numberAllocations.Add(newAllocation);
 
             // إذا كان الرقم الحالي ضمن النطاق المحجوز، ننقله إلى ما بعد النطاق
             if (CurrentNumber >= rangeStart && CurrentNumber <= rangeEnd)
@@ -511,8 +514,8 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
                 CurrentNumber = rangeEnd + 1;
             }
 
-            AddDomainEvent(new NumberRangeReservedEvent(Id, allocation.Id, rangeStart, rangeEnd));
-            return allocation;
+            AddDomainEvent(new NumberRangeReservedEvent(Id, newAllocation.Id, rangeStart, rangeEnd));
+            return newAllocation;
         }
 
         /// <summary>
@@ -684,6 +687,16 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         public void ClearDomainEvents()
         {
             _domainEvents.Clear();
+        }
+
+        /// <summary>
+        /// الحصول على اسم الفرع من معرفه
+        /// </summary>
+        private string GetBranchName(Guid branchId)
+        {
+            // في بيئة حقيقية، يجب استرجاع اسم الفرع من قاعدة البيانات
+            // لكن هنا نقوم بإرجاع قيمة افتراضية للتبسيط
+            return "فرع افتراضي";
         }
     }
 } 

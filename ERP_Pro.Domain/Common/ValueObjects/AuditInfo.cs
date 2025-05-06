@@ -1,30 +1,30 @@
 using System;
-using ERP_Pro.Shared.Exceptions.Base;
+using ERP_Pro.Domain.Common.Exceptions;
 
 namespace ERP_Pro.Domain.Common.ValueObjects
 {
     public record AuditInfo
     {
         /// <summary> رقم المستخدم الذي أنشأ السجل </summary>
-        public int CreatedBy { get; }
+        public int CreatedBy { get; init; }
         /// <summary> تاريخ إنشاء السجل </summary>
-        public DateTime CreatedOn { get; }
+        public DateTime CreatedOn { get; init; }
         /// <summary> محطة إنشاء السجل </summary>
-        public string CreatedTerminal { get; }
+        public string CreatedTerminal { get; init; }
         /// <summary> رقم المستخدم الذي دقق السجل </summary>
-        public int? AuditedBy { get; }
+        public int? AuditedBy { get; init; }
         /// <summary> تاريخ تدقيق السجل </summary>
-        public DateTime? AuditedOn { get; }
+        public DateTime? AuditedOn { get; init; }
         /// <summary> محطة تدقيق السجل </summary>
-        public string? AuditedTerminal { get; }
+        public string? AuditedTerminal { get; init; }
         /// <summary> وصف التدقيق </summary>
-        public string? AuditDescription { get; }
+        public string? AuditDescription { get; init; }
         /// <summary> رقم المستخدم الذي عدل السجل </summary>
-        public int? ModifiedBy { get; }
+        public int? ModifiedBy { get; init; }
         /// <summary> تاريخ تعديل السجل </summary>
-        public DateTime? ModifiedOn { get; }
+        public DateTime? ModifiedOn { get; init; }
         /// <summary> محطة تعديل السجل </summary>
-        public string? ModifiedTerminal { get; }
+        public string? ModifiedTerminal { get; init; }
 
         private AuditInfo(
             int createdBy,
@@ -39,7 +39,7 @@ namespace ERP_Pro.Domain.Common.ValueObjects
             string? modifiedTerminal = null)
         {
             if (string.IsNullOrWhiteSpace(createdTerminal))
-                throw new DomainException("Terminal is required");
+                throw new ValueObjectValidationException("Terminal is required");
 
             CreatedBy = createdBy;
             CreatedOn = createdOn;

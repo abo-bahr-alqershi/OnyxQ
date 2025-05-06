@@ -1,6 +1,7 @@
 using System;
 using ERP_Pro.Domain.Common.Entities;
-using ERP_Pro.Shared.Enums.Domain;
+// تحديد استيراد Enum بشكل صريح
+using DomainNumberGapEnum = ERP_Pro.Shared.Enums.Domain.NumberGapResolutionStatusEnum;
 
 namespace ERP_Pro.Domain.SettingsParameters.Entities
 {
@@ -42,7 +43,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         /// <summary>
         /// حالة معالجة الفجوة
         /// </summary>
-        public NumberGapResolutionStatusEnum ResolutionStatus { get; private set; }
+        public DomainNumberGapEnum ResolutionStatus { get; private set; }
         
         /// <summary>
         /// تاريخ معالجة الفجوة
@@ -82,7 +83,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
             GapSize = gapEnd - gapStart + 1;
             Reason = reason;
             DiscoveryDate = discoveryDate;
-            ResolutionStatus = NumberGapResolutionStatusEnum.Detected;
+            ResolutionStatus = DomainNumberGapEnum.Detected;
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         public void MarkAsResolved(
             Guid resolvedByUserId, 
             string resolutionDetails, 
-            NumberGapResolutionStatusEnum status = NumberGapResolutionStatusEnum.Resolved)
+            DomainNumberGapEnum status = DomainNumberGapEnum.Resolved)
         {
             ResolvedByUserId = resolvedByUserId;
             ResolutionDetails = resolutionDetails;
@@ -105,7 +106,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         public void MarkAsInProgress(Guid userId)
         {
             ResolvedByUserId = userId;
-            ResolutionStatus = NumberGapResolutionStatusEnum.InProgress;
+            ResolutionStatus = DomainNumberGapEnum.InProgress;
         }
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace ERP_Pro.Domain.SettingsParameters.Entities
         {
             ResolvedByUserId = userId;
             ResolutionDetails = reason;
-            ResolutionStatus = NumberGapResolutionStatusEnum.Ignored;
+            ResolutionStatus = DomainNumberGapEnum.Ignored;
             ResolutionDate = DateTime.UtcNow;
         }
 

@@ -1,23 +1,23 @@
 using System;
 using ERP_Pro.Domain.Common;
-using ERP_Pro.Shared.Exceptions.Base;
+using ERP_Pro.Domain.Common.Exceptions;
 
 namespace ERP_Pro.Domain.Common.ValueObjects
 {
     public record CompanyInfo
     {
         /// <summary> رقم الشركة </summary>
-        public int CompanyId { get; }
+        public int CompanyId { get; init; }
         /// <summary> اسم الشركة </summary>
-        public string CompanyName { get; }
+        public string CompanyName { get; init; }
         /// <summary> رقم الفرع </summary>
-        public int BranchId { get; }
+        public int BranchId { get; init; }
         /// <summary> اسم الفرع </summary>
-        public string BranchName { get; }
+        public string BranchName { get; init; }
         /// <summary> السنة المالية </summary>
-        public int FiscalYear { get; }
+        public int FiscalYear { get; init; }
         /// <summary> الفترة المالية </summary>
-        public int FiscalPeriod { get; }
+        public int FiscalPeriod { get; init; }
 
         private CompanyInfo(
             int companyId,
@@ -28,22 +28,22 @@ namespace ERP_Pro.Domain.Common.ValueObjects
             int fiscalPeriod)
         {
             if (companyId <= 0)
-                throw new DomainException("Company ID must be greater than zero");
+                throw new ValueObjectValidationException("Company ID must be greater than zero");
 
             if (string.IsNullOrWhiteSpace(companyName))
-                throw new DomainException("Company name is required");
+                throw new ValueObjectValidationException("Company name is required");
 
             if (branchId <= 0)
-                throw new DomainException("Branch ID must be greater than zero");
+                throw new ValueObjectValidationException("Branch ID must be greater than zero");
 
             if (string.IsNullOrWhiteSpace(branchName))
-                throw new DomainException("Branch name is required");
+                throw new ValueObjectValidationException("Branch name is required");
 
             if (fiscalYear <= 0)
-                throw new DomainException("Fiscal year must be greater than zero");
+                throw new ValueObjectValidationException("Fiscal year must be greater than zero");
 
             if (fiscalPeriod <= 0)
-                throw new DomainException("Fiscal period must be greater than zero");
+                throw new ValueObjectValidationException("Fiscal period must be greater than zero");
 
             CompanyId = companyId;
             CompanyName = companyName;

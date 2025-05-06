@@ -1,3 +1,7 @@
+using System.Collections.Generic;
+using ERP_Pro.Domain.Common.Entities;
+using ERP_Pro.Domain.Common.Interfaces;
+using ERP_Pro.Shared.Events.Base;
 using System;
 using ERP_Pro.Domain.Common.Base;
 using ERP_Pro.Domain.FinanceAccounting.Events;
@@ -7,6 +11,8 @@ using ERP_Pro.Shared.Enums.Domain;
 namespace ERP_Pro.Domain.FinanceAccounting.Entities
 {
     /// <summary>
+    private readonly List<IDomainEvent> _domainEvents = new List<IDomainEvent>();
+    public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
     /// كيان حد مخاطر العملة - يحدد الحدود المقبولة لأسعار صرف العملة
     /// </summary>
     public class CurrencyRiskLimit : Entity
@@ -163,3 +169,26 @@ namespace ERP_Pro.Domain.FinanceAccounting.Entities
         }
     }
 } 
+    /// <summary>
+    /// إضافة حدث نطاق
+    /// </summary>
+    public void AddDomainEvent(IDomainEvent domainEvent)
+    {
+        _domainEvents.Add(domainEvent);
+    }
+
+    /// <summary>
+    /// إزالة حدث نطاق
+    /// </summary>
+    public void RemoveDomainEvent(IDomainEvent domainEvent)
+    {
+        _domainEvents.Remove(domainEvent);
+    }
+
+    /// <summary>
+    /// مسح أحداث النطاق
+    /// </summary>
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
+    }

@@ -1,6 +1,6 @@
 using System;
-using ERP_Pro.Domain.Common.Events;
-using ERP_Pro.Domain.FinanceAccounting.Entities;
+using ERP_Pro.Shared.Events.Domain;
+using ERP_Pro.Shared.Enums.Domain;
 
 namespace ERP_Pro.Domain.FinanceAccounting.Events
 {
@@ -15,26 +15,17 @@ namespace ERP_Pro.Domain.FinanceAccounting.Events
         public Guid CurrencyId { get; }
         
         /// <summary>
-        /// العملة التي تم تغيير حالتها
+        /// الحالة الجديدة للعملة
         /// </summary>
-        public Currency Currency { get; }
-        
-        /// <summary>
-        /// الحالة الجديدة للعملة (نشطة أو غير نشطة)
-        /// </summary>
-        public bool IsActive { get; }
+        public CurrencyStatusEnum NewStatus { get; }
 
         /// <summary>
         /// المنشئ
         /// </summary>
-        public CurrencyStatusChangedEvent(Currency currency)
+        public CurrencyStatusChangedEvent(Guid currencyId, CurrencyStatusEnum newStatus)
         {
-            if (currency == null)
-                throw new ArgumentNullException(nameof(currency));
-                
-            CurrencyId = currency.Id;
-            Currency = currency;
-            IsActive = currency.IsActive;
+            CurrencyId = currencyId;
+            NewStatus = newStatus;
         }
     }
 }
